@@ -27,14 +27,15 @@
    base palettes described in docs/calendar-design-system.md §8. */
 .palette-warm {
   --bougies-bg: #1b1410;
-  --bougies-bg-panel: rgba(36, 26, 20, 0.72);
+  --bougies-bg-panel: rgba(36, 26, 20, 0.55);
+  --bougies-bg-panel-quiet: rgba(36, 26, 20, 0.32);
   --bougies-wood: #3a2a1d;
   --bougies-amber: #d9a441;
   --bougies-amber-soft: #b98a3a;
   --bougies-cream: #f2e6d3;
   --bougies-cream-dim: #cbb99e;
   --bougies-recurring-accent: #5f8f80;
-  --bougies-outside: rgba(18, 13, 10, 0.65);
+  --bougies-outside: rgba(18, 13, 10, 0.4);
   --bougies-border: #4a382a;
   --bougies-overlay: rgba(15, 10, 7, 0.55);
 }
@@ -43,14 +44,15 @@
    leaning months). Second base palette per design-system §8. */
 .palette-dusk {
   --bougies-bg: #12131f;
-  --bougies-bg-panel: rgba(24, 22, 42, 0.72);
+  --bougies-bg-panel: rgba(24, 22, 42, 0.55);
+  --bougies-bg-panel-quiet: rgba(24, 22, 42, 0.32);
   --bougies-wood: #262646;
   --bougies-amber: #e8a5d8;
   --bougies-amber-soft: #b978ab;
   --bougies-cream: #eef0fb;
   --bougies-cream-dim: #b9bce0;
   --bougies-recurring-accent: #5fd0c8;
-  --bougies-outside: rgba(10, 10, 18, 0.65);
+  --bougies-outside: rgba(10, 10, 18, 0.4);
   --bougies-border: #3a3a63;
   --bougies-overlay: rgba(10, 8, 20, 0.55);
 }
@@ -227,26 +229,44 @@ body {
   min-height: 0; /* required for a flex child grid to actually shrink/fill correctly */
 }
 
+/* Grid readability, Phase 6B — the background is the calendar's primary
+   visual identity ("album cover"), not something the grid sits on top of
+   and hides. Cells use a top-anchored gradient scrim (strongest right
+   behind the date/content near the top, fading to fully transparent
+   toward each cell's usually-unfilled bottom) instead of a flat opaque
+   fill, so the shared background stays visible through every cell,
+   populated or not — never a traditional opaque app-grid look.
+   text-shadow on cell text is the secondary, always-on contrast layer,
+   doing the rest of the work in the faded zone. Only populated cells get
+   a border — empty/outside cells stay borderless so the grid reads as
+   "events on a poster," not gridlines over everything. */
+
 .day-cell {
   border-radius: 6px;
   padding: 8px 10px;
   position: relative;
-  border: 1px solid var(--bougies-border);
   overflow: hidden;
 }
 
 .day-cell--outside {
-  background: var(--bougies-outside);
-  border-color: transparent;
+  background: linear-gradient(180deg, var(--bougies-outside) 0%, transparent 70%);
 }
 
 .day-cell--empty {
-  background: var(--bougies-bg-panel);
-  opacity: 0.55; /* "visually recessed" per docs §3 item 6 */
+  background: linear-gradient(180deg, var(--bougies-bg-panel-quiet) 0%, transparent 55%);
 }
 
 .day-cell--populated {
-  background: var(--bougies-bg-panel);
+  background: linear-gradient(180deg, var(--bougies-bg-panel) 0%, transparent 62%);
+  border: 1px solid var(--bougies-border);
+}
+
+.cell-date,
+.cell-label,
+.cell-primary,
+.cell-primary--default,
+.cell-secondary {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
 }
 
 /* Date number — same position/markup class across every template, per
