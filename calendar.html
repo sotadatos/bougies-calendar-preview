@@ -138,14 +138,57 @@ body {
   z-index: 1;
 }
 
-/* --- Header (docs §3 items 1-2) --- */
+/* --- Header (docs §3 items 1-2; docs/visual-design-phase6b-plan.md §2/§4
+   "header treatment layer"). Integrated into the shared background, not a
+   separate website-style banner: the backing below is a soft gradient
+   bleeding into the page's own background, not an opaque box, and the
+   divider is a fading decorative line rather than a hard rule. --- */
 
 .calendar-header {
+  position: relative;
   flex: 0 0 auto;
   text-align: center;
-  padding-bottom: 18px;
-  margin-bottom: 16px;
-  border-bottom: 2px solid var(--bougies-border);
+  /* Negative margin matches .calendar-page's own padding (32px 40px) so
+     the gradient backing below bleeds edge-to-edge behind the header,
+     while the padding keeps header text inset exactly where it was. */
+  margin: -32px -40px 16px;
+  padding: 28px 40px 24px;
+}
+
+.calendar-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 80% 100% at 50% 25%, var(--bougies-overlay) 0%, transparent 75%);
+}
+
+.calendar-header > * {
+  position: relative;
+  z-index: 1;
+}
+
+.calendar-brand {
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--bougies-amber-soft);
+  margin-bottom: 10px;
+}
+
+.calendar-header-divider {
+  height: 2px;
+  margin-top: 18px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--bougies-border) 18%,
+    var(--bougies-amber-soft) 50%,
+    var(--bougies-border) 82%,
+    transparent 100%
+  );
 }
 
 .calendar-month {
@@ -358,9 +401,11 @@ body {
 <div class="calendar-page palette-warm overlay-warm-transparent">
 
     <header class="calendar-header">
+      <div class="calendar-brand">Bougies · An Old Florida Tavern</div>
       <div class="calendar-month">August 2026</div>
       <div class="calendar-theme">August at Bougies</div>
       <p class="calendar-tagline">August at Bougies: Whiskey Allstars on Sunday, Karaoke Tuesday at 10 PM, and JEMM live Saturday night. Save the dates and come hang in the Living Room.</p>
+      <div class="calendar-header-divider" aria-hidden="true"></div>
     </header>
   
 <div class="weekday-row"><div class="weekday-label"><span class="weekday-name">Sun</span><span class="weekday-identity">Whiskey Allstars</span></div><div class="weekday-label"><span class="weekday-name">Mon</span></div><div class="weekday-label"><span class="weekday-name">Tue</span><span class="weekday-identity">Karaoke Tuesday</span></div><div class="weekday-label"><span class="weekday-name">Wed</span></div><div class="weekday-label"><span class="weekday-name">Thu</span></div><div class="weekday-label"><span class="weekday-name">Fri</span></div><div class="weekday-label"><span class="weekday-name">Sat</span></div></div><div class="month-grid" style="--row-count:6"><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--empty"><div class="cell-date">1</div></div><div class="day-cell day-cell--empty"><div class="cell-date">2</div></div><div class="day-cell day-cell--empty"><div class="cell-date">3</div></div><div class="day-cell day-cell--empty"><div class="cell-date">4</div></div><div class="day-cell day-cell--empty"><div class="cell-date">5</div></div><div class="day-cell day-cell--empty"><div class="cell-date">6</div></div><div class="day-cell day-cell--empty"><div class="cell-date">7</div></div><div class="day-cell day-cell--empty"><div class="cell-date">8</div></div><div class="day-cell day-cell--empty"><div class="cell-date">9</div></div><div class="day-cell day-cell--empty"><div class="cell-date">10</div></div><div class="day-cell day-cell--empty"><div class="cell-date">11</div></div><div class="day-cell day-cell--empty"><div class="cell-date">12</div></div><div class="day-cell day-cell--empty"><div class="cell-date">13</div></div><div class="day-cell day-cell--empty"><div class="cell-date">14</div></div><div class="day-cell day-cell--empty"><div class="cell-date">15</div></div><div class="day-cell day-cell--empty"><div class="cell-date">16</div></div><div class="day-cell day-cell--empty"><div class="cell-date">17</div></div><div class="day-cell day-cell--empty"><div class="cell-date">18</div></div><div class="day-cell day-cell--empty"><div class="cell-date">19</div></div><div class="day-cell day-cell--empty"><div class="cell-date">20</div></div><div class="day-cell day-cell--empty"><div class="cell-date">21</div></div><div class="day-cell day-cell--empty"><div class="cell-date">22</div></div><div class="day-cell day-cell--populated template-recurring-night"><div class="cell-date">23</div>
