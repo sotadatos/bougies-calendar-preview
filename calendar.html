@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bougies Calendar — August 2026</title>
+<style>
+/* Bougies Calendar — Phase 5C landscape renderer foundation.
+   Old Florida tavern / nightlife direction per docs/calendar-design-system.md
+   §0 (historical analysis), §1, §7, §8. System font stacks only (no
+   external font loading — keeps this fully self-contained and
+   offline-safe). First-pass palette and type choices, not final brand
+   design ("do not attempt final artistic perfection yet" — focus is
+   correct architecture and reusable components). CSS variables + reusable
+   classes only — no per-event inline styling anywhere in the generator
+   (the one exception, --row-count, is a per-month grid-structure value,
+   not event-specific — see components/month-grid.mjs). */
+
+:root {
+  /* Base palette: warm wood / amber, indoor-leaning — one of the 2-3 base
+     palettes described in docs/calendar-design-system.md §8, not a unique
+     one-off for this month. */
+  --bougies-bg: #1b1410;
+  --bougies-bg-panel: #241a14;
+  --bougies-wood: #3a2a1d;
+  --bougies-amber: #d9a441;
+  --bougies-amber-soft: #b98a3a;
+  --bougies-cream: #f2e6d3;
+  --bougies-cream-dim: #cbb99e;
+  --bougies-recurring-accent: #5f8f80;
+  --bougies-outside: #120d0a;
+  --bougies-border: #4a382a;
+
+  --font-display: Georgia, "Times New Roman", serif;
+  --font-body: -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bougies-bg);
+  color: var(--bougies-cream);
+  font-family: var(--font-body);
+}
+
+/* --- Primary composition: landscape, 3:2, matching the historical
+   Bougies reference dimensions exactly (docs/calendar-design-system.md
+   §0 and §2 — "Primary source design"). 1800×1200 is the working
+   resolution chosen for this digital renderer; 5400×3600 (the historical
+   files' actual pixel size) remains the reference ratio, not a hard
+   requirement to hit at this stage. Fixed height, flex column: header and
+   the weekday row take their natural height, the grid fills whatever
+   remains — this is what makes "the grid is the hero" (docs §0 "What
+   should be preserved") literally true regardless of whether a given
+   month needs 5 or 6 row. Portrait/Instagram/print derivations are
+   explicitly future work (docs §2) — this stylesheet only targets the
+   landscape master. */
+
+.calendar-page {
+  width: 1800px;
+  height: 1200px;
+  padding: 32px 40px;
+  background: var(--bougies-bg);
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Header (docs §3 items 1-2) --- */
+
+.calendar-header {
+  flex: 0 0 auto;
+  text-align: center;
+  padding-bottom: 18px;
+  margin-bottom: 16px;
+  border-bottom: 2px solid var(--bougies-border);
+}
+
+.calendar-month {
+  font-family: var(--font-display);
+  font-size: 18px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--bougies-cream-dim);
+  margin-bottom: 6px;
+}
+
+.calendar-theme {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--bougies-amber);
+  line-height: 1.1;
+  /* Large, but the grid below still gets most of the canvas height —
+     the theme name announces the month, it doesn't dominate the page. */
+  font-size: 44px;
+}
+
+.calendar-tagline {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--bougies-cream-dim);
+  max-width: 1100px;
+  margin: 8px auto 0;
+  line-height: 1.4;
+}
+
+/* --- Weekday row (docs §3 item 3) --- */
+
+.weekday-row {
+  flex: 0 0 auto;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.weekday-label {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--bougies-cream-dim);
+  padding-bottom: 4px;
+}
+
+/* --- Monthly grid: the hero element (docs §0 "What should be
+   preserved" — "calendar grid as hero"). Fills all remaining vertical
+   space in the fixed-height canvas; --row-count (5 or 6, set per month by
+   components/month-grid.mjs) sizes rows so the grid always exactly fills
+   the frame, never overflows it, and never leaves a gap below it. */
+
+.month-grid {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(var(--row-count, 6), 1fr);
+  gap: 6px;
+  min-height: 0; /* required for a flex child grid to actually shrink/fill correctly */
+}
+
+.day-cell {
+  border-radius: 6px;
+  padding: 8px 10px;
+  position: relative;
+  border: 1px solid var(--bougies-border);
+  overflow: hidden;
+}
+
+.day-cell--outside {
+  background: var(--bougies-outside);
+  border-color: transparent;
+}
+
+.day-cell--empty {
+  background: var(--bougies-bg-panel);
+  opacity: 0.55; /* "visually recessed" per docs §3 item 6 */
+}
+
+.day-cell--populated {
+  background: var(--bougies-bg-panel);
+}
+
+/* Date number — same position/markup class across every template, per
+   docs §3 item 5 ("must never move"). */
+.cell-date {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--bougies-cream-dim);
+  margin-bottom: 4px;
+}
+
+.day-cell--populated .cell-date {
+  color: var(--bougies-cream);
+}
+
+/* --- Cell content, shared across templates. Text-first, graphics
+   optional (docs §12 "Renderer philosophy") — every rule below applies
+   whether or not a cell ever gains an image, so no cell depends on one
+   existing to render correctly. --- */
+
+.cell-label {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 3px;
+  margin-bottom: 5px;
+}
+
+.cell-primary {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 1.15;
+  color: var(--bougies-cream);
+}
+
+.cell-primary--default {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--bougies-cream-dim);
+}
+
+.cell-secondary {
+  margin-top: 5px;
+  font-size: 13px;
+  color: var(--bougies-cream-dim);
+}
+
+/* --- Template-specific accents (docs §5) --- */
+
+.template-live-band {
+  border-color: var(--bougies-amber-soft);
+}
+.template-live-band .cell-label {
+  background: var(--bougies-amber);
+  color: var(--bougies-bg);
+}
+
+.template-recurring-night {
+  border-color: var(--bougies-recurring-accent);
+}
+.template-recurring-night .cell-label {
+  background: var(--bougies-recurring-accent);
+  color: var(--bougies-bg);
+}
+
+.template-default-text .cell-label {
+  display: none;
+}
+
+/* --- Print (PDF export) --- */
+
+@media print {
+  body {
+    background: var(--bougies-bg);
+  }
+  .calendar-page {
+    width: auto;
+    height: auto;
+  }
+}
+
+</style>
+</head>
+<body>
+<div class="calendar-page">
+
+    <header class="calendar-header">
+      <div class="calendar-month">August 2026</div>
+      <div class="calendar-theme">August at Bougies</div>
+      <p class="calendar-tagline">August at Bougies: Whiskey Allstars on Sunday, Karaoke Tuesday at 10 PM, and JEMM live Saturday night. Save the dates and come hang in the Living Room.</p>
+    </header>
+  
+<div class="weekday-row"><div class="weekday-label">Sun</div><div class="weekday-label">Mon</div><div class="weekday-label">Tue</div><div class="weekday-label">Wed</div><div class="weekday-label">Thu</div><div class="weekday-label">Fri</div><div class="weekday-label">Sat</div></div><div class="month-grid" style="--row-count:6"><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--empty"><div class="cell-date">1</div></div><div class="day-cell day-cell--empty"><div class="cell-date">2</div></div><div class="day-cell day-cell--empty"><div class="cell-date">3</div></div><div class="day-cell day-cell--empty"><div class="cell-date">4</div></div><div class="day-cell day-cell--empty"><div class="cell-date">5</div></div><div class="day-cell day-cell--empty"><div class="cell-date">6</div></div><div class="day-cell day-cell--empty"><div class="cell-date">7</div></div><div class="day-cell day-cell--empty"><div class="cell-date">8</div></div><div class="day-cell day-cell--empty"><div class="cell-date">9</div></div><div class="day-cell day-cell--empty"><div class="cell-date">10</div></div><div class="day-cell day-cell--empty"><div class="cell-date">11</div></div><div class="day-cell day-cell--empty"><div class="cell-date">12</div></div><div class="day-cell day-cell--empty"><div class="cell-date">13</div></div><div class="day-cell day-cell--empty"><div class="cell-date">14</div></div><div class="day-cell day-cell--empty"><div class="cell-date">15</div></div><div class="day-cell day-cell--empty"><div class="cell-date">16</div></div><div class="day-cell day-cell--empty"><div class="cell-date">17</div></div><div class="day-cell day-cell--empty"><div class="cell-date">18</div></div><div class="day-cell day-cell--empty"><div class="cell-date">19</div></div><div class="day-cell day-cell--empty"><div class="cell-date">20</div></div><div class="day-cell day-cell--empty"><div class="cell-date">21</div></div><div class="day-cell day-cell--empty"><div class="cell-date">22</div></div><div class="day-cell day-cell--populated template-recurring-night"><div class="cell-date">23</div>
+    <div class="cell-label">Weekly</div>
+    <div class="cell-primary">Whiskey Allstars</div>
+    <div class="cell-secondary">6ish</div>
+  </div><div class="day-cell day-cell--empty"><div class="cell-date">24</div></div><div class="day-cell day-cell--populated template-recurring-night"><div class="cell-date">25</div>
+    <div class="cell-label">Weekly</div>
+    <div class="cell-primary">Karaoke Tuesday</div>
+    <div class="cell-secondary">10 PM</div>
+  </div><div class="day-cell day-cell--empty"><div class="cell-date">26</div></div><div class="day-cell day-cell--empty"><div class="cell-date">27</div></div><div class="day-cell day-cell--empty"><div class="cell-date">28</div></div><div class="day-cell day-cell--populated template-live-band"><div class="cell-date">29</div>
+    <div class="cell-label">Live Music</div>
+    <div class="cell-primary">JEMM</div>
+    <div class="cell-secondary">10 PM</div>
+  </div><div class="day-cell day-cell--empty"><div class="cell-date">30</div></div><div class="day-cell day-cell--empty"><div class="cell-date">31</div></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div></div>
+</div>
+</body>
+</html>
