@@ -4,34 +4,55 @@
 <meta charset="utf-8">
 <title>Bougies Calendar — August 2026</title>
 <style>
-/* Bougies Calendar — Phase 5C landscape renderer foundation.
-   Old Florida tavern / nightlife direction per docs/calendar-design-system.md
-   §0 (historical analysis), §1, §7, §8. System font stacks only (no
+/* Bougies Calendar — Phase 6A background-first renderer foundation
+   (docs/visual-design-phase6-plan.md §2). System font stacks only (no
    external font loading — keeps this fully self-contained and
-   offline-safe). First-pass palette and type choices, not final brand
-   design ("do not attempt final artistic perfection yet" — focus is
-   correct architecture and reusable components). CSS variables + reusable
-   classes only — no per-event inline styling anywhere in the generator
-   (the one exception, --row-count, is a per-month grid-structure value,
-   not event-specific — see components/month-grid.mjs). */
+   offline-safe). CSS variables + reusable classes only — per-render
+   (not per-event) inline values are limited to --row-count
+   (components/month-grid.mjs) and --bougies-bg-image (theme-resolver.mjs
+   via generate-calendar-render.mjs), both structural, never per-event.
+
+   Palette is now a swappable class (.palette-warm / .palette-dusk) rather
+   than fixed :root values, selected per month by colorDirection — see
+   theme-resolver.mjs. Colors below are rgba() rather than opaque hex so
+   the grid stays transparent over whatever sits in the background layer
+   (photo or procedural fallback), per the plan's layer 3. */
 
 :root {
-  /* Base palette: warm wood / amber, indoor-leaning — one of the 2-3 base
-     palettes described in docs/calendar-design-system.md §8, not a unique
-     one-off for this month. */
+  --font-display: Georgia, "Times New Roman", serif;
+  --font-body: -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Palette: warm wood / amber, indoor-leaning (default) — one of the 2-3
+   base palettes described in docs/calendar-design-system.md §8. */
+.palette-warm {
   --bougies-bg: #1b1410;
-  --bougies-bg-panel: #241a14;
+  --bougies-bg-panel: rgba(36, 26, 20, 0.72);
   --bougies-wood: #3a2a1d;
   --bougies-amber: #d9a441;
   --bougies-amber-soft: #b98a3a;
   --bougies-cream: #f2e6d3;
   --bougies-cream-dim: #cbb99e;
   --bougies-recurring-accent: #5f8f80;
-  --bougies-outside: #120d0a;
+  --bougies-outside: rgba(18, 13, 10, 0.65);
   --bougies-border: #4a382a;
+  --bougies-overlay: rgba(15, 10, 7, 0.55);
+}
 
-  --font-display: Georgia, "Times New Roman", serif;
-  --font-body: -apple-system, "Helvetica Neue", Arial, sans-serif;
+/* Palette: dusk / neon, cooler — colorDirection: "dusk" (DJ / late-night
+   leaning months). Second base palette per design-system §8. */
+.palette-dusk {
+  --bougies-bg: #12131f;
+  --bougies-bg-panel: rgba(24, 22, 42, 0.72);
+  --bougies-wood: #262646;
+  --bougies-amber: #e8a5d8;
+  --bougies-amber-soft: #b978ab;
+  --bougies-cream: #eef0fb;
+  --bougies-cream-dim: #b9bce0;
+  --bougies-recurring-accent: #5fd0c8;
+  --bougies-outside: rgba(10, 10, 18, 0.65);
+  --bougies-border: #3a3a63;
+  --bougies-overlay: rgba(10, 8, 20, 0.55);
 }
 
 * {
@@ -59,12 +80,60 @@ body {
    landscape master. */
 
 .calendar-page {
+  position: relative;
   width: 1800px;
   height: 1200px;
   padding: 32px 40px;
-  background: var(--bougies-bg);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+
+  /* Render-stack layer 1: monthly background image when a theme provides
+     one (--bougies-bg-image, set inline per-render by
+     generate-calendar-render.mjs from theme-resolver.mjs), falling back
+     to a subtle procedural texture — never a flat solid color — when it
+     doesn't. docs/visual-design-phase6-plan.md §2, §4. */
+  --bougies-procedural-bg: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.02) 0px,
+    rgba(255, 255, 255, 0.02) 2px,
+    transparent 2px,
+    transparent 14px
+  );
+  background-color: var(--bougies-bg);
+  background-image: var(--bougies-bg-image, var(--bougies-procedural-bg));
+  background-size: cover;
+  background-position: center;
+}
+
+/* Render-stack layer 1 continued: the readability overlay/scrim, per
+   docs/calendar-design-system.md §8 ("any text laid over a photo or
+   textured background must sit on a scrim/overlay strong enough to
+   guarantee contrast, automatically"). Sits between the background and
+   every content layer; overlayStyle (theme-resolver.mjs) selects which
+   variant applies. */
+.calendar-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.calendar-page.overlay-warm-transparent::before {
+  background: var(--bougies-overlay);
+}
+.calendar-page.overlay-none::before {
+  background: none;
+}
+
+/* Layers 2-5 (header, weekday identity, grid, promotional overlays) all
+   sit above the background + scrim (layer 1) — each content layer is
+   lifted into its own stacking context above the ::before overlay. */
+.calendar-header,
+.weekday-row,
+.month-grid {
+  position: relative;
+  z-index: 1;
 }
 
 /* --- Header (docs §3 items 1-2) --- */
@@ -118,11 +187,29 @@ body {
 .weekday-label {
   text-align: center;
   font-family: var(--font-body);
+  padding-bottom: 4px;
+}
+
+/* Render-stack layer 3: weekday identity, derived automatically from
+   which recurring-night event (if any) occupies this weekday this month
+   — see components/month-grid.mjs. Plain weekday name always shows;
+   the identity line only appears when the data supports one, so no
+   weekday is ever given a fabricated identity. */
+.weekday-name {
+  display: block;
   font-size: 12px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--bougies-cream-dim);
-  padding-bottom: 4px;
+}
+
+.weekday-identity {
+  display: block;
+  margin-top: 2px;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--bougies-recurring-accent);
 }
 
 /* --- Monthly grid: the hero element (docs §0 "What should be
@@ -248,7 +335,7 @@ body {
 </style>
 </head>
 <body>
-<div class="calendar-page">
+<div class="calendar-page palette-warm overlay-warm-transparent">
 
     <header class="calendar-header">
       <div class="calendar-month">August 2026</div>
@@ -256,7 +343,7 @@ body {
       <p class="calendar-tagline">August at Bougies: Whiskey Allstars on Sunday, Karaoke Tuesday at 10 PM, and JEMM live Saturday night. Save the dates and come hang in the Living Room.</p>
     </header>
   
-<div class="weekday-row"><div class="weekday-label">Sun</div><div class="weekday-label">Mon</div><div class="weekday-label">Tue</div><div class="weekday-label">Wed</div><div class="weekday-label">Thu</div><div class="weekday-label">Fri</div><div class="weekday-label">Sat</div></div><div class="month-grid" style="--row-count:6"><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--empty"><div class="cell-date">1</div></div><div class="day-cell day-cell--empty"><div class="cell-date">2</div></div><div class="day-cell day-cell--empty"><div class="cell-date">3</div></div><div class="day-cell day-cell--empty"><div class="cell-date">4</div></div><div class="day-cell day-cell--empty"><div class="cell-date">5</div></div><div class="day-cell day-cell--empty"><div class="cell-date">6</div></div><div class="day-cell day-cell--empty"><div class="cell-date">7</div></div><div class="day-cell day-cell--empty"><div class="cell-date">8</div></div><div class="day-cell day-cell--empty"><div class="cell-date">9</div></div><div class="day-cell day-cell--empty"><div class="cell-date">10</div></div><div class="day-cell day-cell--empty"><div class="cell-date">11</div></div><div class="day-cell day-cell--empty"><div class="cell-date">12</div></div><div class="day-cell day-cell--empty"><div class="cell-date">13</div></div><div class="day-cell day-cell--empty"><div class="cell-date">14</div></div><div class="day-cell day-cell--empty"><div class="cell-date">15</div></div><div class="day-cell day-cell--empty"><div class="cell-date">16</div></div><div class="day-cell day-cell--empty"><div class="cell-date">17</div></div><div class="day-cell day-cell--empty"><div class="cell-date">18</div></div><div class="day-cell day-cell--empty"><div class="cell-date">19</div></div><div class="day-cell day-cell--empty"><div class="cell-date">20</div></div><div class="day-cell day-cell--empty"><div class="cell-date">21</div></div><div class="day-cell day-cell--empty"><div class="cell-date">22</div></div><div class="day-cell day-cell--populated template-recurring-night"><div class="cell-date">23</div>
+<div class="weekday-row"><div class="weekday-label"><span class="weekday-name">Sun</span><span class="weekday-identity">Whiskey Allstars</span></div><div class="weekday-label"><span class="weekday-name">Mon</span></div><div class="weekday-label"><span class="weekday-name">Tue</span><span class="weekday-identity">Karaoke Tuesday</span></div><div class="weekday-label"><span class="weekday-name">Wed</span></div><div class="weekday-label"><span class="weekday-name">Thu</span></div><div class="weekday-label"><span class="weekday-name">Fri</span></div><div class="weekday-label"><span class="weekday-name">Sat</span></div></div><div class="month-grid" style="--row-count:6"><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--empty"><div class="cell-date">1</div></div><div class="day-cell day-cell--empty"><div class="cell-date">2</div></div><div class="day-cell day-cell--empty"><div class="cell-date">3</div></div><div class="day-cell day-cell--empty"><div class="cell-date">4</div></div><div class="day-cell day-cell--empty"><div class="cell-date">5</div></div><div class="day-cell day-cell--empty"><div class="cell-date">6</div></div><div class="day-cell day-cell--empty"><div class="cell-date">7</div></div><div class="day-cell day-cell--empty"><div class="cell-date">8</div></div><div class="day-cell day-cell--empty"><div class="cell-date">9</div></div><div class="day-cell day-cell--empty"><div class="cell-date">10</div></div><div class="day-cell day-cell--empty"><div class="cell-date">11</div></div><div class="day-cell day-cell--empty"><div class="cell-date">12</div></div><div class="day-cell day-cell--empty"><div class="cell-date">13</div></div><div class="day-cell day-cell--empty"><div class="cell-date">14</div></div><div class="day-cell day-cell--empty"><div class="cell-date">15</div></div><div class="day-cell day-cell--empty"><div class="cell-date">16</div></div><div class="day-cell day-cell--empty"><div class="cell-date">17</div></div><div class="day-cell day-cell--empty"><div class="cell-date">18</div></div><div class="day-cell day-cell--empty"><div class="cell-date">19</div></div><div class="day-cell day-cell--empty"><div class="cell-date">20</div></div><div class="day-cell day-cell--empty"><div class="cell-date">21</div></div><div class="day-cell day-cell--empty"><div class="cell-date">22</div></div><div class="day-cell day-cell--populated template-recurring-night"><div class="cell-date">23</div>
     <div class="cell-label">Weekly</div>
     <div class="cell-primary">Whiskey Allstars</div>
     <div class="cell-secondary">6ish</div>
