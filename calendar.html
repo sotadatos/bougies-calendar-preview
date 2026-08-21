@@ -38,6 +38,12 @@
   --bougies-outside: rgba(18, 13, 10, 0.4);
   --bougies-border: #4a382a;
   --bougies-overlay: rgba(15, 10, 7, 0.55);
+  /* Phase 6B step D — overlayStyle "strong" variant and per-template
+     accent/panel tokens (docs/visual-design-phase6b-plan.md §4, §7). */
+  --bougies-overlay-strong: rgba(15, 10, 7, 0.74);
+  --bougies-dj-accent: #6f8fc9;
+  --bougies-dj-panel: rgba(15, 18, 30, 0.72);
+  --bougies-special-accent: #e8c458;
 }
 
 /* Palette: dusk / neon, cooler — colorDirection: "dusk" (DJ / late-night
@@ -55,6 +61,10 @@
   --bougies-outside: rgba(10, 10, 18, 0.4);
   --bougies-border: #3a3a63;
   --bougies-overlay: rgba(10, 8, 20, 0.55);
+  --bougies-overlay-strong: rgba(10, 8, 20, 0.74);
+  --bougies-dj-accent: #8b7fe0;
+  --bougies-dj-panel: rgba(8, 8, 20, 0.72);
+  --bougies-special-accent: #f2d675;
 }
 
 * {
@@ -108,12 +118,15 @@ body {
   background-position: center;
 }
 
-/* Render-stack layer 1 continued: the readability overlay/scrim, per
+/* Render-stack layer 2: the readability overlay/scrim, per
    docs/calendar-design-system.md §8 ("any text laid over a photo or
    textured background must sit on a scrim/overlay strong enough to
    guarantee contrast, automatically"). Sits between the background and
    every content layer; overlayStyle (theme-resolver.mjs) selects which
-   variant applies. */
+   variant applies. Phase 6B step D formalizes this as a small named
+   registry (docs/visual-design-phase6b-plan.md §7) — "standard" (the
+   prior "warm transparent grid" default, renamed only, unchanged value),
+   "strong" (new, for busier photos), "none". */
 .calendar-page::before {
   content: "";
   position: absolute;
@@ -121,11 +134,26 @@ body {
   z-index: 0;
   pointer-events: none;
 }
-.calendar-page.overlay-warm-transparent::before {
+.calendar-page.overlay-standard::before {
   background: var(--bougies-overlay);
+}
+.calendar-page.overlay-strong::before {
+  background: var(--bougies-overlay-strong);
 }
 .calendar-page.overlay-none::before {
   background: none;
+}
+
+/* graphicStyle registry (theme-resolver.mjs), Phase 6B step D
+   (docs/visual-design-phase6b-plan.md §7) — "bold" (default) is today's
+   existing badge treatment, so it needs no override rule of its own;
+   "minimal" is the one named alternative, a lighter/quieter badge. Both
+   are named values only — never arbitrary CSS from config. */
+.graphic-minimal .cell-label {
+  font-weight: 500;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  padding: 1px 5px;
 }
 
 /* Layers 3-5 and 7 (header, weekday identity, grid, footer) all sit above
@@ -337,6 +365,8 @@ body {
 .cell-primary,
 .cell-primary--default,
 .cell-secondary,
+.cell-venue,
+.cell-promo,
 .weekday-name,
 .weekday-identity {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
@@ -391,7 +421,46 @@ body {
   color: var(--bougies-cream-dim);
 }
 
-/* --- Template-specific accents (docs §5) --- */
+/* Cell content model additions, Phase 6B step D
+   (docs/visual-design-phase6b-plan.md §4) — shared across every template
+   that opts into them via templates/template-registry.mjs, rendered by
+   the single templates/cell-composer.mjs. All three stay empty/absent on
+   every real render today (no image/icon assets exist, no event carries
+   promotionalText yet) — this only defines how they'd look once populated. */
+
+.cell-visual {
+  width: 100%;
+  height: 36px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  background-color: rgba(0, 0, 0, 0.2);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.cell-venue {
+  margin-top: 3px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bougies-cream-dim);
+}
+
+.cell-promo {
+  margin-top: 5px;
+  font-size: 11px;
+  font-style: italic;
+  color: var(--bougies-cream-dim);
+}
+
+/* --- Template-specific accents (docs §5). Every template below is the
+   same shared card (day-cell + cell-composer.mjs) with only its accent
+   color, badge fill, and (for dj) panel darkness varying — never a
+   separate hand-built layout per template. --- */
 
 .template-live-band {
   border-color: var(--bougies-amber-soft);
@@ -406,6 +475,33 @@ body {
 }
 .template-recurring-night .cell-label {
   background: var(--bougies-recurring-accent);
+  color: var(--bougies-bg);
+}
+
+/* DJ Cell (docs/calendar-design-system.md §5) — first built in Phase 6B
+   step D. The "late-night visual treatment (darker background tone)"
+   §5 calls for is a local panel darkening (--bougies-dj-panel), not a
+   photo — it applies inside any palette, not only "dusk" months. */
+.template-dj {
+  border-color: var(--bougies-dj-accent);
+}
+.template-dj .cell-label {
+  background: var(--bougies-dj-accent);
+  color: var(--bougies-bg);
+}
+.day-cell--populated.template-dj {
+  background: linear-gradient(180deg, var(--bougies-dj-panel) 0%, transparent 62%);
+}
+
+/* Special Event Cell (docs/calendar-design-system.md §5) — first built in
+   Phase 6B step D, modest automatic-default state only (the "loud",
+   human-approved custom-artwork upgrade §5/§11 describe stays future
+   work, gated on human approval by definition). */
+.template-special-event {
+  border-color: var(--bougies-special-accent);
+}
+.template-special-event .cell-label {
+  background: var(--bougies-special-accent);
   color: var(--bougies-bg);
 }
 
@@ -486,7 +582,7 @@ body {
 </style>
 </head>
 <body>
-<div class="calendar-page palette-warm overlay-warm-transparent">
+<div class="calendar-page palette-warm overlay-standard graphic-bold">
 
     <header class="calendar-header">
       <div class="calendar-brand">Bougies · An Old Florida Tavern</div>
@@ -496,17 +592,26 @@ body {
     </header>
   
 <div class="weekday-row"><div class="weekday-label"><span class="weekday-name">Sun</span><span class="weekday-identity">Whiskey Allstars</span></div><div class="weekday-label"><span class="weekday-name">Mon</span></div><div class="weekday-label"><span class="weekday-name">Tue</span><span class="weekday-identity">Karaoke Tuesday</span></div><div class="weekday-label"><span class="weekday-name">Wed</span></div><div class="weekday-label"><span class="weekday-name">Thu</span></div><div class="weekday-label"><span class="weekday-name">Fri</span></div><div class="weekday-label"><span class="weekday-name">Sat</span></div></div><div class="month-grid" style="--row-count:6"><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--empty"><div class="cell-date">1</div></div><div class="day-cell day-cell--empty"><div class="cell-date">2</div></div><div class="day-cell day-cell--empty"><div class="cell-date">3</div></div><div class="day-cell day-cell--empty"><div class="cell-date">4</div></div><div class="day-cell day-cell--empty"><div class="cell-date">5</div></div><div class="day-cell day-cell--empty"><div class="cell-date">6</div></div><div class="day-cell day-cell--empty"><div class="cell-date">7</div></div><div class="day-cell day-cell--empty"><div class="cell-date">8</div></div><div class="day-cell day-cell--empty"><div class="cell-date">9</div></div><div class="day-cell day-cell--empty"><div class="cell-date">10</div></div><div class="day-cell day-cell--empty"><div class="cell-date">11</div></div><div class="day-cell day-cell--empty"><div class="cell-date">12</div></div><div class="day-cell day-cell--empty"><div class="cell-date">13</div></div><div class="day-cell day-cell--empty"><div class="cell-date">14</div></div><div class="day-cell day-cell--empty"><div class="cell-date">15</div></div><div class="day-cell day-cell--empty"><div class="cell-date">16</div></div><div class="day-cell day-cell--empty"><div class="cell-date">17</div></div><div class="day-cell day-cell--empty"><div class="cell-date">18</div></div><div class="day-cell day-cell--empty"><div class="cell-date">19</div></div><div class="day-cell day-cell--empty"><div class="cell-date">20</div></div><div class="day-cell day-cell--empty"><div class="cell-date">21</div></div><div class="day-cell day-cell--empty"><div class="cell-date">22</div></div><div class="day-cell day-cell--populated template-recurring-night"><div class="cell-date">23</div>
+    
     <div class="cell-label">Weekly</div>
     <div class="cell-primary">Whiskey Allstars</div>
     <div class="cell-secondary">6ish</div>
+    
+    
   </div><div class="day-cell day-cell--empty"><div class="cell-date">24</div></div><div class="day-cell day-cell--populated template-recurring-night"><div class="cell-date">25</div>
+    
     <div class="cell-label">Weekly</div>
     <div class="cell-primary">Karaoke Tuesday</div>
     <div class="cell-secondary">10 PM</div>
+    
+    
   </div><div class="day-cell day-cell--empty"><div class="cell-date">26</div></div><div class="day-cell day-cell--empty"><div class="cell-date">27</div></div><div class="day-cell day-cell--empty"><div class="cell-date">28</div></div><div class="day-cell day-cell--populated template-live-band"><div class="cell-date">29</div>
+    
     <div class="cell-label">Live Music</div>
     <div class="cell-primary">JEMM</div>
     <div class="cell-secondary">10 PM</div>
+    
+    
   </div><div class="day-cell day-cell--empty"><div class="cell-date">30</div></div><div class="day-cell day-cell--empty"><div class="cell-date">31</div></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div></div>
 
     <footer class="calendar-footer">
