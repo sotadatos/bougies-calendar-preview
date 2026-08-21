@@ -44,6 +44,7 @@
   --bougies-dj-accent: #6f8fc9;
   --bougies-dj-panel: rgba(15, 18, 30, 0.72);
   --bougies-special-accent: #e8c458;
+  --bougies-border-faint: rgba(74, 56, 42, 0.35);
 }
 
 /* Palette: dusk / neon, cooler — colorDirection: "dusk" (DJ / late-night
@@ -65,6 +66,7 @@
   --bougies-dj-accent: #8b7fe0;
   --bougies-dj-panel: rgba(8, 8, 20, 0.72);
   --bougies-special-accent: #f2d675;
+  --bougies-border-faint: rgba(58, 58, 99, 0.35);
 }
 
 * {
@@ -336,9 +338,7 @@ body {
    fill, so the shared background stays visible through every cell,
    populated or not — never a traditional opaque app-grid look.
    text-shadow on cell text is the secondary, always-on contrast layer,
-   doing the rest of the work in the faded zone. Only populated cells get
-   a border — empty/outside cells stay borderless so the grid reads as
-   "events on a poster," not gridlines over everything. */
+   doing the rest of the work in the faded zone. */
 
 .day-cell {
   border-radius: 6px;
@@ -347,12 +347,31 @@ body {
   overflow: hidden;
 }
 
+/* Empty-cell texture, Phase 6B step F (docs/visual-design-phase6b-plan.md
+   §8) — empty days read as recessed poster surface, not dead/unused
+   space (design-system §3 item 6, §0's "no cell was ever left truly
+   blank"). No opaque fill, no new asset: a very faint diagonal-hash
+   texture (same technique as .calendar-page's own procedural fallback
+   texture, just fainter) layered under the existing gradient panel, so
+   the shared background still reads through clearly. day-cell--outside
+   (adjacent-month padding) stays the quietest state of all — a dimmer
+   texture, still borderless, since it isn't even a day in the displayed
+   month. day-cell--empty (an in-month day with no event) gets slightly
+   more presence: the faint hairline border and a subtle inset shadow
+   below give it a touch of depth/personality without competing with
+   populated cells, which remain the only ones with a full accent
+   border. */
+
 .day-cell--outside {
-  background: linear-gradient(180deg, var(--bougies-outside) 0%, transparent 70%);
+  background-image: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.018) 0px, rgba(255, 255, 255, 0.018) 1px, transparent 1px, transparent 10px),
+    linear-gradient(180deg, var(--bougies-outside) 0%, transparent 70%);
 }
 
 .day-cell--empty {
-  background: linear-gradient(180deg, var(--bougies-bg-panel-quiet) 0%, transparent 55%);
+  background-image: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0px, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 10px),
+    linear-gradient(180deg, var(--bougies-bg-panel-quiet) 0%, transparent 55%);
+  border: 1px solid var(--bougies-border-faint);
+  box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.22);
 }
 
 .day-cell--populated {
