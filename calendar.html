@@ -250,11 +250,19 @@ body {
   padding-bottom: 4px;
 }
 
-/* Render-stack layer 3: weekday identity, derived automatically from
+/* Render-stack layer 4: weekday identity, derived automatically from
    which recurring-night event (if any) occupies this weekday this month
    — see components/month-grid.mjs. Plain weekday name always shows;
    the identity line only appears when the data supports one, so no
-   weekday is ever given a fabricated identity. */
+   weekday is ever given a fabricated identity.
+
+   Phase 6B step B (docs/visual-design-phase6b-plan.md §3): the identity
+   line is promoted from a quiet 10px body-font accent to a real marketing
+   layer — display-font, larger, bolder — the modern equivalent of the
+   historical calendars' "Poker MONDAYS"/"TUESDAY reggae" branded weekday
+   headers (design-system §0). The plain weekday abbreviation stays small
+   body-font text on purpose: it's still the fast day-of-week scan anchor,
+   not part of the brand-voice layer sitting just below it. */
 .weekday-name {
   display: block;
   font-size: 12px;
@@ -265,9 +273,11 @@ body {
 
 .weekday-identity {
   display: block;
-  margin-top: 2px;
-  font-size: 10px;
-  letter-spacing: 0.05em;
+  margin-top: 3px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--bougies-recurring-accent);
 }
@@ -323,7 +333,9 @@ body {
 .cell-label,
 .cell-primary,
 .cell-primary--default,
-.cell-secondary {
+.cell-secondary,
+.weekday-name,
+.weekday-identity {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
 }
 
