@@ -98,7 +98,19 @@ body {
 .calendar-page {
   position: relative;
   width: 1800px;
-  height: 1200px;
+  /* Phase 7C layout architecture (docs/phase7c-graphic-language-plan.md
+     §5): min-height, not a fixed height. Graphic override layers (month
+     title artwork, weekday identity artwork) have unpredictable rendered
+     heights depending on the source image's aspect ratio — a fixed
+     1200px forced the grid to silently shrink and clip event content
+     whenever those layers grew taller than the space a plain-text
+     render needed. With min-height, the page grows to fit real content
+     instead; a month using only styled text (no graphic overrides)
+     still computes to exactly 1200px, unchanged from before. The actual
+     PNG capture height is measured per-render, not assumed — see
+     generate-calendar-render.mjs's two-pass measure-then-screenshot
+     flow. */
+  min-height: 1200px;
   padding: 32px 40px;
   display: flex;
   flex-direction: column;
@@ -258,6 +270,20 @@ body {
   margin-bottom: 6px;
 }
 
+/* Hero Artwork layer, Phase 7C (docs/phase7c-graphic-language-plan.md
+   §1) — replaces .calendar-month entirely when a monthTitleAsset
+   resolves (components/header.mjs); same position in the hierarchy,
+   same role as the dominant element. max-width keeps it proportionate
+   to the masthead/subtitle around it rather than filling the full page
+   width — verified visually during the Phase 7C placement tests. */
+.calendar-month-artwork {
+  display: block;
+  margin: 0 auto 6px;
+  max-width: 720px;
+  width: 100%;
+  height: auto;
+}
+
 /* Supporting subtitle (demoted from this rule's prior 44px/700-weight
    treatment) — announces the month's theme without outweighing the
    month/year element above it. */
@@ -331,6 +357,26 @@ body {
   color: var(--bougies-recurring-accent);
 }
 
+/* Recurring Identity Artwork layer, Phase 7C
+   (docs/phase7c-graphic-language-plan.md §2) — replaces .weekday-identity
+   entirely for a weekday whose artwork resolves (components/month-grid.mjs);
+   sized by height so it stays proportionate regardless of each mark's own
+   aspect ratio, deliberately not width-constrained to its single column —
+   a poster layer is allowed to bleed into neighboring, otherwise-empty
+   columns, per the Phase 7C visual tests. Secondary to .calendar-month-artwork
+   in the hierarchy — smaller, and the page grows (see .calendar-page,
+   .month-grid) rather than letting this layer compress the grid below a
+   safe minimum. */
+.weekday-identity-artwork {
+  display: block;
+  margin: 6px auto 0;
+  height: 110px;
+  width: auto;
+  max-width: none;
+  position: relative;
+  z-index: 2;
+}
+
 /* --- Monthly grid: the hero element (docs §0 "What should be
    preserved" — "calendar grid as hero"). Fills all remaining vertical
    space in the fixed-height canvas; --row-count (5 or 6, set per month by
@@ -341,9 +387,19 @@ body {
   flex: 1 1 auto;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(var(--row-count, 6), 1fr);
+  /* Phase 7C: minmax(100px, ...) is the safe-minimum floor a populated
+     cell actually needs (date + badge + title + time, verified against
+     real content — docs/phase7c-graphic-language-plan.md §5) — rows
+     still grow to fill available space via the 1fr when there's room,
+     but never shrink below the floor. Combined with .calendar-page's
+     min-height (above), a row is never forced smaller than this even
+     when the header/weekday-row layers above grow — the page grows
+     instead. No min-height:0 override anymore: letting this grid keep
+     its natural (content-driven) minimum size is exactly what stops it
+     from being silently shrunk past the point cells can render
+     correctly. */
+  grid-template-rows: repeat(var(--row-count, 6), minmax(100px, 1fr));
   gap: 6px;
-  min-height: 0; /* required for a flex child grid to actually shrink/fill correctly */
 }
 
 /* Grid readability, Phase 6B — the background is the calendar's primary
@@ -656,5 +712,19 @@ body {
     </footer>
   
 </div>
+<script>
+// Phase 7C layout architecture (docs/phase7c-graphic-language-plan.md §5):
+// reports the page's real, laid-out height as a data attribute so
+// generate-calendar-render.mjs can capture a PNG at exactly the height
+// this render actually needs — never a fixed guess that risks clipping
+// event content. Harmless in any other context (opening this file
+// directly in a browser): it only ever sets an attribute, never alters
+// what's visible.
+window.addEventListener("load", function () {
+  var page = document.querySelector(".calendar-page");
+  var height = Math.ceil(page.getBoundingClientRect().height);
+  document.documentElement.setAttribute("data-measured-height", String(height));
+});
+</script>
 </body>
 </html>
