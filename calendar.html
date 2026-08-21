@@ -128,12 +128,15 @@ body {
   background: none;
 }
 
-/* Layers 2-5 (header, weekday identity, grid, promotional overlays) all
-   sit above the background + scrim (layer 1) — each content layer is
-   lifted into its own stacking context above the ::before overlay. */
+/* Layers 3-5 and 7 (header, weekday identity, grid, footer) all sit above
+   the background + global scrim (layers 1-2) — each content layer is
+   lifted into its own stacking context above the ::before overlay. Layer
+   6 (Promotional Overlays) has no rule here yet — architecture only, not
+   implemented (docs/visual-design-phase6-plan.md §2). */
 .calendar-header,
 .weekday-row,
-.month-grid {
+.month-grid,
+.calendar-footer {
   position: relative;
   z-index: 1;
 }
@@ -410,6 +413,64 @@ body {
   display: none;
 }
 
+/* --- Footer (render-stack layer 7, permanent — docs/visual-design-phase6-plan.md
+   §2; docs/visual-design-phase6b-plan.md §6, Phase 6B implementation step
+   C). Same background-integration technique already built for the header
+   in step 2: bleeds to the page edge via a negative margin matching
+   .calendar-page's own padding, with a soft local radial-gradient backing
+   rather than a boxed contact card — a poster branding band, not a
+   website footer. Sits below the grid in DOM/flex order; the grid's own
+   flex:1 sizing already shrinks to make room for it, so the fixed
+   1800×1200 canvas never overflows. --- */
+
+.calendar-footer {
+  position: relative;
+  flex: 0 0 auto;
+  text-align: center;
+  margin: 16px -40px -32px;
+  padding: 20px 40px 26px;
+}
+
+.calendar-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 80% 100% at 50% 90%, var(--bougies-overlay) 0%, transparent 75%);
+}
+
+.calendar-footer > * {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bougies-amber-soft);
+  margin-bottom: 6px;
+}
+
+.footer-contact {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--bougies-cream-dim);
+}
+
+.footer-contact-sep {
+  margin: 0 8px;
+  color: var(--bougies-border);
+}
+
+.footer-tagline {
+  margin: 8px auto 0;
+}
+
 /* --- Print (PDF export) --- */
 
 @media print {
@@ -447,6 +508,13 @@ body {
     <div class="cell-primary">JEMM</div>
     <div class="cell-secondary">10 PM</div>
   </div><div class="day-cell day-cell--empty"><div class="cell-date">30</div></div><div class="day-cell day-cell--empty"><div class="cell-date">31</div></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div></div>
+
+    <footer class="calendar-footer">
+      <div class="footer-brand">Bougainvillea&#39;s Old Florida Tavern</div>
+      <div class="footer-contact"><span class="footer-contact-item">721 SW 58th Ave, South Miami, FL</span><span class="footer-contact-sep" aria-hidden="true">·</span><span class="footer-contact-item">www.bougiesbar.com</span><span class="footer-contact-sep" aria-hidden="true">·</span><span class="footer-contact-item">305-669-8577</span><span class="footer-contact-sep" aria-hidden="true">·</span><span class="footer-contact-item">@bougiesbar</span></div>
+      <p class="calendar-tagline footer-tagline">August at Bougies: Whiskey Allstars on Sunday, Karaoke Tuesday at 10 PM, and JEMM live Saturday night. Save the dates and come hang in the Living Room.</p>
+    </footer>
+  
 </div>
 </body>
 </html>
