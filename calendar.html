@@ -191,28 +191,43 @@ body {
   );
 }
 
+/* Dominant element (Phase 6B step A — docs/visual-design-phase6b-plan.md
+   §2): the month/year masthead artwork, not a plain label. Promoted from
+   this rule's prior 18px to the largest text on the page — the first-read
+   anchor a large stylized month name was in both historical references
+   (design-system §0). text-shadow adds a subtle poster-style depth on top
+   of the header's local backing (::before, above). */
 .calendar-month {
   font-family: var(--font-display);
-  font-size: 18px;
-  letter-spacing: 0.35em;
+  font-weight: 700;
+  font-size: 68px;
+  line-height: 1.05;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--bougies-cream-dim);
+  color: var(--bougies-amber);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
   margin-bottom: 6px;
 }
 
+/* Supporting subtitle (demoted from this rule's prior 44px/700-weight
+   treatment) — announces the month's theme without outweighing the
+   month/year element above it. */
 .calendar-theme {
   font-family: var(--font-display);
-  font-weight: 700;
-  color: var(--bougies-amber);
-  line-height: 1.1;
-  /* Large, but the grid below still gets most of the canvas height —
-     the theme name announces the month, it doesn't dominate the page. */
-  font-size: 44px;
+  font-weight: 400;
+  font-size: 17px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bougies-cream-dim);
 }
 
+/* Reused by the footer layer (Phase 6B step C) for the relocated monthly
+   tagline/overviewCaption — not currently rendered anywhere
+   (components/header.mjs no longer outputs a .calendar-tagline element as
+   of step A). Left in place so step C has a ready-made style. */
 .calendar-tagline {
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: 14px;
   color: var(--bougies-cream-dim);
   max-width: 1100px;
   margin: 8px auto 0;
@@ -404,7 +419,6 @@ body {
       <div class="calendar-brand">Bougies · An Old Florida Tavern</div>
       <div class="calendar-month">August 2026</div>
       <div class="calendar-theme">August at Bougies</div>
-      <p class="calendar-tagline">August at Bougies: Whiskey Allstars on Sunday, Karaoke Tuesday at 10 PM, and JEMM live Saturday night. Save the dates and come hang in the Living Room.</p>
       <div class="calendar-header-divider" aria-hidden="true"></div>
     </header>
   
