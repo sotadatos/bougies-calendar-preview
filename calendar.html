@@ -495,6 +495,95 @@ body {
   border: 1px solid var(--bougies-border);
 }
 
+/* Explicit review-only multi-event composition. Each region receives the
+   original event markup and optional artwork independently; nothing is
+   flattened into a combined asset or title. */
+.day-cell--multi-event {
+  padding: 0;
+}
+
+.day-cell--multi-event > .cell-date {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  z-index: 4;
+  margin: 0;
+}
+
+.multi-event-layout {
+  position: absolute;
+  inset: 0;
+}
+
+.multi-event-region {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.multi-event-region--upper-left {
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  padding: 25px 40% 6px 8px;
+}
+
+.multi-event-region--lower-right {
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  padding: 42px 8px 6px 40%;
+  text-align: right;
+}
+
+.multi-event-region--has-review-artwork::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(4, 9, 13, 0.78), rgba(4, 9, 13, 0.34));
+}
+
+.multi-event-region > :not(.cell-review-artwork) {
+  position: relative;
+  z-index: 1;
+}
+
+.multi-event-region .cell-label {
+  font-size: 7px;
+  line-height: 1.1;
+  margin: 0;
+  padding: 1px 3px;
+  white-space: nowrap;
+}
+
+.multi-event-region .cell-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-bottom: 3px;
+}
+
+.multi-event-region--lower-right .cell-tags {
+  justify-content: flex-end;
+}
+
+.multi-event-region .cell-label--venue {
+  background: rgba(4, 9, 13, 0.72);
+  border: 1px solid rgba(244, 222, 177, 0.46);
+  color: var(--bougies-cream);
+}
+
+.multi-event-region .cell-primary {
+  font-size: 13px;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.multi-event-region .cell-secondary,
+.multi-event-region .cell-venue {
+  margin-top: 2px;
+  font-size: 9px;
+}
+
 /* Review-only event artwork sits behind the established cell composition.
    The local scrim keeps dates and event copy readable without changing the
    final renderer path or requiring artwork for a usable cell. */
@@ -744,7 +833,7 @@ body {
 
 <style>
 @page {
-  size: 1800px 1512px;
+  size: 1800px 1422px;
   margin: 0;
 }
 
@@ -753,7 +842,7 @@ body {
   body,
   .calendar-page {
     width: 1800px;
-    height: 1512px;
+    height: 1422px;
     margin: 0;
   }
 }
@@ -770,7 +859,7 @@ body {
       <div class="calendar-header-divider" aria-hidden="true"></div>
     </header>
   
-<div class="weekday-row"><div class="weekday-label"><span class="weekday-name">Sun</span><span class="weekday-identity">Whiskey Allstars</span></div><div class="weekday-label"><span class="weekday-name">Mon</span></div><div class="weekday-label"><span class="weekday-name">Tue</span><span class="weekday-identity">Karaoke Tuesday</span></div><div class="weekday-label"><span class="weekday-name">Wed</span><span class="weekday-identity">Ladies Night</span></div><div class="weekday-label"><span class="weekday-name">Thu</span></div><div class="weekday-label"><span class="weekday-name">Fri</span></div><div class="weekday-label"><span class="weekday-name">Sat</span></div></div><div class="month-grid" style="--row-count:6"><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--populated template-live-band "><div class="cell-date">1</div>
+<div class="weekday-row"><div class="weekday-label"><span class="weekday-name">Sun</span><span class="weekday-identity">Whiskey Allstars</span></div><div class="weekday-label"><span class="weekday-name">Mon</span></div><div class="weekday-label"><span class="weekday-name">Tue</span><span class="weekday-identity">Karaoke Tuesday</span></div><div class="weekday-label"><span class="weekday-name">Wed</span><span class="weekday-identity">Ladies Night</span></div><div class="weekday-label"><span class="weekday-name">Thu</span><span class="weekday-identity">Rhinestone Cowboys</span></div><div class="weekday-label"><span class="weekday-name">Fri</span><span class="weekday-identity">Bougie Nights</span></div><div class="weekday-label"><span class="weekday-name">Sat</span></div></div><div class="month-grid" style="--row-count:6"><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--populated template-live-band "><div class="cell-date">1</div>
     
     <div class="cell-label">Live Music</div>
     <div class="cell-primary">Chronicles</div>
@@ -798,14 +887,14 @@ body {
     <div class="cell-secondary">10 PM–2 AM</div>
     
     
-  </div><div class="day-cell day-cell--populated template-live-band "><div class="cell-date">6</div>
+  </div><div class="day-cell day-cell--populated template-recurring-night "><div class="cell-date">6</div>
     
-    <div class="cell-label">Live Music</div>
+    <div class="cell-label">Weekly</div>
     <div class="cell-primary">Rhinestone Cowboys</div>
     <div class="cell-secondary">20:00</div>
     
     
-  </div><div class="day-cell day-cell--populated template-live-band template-dj "><div class="cell-date">7</div>
+  </div><div class="day-cell day-cell--populated template-live-band template-recurring-night "><div class="cell-date">7</div>
     
     <div class="cell-label">Live Music</div>
     <div class="cell-primary">Retro Sky</div>
@@ -814,10 +903,10 @@ body {
     
   
     
-    <div class="cell-label">DJ</div>
+    <div class="cell-label">Weekly</div>
     <div class="cell-primary">Bougie Nights</div>
     <div class="cell-secondary">8 PM</div>
-    <div class="cell-venue">Backyard</div>
+    
     
   </div><div class="day-cell day-cell--populated template-dj "><div class="cell-date">8</div>
     
@@ -847,9 +936,9 @@ body {
     <div class="cell-secondary">10 PM–2 AM</div>
     
     
-  </div><div class="day-cell day-cell--populated template-live-band "><div class="cell-date">13</div>
+  </div><div class="day-cell day-cell--populated template-recurring-night "><div class="cell-date">13</div>
     
-    <div class="cell-label">Live Music</div>
+    <div class="cell-label">Weekly</div>
     <div class="cell-primary">KoolKidz</div>
     <div class="cell-secondary">20:00</div>
     
@@ -889,9 +978,9 @@ body {
     <div class="cell-secondary">10 PM–2 AM</div>
     
     
-  </div><div class="day-cell day-cell--populated template-live-band "><div class="cell-date">20</div>
+  </div><div class="day-cell day-cell--populated template-recurring-night "><div class="cell-date">20</div>
     
-    <div class="cell-label">Live Music</div>
+    <div class="cell-label">Weekly</div>
     <div class="cell-primary">Luftz</div>
     <div class="cell-secondary">20:00</div>
     
@@ -924,9 +1013,9 @@ body {
     <div class="cell-secondary">10 PM–2 AM</div>
     
     
-  </div><div class="day-cell day-cell--populated template-live-band "><div class="cell-date">27</div>
+  </div><div class="day-cell day-cell--populated template-recurring-night "><div class="cell-date">27</div>
     
-    <div class="cell-label">Live Music</div>
+    <div class="cell-label">Weekly</div>
     <div class="cell-primary">KoolKidz</div>
     <div class="cell-secondary">20:00</div>
     
