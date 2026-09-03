@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "prototypeOnly": true,
+  "targetMonth": "2026-09",
+  "mobileReviewVersion": "mobile-v1",
+  "renderMode": "review",
+  "sourceDesktopReview": {
+    "version": "v12",
+    "htmlUrl": "https://sotadatos.github.io/bougies-calendar-preview/review/2026-09/v12/calendar.html",
+    "htmlSha256": "5d0b7060f79b8b6115e5f26b53bffd406448bf0b730ec6674629e0e681020343",
+    "previewCommit": "f086440516663403bc16ec4501d21542e7211c94"
+  },
+  "sourceFixture": {
+    "path": "calendar-renderer/mobile/fixtures/2026-09-v12-representative.events.public.json",
+    "sha256": "e15e2e0369ed46b6aea92cf613047243afbcd6f44c8986b0a5cc8d4110921191",
+    "eventCount": 10,
+    "representativeDates": [
+      "2026-09-01",
+      "2026-09-02",
+      "2026-09-03",
+      "2026-09-04",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-17",
+      "2026-09-19"
+    ]
+  },
+  "embeddedImages": {
+    "sourceCount": 8,
+    "targetCount": 8
+  },
+  "htmlBytes": 25504277
+}
