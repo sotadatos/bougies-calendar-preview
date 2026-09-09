@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "prototypeOnly": true,
+  "targetMonth": "2026-09",
+  "mobileReviewVersion": "mobile-v10",
+  "renderMode": "review",
+  "sourceDesktopReview": {
+    "version": "v12",
+    "htmlUrl": "https://sotadatos.github.io/bougies-calendar-preview/review/2026-09/v12/calendar.html",
+    "htmlSha256": "5d0b7060f79b8b6115e5f26b53bffd406448bf0b730ec6674629e0e681020343",
+    "previewCommit": "f086440516663403bc16ec4501d21542e7211c94"
+  },
+  "sourceFixture": {
+    "path": "calendar-renderer/mobile/fixtures/2026-09-mobile-v10.events.public.json",
+    "sha256": "932287c4aef24b322743405a3e60f7d0971528da7253f9cd0a105296ccde26da",
+    "eventCount": 43,
+    "representativeDates": [
+      "2026-09-01",
+      "2026-09-02",
+      "2026-09-03",
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12",
+      "2026-09-13",
+      "2026-09-14",
+      "2026-09-15",
+      "2026-09-16",
+      "2026-09-17",
+      "2026-09-18",
+      "2026-09-19",
+      "2026-09-20",
+      "2026-09-21",
+      "2026-09-22",
+      "2026-09-23",
+      "2026-09-24",
+      "2026-09-25",
+      "2026-09-26",
+      "2026-09-27",
+      "2026-09-28",
+      "2026-09-29",
+      "2026-09-30"
+    ]
+  },
+  "sourceProvenance": {
+    "path": "calendar-renderer/mobile/fixtures/2026-09-mobile-v10.source-provenance.json",
+    "sha256": "305040cf868ea4909b49ef7188ecdc8287c74acd96bc86afe7bb2dc7eb36091e",
+    "sourceSystem": "airtable",
+    "baseId": "appO1Poo0qe1dG0QQ",
+    "tableId": "tbl6Akw4TYff1oZPF",
+    "bindingCount": 20,
+    "capturedAt": "2026-09-09T16:38:06.878Z"
+  },
+  "embeddedImages": {
+    "sourceCount": 25,
+    "targetCount": 46
+  },
+  "htmlBytes": 61697135,
+  "sourceMergeSha": "1090c802858e510dfc893f9f164b61e825012ec3",
+  "authorizationId": "issue-124-bca-exact-head"
+}
