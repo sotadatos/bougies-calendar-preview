@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "reviewOnly": true,
+  "surface": "web",
+  "targetMonth": "2026-08",
+  "contentRevision": "60e97d4446d3912f037eac708a5dd03fc265fa89bdd148a03c080b4985945b0a",
+  "sourcePullRequest": "https://github.com/sotadatos/bougies-calendar-system/pull/120",
+  "sourceHeadSha": "0121f2669b399b4c8e9ccdf5400fb6078fddd2f3",
+  "renderReviewEvidenceIdentity": "ca90140f5cb871d8e7c427ded91cc124baa771aa84ef510b768d0150354fa713",
+  "presentationContractIdentity": "1083a67f9e23386764b78a8bfa370a51033d9462b9241f7bd3ce3ea9d05f0b20",
+  "artifacts": [
+    {
+      "file": "asset-quality-report.json",
+      "sha256": "b450ba6d335791209647162703badd669de079c791f9b47aadec8148cbc849f6"
+    },
+    {
+      "file": "calendar.html",
+      "sha256": "5f9373578640ea24d962f4e73bbc7924d97d2a043b3ab8d8ffb7af1bb8297440"
+    },
+    {
+      "file": "calendar.pdf",
+      "sha256": "93d121bd91f8d82e378fa53e11c72c2365c972bb65abe52d8737725aa0236d78"
+    },
+    {
+      "file": "calendar.png",
+      "sha256": "9d84f22e09f750e48ad186d475fd1177fb8f98ada7c421f5d5ed583b6235184a"
+    }
+  ],
+  "productionPointersChanged": false
+}
