@@ -1,0 +1,871 @@
+{
+  "schemaVersion": 1,
+  "targetMonth": "2026-08",
+  "contentRevision": "d0d7657d040ad334c87865d93bd1ef3ff709d2d5b8759b76408268db9dafdbe3",
+  "records": [
+    {
+      "date": "2026-08-01",
+      "eventId": null,
+      "eventName": "Chronicles",
+      "linkedPerformer": "Chronicles",
+      "performerIdentity": "performer-chronicles",
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "VERIFIED",
+        "profileUrl": "https://www.instagram.com/chronicles.music/",
+        "reason": "profile URL present in authenticated canonical Airtable capture"
+      },
+      "artObligation": {
+        "status": "EVIDENCE_AVAILABLE",
+        "reason": "linked performer has governed repository art candidates"
+      },
+      "attempts": [
+        {
+          "assetId": "chronicles",
+          "repositoryPath": "assets/calendar/event-artwork/candidates/chronicles-v1.jpg",
+          "approvalState": "approved",
+          "preference": "preferred",
+          "classification": "SOURCE QUALITY FAILURE",
+          "reasons": [
+            "source would scale 1.587x, yielding 0.63 effective source pixels per rendered pixel",
+            "37% of source area would be cropped by cover fit"
+          ],
+          "sourceDimensions": {
+            "width": 150,
+            "height": 150
+          },
+          "fit": "cover",
+          "cropFraction": 0.37,
+          "scaleUpFactor": 1.587
+        }
+      ],
+      "selectedAsset": null,
+      "classification": "SOURCE QUALITY FAILURE",
+      "disposition": "text-only-fallback",
+      "reason": "chronicles: SOURCE QUALITY FAILURE"
+    },
+    {
+      "date": "2026-08-02",
+      "eventId": null,
+      "eventName": "Whiskey Allstars",
+      "linkedPerformer": "Whiskey Allstars",
+      "performerIdentity": "performer-whiskey-allstars",
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "VERIFIED",
+        "profileUrl": "https://www.instagram.com/whiskeyallstars/",
+        "reason": "profile URL present in authenticated canonical Airtable capture"
+      },
+      "artObligation": {
+        "status": "MISSING",
+        "reason": "linked performer has no preferred or alternate art"
+      },
+      "attempts": [],
+      "selectedAsset": null,
+      "classification": "NO APPROVED ART",
+      "disposition": "text-only-fallback",
+      "reason": "linked performer has no approved repository art candidates"
+    },
+    {
+      "date": "2026-08-04",
+      "eventId": null,
+      "eventName": "Karaoke Tuesday",
+      "linkedPerformer": null,
+      "performerIdentity": null,
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "NOT_APPLICABLE",
+        "profileUrl": null,
+        "reason": "event has no linked performer"
+      },
+      "artObligation": {
+        "status": "MISSING",
+        "reason": "performer linkage cannot be resolved to governed art"
+      },
+      "attempts": [],
+      "selectedAsset": null,
+      "classification": "NO LINKED PERFORMER",
+      "disposition": "text-only-fallback",
+      "reason": "event has no linked performer and no governed event override"
+    },
+    {
+      "date": "2026-08-05",
+      "eventId": null,
+      "eventName": "Ladies Night",
+      "linkedPerformer": "DJ Edward",
+      "performerIdentity": "performer-dj-edward",
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "VERIFIED",
+        "profileUrl": "https://www.instagram.com/djedward305/",
+        "reason": "profile URL present in authenticated canonical Airtable capture"
+      },
+      "artObligation": {
+        "status": "MISSING",
+        "reason": "linked performer has no preferred or alternate art"
+      },
+      "attempts": [],
+      "selectedAsset": null,
+      "classification": "NO APPROVED ART",
+      "disposition": "text-only-fallback",
+      "reason": "linked performer has no approved repository art candidates"
+    },
+    {
+      "date": "2026-08-06",
+      "eventId": null,
+      "eventName": "Rhinestone Cowboys",
+      "linkedPerformer": "Rhinestone Cowboys",
+      "performerIdentity": "performer-rhinestone-cowboys",
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "UNKNOWN",
+        "profileUrl": null,
+        "reason": "profile URL and handle absent from authenticated canonical Airtable capture"
+      },
+      "artObligation": {
+        "status": "EVIDENCE_AVAILABLE",
+        "reason": "linked performer has governed repository art candidates"
+      },
+      "attempts": [
+        {
+          "assetId": "rhinestone-cowboys",
+          "repositoryPath": "assets/calendar/event-artwork/candidates/thursday-v1-rhinestone-cowboys.png",
+          "approvalState": "approved",
+          "preference": "preferred",
+          "classification": "ACCEPTABLE",
+          "reasons": [
+            "source density and configured fit satisfy policy"
+          ],
+          "sourceDimensions": {
+            "width": 1254,
+            "height": 1254
+          },
+          "fit": "contain",
+          "cropFraction": 0,
+          "scaleUpFactor": 1
+        }
+      ],
+      "selectedAsset": "rhinestone-cowboys",
+      "classification": "ACCEPTABLE",
+      "disposition": "selected",
+      "reason": "selected rhinestone-cowboys after 1 quality/fit attempt(s)"
+    },
+    {
+      "date": "2026-08-07",
+      "eventId": null,
+      "eventName": "Bougie Nights",
+      "linkedPerformer": "DJ Alex",
+      "performerIdentity": "performer-dj-alex",
+      "resolutionRoute": "explicit-event-override",
+      "instagram": {
+        "status": "VERIFIED",
+        "profileUrl": "https://www.instagram.com/djalexgutierrez007/",
+        "reason": "profile URL present in authenticated canonical Airtable capture"
+      },
+      "artObligation": {
+        "status": "EVIDENCE_AVAILABLE",
+        "reason": "approved reusable series artwork is an explicit event identity, not DJ performer art"
+      },
+      "attempts": [
+        {
+          "assetId": "bougie-nights",
+          "repositoryPath": "assets/calendar/event-artwork/candidates/friday-v2-bougie-nights.png",
+          "approvalState": "approved",
+          "preference": "preferred",
+          "classification": "ACCEPTABLE",
+          "reasons": [
+            "source density and configured fit satisfy policy"
+          ],
+          "sourceDimensions": {
+            "width": 1254,
+            "height": 1254
+          },
+          "fit": "contain",
+          "cropFraction": 0,
+          "scaleUpFactor": 1
+        }
+      ],
+      "selectedAsset": "bougie-nights",
+      "classification": "ACCEPTABLE",
+      "disposition": "selected",
+      "reason": "selected bougie-nights after 1 quality/fit attempt(s)"
+    },
+    {
+      "date": "2026-08-07",
+      "eventId": null,
+      "eventName": "Retro Sky",
+      "linkedPerformer": "Retro Sky",
+      "performerIdentity": "performer-retro-sky",
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "VERIFIED",
+        "profileUrl": "https://www.instagram.com/retroskyrockbandrob/",
+        "reason": "profile URL present in authenticated canonical Airtable capture"
+      },
+      "artObligation": {
+        "status": "EVIDENCE_AVAILABLE",
+        "reason": "linked performer has governed repository art candidates"
+      },
+      "attempts": [
+        {
+          "assetId": "retro-sky",
+          "repositoryPath": "assets/calendar/event-artwork/candidates/retro-sky-v1.jpg",
+          "approvalState": "approved",
+          "preference": "preferred",
+          "classification": "SOURCE QUALITY FAILURE",
+          "reasons": [
+            "source would scale 1.587x, yielding 0.63 effective source pixels per rendered pixel",
+            "37% of source area would be cropped by cover fit"
+          ],
+          "sourceDimensions": {
+            "width": 150,
+            "height": 150
+          },
+          "fit": "cover",
+          "cropFraction": 0.37,
+          "scaleUpFactor": 1.587
+        }
+      ],
+      "selectedAsset": null,
+      "classification": "SOURCE QUALITY FAILURE",
+      "disposition": "text-only-fallback",
+      "reason": "retro-sky: SOURCE QUALITY FAILURE"
+    },
+    {
+      "date": "2026-08-08",
+      "eventId": null,
+      "eventName": "Freestyle Party",
+      "linkedPerformer": "DJ Edward",
+      "performerIdentity": "performer-dj-edward",
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "VERIFIED",
+        "profileUrl": "https://www.instagram.com/djedward305/",
+        "reason": "profile URL present in authenticated canonical Airtable capture"
+      },
+      "artObligation": {
+        "status": "MISSING",
+        "reason": "linked performer has no preferred or alternate art"
+      },
+      "attempts": [],
+      "selectedAsset": null,
+      "classification": "NO APPROVED ART",
+      "disposition": "text-only-fallback",
+      "reason": "linked performer has no approved repository art candidates"
+    },
+    {
+      "date": "2026-08-09",
+      "eventId": null,
+      "eventName": "Whiskey Allstars",
+      "linkedPerformer": "Whiskey Allstars",
+      "performerIdentity": "performer-whiskey-allstars",
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "VERIFIED",
+        "profileUrl": "https://www.instagram.com/whiskeyallstars/",
+        "reason": "profile URL present in authenticated canonical Airtable capture"
+      },
+      "artObligation": {
+        "status": "MISSING",
+        "reason": "linked performer has no preferred or alternate art"
+      },
+      "attempts": [],
+      "selectedAsset": null,
+      "classification": "NO APPROVED ART",
+      "disposition": "text-only-fallback",
+      "reason": "linked performer has no approved repository art candidates"
+    },
+    {
+      "date": "2026-08-11",
+      "eventId": null,
+      "eventName": "Karaoke Tuesday",
+      "linkedPerformer": null,
+      "performerIdentity": null,
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "NOT_APPLICABLE",
+        "profileUrl": null,
+        "reason": "event has no linked performer"
+      },
+      "artObligation": {
+        "status": "MISSING",
+        "reason": "performer linkage cannot be resolved to governed art"
+      },
+      "attempts": [],
+      "selectedAsset": null,
+      "classification": "NO LINKED PERFORMER",
+      "disposition": "text-only-fallback",
+      "reason": "event has no linked performer and no governed event override"
+    },
+    {
+      "date": "2026-08-12",
+      "eventId": null,
+      "eventName": "Ladies Night",
+      "linkedPerformer": "DJ Edward",
+      "performerIdentity": "performer-dj-edward",
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "VERIFIED",
+        "profileUrl": "https://www.instagram.com/djedward305/",
+        "reason": "profile URL present in authenticated canonical Airtable capture"
+      },
+      "artObligation": {
+        "status": "MISSING",
+        "reason": "linked performer has no preferred or alternate art"
+      },
+      "attempts": [],
+      "selectedAsset": null,
+      "classification": "NO APPROVED ART",
+      "disposition": "text-only-fallback",
+      "reason": "linked performer has no approved repository art candidates"
+    },
+    {
+      "date": "2026-08-13",
+      "eventId": null,
+      "eventName": "KoolKidz",
+      "linkedPerformer": "KoolKidz",
+      "performerIdentity": "performer-koolkidz",
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "VERIFIED",
+        "profileUrl": "https://www.instagram.com/koolkidzmia/",
+        "reason": "profile URL present in authenticated canonical Airtable capture"
+      },
+      "artObligation": {
+        "status": "EVIDENCE_AVAILABLE",
+        "reason": "linked performer has governed repository art candidates"
+      },
+      "attempts": [
+        {
+          "assetId": "koolkidz",
+          "repositoryPath": "assets/calendar/event-artwork/candidates/koolkidz-v1.jpg",
+          "approvalState": "approved",
+          "preference": "preferred",
+          "classification": "SOURCE QUALITY FAILURE",
+          "reasons": [
+            "source would scale 1.587x, yielding 0.63 effective source pixels per rendered pixel",
+            "37% of source area would be cropped by cover fit"
+          ],
+          "sourceDimensions": {
+            "width": 150,
+            "height": 150
+          },
+          "fit": "cover",
+          "cropFraction": 0.37,
+          "scaleUpFactor": 1.587
+        }
+      ],
+      "selectedAsset": null,
+      "classification": "SOURCE QUALITY FAILURE",
+      "disposition": "text-only-fallback",
+      "reason": "koolkidz: SOURCE QUALITY FAILURE"
+    },
+    {
+      "date": "2026-08-14",
+      "eventId": null,
+      "eventName": "Stereo Mix",
+      "linkedPerformer": "Stereo Mix",
+      "performerIdentity": "performer-stereo-mix",
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "VERIFIED",
+        "profileUrl": "https://www.instagram.com/stereomixband/",
+        "reason": "profile URL present in authenticated canonical Airtable capture"
+      },
+      "artObligation": {
+        "status": "EVIDENCE_AVAILABLE",
+        "reason": "linked performer has governed repository art candidates"
+      },
+      "attempts": [
+        {
+          "assetId": "stereo-mix",
+          "repositoryPath": "assets/calendar/event-artwork/candidates/stereo-mix-v1.jpg",
+          "approvalState": "approved",
+          "preference": "preferred",
+          "classification": "SOURCE QUALITY FAILURE",
+          "reasons": [
+            "source would scale 1.587x, yielding 0.63 effective source pixels per rendered pixel",
+            "37% of source area would be cropped by cover fit"
+          ],
+          "sourceDimensions": {
+            "width": 150,
+            "height": 150
+          },
+          "fit": "cover",
+          "cropFraction": 0.37,
+          "scaleUpFactor": 1.587
+        }
+      ],
+      "selectedAsset": null,
+      "classification": "SOURCE QUALITY FAILURE",
+      "disposition": "text-only-fallback",
+      "reason": "stereo-mix: SOURCE QUALITY FAILURE"
+    },
+    {
+      "date": "2026-08-15",
+      "eventId": null,
+      "eventName": "Undercover",
+      "linkedPerformer": "Undercover",
+      "performerIdentity": "performer-undercover",
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "VERIFIED",
+        "profileUrl": "https://www.instagram.com/rockundercover/",
+        "reason": "profile URL present in authenticated canonical Airtable capture"
+      },
+      "artObligation": {
+        "status": "EVIDENCE_AVAILABLE",
+        "reason": "linked performer has governed repository art candidates"
+      },
+      "attempts": [
+        {
+          "assetId": "undercover",
+          "repositoryPath": "assets/calendar/event-artwork/candidates/undercover-v1.jpg",
+          "approvalState": "approved",
+          "preference": "preferred",
+          "classification": "SOURCE QUALITY FAILURE",
+          "reasons": [
+            "source would scale 1.587x, yielding 0.63 effective source pixels per rendered pixel",
+            "37% of source area would be cropped by cover fit"
+          ],
+          "sourceDimensions": {
+            "width": 150,
+            "height": 150
+          },
+          "fit": "cover",
+          "cropFraction": 0.37,
+          "scaleUpFactor": 1.587
+        }
+      ],
+      "selectedAsset": null,
+      "classification": "SOURCE QUALITY FAILURE",
+      "disposition": "text-only-fallback",
+      "reason": "undercover: SOURCE QUALITY FAILURE"
+    },
+    {
+      "date": "2026-08-16",
+      "eventId": null,
+      "eventName": "Whiskey Allstars",
+      "linkedPerformer": "Whiskey Allstars",
+      "performerIdentity": "performer-whiskey-allstars",
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "VERIFIED",
+        "profileUrl": "https://www.instagram.com/whiskeyallstars/",
+        "reason": "profile URL present in authenticated canonical Airtable capture"
+      },
+      "artObligation": {
+        "status": "MISSING",
+        "reason": "linked performer has no preferred or alternate art"
+      },
+      "attempts": [],
+      "selectedAsset": null,
+      "classification": "NO APPROVED ART",
+      "disposition": "text-only-fallback",
+      "reason": "linked performer has no approved repository art candidates"
+    },
+    {
+      "date": "2026-08-18",
+      "eventId": null,
+      "eventName": "Karaoke Tuesday",
+      "linkedPerformer": null,
+      "performerIdentity": null,
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "NOT_APPLICABLE",
+        "profileUrl": null,
+        "reason": "event has no linked performer"
+      },
+      "artObligation": {
+        "status": "MISSING",
+        "reason": "performer linkage cannot be resolved to governed art"
+      },
+      "attempts": [],
+      "selectedAsset": null,
+      "classification": "NO LINKED PERFORMER",
+      "disposition": "text-only-fallback",
+      "reason": "event has no linked performer and no governed event override"
+    },
+    {
+      "date": "2026-08-19",
+      "eventId": null,
+      "eventName": "Ladies Night",
+      "linkedPerformer": "DJ Edward",
+      "performerIdentity": "performer-dj-edward",
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "VERIFIED",
+        "profileUrl": "https://www.instagram.com/djedward305/",
+        "reason": "profile URL present in authenticated canonical Airtable capture"
+      },
+      "artObligation": {
+        "status": "MISSING",
+        "reason": "linked performer has no preferred or alternate art"
+      },
+      "attempts": [],
+      "selectedAsset": null,
+      "classification": "NO APPROVED ART",
+      "disposition": "text-only-fallback",
+      "reason": "linked performer has no approved repository art candidates"
+    },
+    {
+      "date": "2026-08-20",
+      "eventId": null,
+      "eventName": "The Lufts",
+      "linkedPerformer": "The Lufts",
+      "performerIdentity": "performer-the-lufts",
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "VERIFIED",
+        "profileUrl": "https://www.instagram.com/the_lufts_music/",
+        "reason": "profile URL present in authenticated canonical Airtable capture"
+      },
+      "artObligation": {
+        "status": "EVIDENCE_AVAILABLE",
+        "reason": "linked performer has governed repository art candidates"
+      },
+      "attempts": [
+        {
+          "assetId": "the-lufts",
+          "repositoryPath": "assets/calendar/event-artwork/candidates/luftz-v1.jpg",
+          "approvalState": "approved",
+          "preference": "preferred",
+          "classification": "SOURCE QUALITY FAILURE",
+          "reasons": [
+            "source would scale 1.587x, yielding 0.63 effective source pixels per rendered pixel",
+            "37% of source area would be cropped by cover fit"
+          ],
+          "sourceDimensions": {
+            "width": 150,
+            "height": 150
+          },
+          "fit": "cover",
+          "cropFraction": 0.37,
+          "scaleUpFactor": 1.587
+        }
+      ],
+      "selectedAsset": null,
+      "classification": "SOURCE QUALITY FAILURE",
+      "disposition": "text-only-fallback",
+      "reason": "the-lufts: SOURCE QUALITY FAILURE"
+    },
+    {
+      "date": "2026-08-21",
+      "eventId": null,
+      "eventName": "DJ DIAGA",
+      "linkedPerformer": "DJ DIAGA",
+      "performerIdentity": "performer-dj-diaga",
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "VERIFIED",
+        "profileUrl": "https://www.instagram.com/djdiaga/",
+        "reason": "profile URL present in authenticated canonical Airtable capture"
+      },
+      "artObligation": {
+        "status": "MISSING",
+        "reason": "linked performer has no preferred or alternate art"
+      },
+      "attempts": [],
+      "selectedAsset": null,
+      "classification": "NO APPROVED ART",
+      "disposition": "text-only-fallback",
+      "reason": "linked performer has no approved repository art candidates"
+    },
+    {
+      "date": "2026-08-21",
+      "eventId": null,
+      "eventName": "Sunset Dreams",
+      "linkedPerformer": "Sunset Dreams",
+      "performerIdentity": "performer-sunset-dreams",
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "VERIFIED",
+        "profileUrl": "https://www.instagram.com/sunsetdreams305/",
+        "reason": "profile URL present in authenticated canonical Airtable capture"
+      },
+      "artObligation": {
+        "status": "EVIDENCE_AVAILABLE",
+        "reason": "linked performer has governed repository art candidates"
+      },
+      "attempts": [
+        {
+          "assetId": "sunset-dreams",
+          "repositoryPath": "assets/calendar/event-artwork/candidates/sunset-dreams-v1.jpg",
+          "approvalState": "approved",
+          "preference": "preferred",
+          "classification": "SOURCE QUALITY FAILURE",
+          "reasons": [
+            "source would scale 1.587x, yielding 0.63 effective source pixels per rendered pixel",
+            "37% of source area would be cropped by cover fit"
+          ],
+          "sourceDimensions": {
+            "width": 150,
+            "height": 150
+          },
+          "fit": "cover",
+          "cropFraction": 0.37,
+          "scaleUpFactor": 1.587
+        }
+      ],
+      "selectedAsset": null,
+      "classification": "SOURCE QUALITY FAILURE",
+      "disposition": "text-only-fallback",
+      "reason": "sunset-dreams: SOURCE QUALITY FAILURE"
+    },
+    {
+      "date": "2026-08-22",
+      "eventId": null,
+      "eventName": "DJ ICUE",
+      "linkedPerformer": "DJ ICUE",
+      "performerIdentity": "performer-dj-icue",
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "VERIFIED",
+        "profileUrl": "https://www.instagram.com/djicue/",
+        "reason": "profile URL present in authenticated canonical Airtable capture"
+      },
+      "artObligation": {
+        "status": "MISSING",
+        "reason": "linked performer has no preferred or alternate art"
+      },
+      "attempts": [],
+      "selectedAsset": null,
+      "classification": "NO APPROVED ART",
+      "disposition": "text-only-fallback",
+      "reason": "linked performer has no approved repository art candidates"
+    },
+    {
+      "date": "2026-08-22",
+      "eventId": null,
+      "eventName": "Private Buyout",
+      "linkedPerformer": null,
+      "performerIdentity": null,
+      "resolutionRoute": "intentional-text-only",
+      "instagram": {
+        "status": "NOT_APPLICABLE",
+        "profileUrl": null,
+        "reason": "event has no linked performer"
+      },
+      "artObligation": {
+        "status": "MISSING",
+        "reason": "performer linkage cannot be resolved to governed art"
+      },
+      "attempts": [],
+      "selectedAsset": null,
+      "classification": "INTENTIONALLY TEXT ONLY",
+      "disposition": "text-only-fallback",
+      "reason": "private-event cell is intentionally text-only; no performer or promotional artwork is required"
+    },
+    {
+      "date": "2026-08-23",
+      "eventId": null,
+      "eventName": "Whiskey Allstars",
+      "linkedPerformer": "Whiskey Allstars",
+      "performerIdentity": "performer-whiskey-allstars",
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "VERIFIED",
+        "profileUrl": "https://www.instagram.com/whiskeyallstars/",
+        "reason": "profile URL present in authenticated canonical Airtable capture"
+      },
+      "artObligation": {
+        "status": "MISSING",
+        "reason": "linked performer has no preferred or alternate art"
+      },
+      "attempts": [],
+      "selectedAsset": null,
+      "classification": "NO APPROVED ART",
+      "disposition": "text-only-fallback",
+      "reason": "linked performer has no approved repository art candidates"
+    },
+    {
+      "date": "2026-08-25",
+      "eventId": null,
+      "eventName": "Karaoke Tuesday",
+      "linkedPerformer": null,
+      "performerIdentity": null,
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "NOT_APPLICABLE",
+        "profileUrl": null,
+        "reason": "event has no linked performer"
+      },
+      "artObligation": {
+        "status": "MISSING",
+        "reason": "performer linkage cannot be resolved to governed art"
+      },
+      "attempts": [],
+      "selectedAsset": null,
+      "classification": "NO LINKED PERFORMER",
+      "disposition": "text-only-fallback",
+      "reason": "event has no linked performer and no governed event override"
+    },
+    {
+      "date": "2026-08-26",
+      "eventId": null,
+      "eventName": "Ladies Night",
+      "linkedPerformer": "DJ Edward",
+      "performerIdentity": "performer-dj-edward",
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "VERIFIED",
+        "profileUrl": "https://www.instagram.com/djedward305/",
+        "reason": "profile URL present in authenticated canonical Airtable capture"
+      },
+      "artObligation": {
+        "status": "MISSING",
+        "reason": "linked performer has no preferred or alternate art"
+      },
+      "attempts": [],
+      "selectedAsset": null,
+      "classification": "NO APPROVED ART",
+      "disposition": "text-only-fallback",
+      "reason": "linked performer has no approved repository art candidates"
+    },
+    {
+      "date": "2026-08-27",
+      "eventId": null,
+      "eventName": "KoolKidz",
+      "linkedPerformer": "KoolKidz",
+      "performerIdentity": "performer-koolkidz",
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "VERIFIED",
+        "profileUrl": "https://www.instagram.com/koolkidzmia/",
+        "reason": "profile URL present in authenticated canonical Airtable capture"
+      },
+      "artObligation": {
+        "status": "EVIDENCE_AVAILABLE",
+        "reason": "linked performer has governed repository art candidates"
+      },
+      "attempts": [
+        {
+          "assetId": "koolkidz",
+          "repositoryPath": "assets/calendar/event-artwork/candidates/koolkidz-v1.jpg",
+          "approvalState": "approved",
+          "preference": "preferred",
+          "classification": "SOURCE QUALITY FAILURE",
+          "reasons": [
+            "source would scale 1.587x, yielding 0.63 effective source pixels per rendered pixel",
+            "37% of source area would be cropped by cover fit"
+          ],
+          "sourceDimensions": {
+            "width": 150,
+            "height": 150
+          },
+          "fit": "cover",
+          "cropFraction": 0.37,
+          "scaleUpFactor": 1.587
+        }
+      ],
+      "selectedAsset": null,
+      "classification": "SOURCE QUALITY FAILURE",
+      "disposition": "text-only-fallback",
+      "reason": "koolkidz: SOURCE QUALITY FAILURE"
+    },
+    {
+      "date": "2026-08-28",
+      "eventId": null,
+      "eventName": "Pump",
+      "linkedPerformer": "Pump",
+      "performerIdentity": "performer-pump",
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "VERIFIED",
+        "profileUrl": "https://www.instagram.com/pumprockband/",
+        "reason": "profile URL present in authenticated canonical Airtable capture"
+      },
+      "artObligation": {
+        "status": "EVIDENCE_AVAILABLE",
+        "reason": "linked performer has governed repository art candidates"
+      },
+      "attempts": [
+        {
+          "assetId": "pump",
+          "repositoryPath": "assets/calendar/event-artwork/candidates/pump-v1.jpg",
+          "approvalState": "approved",
+          "preference": "preferred",
+          "classification": "SOURCE QUALITY FAILURE",
+          "reasons": [
+            "source would scale 1.587x, yielding 0.63 effective source pixels per rendered pixel",
+            "37% of source area would be cropped by cover fit"
+          ],
+          "sourceDimensions": {
+            "width": 150,
+            "height": 150
+          },
+          "fit": "cover",
+          "cropFraction": 0.37,
+          "scaleUpFactor": 1.587
+        }
+      ],
+      "selectedAsset": null,
+      "classification": "SOURCE QUALITY FAILURE",
+      "disposition": "text-only-fallback",
+      "reason": "pump: SOURCE QUALITY FAILURE"
+    },
+    {
+      "date": "2026-08-29",
+      "eventId": null,
+      "eventName": "JEMM",
+      "linkedPerformer": "JEMM",
+      "performerIdentity": "performer-jemm",
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "VERIFIED",
+        "profileUrl": "https://www.instagram.com/jemmband/",
+        "reason": "profile URL present in authenticated canonical Airtable capture"
+      },
+      "artObligation": {
+        "status": "EVIDENCE_AVAILABLE",
+        "reason": "linked performer has governed repository art candidates"
+      },
+      "attempts": [
+        {
+          "assetId": "jemm",
+          "repositoryPath": "assets/calendar/event-artwork/candidates/jemm-v1.jpg",
+          "approvalState": "approved",
+          "preference": "preferred",
+          "classification": "SOURCE QUALITY FAILURE",
+          "reasons": [
+            "source would scale 1.587x, yielding 0.63 effective source pixels per rendered pixel",
+            "37% of source area would be cropped by cover fit"
+          ],
+          "sourceDimensions": {
+            "width": 150,
+            "height": 150
+          },
+          "fit": "cover",
+          "cropFraction": 0.37,
+          "scaleUpFactor": 1.587
+        }
+      ],
+      "selectedAsset": null,
+      "classification": "SOURCE QUALITY FAILURE",
+      "disposition": "text-only-fallback",
+      "reason": "jemm: SOURCE QUALITY FAILURE"
+    },
+    {
+      "date": "2026-08-30",
+      "eventId": null,
+      "eventName": "Whiskey Allstars",
+      "linkedPerformer": "Whiskey Allstars",
+      "performerIdentity": "performer-whiskey-allstars",
+      "resolutionRoute": "linked-performer",
+      "instagram": {
+        "status": "VERIFIED",
+        "profileUrl": "https://www.instagram.com/whiskeyallstars/",
+        "reason": "profile URL present in authenticated canonical Airtable capture"
+      },
+      "artObligation": {
+        "status": "MISSING",
+        "reason": "linked performer has no preferred or alternate art"
+      },
+      "attempts": [],
+      "selectedAsset": null,
+      "classification": "NO APPROVED ART",
+      "disposition": "text-only-fallback",
+      "reason": "linked performer has no approved repository art candidates"
+    }
+  ]
+}
