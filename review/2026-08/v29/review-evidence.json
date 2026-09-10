@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "targetMonth": "2026-08",
+  "contentRevision": "d0d7657d040ad334c87865d93bd1ef3ff709d2d5b8759b76408268db9dafdbe3",
+  "outputs": {
+    "web": {
+      "path": "review/2026-08/v29/calendar.html",
+      "sha256": "da53d3e2b18904233b91e274fe52f8b5b3fa266a36fe28fd4f6ab1d2264a828a"
+    },
+    "mobile": {
+      "path": "mobile/review/2026-08/mobile-v10-h3/calendar.html",
+      "sha256": "96b6d8d88ca7d5ecce07543c09e37cec62b11d8fa1750da66158962951d7ce7a"
+    }
+  },
+  "frameworkRevision": "8a6c52124a31f87a853dbb9acc9eefc1077e1f65f982a561bb6befebf3b14009",
+  "approvedAssetLibraryRevision": "9311bae361825ce48f189164b00cc56dc88cef43b879525775e7eaf17da3d442",
+  "qa": {
+    "status": "pass",
+    "checks": [
+      "full repository suite 463/463",
+      "Web Chromium runtime completed; HTML, PNG, and PDF exported at 1800x1204 without observed clipping",
+      "Web and Mobile resolve exact approved Retro Sky v2, Chronicles v2, and DJ ICUE v1 artwork",
+      "Stereo Mix v2 and Sunset Dreams v2 remain rejected, unmapped, and render-ineligible",
+      "Wednesday footer renders once and owns occurrence time; Tuesday, Sunday, and date-specific promotion semantics remain unchanged",
+      "August 7 stacked layout, inherited background, August title, The Lufts, Home, and archive behavior are preserved",
+      "Mobile exact widths 320/375/390/430/480 have zero horizontal overflow, clipped elements, or bounds violations",
+      "Mobile resolves 32/32 image targets and 26 date anchors; minimum date target is at least 44x44 CSS pixels",
+      "residual dispositions: seven NO_ACCEPTABLE_SOURCE_FOUND, two BCA_REJECTED_AVAILABLE_CANDIDATE, one INTENTIONALLY_TEXT_ONLY",
+      "no production/current pointer changes"
+    ]
+  },
+  "timing": {
+    "fullTestSuiteMs": 4787.333083,
+    "webGenerationExportMs": 29100,
+    "mobileGenerationMs": 7500,
+    "mobileFiveWidthQaMs": 19200
+  },
+  "runtime": {
+    "node": "v26.6.0",
+    "chrome": "152.0.7977.83",
+    "chromedriver": "152.0.7977.82",
+    "platform": "darwin",
+    "architecture": "arm64"
+  },
+  "reviewState": "needs-review",
+  "recordedAt": "2026-09-10T15:43:53Z",
+  "evidenceIdentity": "c62672fd1e30bbb673aaac002e75f25237a4afa6a1df60cefc8d3079c5b566c2",
+  "renderReviewRun": "c62672fd1e30bbb673aaac002e75f25237a4afa6a1df60cefc8d3079c5b566c2"
+}
