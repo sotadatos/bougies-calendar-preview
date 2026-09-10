@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "prototypeOnly": true,
+  "targetMonth": "2026-08",
+  "mobileReviewVersion": "mobile-v10",
+  "renderMode": "review",
+  "sourceFixture": {
+    "path": "output/month-revisions/2026-08/d0d7657d040ad334c87865d93bd1ef3ff709d2d5b8759b76408268db9dafdbe3/month.snapshot.json",
+    "sha256": "a8c4dea2f0ec8af4a8aae91f6690987afaf12e9cf9720b7ed83dd7a023ddd8ea",
+    "eventCount": 29,
+    "representativeDates": [
+      "2026-08-01",
+      "2026-08-02",
+      "2026-08-03",
+      "2026-08-04",
+      "2026-08-05",
+      "2026-08-06",
+      "2026-08-07",
+      "2026-08-08",
+      "2026-08-09",
+      "2026-08-10",
+      "2026-08-11",
+      "2026-08-12",
+      "2026-08-13",
+      "2026-08-14",
+      "2026-08-15",
+      "2026-08-16",
+      "2026-08-17",
+      "2026-08-18",
+      "2026-08-19",
+      "2026-08-20",
+      "2026-08-21",
+      "2026-08-22",
+      "2026-08-23",
+      "2026-08-24",
+      "2026-08-25",
+      "2026-08-26",
+      "2026-08-27",
+      "2026-08-28",
+      "2026-08-29",
+      "2026-08-30",
+      "2026-08-31"
+    ]
+  },
+  "sourceSnapshot": {
+    "path": "output/month-revisions/2026-08/d0d7657d040ad334c87865d93bd1ef3ff709d2d5b8759b76408268db9dafdbe3/month.snapshot.json",
+    "revision": "d0d7657d040ad334c87865d93bd1ef3ff709d2d5b8759b76408268db9dafdbe3"
+  },
+  "embeddedImages": {
+    "sourceCount": 9,
+    "targetCount": 29
+  },
+  "htmlBytes": 34326892
+}

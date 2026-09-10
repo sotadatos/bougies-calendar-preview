@@ -1,0 +1,3 @@
+# August Mobile-v10 hardening candidate h2
+
+Immutable review-only regression evidence for Issue #127. Bound to content revision d0d7657d040ad334c87865d93bd1ef3ff709d2d5b8759b76408268db9dafdbe3, framework revision 5d3dc5407b666d63073e510ad465fb1aafe3e7554c50d7a5781d3a84d60291ec, and render/review run eee3479882e459684527ce5ef0f2188a0d79339e442e532db651877282646a4e. No production pointer changed.

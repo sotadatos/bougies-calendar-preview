@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "reviewOnly": true,
+  "targetMonth": "2026-08",
+  "contentRevision": "d0d7657d040ad334c87865d93bd1ef3ff709d2d5b8759b76408268db9dafdbe3",
+  "frameworkRevision": "5d3dc5407b666d63073e510ad465fb1aafe3e7554c50d7a5781d3a84d60291ec",
+  "renderReviewRun": "eee3479882e459684527ce5ef0f2188a0d79339e442e532db651877282646a4e",
+  "sourcePullRequest": "https://github.com/sotadatos/bougies-calendar-system/pull/121",
+  "sourceHeadSha": "05777f10acdf444e827706dba4e1016b495d4f71",
+  "sourceBaseSha": "b0a16aab7d37783105f4b574630332cf46edbb0d",
+  "productionPointersChanged": false,
+  "surface": "mobile",
+  "artifacts": [
+    {
+      "file": "asset-quality-report.json",
+      "sha256": "4435a272af11a2cae6089793eb248e034e2f0eef7aa392aede9ad0af30d21563"
+    },
+    {
+      "file": "calendar.html",
+      "sha256": "eef58b8ed3d24a59ea7f43724efb45c4699825bc8abcb914cd2869694e6aa497"
+    },
+    {
+      "file": "event-art-resolution-report.json",
+      "sha256": "1b3aa0241594a70b4558e15fd7c2c897487b9adfb092e28406a67698b8b4caf7"
+    },
+    {
+      "file": "prototype-manifest.json",
+      "sha256": "5afe039156e391d7cfafeaafdd5b1af42d595f1f68fafe0d98a96ac4da5ced56"
+    },
+    {
+      "file": "viewport-validation.json",
+      "sha256": "10151ff1e0c718efbf1d77540b04b8817bcddb13ad4a63da75b6c61cb84dc136"
+    }
+  ]
+}

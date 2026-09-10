@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "targetMonth": "2026-08",
+  "contentRevision": "d0d7657d040ad334c87865d93bd1ef3ff709d2d5b8759b76408268db9dafdbe3",
+  "records": [
+    {
+      "date": "2026-08-01",
+      "eventName": "Chronicles",
+      "performerName": "Chronicles",
+      "libraryId": "chronicles",
+      "asset": "chronicles-v1.jpg",
+      "approvalIdentity": "approved-framework-baseline",
+      "classification": "SOURCE QUALITY FAILURE",
+      "disposition": "text-only-fallback",
+      "reason": "source would scale 2.987x, yielding 0.335 effective source pixels per rendered pixel; 44% of source area would be cropped by cover fit"
+    },
+    {
+      "date": "2026-08-07",
+      "eventName": "Retro Sky",
+      "performerName": "Retro Sky",
+      "libraryId": "retro-sky",
+      "asset": "retro-sky-v1.jpg",
+      "approvalIdentity": "approved-framework-baseline",
+      "classification": "SOURCE QUALITY FAILURE",
+      "disposition": "text-only-fallback",
+      "reason": "source would scale 2.987x, yielding 0.335 effective source pixels per rendered pixel; 44% of source area would be cropped by cover fit"
+    },
+    {
+      "date": "2026-08-08",
+      "eventName": "Freestyle Party",
+      "performerName": "DJ Edward",
+      "classification": "MISSING",
+      "disposition": "text-only-fallback",
+      "reason": "no approved reusable event or performer art"
+    },
+    {
+      "date": "2026-08-14",
+      "eventName": "Stereo Mix",
+      "performerName": "Stereo Mix",
+      "libraryId": "stereo-mix",
+      "asset": "stereo-mix-v1.jpg",
+      "approvalIdentity": "approved-framework-baseline",
+      "classification": "SOURCE QUALITY FAILURE",
+      "disposition": "text-only-fallback",
+      "reason": "source would scale 2.987x, yielding 0.335 effective source pixels per rendered pixel; 44% of source area would be cropped by cover fit"
+    },
+    {
+      "date": "2026-08-15",
+      "eventName": "Undercover",
+      "performerName": "Undercover",
+      "libraryId": "undercover",
+      "asset": "undercover-v1.jpg",
+      "approvalIdentity": "approved-framework-baseline",
+      "classification": "SOURCE QUALITY FAILURE",
+      "disposition": "text-only-fallback",
+      "reason": "source would scale 2.987x, yielding 0.335 effective source pixels per rendered pixel; 44% of source area would be cropped by cover fit"
+    },
+    {
+      "date": "2026-08-21",
+      "eventName": "DJ DIAGA",
+      "performerName": "DJ DIAGA",
+      "classification": "MISSING",
+      "disposition": "text-only-fallback",
+      "reason": "no approved reusable event or performer art"
+    },
+    {
+      "date": "2026-08-21",
+      "eventName": "Sunset Dreams",
+      "performerName": "Sunset Dreams",
+      "libraryId": "sunset-dreams",
+      "asset": "sunset-dreams-v1.jpg",
+      "approvalIdentity": "approved-framework-baseline",
+      "classification": "SOURCE QUALITY FAILURE",
+      "disposition": "text-only-fallback",
+      "reason": "source would scale 2.987x, yielding 0.335 effective source pixels per rendered pixel; 44% of source area would be cropped by cover fit"
+    },
+    {
+      "date": "2026-08-22",
+      "eventName": "DJ ICUE",
+      "performerName": "DJ ICUE",
+      "classification": "MISSING",
+      "disposition": "text-only-fallback",
+      "reason": "no approved reusable event or performer art"
+    },
+    {
+      "date": "2026-08-22",
+      "eventName": "Private Buyout",
+      "performerName": null,
+      "classification": "MISSING",
+      "disposition": "text-only-fallback",
+      "reason": "no approved reusable event or performer art"
+    },
+    {
+      "date": "2026-08-28",
+      "eventName": "Pump",
+      "performerName": "Pump",
+      "libraryId": "pump",
+      "asset": "pump-v1.jpg",
+      "approvalIdentity": "approved-framework-baseline",
+      "classification": "SOURCE QUALITY FAILURE",
+      "disposition": "text-only-fallback",
+      "reason": "source would scale 2.987x, yielding 0.335 effective source pixels per rendered pixel; 44% of source area would be cropped by cover fit"
+    },
+    {
+      "date": "2026-08-29",
+      "eventName": "JEMM",
+      "performerName": "JEMM",
+      "libraryId": "jemm",
+      "asset": "jemm-v1.jpg",
+      "approvalIdentity": "approved-framework-baseline",
+      "classification": "SOURCE QUALITY FAILURE",
+      "disposition": "text-only-fallback",
+      "reason": "source would scale 2.987x, yielding 0.335 effective source pixels per rendered pixel; 44% of source area would be cropped by cover fit"
+    }
+  ]
+}
