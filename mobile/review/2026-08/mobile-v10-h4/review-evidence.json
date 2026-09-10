@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "targetMonth": "2026-08",
+  "contentRevision": "d0d7657d040ad334c87865d93bd1ef3ff709d2d5b8759b76408268db9dafdbe3",
+  "outputs": {
+    "web": {
+      "path": "review/2026-08/v30/calendar.html",
+      "sha256": "7544ac8e5de53c0e4f612123e5650f8d3b39e07bb4fad458337aa563facc1f30"
+    },
+    "mobile": {
+      "path": "mobile/review/2026-08/mobile-v10-h4/calendar.html",
+      "sha256": "85a0d49220282ae38de3f938fbd3c32fc59a9f0c692b78defd17aeee865d0893"
+    }
+  },
+  "frameworkRevision": "d94e0abe084246b4617880f8d7a69ae6225805c8e263430cfba4f2b0041b87ed",
+  "approvedAssetLibraryRevision": "fd9c5c5d1e8bd5393edef02700ba7be59cb53b9d09ccc4fe7842080c1393d70f",
+  "qa": {
+    "status": "pass",
+    "checks": [
+      "full repository suite 477/477",
+      "Web Chromium runtime completed; HTML, PNG, and PDF exported at 1800x1204 without observed clipping",
+      "Web and Mobile render exact recovered approved-history KoolKidz, The Lufts, and Undercover bytes",
+      "Web and Mobile preserve approved Retro Sky v2, Chronicles v2, and DJ ICUE v1 artwork",
+      "all 12 August fallback identities have one mandated terminal disposition; no generic MISSING_ART remains",
+      "Web inherits the complete approved September background asset and treatment profile",
+      "Tuesday Late Night Happy Hour suppression is bound to exact selected Karaoke artwork bytes; Wednesday, Sunday, and Tito's promotion behavior remains intact",
+      "Mobile long-form order is canonical Start Time ascending; August 22 renders Private Buyout at 8 PM before DJ ICUE at 10:30 PM",
+      "Mobile exact widths 320/375/390/430/480 have zero horizontal overflow, clipped elements, or bounds violations",
+      "Mobile uses 15 unique embedded image sources for 36 resolved targets and 26 date anchors",
+      "August 7 stacked layout, weekly tags hidden, August title, The Lufts spelling, Home navigation, and archive behavior are preserved",
+      "hardening delta table classifies every material change and proves reusable or month-specific scope",
+      "no production/current, Wix, DNS, Airtable, Calendar publication, or mobile-current pointer changes"
+    ]
+  },
+  "timing": {
+    "fullTestSuiteMs": 4548.977958,
+    "webGenerationExportMs": 16000,
+    "mobileGenerationMs": 410,
+    "mobileFiveWidthQaMs": 5200
+  },
+  "runtime": {
+    "node": "v26.6.0",
+    "chrome": "152.0.7977.83",
+    "chromedriver": "152.0.7977.82",
+    "platform": "darwin",
+    "architecture": "arm64"
+  },
+  "reviewState": "needs-review",
+  "recordedAt": "2026-09-10T17:08:41Z",
+  "evidenceIdentity": "c652617f909ef921185de69d66b1484943472842debb4eac3aa523ad2a97341d",
+  "renderReviewRun": "c652617f909ef921185de69d66b1484943472842debb4eac3aa523ad2a97341d"
+}

@@ -1,0 +1,819 @@
+{
+  "schemaVersion": 1,
+  "surface": "web",
+  "targetMonth": "2026-08",
+  "contentRevision": "d0d7657d040ad334c87865d93bd1ef3ff709d2d5b8759b76408268db9dafdbe3",
+  "policy": {
+    "minimumEffectiveDensity": 0.8,
+    "maximumUpscaleFactor": 1.25,
+    "maximumCoverCropFraction": 0.32
+  },
+  "counts": {
+    "SOURCE QUALITY FAILURE": 7,
+    "FIT/CROP POLICY FAILURE": 0,
+    "ACCEPTABLE": 17
+  },
+  "records": [
+    {
+      "asset": "september-school-bus-background-v1.png",
+      "surface": "web",
+      "format": "png",
+      "sourceDimensions": {
+        "width": 1534,
+        "height": 1025
+      },
+      "sourceAspectRatio": 1.497,
+      "renderedBox": {
+        "width": 1800,
+        "height": 1200
+      },
+      "renderedAspectRatio": 1.5,
+      "fit": "cover",
+      "position": "center",
+      "policy": {
+        "minimumEffectiveDensity": 0.8,
+        "maximumUpscaleFactor": 1.25,
+        "maximumCoverCropFraction": 0.32
+      },
+      "scaleUpFactor": 1.173,
+      "effectivePixelDensity": 0.852,
+      "cropRisk": "none",
+      "cropFraction": 0.002,
+      "classification": "ACCEPTABLE",
+      "secondaryClassification": null,
+      "reasons": [
+        "source density and configured fit satisfy policy"
+      ]
+    },
+    {
+      "asset": "sunday-v3-whiskey-sunday-header.png",
+      "surface": "web",
+      "format": "png",
+      "sourceDimensions": {
+        "width": 2172,
+        "height": 724
+      },
+      "sourceAspectRatio": 3,
+      "renderedBox": {
+        "width": 238,
+        "height": 80
+      },
+      "renderedAspectRatio": 2.975,
+      "fit": "contain",
+      "position": "center",
+      "policy": {
+        "minimumEffectiveDensity": 0.8,
+        "maximumUpscaleFactor": 1.25,
+        "maximumCoverCropFraction": 0.32
+      },
+      "scaleUpFactor": 1,
+      "effectivePixelDensity": 9.126,
+      "cropRisk": "none",
+      "cropFraction": 0,
+      "classification": "ACCEPTABLE",
+      "secondaryClassification": null,
+      "reasons": [
+        "source density and configured fit satisfy policy"
+      ]
+    },
+    {
+      "asset": "monday-v1.png",
+      "surface": "web",
+      "format": "png",
+      "sourceDimensions": {
+        "width": 1672,
+        "height": 941
+      },
+      "sourceAspectRatio": 1.777,
+      "renderedBox": {
+        "width": 238,
+        "height": 80
+      },
+      "renderedAspectRatio": 2.975,
+      "fit": "contain",
+      "position": "center",
+      "policy": {
+        "minimumEffectiveDensity": 0.8,
+        "maximumUpscaleFactor": 1.25,
+        "maximumCoverCropFraction": 0.32
+      },
+      "scaleUpFactor": 1,
+      "effectivePixelDensity": 11.763,
+      "cropRisk": "none",
+      "cropFraction": 0,
+      "classification": "ACCEPTABLE",
+      "secondaryClassification": null,
+      "reasons": [
+        "source density and configured fit satisfy policy"
+      ]
+    },
+    {
+      "asset": "tuesday-v3-karaoke-tuesday-header.png",
+      "surface": "web",
+      "format": "png",
+      "sourceDimensions": {
+        "width": 2172,
+        "height": 724
+      },
+      "sourceAspectRatio": 3,
+      "renderedBox": {
+        "width": 238,
+        "height": 80
+      },
+      "renderedAspectRatio": 2.975,
+      "fit": "contain",
+      "position": "center",
+      "policy": {
+        "minimumEffectiveDensity": 0.8,
+        "maximumUpscaleFactor": 1.25,
+        "maximumCoverCropFraction": 0.32
+      },
+      "scaleUpFactor": 1,
+      "effectivePixelDensity": 9.126,
+      "cropRisk": "none",
+      "cropFraction": 0,
+      "classification": "ACCEPTABLE",
+      "secondaryClassification": null,
+      "reasons": [
+        "source density and configured fit satisfy policy"
+      ]
+    },
+    {
+      "asset": "wednesday-v3-ladies-night-wednesday-header.png",
+      "surface": "web",
+      "format": "png",
+      "sourceDimensions": {
+        "width": 2172,
+        "height": 724
+      },
+      "sourceAspectRatio": 3,
+      "renderedBox": {
+        "width": 238,
+        "height": 80
+      },
+      "renderedAspectRatio": 2.975,
+      "fit": "contain",
+      "position": "center",
+      "policy": {
+        "minimumEffectiveDensity": 0.8,
+        "maximumUpscaleFactor": 1.25,
+        "maximumCoverCropFraction": 0.32
+      },
+      "scaleUpFactor": 1,
+      "effectivePixelDensity": 9.126,
+      "cropRisk": "none",
+      "cropFraction": 0,
+      "classification": "ACCEPTABLE",
+      "secondaryClassification": null,
+      "reasons": [
+        "source density and configured fit satisfy policy"
+      ]
+    },
+    {
+      "asset": "thursday-v2-bougies-thursdays.png",
+      "surface": "web",
+      "format": "png",
+      "sourceDimensions": {
+        "width": 2172,
+        "height": 724
+      },
+      "sourceAspectRatio": 3,
+      "renderedBox": {
+        "width": 238,
+        "height": 80
+      },
+      "renderedAspectRatio": 2.975,
+      "fit": "contain",
+      "position": "center",
+      "policy": {
+        "minimumEffectiveDensity": 0.8,
+        "maximumUpscaleFactor": 1.25,
+        "maximumCoverCropFraction": 0.32
+      },
+      "scaleUpFactor": 1,
+      "effectivePixelDensity": 9.126,
+      "cropRisk": "none",
+      "cropFraction": 0,
+      "classification": "ACCEPTABLE",
+      "secondaryClassification": null,
+      "reasons": [
+        "source density and configured fit satisfy policy"
+      ]
+    },
+    {
+      "asset": "friday-v2-casual-fridays.png",
+      "surface": "web",
+      "format": "png",
+      "sourceDimensions": {
+        "width": 2172,
+        "height": 724
+      },
+      "sourceAspectRatio": 3,
+      "renderedBox": {
+        "width": 238,
+        "height": 80
+      },
+      "renderedAspectRatio": 2.975,
+      "fit": "contain",
+      "position": "center",
+      "policy": {
+        "minimumEffectiveDensity": 0.8,
+        "maximumUpscaleFactor": 1.25,
+        "maximumCoverCropFraction": 0.32
+      },
+      "scaleUpFactor": 1,
+      "effectivePixelDensity": 9.126,
+      "cropRisk": "none",
+      "cropFraction": 0,
+      "classification": "ACCEPTABLE",
+      "secondaryClassification": null,
+      "reasons": [
+        "source density and configured fit satisfy policy"
+      ]
+    },
+    {
+      "asset": "saturday-v2-laid-back-saturday.png",
+      "surface": "web",
+      "format": "png",
+      "sourceDimensions": {
+        "width": 2172,
+        "height": 724
+      },
+      "sourceAspectRatio": 3,
+      "renderedBox": {
+        "width": 238,
+        "height": 80
+      },
+      "renderedAspectRatio": 2.975,
+      "fit": "contain",
+      "position": "center",
+      "policy": {
+        "minimumEffectiveDensity": 0.8,
+        "maximumUpscaleFactor": 1.25,
+        "maximumCoverCropFraction": 0.32
+      },
+      "scaleUpFactor": 1,
+      "effectivePixelDensity": 9.126,
+      "cropRisk": "none",
+      "cropFraction": 0,
+      "classification": "ACCEPTABLE",
+      "secondaryClassification": null,
+      "reasons": [
+        "source density and configured fit satisfy policy"
+      ]
+    },
+    {
+      "placementId": "koolkidz-recurring-cells",
+      "eventName": "KoolKidz",
+      "occurrenceCount": 2,
+      "asset": "koolkidz-v1.jpg",
+      "surface": "web",
+      "format": "jpeg",
+      "sourceDimensions": {
+        "width": 150,
+        "height": 150
+      },
+      "sourceAspectRatio": 1,
+      "renderedBox": {
+        "width": 238,
+        "height": 150
+      },
+      "renderedAspectRatio": 1.587,
+      "fit": "cover",
+      "position": "center",
+      "policy": {
+        "minimumEffectiveDensity": 0.8,
+        "maximumUpscaleFactor": 1.25,
+        "maximumCoverCropFraction": 0.32
+      },
+      "scaleUpFactor": 1.587,
+      "effectivePixelDensity": 0.63,
+      "cropRisk": "likely",
+      "cropFraction": 0.37,
+      "classification": "SOURCE QUALITY FAILURE",
+      "secondaryClassification": "FIT/CROP POLICY FAILURE",
+      "reasons": [
+        "source would scale 1.587x, yielding 0.63 effective source pixels per rendered pixel",
+        "37% of source area would be cropped by cover fit"
+      ],
+      "selectionBasis": "RECOVERED_FROM_APPROVED_HISTORY",
+      "governedEvidenceIdentity": "adc9521e6f07a6549bf500aba6c12d32f979728ebfb19f447b1b02d082224d2a"
+    },
+    {
+      "placementId": "bougie-nights-recurring-cells",
+      "eventName": "Bougie Nights",
+      "occurrenceCount": 1,
+      "asset": "friday-v2-bougie-nights.png",
+      "surface": "web",
+      "format": "png",
+      "sourceDimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "sourceAspectRatio": 1,
+      "renderedBox": {
+        "width": 238,
+        "height": 150
+      },
+      "renderedAspectRatio": 1.587,
+      "fit": "contain",
+      "position": "center",
+      "policy": {
+        "minimumEffectiveDensity": 0.8,
+        "maximumUpscaleFactor": 1.25,
+        "maximumCoverCropFraction": 0.32
+      },
+      "scaleUpFactor": 1,
+      "effectivePixelDensity": 8.36,
+      "cropRisk": "none",
+      "cropFraction": 0,
+      "classification": "ACCEPTABLE",
+      "secondaryClassification": null,
+      "reasons": [
+        "source density and configured fit satisfy policy"
+      ]
+    },
+    {
+      "placementId": "stereo-mix-event-cell",
+      "eventName": "Stereo Mix",
+      "occurrenceCount": 1,
+      "asset": "stereo-mix-v1.jpg",
+      "surface": "web",
+      "format": "jpeg",
+      "sourceDimensions": {
+        "width": 150,
+        "height": 150
+      },
+      "sourceAspectRatio": 1,
+      "renderedBox": {
+        "width": 238,
+        "height": 150
+      },
+      "renderedAspectRatio": 1.587,
+      "fit": "cover",
+      "position": "center",
+      "policy": {
+        "minimumEffectiveDensity": 0.8,
+        "maximumUpscaleFactor": 1.25,
+        "maximumCoverCropFraction": 0.32
+      },
+      "scaleUpFactor": 1.587,
+      "effectivePixelDensity": 0.63,
+      "cropRisk": "likely",
+      "cropFraction": 0.37,
+      "classification": "SOURCE QUALITY FAILURE",
+      "secondaryClassification": "FIT/CROP POLICY FAILURE",
+      "reasons": [
+        "source would scale 1.587x, yielding 0.63 effective source pixels per rendered pixel",
+        "37% of source area would be cropped by cover fit"
+      ]
+    },
+    {
+      "placementId": "rhinestone-cowboys-recurring-cells",
+      "eventName": "Rhinestone Cowboys",
+      "occurrenceCount": 1,
+      "asset": "thursday-v1-rhinestone-cowboys.png",
+      "surface": "web",
+      "format": "png",
+      "sourceDimensions": {
+        "width": 1254,
+        "height": 1254
+      },
+      "sourceAspectRatio": 1,
+      "renderedBox": {
+        "width": 238,
+        "height": 150
+      },
+      "renderedAspectRatio": 1.587,
+      "fit": "contain",
+      "position": "center",
+      "policy": {
+        "minimumEffectiveDensity": 0.8,
+        "maximumUpscaleFactor": 1.25,
+        "maximumCoverCropFraction": 0.32
+      },
+      "scaleUpFactor": 1,
+      "effectivePixelDensity": 8.36,
+      "cropRisk": "none",
+      "cropFraction": 0,
+      "classification": "ACCEPTABLE",
+      "secondaryClassification": null,
+      "reasons": [
+        "source density and configured fit satisfy policy"
+      ]
+    },
+    {
+      "placementId": "sunset-dreams-august-21-event-cell",
+      "eventName": "Sunset Dreams",
+      "occurrenceCount": 1,
+      "asset": "sunset-dreams-v1.jpg",
+      "surface": "web",
+      "format": "jpeg",
+      "sourceDimensions": {
+        "width": 150,
+        "height": 150
+      },
+      "sourceAspectRatio": 1,
+      "renderedBox": {
+        "width": 238,
+        "height": 150
+      },
+      "renderedAspectRatio": 1.587,
+      "fit": "cover",
+      "position": "center",
+      "policy": {
+        "minimumEffectiveDensity": 0.8,
+        "maximumUpscaleFactor": 1.25,
+        "maximumCoverCropFraction": 0.32
+      },
+      "scaleUpFactor": 1.587,
+      "effectivePixelDensity": 0.63,
+      "cropRisk": "likely",
+      "cropFraction": 0.37,
+      "classification": "SOURCE QUALITY FAILURE",
+      "secondaryClassification": "FIT/CROP POLICY FAILURE",
+      "reasons": [
+        "source would scale 1.587x, yielding 0.63 effective source pixels per rendered pixel",
+        "37% of source area would be cropped by cover fit"
+      ]
+    },
+    {
+      "placementId": "pump-august-28-event-cell",
+      "eventName": "Pump",
+      "occurrenceCount": 1,
+      "asset": "pump-v1.jpg",
+      "surface": "web",
+      "format": "jpeg",
+      "sourceDimensions": {
+        "width": 150,
+        "height": 150
+      },
+      "sourceAspectRatio": 1,
+      "renderedBox": {
+        "width": 238,
+        "height": 150
+      },
+      "renderedAspectRatio": 1.587,
+      "fit": "cover",
+      "position": "center",
+      "policy": {
+        "minimumEffectiveDensity": 0.8,
+        "maximumUpscaleFactor": 1.25,
+        "maximumCoverCropFraction": 0.32
+      },
+      "scaleUpFactor": 1.587,
+      "effectivePixelDensity": 0.63,
+      "cropRisk": "likely",
+      "cropFraction": 0.37,
+      "classification": "SOURCE QUALITY FAILURE",
+      "secondaryClassification": "FIT/CROP POLICY FAILURE",
+      "reasons": [
+        "source would scale 1.587x, yielding 0.63 effective source pixels per rendered pixel",
+        "37% of source area would be cropped by cover fit"
+      ]
+    },
+    {
+      "placementId": "jemm-august-29-event-cell",
+      "eventName": "JEMM",
+      "occurrenceCount": 1,
+      "asset": "jemm-v1.jpg",
+      "surface": "web",
+      "format": "jpeg",
+      "sourceDimensions": {
+        "width": 150,
+        "height": 150
+      },
+      "sourceAspectRatio": 1,
+      "renderedBox": {
+        "width": 238,
+        "height": 150
+      },
+      "renderedAspectRatio": 1.587,
+      "fit": "cover",
+      "position": "center",
+      "policy": {
+        "minimumEffectiveDensity": 0.8,
+        "maximumUpscaleFactor": 1.25,
+        "maximumCoverCropFraction": 0.32
+      },
+      "scaleUpFactor": 1.587,
+      "effectivePixelDensity": 0.63,
+      "cropRisk": "likely",
+      "cropFraction": 0.37,
+      "classification": "SOURCE QUALITY FAILURE",
+      "secondaryClassification": "FIT/CROP POLICY FAILURE",
+      "reasons": [
+        "source would scale 1.587x, yielding 0.63 effective source pixels per rendered pixel",
+        "37% of source area would be cropped by cover fit"
+      ]
+    },
+    {
+      "placementId": "freestyle-party-special-cell",
+      "eventName": "Freestyle Party",
+      "occurrenceCount": 1,
+      "asset": "prototype-special-cell.svg",
+      "surface": "web",
+      "format": "svg",
+      "sourceDimensions": null,
+      "sourceAspectRatio": null,
+      "renderedBox": {
+        "width": 238,
+        "height": 150
+      },
+      "renderedAspectRatio": 1.587,
+      "fit": "cover",
+      "position": "center",
+      "policy": {
+        "minimumEffectiveDensity": 0.8,
+        "maximumUpscaleFactor": 1.25,
+        "maximumCoverCropFraction": 0.32
+      },
+      "scaleUpFactor": 1,
+      "effectivePixelDensity": null,
+      "cropRisk": "none",
+      "cropFraction": 0,
+      "classification": "ACCEPTABLE",
+      "reasons": [
+        "scalable vector source"
+      ]
+    },
+    {
+      "placementId": "whiskey-allstars-2026-08-composition",
+      "eventName": "Whiskey Allstars",
+      "occurrenceCount": 5,
+      "asset": "sunday-v1-whiskey-allstars.png",
+      "surface": "web",
+      "format": "png",
+      "sourceDimensions": {
+        "width": 793,
+        "height": 1983
+      },
+      "sourceAspectRatio": 0.4,
+      "renderedBox": {
+        "width": 238,
+        "height": 750
+      },
+      "renderedAspectRatio": 0.317,
+      "fit": "contain",
+      "position": "center",
+      "policy": {
+        "minimumEffectiveDensity": 0.8,
+        "maximumUpscaleFactor": 1.25,
+        "maximumCoverCropFraction": 0.32
+      },
+      "scaleUpFactor": 1,
+      "effectivePixelDensity": 3.332,
+      "cropRisk": "none",
+      "cropFraction": 0,
+      "classification": "ACCEPTABLE",
+      "secondaryClassification": null,
+      "reasons": [
+        "source density and configured fit satisfy policy"
+      ]
+    },
+    {
+      "placementId": "karaoke-2026-08-composition",
+      "eventName": "Karaoke Tuesday",
+      "occurrenceCount": 4,
+      "asset": "tuesday-v2-karaoke-self-describing.png",
+      "surface": "web",
+      "format": "png",
+      "sourceDimensions": {
+        "width": 819,
+        "height": 1920
+      },
+      "sourceAspectRatio": 0.427,
+      "renderedBox": {
+        "width": 238,
+        "height": 600
+      },
+      "renderedAspectRatio": 0.397,
+      "fit": "contain",
+      "position": "center",
+      "policy": {
+        "minimumEffectiveDensity": 0.8,
+        "maximumUpscaleFactor": 1.25,
+        "maximumCoverCropFraction": 0.32
+      },
+      "scaleUpFactor": 1,
+      "effectivePixelDensity": 3.441,
+      "cropRisk": "none",
+      "cropFraction": 0,
+      "classification": "ACCEPTABLE",
+      "secondaryClassification": null,
+      "reasons": [
+        "source density and configured fit satisfy policy"
+      ]
+    },
+    {
+      "placementId": "ladies-night-2026-08-composition",
+      "eventName": "Ladies Night",
+      "occurrenceCount": 4,
+      "asset": "wednesday-v1-ladies-night.png",
+      "surface": "web",
+      "format": "png",
+      "sourceDimensions": {
+        "width": 793,
+        "height": 1983
+      },
+      "sourceAspectRatio": 0.4,
+      "renderedBox": {
+        "width": 238,
+        "height": 600
+      },
+      "renderedAspectRatio": 0.397,
+      "fit": "contain",
+      "position": "center",
+      "policy": {
+        "minimumEffectiveDensity": 0.8,
+        "maximumUpscaleFactor": 1.25,
+        "maximumCoverCropFraction": 0.32
+      },
+      "scaleUpFactor": 1,
+      "effectivePixelDensity": 3.332,
+      "cropRisk": "none",
+      "cropFraction": 0,
+      "classification": "ACCEPTABLE",
+      "secondaryClassification": null,
+      "reasons": [
+        "source density and configured fit satisfy policy"
+      ]
+    },
+    {
+      "placementId": "auto-2026-08-01-chronicles-v2",
+      "eventName": "Chronicles",
+      "occurrenceCount": 1,
+      "asset": "chronicles-v2.jpg",
+      "surface": "web",
+      "format": "jpeg",
+      "sourceDimensions": {
+        "width": 3200,
+        "height": 2134
+      },
+      "sourceAspectRatio": 1.5,
+      "renderedBox": {
+        "width": 238,
+        "height": 150
+      },
+      "renderedAspectRatio": 1.587,
+      "fit": "cover",
+      "position": "center",
+      "policy": {
+        "minimumEffectiveDensity": 0.8,
+        "maximumUpscaleFactor": 1.25,
+        "maximumCoverCropFraction": 0.32
+      },
+      "scaleUpFactor": 1,
+      "effectivePixelDensity": 13.445,
+      "cropRisk": "possible",
+      "cropFraction": 0.055,
+      "classification": "ACCEPTABLE",
+      "secondaryClassification": null,
+      "reasons": [
+        "source density and configured fit satisfy policy"
+      ]
+    },
+    {
+      "placementId": "auto-2026-08-07-retro-sky-v2",
+      "eventName": "Retro Sky",
+      "occurrenceCount": 1,
+      "asset": "retro-sky-v2.jpg",
+      "surface": "web",
+      "format": "jpeg",
+      "sourceDimensions": {
+        "width": 2961,
+        "height": 1742
+      },
+      "sourceAspectRatio": 1.7,
+      "renderedBox": {
+        "width": 238,
+        "height": 150
+      },
+      "renderedAspectRatio": 1.587,
+      "fit": "cover",
+      "position": "center",
+      "policy": {
+        "minimumEffectiveDensity": 0.8,
+        "maximumUpscaleFactor": 1.25,
+        "maximumCoverCropFraction": 0.32
+      },
+      "scaleUpFactor": 1,
+      "effectivePixelDensity": 11.613,
+      "cropRisk": "possible",
+      "cropFraction": 0.067,
+      "classification": "ACCEPTABLE",
+      "secondaryClassification": null,
+      "reasons": [
+        "source density and configured fit satisfy policy"
+      ]
+    },
+    {
+      "placementId": "auto-2026-08-15-undercover",
+      "eventName": "Undercover",
+      "occurrenceCount": 1,
+      "asset": "undercover-v1.jpg",
+      "surface": "web",
+      "format": "jpeg",
+      "sourceDimensions": {
+        "width": 150,
+        "height": 150
+      },
+      "sourceAspectRatio": 1,
+      "renderedBox": {
+        "width": 238,
+        "height": 150
+      },
+      "renderedAspectRatio": 1.587,
+      "fit": "cover",
+      "position": "center",
+      "policy": {
+        "minimumEffectiveDensity": 0.8,
+        "maximumUpscaleFactor": 1.25,
+        "maximumCoverCropFraction": 0.32
+      },
+      "scaleUpFactor": 1.587,
+      "effectivePixelDensity": 0.63,
+      "cropRisk": "likely",
+      "cropFraction": 0.37,
+      "classification": "SOURCE QUALITY FAILURE",
+      "secondaryClassification": "FIT/CROP POLICY FAILURE",
+      "reasons": [
+        "source would scale 1.587x, yielding 0.63 effective source pixels per rendered pixel",
+        "37% of source area would be cropped by cover fit"
+      ],
+      "selectionBasis": "RECOVERED_FROM_APPROVED_HISTORY",
+      "governedEvidenceIdentity": "d8703c51d9caa0402edb402dac695a47d6262a9edaf2bbedc80422b094a79385"
+    },
+    {
+      "placementId": "auto-2026-08-20-the-lufts",
+      "eventName": "The Lufts",
+      "occurrenceCount": 1,
+      "asset": "luftz-v1.jpg",
+      "surface": "web",
+      "format": "jpeg",
+      "sourceDimensions": {
+        "width": 150,
+        "height": 150
+      },
+      "sourceAspectRatio": 1,
+      "renderedBox": {
+        "width": 238,
+        "height": 150
+      },
+      "renderedAspectRatio": 1.587,
+      "fit": "cover",
+      "position": "center",
+      "policy": {
+        "minimumEffectiveDensity": 0.8,
+        "maximumUpscaleFactor": 1.25,
+        "maximumCoverCropFraction": 0.32
+      },
+      "scaleUpFactor": 1.587,
+      "effectivePixelDensity": 0.63,
+      "cropRisk": "likely",
+      "cropFraction": 0.37,
+      "classification": "SOURCE QUALITY FAILURE",
+      "secondaryClassification": "FIT/CROP POLICY FAILURE",
+      "reasons": [
+        "source would scale 1.587x, yielding 0.63 effective source pixels per rendered pixel",
+        "37% of source area would be cropped by cover fit"
+      ],
+      "selectionBasis": "RECOVERED_FROM_APPROVED_HISTORY",
+      "governedEvidenceIdentity": "f6daafa351e4aa046929a151c4688b8124d71d4bb9291422098926accf357d4d"
+    },
+    {
+      "placementId": "auto-2026-08-22-dj-icue",
+      "eventName": "DJ ICUE",
+      "occurrenceCount": 1,
+      "asset": "dj-icue-v1.webp",
+      "surface": "web",
+      "format": "webp",
+      "sourceDimensions": {
+        "width": 1000,
+        "height": 1000
+      },
+      "sourceAspectRatio": 1,
+      "renderedBox": {
+        "width": 238,
+        "height": 150
+      },
+      "renderedAspectRatio": 1.587,
+      "fit": "contain",
+      "position": "center",
+      "policy": {
+        "minimumEffectiveDensity": 0.8,
+        "maximumUpscaleFactor": 1.25,
+        "maximumCoverCropFraction": 0.32
+      },
+      "scaleUpFactor": 1,
+      "effectivePixelDensity": 6.667,
+      "cropRisk": "none",
+      "cropFraction": 0,
+      "classification": "ACCEPTABLE",
+      "secondaryClassification": null,
+      "reasons": [
+        "source density and configured fit satisfy policy"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "issue": 129,
+  "targetMonth": "2026-08",
+  "contentRevision": "d0d7657d040ad334c87865d93bd1ef3ff709d2d5b8759b76408268db9dafdbe3",
+  "frameworkRevision": "d94e0abe084246b4617880f8d7a69ae6225805c8e263430cfba4f2b0041b87ed",
+  "approvedAssetLibraryRevision": "fd9c5c5d1e8bd5393edef02700ba7be59cb53b9d09ccc4fe7842080c1393d70f",
+  "deltas": [
+    {
+      "classification": "REUSABLE_PROCESS",
+      "change": "History-first performer-art recovery and exhaustive terminal-disposition audit",
+      "fileOrContract": [
+        "calendar-renderer/reusable-event-art.mjs",
+        "reports/issue-129/approved-art-history-recovery.json"
+      ],
+      "identityOrHash": [
+        "3a04520a5951a8c04e5cd75e3a6fabdfd05b6ee04613a67cbf917235b634078f",
+        "13a668939a8da455976f8db06ec896c51d6321ea2af42f859a94cf72d11f8a92"
+      ],
+      "reusableLogic": "Resolve approved history before public discovery; retain measured quality while permitting recovery only through exact governed byte, surface, evidence, and approval bindings.",
+      "syntheticOrOtherMonthTest": "Negative tests reject manual clones, checksum drift, wrong surfaces, tampered evidence, and month facts in reusable framework composition.",
+      "futureAndHistoricalApplication": "The resolver is shared by future and historical snapshot-backed Web and Mobile review renders; month-specific proof stays in durable evidence."
+    },
+    {
+      "classification": "REUSABLE_FRAMEWORK",
+      "change": "Canonical within-date Mobile ordering and shared browser-QA expectations",
+      "fileOrContract": [
+        "calendar-renderer/mobile/mobile-event-ordering.mjs",
+        "calendar-renderer/mobile/render-mobile-calendar.mjs",
+        "calendar-renderer/mobile/mobile-review-config.mjs",
+        "calendar-renderer/mobile/validate-mobile-prototype.mjs"
+      ],
+      "identityOrHash": [
+        "028a6677b6419c8eb1ae56c8f88ce0545c3c8faabd88d8e81c953f8a06843204",
+        "59b0d3065b602152807d9a5cf1844c18ec1a6d28775b750e70fb762e4c40c8ce",
+        "4db4b85b3ad60313f6460480a48f65a22b7d86e68e9364de41d0d610914155e4",
+        "ecbb7c556883f4acb58d13cf96baabd9474bef34d15626c842fa8452587950f2"
+      ],
+      "reusableLogic": "Sort valid canonical Start Times ascending, break equal times by canonical/source identity, place missing or invalid times deterministically afterward, and allow only complete reviewed overrides.",
+      "syntheticOrOtherMonthTest": "Covers 8 PM plus 10:30 PM, equal times, missing and invalid times, explicit override, August 21/22, and validator-renderer parity.",
+      "futureAndHistoricalApplication": "All snapshot-backed Mobile-v10 months use the same preparation path; immutable fixture regeneration retains its original byte-stable order."
+    },
+    {
+      "classification": "REUSABLE_FRAMEWORK",
+      "change": "Complete approved Web background treatment profile",
+      "fileOrContract": [
+        "calendar-renderer/web-presentation-profile.mjs",
+        "config/presentation/web-profile-registry.json"
+      ],
+      "identityOrHash": [
+        "dbae20f6ae27f2897f80606385442688a39cbb9e170e588cf33d3e9dd932270b",
+        "9dd09da56096826a790898b7f6a2dcc0cff27f29f1ec90b0873353a35b96c175"
+      ],
+      "reusableLogic": "Bind background bytes together with palette, overlay, blend, contrast, panel colors, position, cover sizing, pseudo-element layer, and grid interaction.",
+      "syntheticOrOtherMonthTest": "September baseline and historical/future resolution tests verify exact inherited bytes, treatment values, byte-drift rejection, and month-title isolation.",
+      "futureAndHistoricalApplication": "The latest approved profile applies automatically to historical and future snapshot-backed Web candidates without copying month facts."
+    },
+    {
+      "classification": "REUSABLE_FRAMEWORK",
+      "change": "Exact selected-art promotion claims",
+      "fileOrContract": [
+        "calendar-renderer/recurring-web-presentation.mjs",
+        "calendar-renderer/promotion-review.mjs",
+        "config/presentation/recurring-web.json"
+      ],
+      "identityOrHash": [
+        "0c82b88245675464560a9091b770cff3a28ec733baf0745f278079227fd9dd86",
+        "eb76a423d1d2707d0aae07d2076d32541d0bea035c41aca981fa216916845875",
+        "895f88ab61dfaf2100a7807c76b3fb7c0b5e78038b19c5657ebcbcfa7a25d359"
+      ],
+      "reusableLogic": "AUTO_FROM_ART_CLAIMS suppresses a recurring footer only when the selected artwork filename and SHA-256 exactly match the claim and verified repository bytes.",
+      "syntheticOrOtherMonthTest": "Tests cover exact match, stale metadata, different version, checksum drift, month override, Tuesday, Wednesday, Sunday, and date-specific promotions.",
+      "futureAndHistoricalApplication": "Recurring footer decisions follow the exact selected art in every compatible Web month."
+    },
+    {
+      "classification": "REUSABLE_ASSET",
+      "change": "Recovered approved performer artwork",
+      "fileOrContract": [
+        "config/presentation/approved-event-art.json",
+        "assets/calendar/event-artwork/candidates/koolkidz-v1.jpg",
+        "assets/calendar/event-artwork/candidates/luftz-v1.jpg",
+        "assets/calendar/event-artwork/candidates/undercover-v1.jpg"
+      ],
+      "identityOrHash": [
+        "fd9c5c5d1e8bd5393edef02700ba7be59cb53b9d09ccc4fe7842080c1393d70f",
+        "0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b",
+        "440fed2d00114d313246a3d43e7ecc661feaf2ac784554e4d0cf604384f48fe8d",
+        "eec3aa31504399ed47197611f4a6f3ba35be0f5a8b70980d701ce104c42b1c70"
+      ],
+      "reusableLogic": "Map exact previously approved bytes to canonical performer identities for Web and Mobile, while preserving governed evidence and measured quality findings.",
+      "syntheticOrOtherMonthTest": "Real August snapshot integration proves artwork reaches KoolKidz on both dates, The Lufts, and Undercover on both surfaces; checksum and surface negatives fail closed.",
+      "futureAndHistoricalApplication": "The canonical performer mappings are available automatically when those identities appear in future or historical snapshot-backed reviews."
+    },
+    {
+      "classification": "MONTH_SPECIFIC_OVERRIDE",
+      "change": "August recovery provenance and fallback dispositions",
+      "fileOrContract": "reports/issue-129/approved-art-history-recovery.json",
+      "identityOrHash": "13a668939a8da455976f8db06ec896c51d6321ea2af42f859a94cf72d11f8a92",
+      "reusableLogic": "Contains only Issue #129 evidence for the August audit and does not enter frameworkRevision.",
+      "syntheticOrOtherMonthTest": "Framework composition tests reject month facts and month-specific paths from reusable components.",
+      "futureAndHistoricalApplication": "No automatic cross-month application; the reusable resolver and asset mappings consume only the governed evidence pointer and exact identities."
+    }
+  ]
+}
