@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "siteBaseUrl": "https://sotadatos.github.io/bougies-calendar-preview/",
+  "fixedFiles": ["calendar.html", "calendar.png", "calendar.pdf"],
+  "fixedDirectories": ["mobile/current"],
+  "provenanceUrls": [
+    {"document": "mobile/current/prototype-manifest.json", "pointer": ["approvedImmutableReviewUrl"]},
+    {"document": "mobile/current/prototype-manifest.json", "pointer": ["approvedImmutableManifestUrl"]},
+    {"document": "mobile/current/prototype-manifest.json", "pointer": ["sourceDesktopReview", "htmlUrl"]}
+  ],
+  "activeReviews": [
+    {
+      "name": "web",
+      "gitPathspec": "review/*/v*/calendar.html",
+      "pathRegex": "^review/[0-9]{4}-[0-9]{2}/v[0-9]+(?:-[a-z0-9-]+)?/calendar\\.html$"
+    },
+    {
+      "name": "mobile",
+      "gitPathspec": "mobile/review/*/*/calendar.html",
+      "pathRegex": "^mobile/review/[0-9]{4}-[0-9]{2}/mobile-v[0-9]+(?:-[a-z0-9-]+)?/calendar\\.html$"
+    }
+  ]
+}
