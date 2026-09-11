@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "contract": "issue-129-continuation-hardening-delta",
+  "issue": 129,
+  "targetMonth": "2026-08",
+  "contentRevision": "d0d7657d040ad334c87865d93bd1ef3ff709d2d5b8759b76408268db9dafdbe3",
+  "frameworkRevision": "187fd7172f7ad465b3c5d36a6e3727ff01d5706b478b384268886a4790d6d776",
+  "approvedAssetLibraryRevision": "b56326dd84753d5825096a14605ae07bda03d54a80645513305083804cbd85a0",
+  "noHiddenAugustLogic": {
+    "status": "pass",
+    "evidence": [
+      "Reusable framework registry rejects month-specific paths and date-bearing JSON.",
+      "Recurring companion contract rejects date-bearing reusable rules.",
+      "Synthetic and cross-month inheritance tests pass.",
+      "The only MONTH_SPECIFIC_OVERRIDE is durable audit evidence and is excluded from frameworkRevision."
+    ]
+  },
+  "deltas": [
+    {
+      "classification": "REUSABLE_PROCESS",
+      "change": "Self-contained image payload measurement, deduplication, and checksum-bound derivative delivery",
+      "files": [
+        "calendar-renderer/image-payload-delivery.mjs",
+        "config/presentation/render-image-derivatives.json"
+      ],
+      "test": "test/image-payload-delivery.test.mjs covers contract validation, checksum drift, surface binding, dimensional quality, and byte reduction without month facts.",
+      "historical": "Every historical snapshot-backed renderer applies the same surface derivative contract before writing HTML.",
+      "future": "Every future snapshot-backed renderer applies the same surface derivative contract before writing HTML.",
+      "identities": [
+        {
+          "path": "calendar-renderer/image-payload-delivery.mjs",
+          "sha256": "8ee6dcd8a488b12d62c1df2df0622705db2b5b53b48ec2d8899221a2f05009f0"
+        },
+        {
+          "path": "config/presentation/render-image-derivatives.json",
+          "sha256": "c620d63d182d150eeac1da29afc7faba498b72775143e19ddc48725f8104b85c"
+        }
+      ]
+    },
+    {
+      "classification": "REUSABLE_ASSET",
+      "change": "Right-sized approved render derivatives for recurring, background, and performer art",
+      "files": [
+        "config/presentation/render-image-derivatives.json",
+        "assets/calendar/render-derivatives/README.md"
+      ],
+      "test": "test/image-payload-delivery.test.mjs verifies all derivative bytes, source bindings, alpha preservation, dimensions, and reduced size.",
+      "historical": "Approved source hashes select these derivatives on any historical render using the same assets.",
+      "future": "Approved source hashes select these derivatives on any future render using the same assets.",
+      "identities": [
+        {
+          "path": "config/presentation/render-image-derivatives.json",
+          "sha256": "c620d63d182d150eeac1da29afc7faba498b72775143e19ddc48725f8104b85c"
+        },
+        {
+          "path": "assets/calendar/render-derivatives/README.md",
+          "sha256": "69ac9d0e320f4fc03098419e12771b4db22209c03de692f9d4f046e873e66b27"
+        }
+      ]
+    },
+    {
+      "classification": "REUSABLE_FRAMEWORK",
+      "change": "Canonical recurring companion programming for Thursday band then DJ Edward at 11:30 PM in Living Room",
+      "files": [
+        "calendar-renderer/recurring-companion-programming.mjs",
+        "config/calendar-rules.json"
+      ],
+      "test": "test/mobile-recurring-companions.test.mjs covers all weekday instances, explicit-event precedence, suppressions, and rejection of date-bearing reusable rules.",
+      "historical": "Historical snapshots materialize the companion from canonical weekday semantics unless a reviewed date suppression applies.",
+      "future": "Future snapshots materialize the companion from the same canonical weekday semantics unless an explicit source event already exists.",
+      "identities": [
+        {
+          "path": "calendar-renderer/recurring-companion-programming.mjs",
+          "sha256": "e36f8751841b0efcd478d5135d2d95558fe4feab94f7384a15c3ee7efe483cfc"
+        },
+        {
+          "path": "config/calendar-rules.json",
+          "sha256": "ce074a6523c27f13fb222a78aa85af860b956e92bb2f295082c05982ba14de56"
+        }
+      ]
+    },
+    {
+      "classification": "REUSABLE_FRAMEWORK",
+      "change": "Mobile recurring series context, including Karaoke Tuesday Late Night Happy Hour after midnight",
+      "files": [
+        "calendar-renderer/mobile/mobile-semantic-framework.mjs",
+        "config/presentation/mobile-v10-framework.json"
+      ],
+      "test": "test/mobile-semantic-framework.test.mjs and test/mobile-calendar-prototype.test.mjs prove semantic context and rendering without an August condition.",
+      "historical": "All historical Mobile-v10 snapshot reviews resolve Tuesday context from the reusable series key.",
+      "future": "All future Mobile-v10 snapshot reviews resolve Tuesday context from the reusable series key.",
+      "identities": [
+        {
+          "path": "calendar-renderer/mobile/mobile-semantic-framework.mjs",
+          "sha256": "a29ca6c694b78c2a642bb8b4f59e38487ae9f4b58985a7f85ecaee1763f38b86"
+        },
+        {
+          "path": "config/presentation/mobile-v10-framework.json",
+          "sha256": "0b73664d8ed7e3e483f40ccd7d68da7d3fbafa0de4b3667be0b9059cfdefab5a"
+        }
+      ]
+    },
+    {
+      "classification": "REUSABLE_FRAMEWORK",
+      "change": "Six-class art fit, crop, focal point, padding, background, and maximum-upscale policy",
+      "files": [
+        "calendar-renderer/asset-presentation-policy.mjs",
+        "config/presentation/asset-presentation-policy.json"
+      ],
+      "test": "test/asset-presentation-policy.test.mjs covers all classes, both surfaces, month-agnostic behavior, safe fallback, and invalid mutations.",
+      "historical": "Historical event and recurring art resolves through the same class policy and falls back when incompatible.",
+      "future": "Future event and recurring art resolves through the same class policy and falls back when incompatible.",
+      "identities": [
+        {
+          "path": "calendar-renderer/asset-presentation-policy.mjs",
+          "sha256": "e15ad1da1d0a733426b1f45a1e2fe97016aedd0fc273eab6973663e998886026"
+        },
+        {
+          "path": "config/presentation/asset-presentation-policy.json",
+          "sha256": "d7abfd76693232b7a9d94f21fa465f6409ce0fc760f5943aa7cb6f79005a08cb"
+        }
+      ]
+    },
+    {
+      "classification": "REUSABLE_FRAMEWORK",
+      "change": "Latest-approved Web art legibility, compact venue badges, tactical companion suppression, and recurring performer-label suppression",
+      "files": [
+        "config/presentation/web-profile-registry.json",
+        "config/presentation/web-layout-policy.json",
+        "config/presentation/recurring-web.json"
+      ],
+      "test": "test/web-presentation-profile.test.mjs, test/web-layout-policy.test.mjs, and test/presentation-framework-inheritance.test.mjs cover historical/future inheritance and semantic preservation.",
+      "historical": "Historical Web snapshots inherit the latest approved presentation profile with source semantics retained.",
+      "future": "Future Web snapshots inherit the same profile automatically.",
+      "identities": [
+        {
+          "path": "config/presentation/web-profile-registry.json",
+          "sha256": "697c58b59b4aed6bb3ca2a9b0134c71f1ee981ef6133cd1a0e09672b74a99a9c"
+        },
+        {
+          "path": "config/presentation/web-layout-policy.json",
+          "sha256": "ae454cef6a61831b7632e0586579bf39da8b1df5f3a56fc92204668293321f8e"
+        },
+        {
+          "path": "config/presentation/recurring-web.json",
+          "sha256": "b0489e7d904cf8482b5ad0cec02211793155bc1da0ebb77ddfea1258de3a02d8"
+        }
+      ]
+    },
+    {
+      "classification": "REUSABLE_ASSET",
+      "change": "Presentation-class metadata bound into governed performer-art entries",
+      "files": [
+        "config/presentation/approved-event-art.json"
+      ],
+      "test": "test/performer-art-library.test.mjs and test/asset-presentation-policy.test.mjs verify governed identity selection, approved bytes, surfaces, and class policy.",
+      "historical": "Known performer identities reuse the governed asset and class mapping in historical review renders.",
+      "future": "Known performer identities reuse the governed asset and class mapping in future review renders.",
+      "identities": [
+        {
+          "path": "config/presentation/approved-event-art.json",
+          "sha256": "dc17089c71791feea71d93ae68e2e2d1913952a9ffa7692e9499d9ef4812a5a5"
+        }
+      ]
+    },
+    {
+      "classification": "MONTH_SPECIFIC_OVERRIDE",
+      "change": "August regression evidence and exact residual art dispositions only",
+      "files": [
+        "reports/issue-129/residual-art-history-reaudit.json"
+      ],
+      "test": "test/issue129-continuation-audit.test.mjs verifies all residual identities use the required terminal vocabulary and framework tests exclude report/month facts.",
+      "historical": "No automatic reuse; the report records the August audit result while reusable resolvers remain month-neutral.",
+      "future": "No automatic reuse; future months run the same audit process against their own event identities.",
+      "identities": [
+        {
+          "path": "reports/issue-129/residual-art-history-reaudit.json",
+          "sha256": "f85fcc545301480d02fb54dbe45c12385f769d3b79854116ae18778e3406d3ac"
+        }
+      ]
+    }
+  ]
+}

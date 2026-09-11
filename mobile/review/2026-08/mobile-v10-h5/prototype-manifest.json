@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "prototypeOnly": true,
+  "targetMonth": "2026-08",
+  "mobileReviewVersion": "mobile-v10",
+  "renderMode": "review",
+  "sourceFixture": {
+    "path": "output/month-revisions/2026-08/d0d7657d040ad334c87865d93bd1ef3ff709d2d5b8759b76408268db9dafdbe3/month.snapshot.json",
+    "sha256": "a8c4dea2f0ec8af4a8aae91f6690987afaf12e9cf9720b7ed83dd7a023ddd8ea",
+    "eventCount": 29,
+    "representativeDates": [
+      "2026-08-01",
+      "2026-08-02",
+      "2026-08-03",
+      "2026-08-04",
+      "2026-08-05",
+      "2026-08-06",
+      "2026-08-07",
+      "2026-08-08",
+      "2026-08-09",
+      "2026-08-10",
+      "2026-08-11",
+      "2026-08-12",
+      "2026-08-13",
+      "2026-08-14",
+      "2026-08-15",
+      "2026-08-16",
+      "2026-08-17",
+      "2026-08-18",
+      "2026-08-19",
+      "2026-08-20",
+      "2026-08-21",
+      "2026-08-22",
+      "2026-08-23",
+      "2026-08-24",
+      "2026-08-25",
+      "2026-08-26",
+      "2026-08-27",
+      "2026-08-28",
+      "2026-08-29",
+      "2026-08-30",
+      "2026-08-31"
+    ]
+  },
+  "sourceSnapshot": {
+    "path": "output/month-revisions/2026-08/d0d7657d040ad334c87865d93bd1ef3ff709d2d5b8759b76408268db9dafdbe3/month.snapshot.json",
+    "revision": "d0d7657d040ad334c87865d93bd1ef3ff709d2d5b8759b76408268db9dafdbe3"
+  },
+  "embeddedImages": {
+    "sourceCount": 15,
+    "targetCount": 36
+  },
+  "imageDelivery": {
+    "htmlBytes": 10166338,
+    "imageOccurrences": 15,
+    "uniqueImageCount": 15,
+    "repeatedImageTargets": 0,
+    "uniqueRawImageBytes": 7558470,
+    "allRawImageBytes": 7558470,
+    "encodedImageBytes": 10078312,
+    "uniqueEncodedImageBytes": 10078312,
+    "base64DataUriOverheadBytes": 2519842,
+    "markupWithoutDataUrisBytes": 88026,
+    "uniqueInlineBaselineBytes": 10166338,
+    "styleBytes": 25086,
+    "executableScriptBytes": 4648,
+    "payloadContainerBytes": 10078619,
+    "largestImages": [
+      {
+        "mimeType": "image/png",
+        "sha256": "a1d12c406da0959b087160329ac6225798b7eb457ed3c9d3cc82d8703ccfa3f9",
+        "rawBytes": 1831497,
+        "encodedBytes": 2442018,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/png",
+        "sha256": "4f029697cb6fedbe644a353602dd6f5980643968a5f7f2a7fd983c3cf6287f55",
+        "rawBytes": 1633929,
+        "encodedBytes": 2178594,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/png",
+        "sha256": "480f85eee8adede95f62924cd2c2c1aa4dd2782743814e8ee260d66c16855f7f",
+        "rawBytes": 629393,
+        "encodedBytes": 839214,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/png",
+        "sha256": "249bf73f682bfec6f406a8e55a45cbe1e42d43504a1aef9ab05dbdde5ad6c04d",
+        "rawBytes": 629387,
+        "encodedBytes": 839206,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/png",
+        "sha256": "752909552b3978d36034d651dbf917f896101acd0f56fbf336098248336b8619",
+        "rawBytes": 623073,
+        "encodedBytes": 830786,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/png",
+        "sha256": "5f626940ca33f833820f7045a95d6ea49d9ea5375f7682fd2835b32729eb097b",
+        "rawBytes": 617420,
+        "encodedBytes": 823250,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/png",
+        "sha256": "55df05f3354139b71bb3fd523f27a59cc743d5f6a4108a5aa5c6e010ee2c2ae6",
+        "rawBytes": 616949,
+        "encodedBytes": 822622,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/png",
+        "sha256": "827035111b704b117c06411d5ff76e74711cfd4282736ed0dbeda64f9b2eed2b",
+        "rawBytes": 553550,
+        "encodedBytes": 738090,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/jpeg",
+        "sha256": "c96797c666566091a0a0677522bbbaf9ba406195d5a2cde62e8a5675f54bd51b",
+        "rawBytes": 186108,
+        "encodedBytes": 248167,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/jpeg",
+        "sha256": "9262e64d9e3f1cdfb6a8f6d042f5971d3727f189bb2237091f7f438a9fe7d116",
+        "rawBytes": 162623,
+        "encodedBytes": 216855,
+        "targetCount": 1
+      }
+    ]
+  },
+  "htmlBytes": 10166338
+}

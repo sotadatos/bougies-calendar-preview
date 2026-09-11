@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "targetMonth": "2026-08",
+  "contentRevision": "d0d7657d040ad334c87865d93bd1ef3ff709d2d5b8759b76408268db9dafdbe3",
+  "outputs": {
+    "web": {
+      "path": "review/2026-08/v31/calendar.html",
+      "sha256": "b97f380293c7705ca47f76bae5e7a810cc8e3ab03fb75f6eced3327c9b3bb9f7"
+    },
+    "mobile": {
+      "path": "mobile/review/2026-08/mobile-v10-h5/calendar.html",
+      "sha256": "643aad9f27f52f07fe23f1a2fbb06e415f315f238af1dab494ee2f3fafa97368"
+    }
+  },
+  "frameworkRevision": "187fd7172f7ad465b3c5d36a6e3727ff01d5706b478b384268886a4790d6d776",
+  "approvedAssetLibraryRevision": "b56326dd84753d5825096a14605ae07bda03d54a80645513305083804cbd85a0",
+  "qa": {
+    "status": "pass",
+    "checks": [
+      "full integrated repository suite 496/496",
+      "Web Chromium decoded 15/15 reused inline targets, reported no promotion overflow, and exported 1800x1204 PNG and PDF",
+      "Web HTML reduced from 61261434 to 20577475 bytes (66.41%)",
+      "Mobile HTML reduced from 40935774 to 10166338 bytes (75.17%)",
+      "Mobile exact widths 320/375/390/430/480 have zero horizontal overflow, clipped elements, or bounds violations and resolve 36/36 image targets",
+      "Karaoke Tuesday renders Late Night Happy Hour after midnight on all four occurrences",
+      "All four Thursdays render the band first and DJ Edward at 11:30 PM in Living Room second",
+      "August 22 renders Private Buyout at 8 PM before DJ ICUE at 10:30 PM",
+      "Web venue badges are restored and Wednesday DJ Edward & Friends remains semantic-only",
+      "Tuesday, Wednesday, Sunday, Tito’s, August 7, The Lufts, Home, archive, closures, and At-a-Glance behavior are preserved",
+      "No production/current, Wix, DNS, Airtable, Calendar publication, Slack, or merge action occurred"
+    ]
+  },
+  "timing": {
+    "fullTestSuiteMs": 2628.010208,
+    "webGenerationAndExportMs": 17000,
+    "mobileGenerationMs": 710,
+    "mobileFiveWidthQaMs": 8400
+  },
+  "runtime": {
+    "node": "v26.6.0",
+    "chrome": "153.0.8010.36",
+    "chromedriver": "153.0.8010.36",
+    "platform": "darwin",
+    "architecture": "arm64"
+  },
+  "reviewState": "needs-review",
+  "recordedAt": "2026-09-11T14:35:38.472Z",
+  "evidenceIdentity": "b4c422c44cf4b47b2f11681b1daab34d13f924711e000ef20f20f602650ff4cb",
+  "renderReviewRun": "b4c422c44cf4b47b2f11681b1daab34d13f924711e000ef20f20f602650ff4cb"
+}
