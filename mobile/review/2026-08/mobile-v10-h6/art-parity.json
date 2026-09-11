@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "contract": "post-v31-cross-surface-art-parity",
+  "targetMonth": "2026-08",
+  "contentRevision": "d0d7657d040ad334c87865d93bd1ef3ff709d2d5b8759b76408268db9dafdbe3",
+  "approvedAssetLibraryFileSha256": "dc17089c71791feea71d93ae68e2e2d1913952a9ffa7692e9499d9ef4812a5a5",
+  "reusableRules": [
+    "asset class owns the intended region aspect ratio and maximum upscale on each surface",
+    "the latest governed policy supersedes historical quality recovery when current fit or density fails",
+    "manual event-art placements cannot bypass a governed text-fallback disposition",
+    "canonical performer name remains visible unless the exact selected approved asset carries an approved matching self-identifying claim"
+  ],
+  "auditedIdentities": [
+    {
+      "identity": "Stereo Mix",
+      "web": {
+        "date": "2026-08-14",
+        "eventName": "Stereo Mix",
+        "linkedPerformer": "Stereo Mix",
+        "selectedAsset": "stereo-mix",
+        "surfaceDisposition": "RENDER_APPROVED_ASSET",
+        "selfIdentifyingClaim": null
+      },
+      "mobile": {
+        "date": "2026-08-14",
+        "eventName": "Stereo Mix",
+        "linkedPerformer": "Stereo Mix",
+        "selectedAsset": null,
+        "surfaceDisposition": "TEXT_FALLBACK_SOURCE_QUALITY_FAILURE",
+        "selfIdentifyingClaim": null
+      }
+    },
+    {
+      "identity": "Sunset Dreams",
+      "web": {
+        "date": "2026-08-21",
+        "eventName": "Sunset Dreams",
+        "linkedPerformer": "Sunset Dreams",
+        "selectedAsset": "sunset-dreams",
+        "surfaceDisposition": "RENDER_APPROVED_ASSET",
+        "selfIdentifyingClaim": null
+      },
+      "mobile": {
+        "date": "2026-08-21",
+        "eventName": "Sunset Dreams",
+        "linkedPerformer": "Sunset Dreams",
+        "selectedAsset": null,
+        "surfaceDisposition": "TEXT_FALLBACK_SOURCE_QUALITY_FAILURE",
+        "selfIdentifyingClaim": null
+      }
+    },
+    {
+      "identity": "The Lufts",
+      "web": {
+        "date": "2026-08-20",
+        "eventName": "The Lufts",
+        "linkedPerformer": "The Lufts",
+        "selectedAsset": "the-lufts",
+        "surfaceDisposition": "RENDER_APPROVED_ASSET",
+        "selfIdentifyingClaim": null
+      },
+      "mobile": {
+        "date": "2026-08-20",
+        "eventName": "The Lufts",
+        "linkedPerformer": "The Lufts",
+        "selectedAsset": null,
+        "surfaceDisposition": "TEXT_FALLBACK_SOURCE_QUALITY_FAILURE",
+        "selfIdentifyingClaim": null
+      }
+    },
+    {
+      "identity": "JEMM",
+      "web": {
+        "date": "2026-08-29",
+        "eventName": "JEMM",
+        "linkedPerformer": "JEMM",
+        "selectedAsset": "jemm",
+        "surfaceDisposition": "RENDER_APPROVED_ASSET",
+        "selfIdentifyingClaim": null
+      },
+      "mobile": {
+        "date": "2026-08-29",
+        "eventName": "JEMM",
+        "linkedPerformer": "JEMM",
+        "selectedAsset": null,
+        "surfaceDisposition": "TEXT_FALLBACK_SOURCE_QUALITY_FAILURE",
+        "selfIdentifyingClaim": null
+      }
+    },
+    {
+      "identity": "DJ ICUE",
+      "web": {
+        "date": "2026-08-22",
+        "eventName": "DJ ICUE",
+        "linkedPerformer": "DJ ICUE",
+        "selectedAsset": "dj-icue",
+        "surfaceDisposition": "RENDER_APPROVED_ASSET",
+        "selfIdentifyingClaim": null
+      },
+      "mobile": {
+        "date": "2026-08-22",
+        "eventName": "DJ ICUE",
+        "linkedPerformer": "DJ ICUE",
+        "selectedAsset": "dj-icue",
+        "surfaceDisposition": "RENDER_APPROVED_ASSET",
+        "selfIdentifyingClaim": null
+      }
+    },
+    {
+      "identity": "DJ DIAGA",
+      "web": {
+        "date": "2026-08-21",
+        "eventName": "DJ DIAGA",
+        "linkedPerformer": "DJ DIAGA",
+        "selectedAsset": null,
+        "surfaceDisposition": "TEXT_FALLBACK_NO_APPROVED_ART",
+        "selfIdentifyingClaim": null
+      },
+      "mobile": {
+        "date": "2026-08-21",
+        "eventName": "DJ DIAGA",
+        "linkedPerformer": "DJ DIAGA",
+        "selectedAsset": null,
+        "surfaceDisposition": "TEXT_FALLBACK_NO_APPROVED_ART",
+        "selfIdentifyingClaim": null
+      }
+    }
+  ],
+  "surfaceSummaries": {
+    "web": {
+      "ACCEPTABLE": 13,
+      "INTENTIONALLY TEXT ONLY": 1,
+      "NO APPROVED ART": 11,
+      "NO LINKED PERFORMER": 4
+    },
+    "mobile": {
+      "ACCEPTABLE": 5,
+      "INTENTIONALLY TEXT ONLY": 1,
+      "NO APPROVED ART": 11,
+      "NO LINKED PERFORMER": 4,
+      "SOURCE QUALITY FAILURE": 8
+    }
+  }
+}

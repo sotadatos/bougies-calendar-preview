@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "contract": "post-v31-august-september-presentation-diff",
+  "augustRegressionDataset": "d0d7657d040ad334c87865d93bd1ef3ff709d2d5b8759b76408268db9dafdbe3",
+  "septemberApprovedBaseline": {
+    "webArtifact": "review/2026-09/v12/calendar.html",
+    "webSha256": "5d0b7060f79b8b6115e5f26b53bffd406448bf0b730ec6674629e0e681020343",
+    "mobileArtifact": "mobile/review/2026-09/mobile-v10/calendar.html",
+    "mobileSha256": "a492c306ff36efd4e52b17bf39354c9fd72c0bdc231b9e03e5109810293ce52c"
+  },
+  "frameworkRevision": "d4d2eadf0e89c82c76b1611f1e901bc09ab9e554b472f15152c304985cdb9c8c",
+  "approvedAssetLibraryRevision": "b56326dd84753d5825096a14605ae07bda03d54a80645513305083804cbd85a0",
+  "allowedClassifications": [
+    "REUSABLE_FRAMEWORK",
+    "SURFACE_SPECIFIC_RULE",
+    "MONTH_SPECIFIC_OVERRIDE"
+  ],
+  "unexplainedDifferenceCount": 0,
+  "topics": [
+    {
+      "topic": "performer art selection",
+      "classification": "REUSABLE_FRAMEWORK",
+      "reason": "Both surfaces resolve the same approved library; quality ceilings produce explicit surface dispositions."
+    },
+    {
+      "topic": "art fit",
+      "classification": "REUSABLE_FRAMEWORK",
+      "reason": "Asset class owns fit, focal point, padding, region aspect ratio, crop limit, and upscale limit."
+    },
+    {
+      "topic": "performer-name suppression",
+      "classification": "REUSABLE_FRAMEWORK",
+      "reason": "Canonical text suppresses only for an exact selected asset with an approved matching self-identifying claim."
+    },
+    {
+      "topic": "venue-tag visibility",
+      "classification": "REUSABLE_FRAMEWORK",
+      "reason": "Recurring Wednesday/Sunday Living Room is semantic-only on Web; other customer-relevant venues remain visible."
+    },
+    {
+      "topic": "venue-tag placement",
+      "classification": "REUSABLE_FRAMEWORK",
+      "reason": "Visible Web venue tags default to bottom-left with validated semantic overrides only."
+    },
+    {
+      "topic": "recurring performer suppression",
+      "classification": "SURFACE_SPECIFIC_RULE",
+      "reason": "Web composition art may own repeated recurring identity; Mobile long-form cards retain explicit identity."
+    },
+    {
+      "topic": "special-event borders/accent",
+      "classification": "REUSABLE_FRAMEWORK",
+      "reason": "Web gold outline and Mobile special treatment share event-type and recurring-series semantics."
+    },
+    {
+      "topic": "promo grammar",
+      "classification": "SURFACE_SPECIFIC_RULE",
+      "reason": "Web uses weekday/cell footers; Mobile renders per-card context while preserving the same public promo facts."
+    },
+    {
+      "topic": "recurring time suppression",
+      "classification": "SURFACE_SPECIFIC_RULE",
+      "reason": "Web self-describing recurring art may own visible time; Mobile long-form cards retain it."
+    },
+    {
+      "topic": "multi-event layout",
+      "classification": "SURFACE_SPECIFIC_RULE",
+      "reason": "Web uses bounded stacked panels; Mobile uses chronological cards."
+    },
+    {
+      "topic": "background/overlay treatment",
+      "classification": "REUSABLE_FRAMEWORK",
+      "reason": "August inherits the latest approved warm September background and overlay profile."
+    },
+    {
+      "topic": "tag/badge styling",
+      "classification": "SURFACE_SPECIFIC_RULE",
+      "reason": "Web compact labels and Mobile chips are approved surface grammars with shared semantics."
+    },
+    {
+      "topic": "navigation/archive behavior",
+      "classification": "REUSABLE_FRAMEWORK",
+      "reason": "Both surfaces expose Home and exclude unapproved review artifacts from the customer archive."
+    }
+  ]
+}

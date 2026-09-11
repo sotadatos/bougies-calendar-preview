@@ -1,0 +1,621 @@
+{
+  "widths": [
+    320,
+    375,
+    390,
+    430,
+    480
+  ],
+  "results": [
+    {
+      "width": 320,
+      "sourceCount": 12,
+      "loadedSourceCount": 12,
+      "failedSourceCount": 0,
+      "targetCount": 32,
+      "resolvedTargetCount": 32,
+      "unresolvedTargetCount": 0,
+      "viewportWidth": 320,
+      "horizontalOverflow": 0,
+      "clippedCount": 0,
+      "boundsViolationCount": 0,
+      "measuredHeight": 7599,
+      "dateNavigation": {
+        "failures": [],
+        "linkCount": 26,
+        "minHeight": 45,
+        "minWidth": 45
+      },
+      "homeNavigation": {
+        "height": 36,
+        "href": "https://www.bougiesbar.com/",
+        "label": "Return to Bougies home",
+        "width": 52
+      },
+      "mobileV10Ux": {
+        "actualByDate": {
+          "2026-08-01": [
+            "Chronicles"
+          ],
+          "2026-08-02": [
+            "Whiskey Allstars"
+          ],
+          "2026-08-04": [
+            "Karaoke Tuesday"
+          ],
+          "2026-08-05": [
+            "Ladies Night"
+          ],
+          "2026-08-06": [
+            "Rhinestone Cowboys",
+            "DJ Edward"
+          ],
+          "2026-08-07": [
+            "Bougie Nights",
+            "Retro Sky"
+          ],
+          "2026-08-08": [
+            "Freestyle Party"
+          ],
+          "2026-08-09": [
+            "Whiskey Allstars"
+          ],
+          "2026-08-11": [
+            "Karaoke Tuesday"
+          ],
+          "2026-08-12": [
+            "Ladies Night"
+          ],
+          "2026-08-13": [
+            "KoolKidz",
+            "DJ Edward"
+          ],
+          "2026-08-14": [
+            "Stereo Mix"
+          ],
+          "2026-08-15": [
+            "Undercover"
+          ],
+          "2026-08-16": [
+            "Whiskey Allstars"
+          ],
+          "2026-08-18": [
+            "Karaoke Tuesday"
+          ],
+          "2026-08-19": [
+            "Ladies Night"
+          ],
+          "2026-08-20": [
+            "The Lufts",
+            "DJ Edward"
+          ],
+          "2026-08-21": [
+            "Sunset Dreams",
+            "DJ DIAGA"
+          ],
+          "2026-08-22": [
+            "Private Buyout",
+            "DJ ICUE"
+          ],
+          "2026-08-23": [
+            "Whiskey Allstars"
+          ],
+          "2026-08-25": [
+            "Karaoke Tuesday"
+          ],
+          "2026-08-26": [
+            "Ladies Night"
+          ],
+          "2026-08-27": [
+            "KoolKidz",
+            "DJ Edward"
+          ],
+          "2026-08-28": [
+            "Pump"
+          ],
+          "2026-08-29": [
+            "JEMM"
+          ],
+          "2026-08-30": [
+            "Whiskey Allstars"
+          ]
+        },
+        "eventCardCount": 33,
+        "hasHome": true,
+        "hasTitle": true,
+        "identityExactlyOnce": true,
+        "identityFirst": true,
+        "rowCount": 26
+      },
+      "screenshot": "output/mobile-calendar-prototypes/2026-08/mobile-v10/viewport-screenshots/320.png"
+    },
+    {
+      "width": 375,
+      "sourceCount": 12,
+      "loadedSourceCount": 12,
+      "failedSourceCount": 0,
+      "targetCount": 32,
+      "resolvedTargetCount": 32,
+      "unresolvedTargetCount": 0,
+      "viewportWidth": 375,
+      "horizontalOverflow": 0,
+      "clippedCount": 0,
+      "boundsViolationCount": 0,
+      "measuredHeight": 8236,
+      "dateNavigation": {
+        "failures": [],
+        "linkCount": 26,
+        "minHeight": 44,
+        "minWidth": 44
+      },
+      "homeNavigation": {
+        "height": 36,
+        "href": "https://www.bougiesbar.com/",
+        "label": "Return to Bougies home",
+        "width": 53
+      },
+      "mobileV10Ux": {
+        "actualByDate": {
+          "2026-08-01": [
+            "Chronicles"
+          ],
+          "2026-08-02": [
+            "Whiskey Allstars"
+          ],
+          "2026-08-04": [
+            "Karaoke Tuesday"
+          ],
+          "2026-08-05": [
+            "Ladies Night"
+          ],
+          "2026-08-06": [
+            "Rhinestone Cowboys",
+            "DJ Edward"
+          ],
+          "2026-08-07": [
+            "Bougie Nights",
+            "Retro Sky"
+          ],
+          "2026-08-08": [
+            "Freestyle Party"
+          ],
+          "2026-08-09": [
+            "Whiskey Allstars"
+          ],
+          "2026-08-11": [
+            "Karaoke Tuesday"
+          ],
+          "2026-08-12": [
+            "Ladies Night"
+          ],
+          "2026-08-13": [
+            "KoolKidz",
+            "DJ Edward"
+          ],
+          "2026-08-14": [
+            "Stereo Mix"
+          ],
+          "2026-08-15": [
+            "Undercover"
+          ],
+          "2026-08-16": [
+            "Whiskey Allstars"
+          ],
+          "2026-08-18": [
+            "Karaoke Tuesday"
+          ],
+          "2026-08-19": [
+            "Ladies Night"
+          ],
+          "2026-08-20": [
+            "The Lufts",
+            "DJ Edward"
+          ],
+          "2026-08-21": [
+            "Sunset Dreams",
+            "DJ DIAGA"
+          ],
+          "2026-08-22": [
+            "Private Buyout",
+            "DJ ICUE"
+          ],
+          "2026-08-23": [
+            "Whiskey Allstars"
+          ],
+          "2026-08-25": [
+            "Karaoke Tuesday"
+          ],
+          "2026-08-26": [
+            "Ladies Night"
+          ],
+          "2026-08-27": [
+            "KoolKidz",
+            "DJ Edward"
+          ],
+          "2026-08-28": [
+            "Pump"
+          ],
+          "2026-08-29": [
+            "JEMM"
+          ],
+          "2026-08-30": [
+            "Whiskey Allstars"
+          ]
+        },
+        "eventCardCount": 33,
+        "hasHome": true,
+        "hasTitle": true,
+        "identityExactlyOnce": true,
+        "identityFirst": true,
+        "rowCount": 26
+      },
+      "screenshot": "output/mobile-calendar-prototypes/2026-08/mobile-v10/viewport-screenshots/375.png"
+    },
+    {
+      "width": 390,
+      "sourceCount": 12,
+      "loadedSourceCount": 12,
+      "failedSourceCount": 0,
+      "targetCount": 32,
+      "resolvedTargetCount": 32,
+      "unresolvedTargetCount": 0,
+      "viewportWidth": 390,
+      "horizontalOverflow": 0,
+      "clippedCount": 0,
+      "boundsViolationCount": 0,
+      "measuredHeight": 8503,
+      "dateNavigation": {
+        "failures": [],
+        "linkCount": 26,
+        "minHeight": 46,
+        "minWidth": 46
+      },
+      "homeNavigation": {
+        "height": 36,
+        "href": "https://www.bougiesbar.com/",
+        "label": "Return to Bougies home",
+        "width": 54
+      },
+      "mobileV10Ux": {
+        "actualByDate": {
+          "2026-08-01": [
+            "Chronicles"
+          ],
+          "2026-08-02": [
+            "Whiskey Allstars"
+          ],
+          "2026-08-04": [
+            "Karaoke Tuesday"
+          ],
+          "2026-08-05": [
+            "Ladies Night"
+          ],
+          "2026-08-06": [
+            "Rhinestone Cowboys",
+            "DJ Edward"
+          ],
+          "2026-08-07": [
+            "Bougie Nights",
+            "Retro Sky"
+          ],
+          "2026-08-08": [
+            "Freestyle Party"
+          ],
+          "2026-08-09": [
+            "Whiskey Allstars"
+          ],
+          "2026-08-11": [
+            "Karaoke Tuesday"
+          ],
+          "2026-08-12": [
+            "Ladies Night"
+          ],
+          "2026-08-13": [
+            "KoolKidz",
+            "DJ Edward"
+          ],
+          "2026-08-14": [
+            "Stereo Mix"
+          ],
+          "2026-08-15": [
+            "Undercover"
+          ],
+          "2026-08-16": [
+            "Whiskey Allstars"
+          ],
+          "2026-08-18": [
+            "Karaoke Tuesday"
+          ],
+          "2026-08-19": [
+            "Ladies Night"
+          ],
+          "2026-08-20": [
+            "The Lufts",
+            "DJ Edward"
+          ],
+          "2026-08-21": [
+            "Sunset Dreams",
+            "DJ DIAGA"
+          ],
+          "2026-08-22": [
+            "Private Buyout",
+            "DJ ICUE"
+          ],
+          "2026-08-23": [
+            "Whiskey Allstars"
+          ],
+          "2026-08-25": [
+            "Karaoke Tuesday"
+          ],
+          "2026-08-26": [
+            "Ladies Night"
+          ],
+          "2026-08-27": [
+            "KoolKidz",
+            "DJ Edward"
+          ],
+          "2026-08-28": [
+            "Pump"
+          ],
+          "2026-08-29": [
+            "JEMM"
+          ],
+          "2026-08-30": [
+            "Whiskey Allstars"
+          ]
+        },
+        "eventCardCount": 33,
+        "hasHome": true,
+        "hasTitle": true,
+        "identityExactlyOnce": true,
+        "identityFirst": true,
+        "rowCount": 26
+      },
+      "screenshot": "output/mobile-calendar-prototypes/2026-08/mobile-v10/viewport-screenshots/390.png"
+    },
+    {
+      "width": 430,
+      "sourceCount": 12,
+      "loadedSourceCount": 12,
+      "failedSourceCount": 0,
+      "targetCount": 32,
+      "resolvedTargetCount": 32,
+      "unresolvedTargetCount": 0,
+      "viewportWidth": 430,
+      "horizontalOverflow": 0,
+      "clippedCount": 0,
+      "boundsViolationCount": 0,
+      "measuredHeight": 9215,
+      "dateNavigation": {
+        "failures": [],
+        "linkCount": 26,
+        "minHeight": 51,
+        "minWidth": 51
+      },
+      "homeNavigation": {
+        "height": 36,
+        "href": "https://www.bougiesbar.com/",
+        "label": "Return to Bougies home",
+        "width": 57
+      },
+      "mobileV10Ux": {
+        "actualByDate": {
+          "2026-08-01": [
+            "Chronicles"
+          ],
+          "2026-08-02": [
+            "Whiskey Allstars"
+          ],
+          "2026-08-04": [
+            "Karaoke Tuesday"
+          ],
+          "2026-08-05": [
+            "Ladies Night"
+          ],
+          "2026-08-06": [
+            "Rhinestone Cowboys",
+            "DJ Edward"
+          ],
+          "2026-08-07": [
+            "Bougie Nights",
+            "Retro Sky"
+          ],
+          "2026-08-08": [
+            "Freestyle Party"
+          ],
+          "2026-08-09": [
+            "Whiskey Allstars"
+          ],
+          "2026-08-11": [
+            "Karaoke Tuesday"
+          ],
+          "2026-08-12": [
+            "Ladies Night"
+          ],
+          "2026-08-13": [
+            "KoolKidz",
+            "DJ Edward"
+          ],
+          "2026-08-14": [
+            "Stereo Mix"
+          ],
+          "2026-08-15": [
+            "Undercover"
+          ],
+          "2026-08-16": [
+            "Whiskey Allstars"
+          ],
+          "2026-08-18": [
+            "Karaoke Tuesday"
+          ],
+          "2026-08-19": [
+            "Ladies Night"
+          ],
+          "2026-08-20": [
+            "The Lufts",
+            "DJ Edward"
+          ],
+          "2026-08-21": [
+            "Sunset Dreams",
+            "DJ DIAGA"
+          ],
+          "2026-08-22": [
+            "Private Buyout",
+            "DJ ICUE"
+          ],
+          "2026-08-23": [
+            "Whiskey Allstars"
+          ],
+          "2026-08-25": [
+            "Karaoke Tuesday"
+          ],
+          "2026-08-26": [
+            "Ladies Night"
+          ],
+          "2026-08-27": [
+            "KoolKidz",
+            "DJ Edward"
+          ],
+          "2026-08-28": [
+            "Pump"
+          ],
+          "2026-08-29": [
+            "JEMM"
+          ],
+          "2026-08-30": [
+            "Whiskey Allstars"
+          ]
+        },
+        "eventCardCount": 33,
+        "hasHome": true,
+        "hasTitle": true,
+        "identityExactlyOnce": true,
+        "identityFirst": true,
+        "rowCount": 26
+      },
+      "screenshot": "output/mobile-calendar-prototypes/2026-08/mobile-v10/viewport-screenshots/430.png"
+    },
+    {
+      "width": 480,
+      "sourceCount": 12,
+      "loadedSourceCount": 12,
+      "failedSourceCount": 0,
+      "targetCount": 32,
+      "resolvedTargetCount": 32,
+      "unresolvedTargetCount": 0,
+      "viewportWidth": 480,
+      "horizontalOverflow": 0,
+      "clippedCount": 0,
+      "boundsViolationCount": 0,
+      "measuredHeight": 10041,
+      "dateNavigation": {
+        "failures": [],
+        "linkCount": 26,
+        "minHeight": 57,
+        "minWidth": 57
+      },
+      "homeNavigation": {
+        "height": 36,
+        "href": "https://www.bougiesbar.com/",
+        "label": "Return to Bougies home",
+        "width": 59
+      },
+      "mobileV10Ux": {
+        "actualByDate": {
+          "2026-08-01": [
+            "Chronicles"
+          ],
+          "2026-08-02": [
+            "Whiskey Allstars"
+          ],
+          "2026-08-04": [
+            "Karaoke Tuesday"
+          ],
+          "2026-08-05": [
+            "Ladies Night"
+          ],
+          "2026-08-06": [
+            "Rhinestone Cowboys",
+            "DJ Edward"
+          ],
+          "2026-08-07": [
+            "Bougie Nights",
+            "Retro Sky"
+          ],
+          "2026-08-08": [
+            "Freestyle Party"
+          ],
+          "2026-08-09": [
+            "Whiskey Allstars"
+          ],
+          "2026-08-11": [
+            "Karaoke Tuesday"
+          ],
+          "2026-08-12": [
+            "Ladies Night"
+          ],
+          "2026-08-13": [
+            "KoolKidz",
+            "DJ Edward"
+          ],
+          "2026-08-14": [
+            "Stereo Mix"
+          ],
+          "2026-08-15": [
+            "Undercover"
+          ],
+          "2026-08-16": [
+            "Whiskey Allstars"
+          ],
+          "2026-08-18": [
+            "Karaoke Tuesday"
+          ],
+          "2026-08-19": [
+            "Ladies Night"
+          ],
+          "2026-08-20": [
+            "The Lufts",
+            "DJ Edward"
+          ],
+          "2026-08-21": [
+            "Sunset Dreams",
+            "DJ DIAGA"
+          ],
+          "2026-08-22": [
+            "Private Buyout",
+            "DJ ICUE"
+          ],
+          "2026-08-23": [
+            "Whiskey Allstars"
+          ],
+          "2026-08-25": [
+            "Karaoke Tuesday"
+          ],
+          "2026-08-26": [
+            "Ladies Night"
+          ],
+          "2026-08-27": [
+            "KoolKidz",
+            "DJ Edward"
+          ],
+          "2026-08-28": [
+            "Pump"
+          ],
+          "2026-08-29": [
+            "JEMM"
+          ],
+          "2026-08-30": [
+            "Whiskey Allstars"
+          ]
+        },
+        "eventCardCount": 33,
+        "hasHome": true,
+        "hasTitle": true,
+        "identityExactlyOnce": true,
+        "identityFirst": true,
+        "rowCount": 26
+      },
+      "screenshot": "output/mobile-calendar-prototypes/2026-08/mobile-v10/viewport-screenshots/480.png"
+    }
+  ]
+}

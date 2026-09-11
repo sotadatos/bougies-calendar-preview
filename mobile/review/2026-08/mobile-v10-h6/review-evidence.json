@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "targetMonth": "2026-08",
+  "contentRevision": "d0d7657d040ad334c87865d93bd1ef3ff709d2d5b8759b76408268db9dafdbe3",
+  "outputs": {
+    "web": {
+      "path": "review/2026-08/v32/calendar.html",
+      "sha256": "01d774723af7e942cfd2f72e47d6473c044b4707e0f3d1041891f2379780fe2f"
+    },
+    "mobile": {
+      "path": "mobile/review/2026-08/mobile-v10-h6/calendar.html",
+      "sha256": "a5a11a72cb0b9e935cb15c15d8a54bcf8d2fd68c8ca285d5df22f5814cc2c577"
+    }
+  },
+  "frameworkRevision": "d4d2eadf0e89c82c76b1611f1e901bc09ab9e554b472f15152c304985cdb9c8c",
+  "approvedAssetLibraryRevision": "b56326dd84753d5825096a14605ae07bda03d54a80645513305083804cbd85a0",
+  "qa": {
+    "status": "pass",
+    "checks": [
+      "full integrated repository suite 505/505",
+      "Web Chromium decoded 15/15 reused inline targets, reported no promotion overflow, and exported 1800x1204 PNG and PDF",
+      "Web v32 HTML is 20658941 bytes, 81466 bytes (0.40%) above v31 and within the performance-regression tolerance",
+      "Mobile h6 HTML is 10143538 bytes, 22800 bytes (0.22%) below h5",
+      "Mobile exact widths 320/375/390/430/480 have zero horizontal overflow, clipping, or bounds violations; 32/32 image targets resolve and 26 direct date targets remain usable",
+      "all 29 canonical events plus four Mobile companion occurrences have an event-level Web/Mobile audit with zero unexplained discrepancies",
+      "JEMM and The Lufts retain visible canonical identity text because their exact assets have no approved self-identifying claim",
+      "Wednesday and Sunday Living Room tags are semantic-only on Web while canonical venue data remains intact",
+      "remaining Web venue tags use the bottom-left reusable default",
+      "Bougie Nights and Private Buyout receive the semantic yellow/gold Web special accent shared with Mobile special classification",
+      "DJ ICUE renders exact approved art on both surfaces; DJ DIAGA uses the documented named text fallback on both",
+      "Tito’s Promo and its 9:30–11:30 PM time render on Mobile",
+      "No production/current, Wix, DNS, Airtable, Calendar publication, Slack, or merge action occurred"
+    ]
+  },
+  "timing": {
+    "fullTestSuiteMs": 2483.68975,
+    "webGenerationAndExportMs": 20300,
+    "mobileGenerationMs": 900,
+    "mobileFiveWidthQaMs": 10600
+  },
+  "runtime": {
+    "node": "v26.6.0",
+    "chrome": "153.0.8010.36",
+    "chromedriver": "153.0.8010.36",
+    "platform": "darwin",
+    "architecture": "arm64"
+  },
+  "reviewState": "needs-review",
+  "recordedAt": "2026-09-11T20:15:17.000Z",
+  "evidenceIdentity": "b223384dbdd3e065937c4199016f3a5103fb71e531486ed02c6e4f449bfe4428",
+  "renderReviewRun": "b223384dbdd3e065937c4199016f3a5103fb71e531486ed02c6e4f449bfe4428"
+}

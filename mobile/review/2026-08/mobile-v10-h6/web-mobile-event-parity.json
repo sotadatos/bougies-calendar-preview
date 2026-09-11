@@ -1,0 +1,1932 @@
+{
+  "schemaVersion": 1,
+  "contract": "post-v31-web-mobile-event-parity",
+  "targetMonth": "2026-08",
+  "contentRevision": "d0d7657d040ad334c87865d93bd1ef3ff709d2d5b8759b76408268db9dafdbe3",
+  "frameworkRevision": "d4d2eadf0e89c82c76b1611f1e901bc09ab9e554b472f15152c304985cdb9c8c",
+  "approvedAssetLibraryRevision": "b56326dd84753d5825096a14605ae07bda03d54a80645513305083804cbd85a0",
+  "comparisonFields": [
+    "performer",
+    "performer art selection",
+    "visible performer identity",
+    "venue",
+    "time",
+    "special classification",
+    "promo semantics"
+  ],
+  "explicitSurfaceContracts": {
+    "performerArtDensityFallback": "SURFACE_SPECIFIC_RULE",
+    "recurringWebCompositionVsMobileLongForm": "SURFACE_SPECIFIC_RULE",
+    "webRecurringVenueSuppressionVsMobileVenueChip": "SURFACE_SPECIFIC_RULE",
+    "mobileCompanionProgramming": "SURFACE_SPECIFIC_RULE"
+  },
+  "summary": {
+    "canonicalEventCount": 29,
+    "companionEventCount": 4,
+    "unexplainedDiscrepancyCount": 0
+  },
+  "identityProof": [
+    {
+      "identity": "JEMM",
+      "date": "2026-08-29",
+      "web": {
+        "method": "CANONICAL_TEXT",
+        "publicName": "JEMM",
+        "exactAssetClaim": null
+      },
+      "mobile": {
+        "method": "CANONICAL_TEXT",
+        "publicName": "JEMM",
+        "exactAssetClaim": null
+      }
+    },
+    {
+      "identity": "The Lufts",
+      "date": "2026-08-20",
+      "web": {
+        "method": "CANONICAL_TEXT",
+        "publicName": "The Lufts",
+        "exactAssetClaim": null
+      },
+      "mobile": {
+        "method": "CANONICAL_TEXT",
+        "publicName": "The Lufts",
+        "exactAssetClaim": null
+      }
+    },
+    {
+      "identity": "DJ ICUE",
+      "date": "2026-08-22",
+      "web": {
+        "method": "CANONICAL_TEXT",
+        "publicName": "DJ ICUE",
+        "exactAssetClaim": null
+      },
+      "mobile": {
+        "method": "CANONICAL_TEXT",
+        "publicName": "DJ ICUE",
+        "exactAssetClaim": null
+      }
+    },
+    {
+      "identity": "DJ DIAGA",
+      "date": "2026-08-21",
+      "web": {
+        "method": "CANONICAL_TEXT",
+        "publicName": "DJ DIAGA",
+        "exactAssetClaim": null
+      },
+      "mobile": {
+        "method": "CANONICAL_TEXT",
+        "publicName": "DJ DIAGA",
+        "exactAssetClaim": null
+      }
+    }
+  ],
+  "events": [
+    {
+      "date": "2026-08-01",
+      "eventName": "Chronicles",
+      "performer": "Chronicles",
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": "chronicles-v2",
+          "finalArtworkAsset": "chronicles-v2.jpg",
+          "disposition": "RENDER_APPROVED_ASSET",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": "chronicles-v2",
+          "finalArtworkAsset": "chronicles-v2.jpg",
+          "disposition": "RENDER_APPROVED_ASSET",
+          "rendered": true
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Chronicles",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Chronicles",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Living Room",
+        "webPresentation": "VISIBLE_WHEN_CUSTOMER_RELEVANT",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "10 PM",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [],
+        "mobile": []
+      },
+      "differences": []
+    },
+    {
+      "date": "2026-08-02",
+      "eventName": "Whiskey Allstars",
+      "performer": "Whiskey Allstars",
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": "sunday-v1-whiskey-allstars.png",
+          "disposition": "TEXT_FALLBACK_NO_APPROVED_ART",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": null,
+          "disposition": "TEXT_FALLBACK_NO_APPROVED_ART",
+          "rendered": false
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "APPROVED_RECURRING_OR_EVENT_IDENTITY",
+          "publicName": "Whiskey Allstars",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Whiskey Allstars",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Living Room",
+        "webPresentation": "SEMANTIC_ONLY",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "6ish",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [
+          "in-da-biz-sundays"
+        ],
+        "mobile": [
+          "in-da-biz-sundays"
+        ]
+      },
+      "differences": [
+        {
+          "field": "finalArtworkPlacement",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web uses the approved recurring vertical composition while Mobile uses its approved weekday identity block."
+        },
+        {
+          "field": "venuePresentation",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web recurring Wednesday/Sunday compositions retain semantic venue data but suppress the visible Living Room tag; Mobile keeps the venue chip."
+        },
+        {
+          "field": "recurringDetailPresentation",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web recurring composition artwork owns repeated visible title/time detail; Mobile long-form cards render canonical detail."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "eventName": "Karaoke Tuesday",
+      "performer": null,
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": "tuesday-v2-karaoke-self-describing.png",
+          "disposition": "TEXT_FALLBACK_NO_LINKED_PERFORMER",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": null,
+          "disposition": "TEXT_FALLBACK_NO_LINKED_PERFORMER",
+          "rendered": false
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "APPROVED_RECURRING_OR_EVENT_IDENTITY",
+          "publicName": "Karaoke Tuesday",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Karaoke Tuesday",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Living Room",
+        "webPresentation": "VISIBLE_WHEN_CUSTOMER_RELEVANT",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "10 PM",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [
+          "late-night-hh"
+        ],
+        "mobile": [
+          "late-night-hh"
+        ]
+      },
+      "differences": [
+        {
+          "field": "finalArtworkPlacement",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web uses the approved recurring vertical composition while Mobile uses its approved weekday identity block."
+        },
+        {
+          "field": "recurringDetailPresentation",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web recurring composition artwork owns repeated visible title/time detail; Mobile long-form cards render canonical detail."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-05",
+      "eventName": "Ladies Night",
+      "performer": "DJ Edward",
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": "wednesday-v1-ladies-night.png",
+          "disposition": "TEXT_FALLBACK_NO_APPROVED_ART",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": null,
+          "disposition": "TEXT_FALLBACK_NO_APPROVED_ART",
+          "rendered": false
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "APPROVED_RECURRING_OR_EVENT_IDENTITY",
+          "publicName": "Ladies Night",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Ladies Night",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Living Room",
+        "webPresentation": "SEMANTIC_ONLY",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "10 PM–2 AM",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [
+          "ladies-drink-free"
+        ],
+        "mobile": [
+          "ladies-drink-free"
+        ]
+      },
+      "differences": [
+        {
+          "field": "finalArtworkPlacement",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web uses the approved recurring vertical composition while Mobile uses its approved weekday identity block."
+        },
+        {
+          "field": "venuePresentation",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web recurring Wednesday/Sunday compositions retain semantic venue data but suppress the visible Living Room tag; Mobile keeps the venue chip."
+        },
+        {
+          "field": "recurringDetailPresentation",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web recurring composition artwork owns repeated visible title/time detail; Mobile long-form cards render canonical detail."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-06",
+      "eventName": "Rhinestone Cowboys",
+      "performer": "Rhinestone Cowboys",
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": "rhinestone-cowboys",
+          "finalArtworkAsset": "thursday-v1-rhinestone-cowboys.png",
+          "disposition": "RENDER_APPROVED_ASSET",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": "rhinestone-cowboys",
+          "finalArtworkAsset": "thursday-v1-rhinestone-cowboys.png",
+          "disposition": "RENDER_APPROVED_ASSET",
+          "rendered": true
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Rhinestone Cowboys",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Rhinestone Cowboys",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Living Room",
+        "webPresentation": "VISIBLE_WHEN_CUSTOMER_RELEVANT",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "8 PM",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [
+          "late-night-hh"
+        ],
+        "mobile": [
+          "late-night-hh"
+        ]
+      },
+      "differences": []
+    },
+    {
+      "date": "2026-08-07",
+      "eventName": "Bougie Nights",
+      "performer": "DJ Alex",
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": "bougie-nights",
+          "finalArtworkAsset": "friday-v2-bougie-nights.png",
+          "disposition": "RENDER_APPROVED_ASSET",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": "bougie-nights",
+          "finalArtworkAsset": "friday-v2-bougie-nights.png",
+          "disposition": "RENDER_APPROVED_ASSET",
+          "rendered": true
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Bougie Nights",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Bougie Nights",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Backyard",
+        "webPresentation": "VISIBLE_WHEN_CUSTOMER_RELEVANT",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "8 PM",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": true,
+        "mobile": true
+      },
+      "promotionSemantics": {
+        "web": [],
+        "mobile": []
+      },
+      "differences": []
+    },
+    {
+      "date": "2026-08-07",
+      "eventName": "Retro Sky",
+      "performer": "Retro Sky",
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": "retro-sky-v2",
+          "finalArtworkAsset": "retro-sky-v2.jpg",
+          "disposition": "RENDER_APPROVED_ASSET",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": "retro-sky-v2",
+          "finalArtworkAsset": "retro-sky-v2.jpg",
+          "disposition": "RENDER_APPROVED_ASSET",
+          "rendered": true
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Retro Sky",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Retro Sky",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Living Room",
+        "webPresentation": "VISIBLE_WHEN_CUSTOMER_RELEVANT",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "10 PM",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [],
+        "mobile": []
+      },
+      "differences": []
+    },
+    {
+      "date": "2026-08-08",
+      "eventName": "Freestyle Party",
+      "performer": "DJ Edward",
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": "prototype-special-cell.svg",
+          "disposition": "TEXT_FALLBACK_NO_APPROVED_ART",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": "prototype-special-cell.svg",
+          "disposition": "TEXT_FALLBACK_NO_APPROVED_ART",
+          "rendered": true
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Freestyle Party",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Freestyle Party",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Living Room",
+        "webPresentation": "VISIBLE_WHEN_CUSTOMER_RELEVANT",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "10 PM",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [],
+        "mobile": []
+      },
+      "differences": []
+    },
+    {
+      "date": "2026-08-09",
+      "eventName": "Whiskey Allstars",
+      "performer": "Whiskey Allstars",
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": "sunday-v1-whiskey-allstars.png",
+          "disposition": "TEXT_FALLBACK_NO_APPROVED_ART",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": null,
+          "disposition": "TEXT_FALLBACK_NO_APPROVED_ART",
+          "rendered": false
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "APPROVED_RECURRING_OR_EVENT_IDENTITY",
+          "publicName": "Whiskey Allstars",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Whiskey Allstars",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Living Room",
+        "webPresentation": "SEMANTIC_ONLY",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "6ish",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [
+          "in-da-biz-sundays"
+        ],
+        "mobile": [
+          "in-da-biz-sundays"
+        ]
+      },
+      "differences": [
+        {
+          "field": "finalArtworkPlacement",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web uses the approved recurring vertical composition while Mobile uses its approved weekday identity block."
+        },
+        {
+          "field": "venuePresentation",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web recurring Wednesday/Sunday compositions retain semantic venue data but suppress the visible Living Room tag; Mobile keeps the venue chip."
+        },
+        {
+          "field": "recurringDetailPresentation",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web recurring composition artwork owns repeated visible title/time detail; Mobile long-form cards render canonical detail."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-11",
+      "eventName": "Karaoke Tuesday",
+      "performer": null,
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": "tuesday-v2-karaoke-self-describing.png",
+          "disposition": "TEXT_FALLBACK_NO_LINKED_PERFORMER",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": null,
+          "disposition": "TEXT_FALLBACK_NO_LINKED_PERFORMER",
+          "rendered": false
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "APPROVED_RECURRING_OR_EVENT_IDENTITY",
+          "publicName": "Karaoke Tuesday",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Karaoke Tuesday",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Living Room",
+        "webPresentation": "VISIBLE_WHEN_CUSTOMER_RELEVANT",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "10 PM",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [
+          "late-night-hh"
+        ],
+        "mobile": [
+          "late-night-hh"
+        ]
+      },
+      "differences": [
+        {
+          "field": "finalArtworkPlacement",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web uses the approved recurring vertical composition while Mobile uses its approved weekday identity block."
+        },
+        {
+          "field": "recurringDetailPresentation",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web recurring composition artwork owns repeated visible title/time detail; Mobile long-form cards render canonical detail."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-12",
+      "eventName": "Ladies Night",
+      "performer": "DJ Edward",
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": "wednesday-v1-ladies-night.png",
+          "disposition": "TEXT_FALLBACK_NO_APPROVED_ART",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": null,
+          "disposition": "TEXT_FALLBACK_NO_APPROVED_ART",
+          "rendered": false
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "APPROVED_RECURRING_OR_EVENT_IDENTITY",
+          "publicName": "Ladies Night",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Ladies Night",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Living Room",
+        "webPresentation": "SEMANTIC_ONLY",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "10 PM–2 AM",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [
+          "ladies-drink-free"
+        ],
+        "mobile": [
+          "ladies-drink-free"
+        ]
+      },
+      "differences": [
+        {
+          "field": "finalArtworkPlacement",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web uses the approved recurring vertical composition while Mobile uses its approved weekday identity block."
+        },
+        {
+          "field": "venuePresentation",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web recurring Wednesday/Sunday compositions retain semantic venue data but suppress the visible Living Room tag; Mobile keeps the venue chip."
+        },
+        {
+          "field": "recurringDetailPresentation",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web recurring composition artwork owns repeated visible title/time detail; Mobile long-form cards render canonical detail."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-13",
+      "eventName": "KoolKidz",
+      "performer": "KoolKidz",
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": "koolkidz",
+          "finalArtworkAsset": "koolkidz-v1.jpg",
+          "disposition": "RENDER_APPROVED_ASSET",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": null,
+          "disposition": "TEXT_FALLBACK_SOURCE_QUALITY_FAILURE",
+          "rendered": false
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "KoolKidz",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "KoolKidz",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Living Room",
+        "webPresentation": "VISIBLE_WHEN_CUSTOMER_RELEVANT",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "8 PM",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [
+          "late-night-hh"
+        ],
+        "mobile": [
+          "late-night-hh"
+        ]
+      },
+      "differences": [
+        {
+          "field": "performerArtSelection",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "The 150px approved source fits the smaller square Web region but exceeds Mobile's 1.25x upscale ceiling; Mobile renders the canonical named text fallback."
+        },
+        {
+          "field": "finalArtworkPlacement",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Mobile's larger art region fails the governed source-density/crop ceiling and uses named text."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-14",
+      "eventName": "Stereo Mix",
+      "performer": "Stereo Mix",
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": "stereo-mix",
+          "finalArtworkAsset": "stereo-mix-v1.jpg",
+          "disposition": "RENDER_APPROVED_ASSET",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": null,
+          "disposition": "TEXT_FALLBACK_SOURCE_QUALITY_FAILURE",
+          "rendered": false
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Stereo Mix",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Stereo Mix",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Living Room",
+        "webPresentation": "VISIBLE_WHEN_CUSTOMER_RELEVANT",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "10 PM",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [
+          "titos-promo-august-14"
+        ],
+        "mobile": [
+          "titos-promo-august-14"
+        ]
+      },
+      "differences": [
+        {
+          "field": "performerArtSelection",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "The 150px approved source fits the smaller square Web region but exceeds Mobile's 1.25x upscale ceiling; Mobile renders the canonical named text fallback."
+        },
+        {
+          "field": "finalArtworkPlacement",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Mobile's larger art region fails the governed source-density/crop ceiling and uses named text."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-15",
+      "eventName": "Undercover",
+      "performer": "Undercover",
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": "undercover",
+          "finalArtworkAsset": "undercover-v1.jpg",
+          "disposition": "RENDER_APPROVED_ASSET",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": null,
+          "disposition": "TEXT_FALLBACK_SOURCE_QUALITY_FAILURE",
+          "rendered": false
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Undercover",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Undercover",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Living Room",
+        "webPresentation": "VISIBLE_WHEN_CUSTOMER_RELEVANT",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "10 PM",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [],
+        "mobile": []
+      },
+      "differences": [
+        {
+          "field": "performerArtSelection",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "The 150px approved source fits the smaller square Web region but exceeds Mobile's 1.25x upscale ceiling; Mobile renders the canonical named text fallback."
+        },
+        {
+          "field": "finalArtworkPlacement",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Mobile's larger art region fails the governed source-density/crop ceiling and uses named text."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "eventName": "Whiskey Allstars",
+      "performer": "Whiskey Allstars",
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": "sunday-v1-whiskey-allstars.png",
+          "disposition": "TEXT_FALLBACK_NO_APPROVED_ART",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": null,
+          "disposition": "TEXT_FALLBACK_NO_APPROVED_ART",
+          "rendered": false
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "APPROVED_RECURRING_OR_EVENT_IDENTITY",
+          "publicName": "Whiskey Allstars",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Whiskey Allstars",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Living Room",
+        "webPresentation": "SEMANTIC_ONLY",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "6ish",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [
+          "in-da-biz-sundays"
+        ],
+        "mobile": [
+          "in-da-biz-sundays"
+        ]
+      },
+      "differences": [
+        {
+          "field": "finalArtworkPlacement",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web uses the approved recurring vertical composition while Mobile uses its approved weekday identity block."
+        },
+        {
+          "field": "venuePresentation",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web recurring Wednesday/Sunday compositions retain semantic venue data but suppress the visible Living Room tag; Mobile keeps the venue chip."
+        },
+        {
+          "field": "recurringDetailPresentation",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web recurring composition artwork owns repeated visible title/time detail; Mobile long-form cards render canonical detail."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-18",
+      "eventName": "Karaoke Tuesday",
+      "performer": null,
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": "tuesday-v2-karaoke-self-describing.png",
+          "disposition": "TEXT_FALLBACK_NO_LINKED_PERFORMER",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": null,
+          "disposition": "TEXT_FALLBACK_NO_LINKED_PERFORMER",
+          "rendered": false
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "APPROVED_RECURRING_OR_EVENT_IDENTITY",
+          "publicName": "Karaoke Tuesday",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Karaoke Tuesday",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Living Room",
+        "webPresentation": "VISIBLE_WHEN_CUSTOMER_RELEVANT",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "10 PM",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [
+          "late-night-hh"
+        ],
+        "mobile": [
+          "late-night-hh"
+        ]
+      },
+      "differences": [
+        {
+          "field": "finalArtworkPlacement",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web uses the approved recurring vertical composition while Mobile uses its approved weekday identity block."
+        },
+        {
+          "field": "recurringDetailPresentation",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web recurring composition artwork owns repeated visible title/time detail; Mobile long-form cards render canonical detail."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "eventName": "Ladies Night",
+      "performer": "DJ Edward",
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": "wednesday-v1-ladies-night.png",
+          "disposition": "TEXT_FALLBACK_NO_APPROVED_ART",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": null,
+          "disposition": "TEXT_FALLBACK_NO_APPROVED_ART",
+          "rendered": false
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "APPROVED_RECURRING_OR_EVENT_IDENTITY",
+          "publicName": "Ladies Night",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Ladies Night",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Living Room",
+        "webPresentation": "SEMANTIC_ONLY",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "10 PM–2 AM",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [
+          "ladies-drink-free"
+        ],
+        "mobile": [
+          "ladies-drink-free"
+        ]
+      },
+      "differences": [
+        {
+          "field": "finalArtworkPlacement",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web uses the approved recurring vertical composition while Mobile uses its approved weekday identity block."
+        },
+        {
+          "field": "venuePresentation",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web recurring Wednesday/Sunday compositions retain semantic venue data but suppress the visible Living Room tag; Mobile keeps the venue chip."
+        },
+        {
+          "field": "recurringDetailPresentation",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web recurring composition artwork owns repeated visible title/time detail; Mobile long-form cards render canonical detail."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-20",
+      "eventName": "The Lufts",
+      "performer": "The Lufts",
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": "the-lufts",
+          "finalArtworkAsset": "luftz-v1.jpg",
+          "disposition": "RENDER_APPROVED_ASSET",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": null,
+          "disposition": "TEXT_FALLBACK_SOURCE_QUALITY_FAILURE",
+          "rendered": false
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "The Lufts",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "The Lufts",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Living Room",
+        "webPresentation": "VISIBLE_WHEN_CUSTOMER_RELEVANT",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "8 PM",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [
+          "late-night-hh"
+        ],
+        "mobile": [
+          "late-night-hh"
+        ]
+      },
+      "differences": [
+        {
+          "field": "performerArtSelection",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "The 150px approved source fits the smaller square Web region but exceeds Mobile's 1.25x upscale ceiling; Mobile renders the canonical named text fallback."
+        },
+        {
+          "field": "finalArtworkPlacement",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Mobile's larger art region fails the governed source-density/crop ceiling and uses named text."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-21",
+      "eventName": "DJ DIAGA",
+      "performer": "DJ DIAGA",
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": null,
+          "disposition": "TEXT_FALLBACK_NO_APPROVED_ART",
+          "rendered": false
+        },
+        "mobile": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": null,
+          "disposition": "TEXT_FALLBACK_NO_APPROVED_ART",
+          "rendered": false
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "DJ DIAGA",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "DJ DIAGA",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Backyard",
+        "webPresentation": "VISIBLE_WHEN_CUSTOMER_RELEVANT",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "10:30 PM",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [],
+        "mobile": []
+      },
+      "differences": []
+    },
+    {
+      "date": "2026-08-21",
+      "eventName": "Sunset Dreams",
+      "performer": "Sunset Dreams",
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": "sunset-dreams",
+          "finalArtworkAsset": "sunset-dreams-v1.jpg",
+          "disposition": "RENDER_APPROVED_ASSET",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": null,
+          "disposition": "TEXT_FALLBACK_SOURCE_QUALITY_FAILURE",
+          "rendered": false
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Sunset Dreams",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Sunset Dreams",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Living Room",
+        "webPresentation": "VISIBLE_WHEN_CUSTOMER_RELEVANT",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "10 PM",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [],
+        "mobile": []
+      },
+      "differences": [
+        {
+          "field": "performerArtSelection",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "The 150px approved source fits the smaller square Web region but exceeds Mobile's 1.25x upscale ceiling; Mobile renders the canonical named text fallback."
+        },
+        {
+          "field": "finalArtworkPlacement",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Mobile's larger art region fails the governed source-density/crop ceiling and uses named text."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-22",
+      "eventName": "DJ ICUE",
+      "performer": "DJ ICUE",
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": "dj-icue",
+          "finalArtworkAsset": "dj-icue-v1.webp",
+          "disposition": "RENDER_APPROVED_ASSET",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": "dj-icue",
+          "finalArtworkAsset": "dj-icue-v1.webp",
+          "disposition": "RENDER_APPROVED_ASSET",
+          "rendered": true
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "DJ ICUE",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "DJ ICUE",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Backyard",
+        "webPresentation": "VISIBLE_WHEN_CUSTOMER_RELEVANT",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "10:30 PM",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [],
+        "mobile": []
+      },
+      "differences": []
+    },
+    {
+      "date": "2026-08-22",
+      "eventName": "Private Buyout",
+      "performer": null,
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": null,
+          "disposition": "TEXT_FALLBACK_INTENTIONALLY_TEXT_ONLY",
+          "rendered": false
+        },
+        "mobile": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": null,
+          "disposition": "TEXT_FALLBACK_INTENTIONALLY_TEXT_ONLY",
+          "rendered": false
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Private Buyout",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Private Buyout",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Living Room",
+        "webPresentation": "VISIBLE_WHEN_CUSTOMER_RELEVANT",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "8 PM",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": true,
+        "mobile": true
+      },
+      "promotionSemantics": {
+        "web": [],
+        "mobile": []
+      },
+      "differences": []
+    },
+    {
+      "date": "2026-08-23",
+      "eventName": "Whiskey Allstars",
+      "performer": "Whiskey Allstars",
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": "sunday-v1-whiskey-allstars.png",
+          "disposition": "TEXT_FALLBACK_NO_APPROVED_ART",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": null,
+          "disposition": "TEXT_FALLBACK_NO_APPROVED_ART",
+          "rendered": false
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "APPROVED_RECURRING_OR_EVENT_IDENTITY",
+          "publicName": "Whiskey Allstars",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Whiskey Allstars",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Living Room",
+        "webPresentation": "SEMANTIC_ONLY",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "6ish",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [
+          "in-da-biz-sundays"
+        ],
+        "mobile": [
+          "in-da-biz-sundays"
+        ]
+      },
+      "differences": [
+        {
+          "field": "finalArtworkPlacement",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web uses the approved recurring vertical composition while Mobile uses its approved weekday identity block."
+        },
+        {
+          "field": "venuePresentation",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web recurring Wednesday/Sunday compositions retain semantic venue data but suppress the visible Living Room tag; Mobile keeps the venue chip."
+        },
+        {
+          "field": "recurringDetailPresentation",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web recurring composition artwork owns repeated visible title/time detail; Mobile long-form cards render canonical detail."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-25",
+      "eventName": "Karaoke Tuesday",
+      "performer": null,
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": "tuesday-v2-karaoke-self-describing.png",
+          "disposition": "TEXT_FALLBACK_NO_LINKED_PERFORMER",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": null,
+          "disposition": "TEXT_FALLBACK_NO_LINKED_PERFORMER",
+          "rendered": false
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "APPROVED_RECURRING_OR_EVENT_IDENTITY",
+          "publicName": "Karaoke Tuesday",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Karaoke Tuesday",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Living Room",
+        "webPresentation": "VISIBLE_WHEN_CUSTOMER_RELEVANT",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "10 PM",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [
+          "late-night-hh"
+        ],
+        "mobile": [
+          "late-night-hh"
+        ]
+      },
+      "differences": [
+        {
+          "field": "finalArtworkPlacement",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web uses the approved recurring vertical composition while Mobile uses its approved weekday identity block."
+        },
+        {
+          "field": "recurringDetailPresentation",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web recurring composition artwork owns repeated visible title/time detail; Mobile long-form cards render canonical detail."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-26",
+      "eventName": "Ladies Night",
+      "performer": "DJ Edward",
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": "wednesday-v1-ladies-night.png",
+          "disposition": "TEXT_FALLBACK_NO_APPROVED_ART",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": null,
+          "disposition": "TEXT_FALLBACK_NO_APPROVED_ART",
+          "rendered": false
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "APPROVED_RECURRING_OR_EVENT_IDENTITY",
+          "publicName": "Ladies Night",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Ladies Night",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Living Room",
+        "webPresentation": "SEMANTIC_ONLY",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "10 PM–2 AM",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [
+          "ladies-drink-free"
+        ],
+        "mobile": [
+          "ladies-drink-free"
+        ]
+      },
+      "differences": [
+        {
+          "field": "finalArtworkPlacement",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web uses the approved recurring vertical composition while Mobile uses its approved weekday identity block."
+        },
+        {
+          "field": "venuePresentation",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web recurring Wednesday/Sunday compositions retain semantic venue data but suppress the visible Living Room tag; Mobile keeps the venue chip."
+        },
+        {
+          "field": "recurringDetailPresentation",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web recurring composition artwork owns repeated visible title/time detail; Mobile long-form cards render canonical detail."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-27",
+      "eventName": "KoolKidz",
+      "performer": "KoolKidz",
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": "koolkidz",
+          "finalArtworkAsset": "koolkidz-v1.jpg",
+          "disposition": "RENDER_APPROVED_ASSET",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": null,
+          "disposition": "TEXT_FALLBACK_SOURCE_QUALITY_FAILURE",
+          "rendered": false
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "KoolKidz",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "KoolKidz",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Living Room",
+        "webPresentation": "VISIBLE_WHEN_CUSTOMER_RELEVANT",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "8 PM",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [
+          "late-night-hh"
+        ],
+        "mobile": [
+          "late-night-hh"
+        ]
+      },
+      "differences": [
+        {
+          "field": "performerArtSelection",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "The 150px approved source fits the smaller square Web region but exceeds Mobile's 1.25x upscale ceiling; Mobile renders the canonical named text fallback."
+        },
+        {
+          "field": "finalArtworkPlacement",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Mobile's larger art region fails the governed source-density/crop ceiling and uses named text."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-28",
+      "eventName": "Pump",
+      "performer": "Pump",
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": "pump",
+          "finalArtworkAsset": "pump-v1.jpg",
+          "disposition": "RENDER_APPROVED_ASSET",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": null,
+          "disposition": "TEXT_FALLBACK_SOURCE_QUALITY_FAILURE",
+          "rendered": false
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Pump",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Pump",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Living Room",
+        "webPresentation": "VISIBLE_WHEN_CUSTOMER_RELEVANT",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "10 PM",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [],
+        "mobile": []
+      },
+      "differences": [
+        {
+          "field": "performerArtSelection",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "The 150px approved source fits the smaller square Web region but exceeds Mobile's 1.25x upscale ceiling; Mobile renders the canonical named text fallback."
+        },
+        {
+          "field": "finalArtworkPlacement",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Mobile's larger art region fails the governed source-density/crop ceiling and uses named text."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-29",
+      "eventName": "JEMM",
+      "performer": "JEMM",
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": "jemm",
+          "finalArtworkAsset": "jemm-v1.jpg",
+          "disposition": "RENDER_APPROVED_ASSET",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": null,
+          "disposition": "TEXT_FALLBACK_SOURCE_QUALITY_FAILURE",
+          "rendered": false
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "JEMM",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "JEMM",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Living Room",
+        "webPresentation": "VISIBLE_WHEN_CUSTOMER_RELEVANT",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "10 PM",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [],
+        "mobile": []
+      },
+      "differences": [
+        {
+          "field": "performerArtSelection",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "The 150px approved source fits the smaller square Web region but exceeds Mobile's 1.25x upscale ceiling; Mobile renders the canonical named text fallback."
+        },
+        {
+          "field": "finalArtworkPlacement",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Mobile's larger art region fails the governed source-density/crop ceiling and uses named text."
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "eventName": "Whiskey Allstars",
+      "performer": "Whiskey Allstars",
+      "performerArt": {
+        "web": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": "sunday-v1-whiskey-allstars.png",
+          "disposition": "TEXT_FALLBACK_NO_APPROVED_ART",
+          "rendered": true
+        },
+        "mobile": {
+          "approvedLibraryAsset": null,
+          "finalArtworkAsset": null,
+          "disposition": "TEXT_FALLBACK_NO_APPROVED_ART",
+          "rendered": false
+        }
+      },
+      "visiblePerformerIdentity": {
+        "web": {
+          "method": "APPROVED_RECURRING_OR_EVENT_IDENTITY",
+          "publicName": "Whiskey Allstars",
+          "exactAssetClaim": null
+        },
+        "mobile": {
+          "method": "CANONICAL_TEXT",
+          "publicName": "Whiskey Allstars",
+          "exactAssetClaim": null
+        }
+      },
+      "venue": {
+        "canonical": "Living Room",
+        "webPresentation": "SEMANTIC_ONLY",
+        "mobilePresentation": "VISIBLE_CHIP"
+      },
+      "time": {
+        "canonical": "6ish",
+        "web": "PRESERVED",
+        "mobile": "PRESERVED"
+      },
+      "specialClassification": {
+        "web": false,
+        "mobile": false
+      },
+      "promotionSemantics": {
+        "web": [
+          "in-da-biz-sundays"
+        ],
+        "mobile": [
+          "in-da-biz-sundays"
+        ]
+      },
+      "differences": [
+        {
+          "field": "finalArtworkPlacement",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web uses the approved recurring vertical composition while Mobile uses its approved weekday identity block."
+        },
+        {
+          "field": "venuePresentation",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web recurring Wednesday/Sunday compositions retain semantic venue data but suppress the visible Living Room tag; Mobile keeps the venue chip."
+        },
+        {
+          "field": "recurringDetailPresentation",
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "reason": "Web recurring composition artwork owns repeated visible title/time detail; Mobile long-form cards render canonical detail."
+        }
+      ]
+    }
+  ],
+  "surfaceOnlyCompanions": [
+    {
+      "date": "2026-08-06",
+      "eventName": "DJ Edward",
+      "performer": "DJ Edward",
+      "presentationRole": "late-night-companion",
+      "time": "11:30 PM",
+      "web": "SUPPRESSED",
+      "mobile": "VISIBLE_AFTER_PRIMARY_EVENT",
+      "classification": "SURFACE_SPECIFIC_RULE",
+      "reason": "The approved Web composition suppresses tactical companion programming; Mobile long-form chronology exposes it."
+    },
+    {
+      "date": "2026-08-13",
+      "eventName": "DJ Edward",
+      "performer": "DJ Edward",
+      "presentationRole": "late-night-companion",
+      "time": "11:30 PM",
+      "web": "SUPPRESSED",
+      "mobile": "VISIBLE_AFTER_PRIMARY_EVENT",
+      "classification": "SURFACE_SPECIFIC_RULE",
+      "reason": "The approved Web composition suppresses tactical companion programming; Mobile long-form chronology exposes it."
+    },
+    {
+      "date": "2026-08-20",
+      "eventName": "DJ Edward",
+      "performer": "DJ Edward",
+      "presentationRole": "late-night-companion",
+      "time": "11:30 PM",
+      "web": "SUPPRESSED",
+      "mobile": "VISIBLE_AFTER_PRIMARY_EVENT",
+      "classification": "SURFACE_SPECIFIC_RULE",
+      "reason": "The approved Web composition suppresses tactical companion programming; Mobile long-form chronology exposes it."
+    },
+    {
+      "date": "2026-08-27",
+      "eventName": "DJ Edward",
+      "performer": "DJ Edward",
+      "presentationRole": "late-night-companion",
+      "time": "11:30 PM",
+      "web": "SUPPRESSED",
+      "mobile": "VISIBLE_AFTER_PRIMARY_EVENT",
+      "classification": "SURFACE_SPECIFIC_RULE",
+      "reason": "The approved Web composition suppresses tactical companion programming; Mobile long-form chronology exposes it."
+    }
+  ]
+}

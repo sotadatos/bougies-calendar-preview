@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "issue": 129,
+  "scope": "post-v31-web-presentation-schema",
+  "classification": "REUSABLE_FRAMEWORK",
+  "reference": {
+    "artifact": "review/2026-09/v12/calendar.html",
+    "sha256": "5d0b7060f79b8b6115e5f26b53bffd406448bf0b730ec6674629e0e681020343",
+    "use": "Exact latest-approved September Web presentation evidence only; no September event facts or dates enter the reusable policy."
+  },
+  "approvedPresentationEvidence": {
+    "recurringWednesdayVisibleVenueNodes": 0,
+    "recurringSundayVisibleVenueNodes": 0,
+    "specialSingleCellBorder": "rgba(255, 234, 142, 0.98)",
+    "specialMultiEventPanelBorder": "rgba(255, 234, 142, 0.94)"
+  },
+  "deltas": [
+    {
+      "requirement": "recurring-venue-suppression",
+      "rule": "Recurring Wednesday and Sunday Living Room tags render semantic-only while canonical venueArea remains unchanged.",
+      "basis": "weekday plus recurringSeriesName",
+      "monthSpecificOverrides": 0
+    },
+    {
+      "requirement": "venue-tag-position",
+      "rule": "Visible venue tags inherit BOTTOM_LEFT; the reusable profile contains no placement override.",
+      "basis": "latest-approved Web venue policy",
+      "monthSpecificOverrides": 0
+    },
+    {
+      "requirement": "special-event-outline",
+      "rule": "Yellow/gold outline applies only when canonical eventType or an explicit reviewed semantic classification is Special Event.",
+      "basis": "semantic classification; display templates and dates cannot activate the accent",
+      "monthSpecificOverrides": 0
+    }
+  ],
+  "durableContracts": [
+    "config/presentation/web-layout-policy.json",
+    "calendar-renderer/web-layout-policy.mjs",
+    "calendar-renderer/templates/select-template.mjs",
+    "calendar-renderer/templates/cell-composer.mjs",
+    "calendar-renderer/components/month-grid.mjs",
+    "calendar-renderer/styles/calendar.css"
+  ],
+  "contractIdentities": [
+    {
+      "path": "config/presentation/web-layout-policy.json",
+      "sha256": "75603ae3343730098e537ca4ad6071a804f0c2f5ff3031bddf7d7debd1a68552"
+    },
+    {
+      "path": "calendar-renderer/web-layout-policy.mjs",
+      "sha256": "ed393ccc817854196318b2132590e11bae3705c8425c5036ea99b2b9aeea9a75"
+    },
+    {
+      "path": "calendar-renderer/styles/calendar.css",
+      "sha256": "73246e5b33b11695cefe22dc91611abe91dc63ccb514771523760d616c2e397e"
+    }
+  ],
+  "preserved": [
+    "performer-label suppression",
+    "promotion grammar",
+    "stacked and explicit multi-event composition",
+    "background treatment",
+    "customer navigation and archive behavior",
+    "canonical venue semantics"
+  ],
+  "focusedTests": [
+    "test/web-layout-policy.test.mjs",
+    "test/calendar-visual-polish.test.mjs",
+    "test/calendar-render-event-labels.test.mjs",
+    "test/multi-event-cell.test.mjs",
+    "test/event-presentation.test.mjs",
+    "test/presentation-framework-inheritance.test.mjs"
+  ]
+}
