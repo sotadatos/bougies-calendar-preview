@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "targetMonth": "2026-08",
+  "contentRevision": "d0d7657d040ad334c87865d93bd1ef3ff709d2d5b8759b76408268db9dafdbe3",
+  "outputs": {
+    "web": {
+      "path": "review/2026-08/v34/calendar.html",
+      "sha256": "fbf49405b443c8579709782a7fc4829290be358596ff1d997d79271adf3a35ca"
+    },
+    "mobile": {
+      "path": "mobile/review/2026-08/mobile-v10-h8/calendar.html",
+      "sha256": "f32c4ec692fd8ae3fa04983da37c52ea6d4c9641df0d89582c4bb3235847ea91"
+    }
+  },
+  "frameworkRevision": "fead6024d56cc5ff506767ca878aaa448ca2dfecd7d81db4d623b50bbb05e5d0",
+  "approvedAssetLibraryRevision": "454ed4f771515436529194a5a8075d6f03043c9d17df219d2c7e6cc74e940943",
+  "qa": {
+    "status": "pass",
+    "checks": [
+      "full integrated repository suite 509/509",
+      "fixed September Mobile-v1 regeneration passes the shared budget at 14,473,589 HTML bytes and 10,835,277 unique image bytes",
+      "normalized Web/Mobile presentation decision artifacts match exactly at a538765487dc83b143050318341b4bfc2190c6a4de585e2c6bcc64ef2ba95bdc",
+      "actual browser audit reconciles 33 Web and 33 Mobile event records with zero unexplained discrepancies",
+      "Mobile exact widths 320/375/390/430/480 remain bound to byte-identical HTML with zero horizontal overflow, clipping, or bounds violations; 19/19 sources and 40/40 targets resolve",
+      "Tito’s Promo and 9:30–11:30 PM render visibly at all five Mobile widths",
+      "KoolKidz, Stereo Mix, Undercover, The Lufts, Sunset Dreams, Pump, JEMM, and DJ ICUE artwork render visibly at all five Mobile widths",
+      "only the exact approved KoolKidz self-identifying asset suppresses performer text; The Lufts and JEMM stay visible",
+      "Web performance PASS at 20658753 HTML bytes and 15429913 unique image bytes with zero duplicate image bytes",
+      "Mobile performance PASS at 10198635 HTML bytes and 7581211 unique image bytes with zero duplicate image bytes",
+      "No production/current, Wix, DNS, Airtable, Calendar publication, Slack, merge, or label action occurred"
+    ]
+  },
+  "timing": {
+    "fullTestSuiteMs": 4000,
+    "webLoadWallMs": 282,
+    "mobileLoadWallMs": 173
+  },
+  "runtime": {
+    "node": "v26.6.0",
+    "chrome": "153.0.8010.36",
+    "browserDriver": "Playwright with system Chrome",
+    "platform": "darwin",
+    "architecture": "arm64"
+  },
+  "reviewState": "needs-review",
+  "recordedAt": "2026-09-11T23:24:39.124Z",
+  "evidenceIdentity": "0d31cfaf5311f104b8cd6b6e4dc5039c83bb5d75cf763440c78ba27fb1fad885",
+  "renderReviewRun": "0d31cfaf5311f104b8cd6b6e4dc5039c83bb5d75cf763440c78ba27fb1fad885"
+}

@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "driver": "Playwright with system Chrome",
+  "widths": [
+    320,
+    375,
+    390,
+    430,
+    480
+  ],
+  "results": [
+    {
+      "width": 320,
+      "viewportWidth": 320,
+      "horizontalOverflow": 0,
+      "clippedCount": 0,
+      "boundsViolationCount": 0,
+      "sourceCount": 19,
+      "loadedSourceCount": 19,
+      "failedSourceCount": 0,
+      "targetCount": 40,
+      "resolvedTargetCount": 40,
+      "unresolvedTargetCount": 0,
+      "titosVisible": true,
+      "artVisible": {
+        "KoolKidz": true,
+        "Stereo Mix": true,
+        "Undercover": true,
+        "The Lufts": true,
+        "Sunset Dreams": true,
+        "Pump": true,
+        "JEMM": true,
+        "DJ ICUE": true
+      },
+      "identityText": {
+        "KoolKidz": false,
+        "The Lufts": true,
+        "JEMM": true
+      }
+    },
+    {
+      "width": 375,
+      "viewportWidth": 375,
+      "horizontalOverflow": 0,
+      "clippedCount": 0,
+      "boundsViolationCount": 0,
+      "sourceCount": 19,
+      "loadedSourceCount": 19,
+      "failedSourceCount": 0,
+      "targetCount": 40,
+      "resolvedTargetCount": 40,
+      "unresolvedTargetCount": 0,
+      "titosVisible": true,
+      "artVisible": {
+        "KoolKidz": true,
+        "Stereo Mix": true,
+        "Undercover": true,
+        "The Lufts": true,
+        "Sunset Dreams": true,
+        "Pump": true,
+        "JEMM": true,
+        "DJ ICUE": true
+      },
+      "identityText": {
+        "KoolKidz": false,
+        "The Lufts": true,
+        "JEMM": true
+      }
+    },
+    {
+      "width": 390,
+      "viewportWidth": 390,
+      "horizontalOverflow": 0,
+      "clippedCount": 0,
+      "boundsViolationCount": 0,
+      "sourceCount": 19,
+      "loadedSourceCount": 19,
+      "failedSourceCount": 0,
+      "targetCount": 40,
+      "resolvedTargetCount": 40,
+      "unresolvedTargetCount": 0,
+      "titosVisible": true,
+      "artVisible": {
+        "KoolKidz": true,
+        "Stereo Mix": true,
+        "Undercover": true,
+        "The Lufts": true,
+        "Sunset Dreams": true,
+        "Pump": true,
+        "JEMM": true,
+        "DJ ICUE": true
+      },
+      "identityText": {
+        "KoolKidz": false,
+        "The Lufts": true,
+        "JEMM": true
+      }
+    },
+    {
+      "width": 430,
+      "viewportWidth": 430,
+      "horizontalOverflow": 0,
+      "clippedCount": 0,
+      "boundsViolationCount": 0,
+      "sourceCount": 19,
+      "loadedSourceCount": 19,
+      "failedSourceCount": 0,
+      "targetCount": 40,
+      "resolvedTargetCount": 40,
+      "unresolvedTargetCount": 0,
+      "titosVisible": true,
+      "artVisible": {
+        "KoolKidz": true,
+        "Stereo Mix": true,
+        "Undercover": true,
+        "The Lufts": true,
+        "Sunset Dreams": true,
+        "Pump": true,
+        "JEMM": true,
+        "DJ ICUE": true
+      },
+      "identityText": {
+        "KoolKidz": false,
+        "The Lufts": true,
+        "JEMM": true
+      }
+    },
+    {
+      "width": 480,
+      "viewportWidth": 480,
+      "horizontalOverflow": 0,
+      "clippedCount": 0,
+      "boundsViolationCount": 0,
+      "sourceCount": 19,
+      "loadedSourceCount": 19,
+      "failedSourceCount": 0,
+      "targetCount": 40,
+      "resolvedTargetCount": 40,
+      "unresolvedTargetCount": 0,
+      "titosVisible": true,
+      "artVisible": {
+        "KoolKidz": true,
+        "Stereo Mix": true,
+        "Undercover": true,
+        "The Lufts": true,
+        "Sunset Dreams": true,
+        "Pump": true,
+        "JEMM": true,
+        "DJ ICUE": true
+      },
+      "identityText": {
+        "KoolKidz": false,
+        "The Lufts": true,
+        "JEMM": true
+      }
+    }
+  ],
+  "status": "PASS"
+}

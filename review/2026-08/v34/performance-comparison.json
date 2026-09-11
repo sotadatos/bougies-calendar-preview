@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "contract": "shared-model-performance-budget",
+  "frameworkRevision": "fead6024d56cc5ff506767ca878aaa448ca2dfecd7d81db4d623b50bbb05e5d0",
+  "calibration": {
+    "reason": "Absolute ceilings cover approved fixed September regeneration; candidate comparisons retain the five-percent regression gate.",
+    "septemberMobileV1GeneratedHtmlBytes": 14473589,
+    "septemberMobileV1GeneratedUniqueImageBytes": 10835277,
+    "septemberMobileV1Status": "PASS"
+  },
+  "surfaces": {
+    "web": {
+      "status": "PASS",
+      "previousArtifact": "review/2026-08/v32/calendar.html",
+      "previousHtmlBytes": 20658941,
+      "currentHtmlBytes": 20658753,
+      "regressionPercent": -0.001,
+      "uniqueRawImageBytes": 15429913,
+      "duplicateImageBytes": 0,
+      "budget": {
+        "maximumHtmlBytes": 65000000,
+        "maximumUniqueImageBytes": 50000000,
+        "maximumDuplicateImageBytes": 0,
+        "maximumRegressionPercent": 5
+      }
+    },
+    "mobile": {
+      "status": "PASS",
+      "previousArtifact": "mobile/review/2026-08/mobile-v10-h6/calendar.html",
+      "previousHtmlBytes": 10143538,
+      "currentHtmlBytes": 10198635,
+      "regressionPercent": 0.543,
+      "uniqueRawImageBytes": 7581211,
+      "duplicateImageBytes": 0,
+      "budget": {
+        "maximumHtmlBytes": 16000000,
+        "maximumUniqueImageBytes": 12000000,
+        "maximumDuplicateImageBytes": 0,
+        "maximumRegressionPercent": 5
+      }
+    }
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "issue": 129,
+  "targetMonth": "2026-08",
+  "frameworkRevision": "fead6024d56cc5ff506767ca878aaa448ca2dfecd7d81db4d623b50bbb05e5d0",
+  "approvedAssetLibraryRevision": "454ed4f771515436529194a5a8075d6f03043c9d17df219d2c7e6cc74e940943",
+  "presentationDecisionRevision": "a538765487dc83b143050318341b4bfc2190c6a4de585e2c6bcc64ef2ba95bdc",
+  "deltas": [
+    {
+      "classification": "REUSABLE_FRAMEWORK",
+      "change": "Normalized presentation-decision model",
+      "evidence": [
+        "calendar-renderer/presentation-decision-model.mjs",
+        "presentation-decision-model.json"
+      ],
+      "result": "Web, Mobile, historical, and future snapshot renders consume one event-level decision contract."
+    },
+    {
+      "classification": "REUSABLE_FRAMEWORK",
+      "change": "Exact self-identifying art claims",
+      "evidence": [
+        "config/presentation/approved-event-art.json",
+        "test/performer-art-library.test.mjs"
+      ],
+      "result": "Only KoolKidz exact approved bytes suppress performer text; The Lufts and JEMM remain visible."
+    },
+    {
+      "classification": "REUSABLE_FRAMEWORK",
+      "change": "Approved historical art recovery",
+      "evidence": [
+        "calendar-renderer/reusable-event-art.mjs",
+        "reports/issue-129/shared-model-art-parity.json"
+      ],
+      "result": "Stereo Mix, Sunset Dreams, Pump, JEMM, The Lufts, Undercover, KoolKidz, and DJ ICUE render on Mobile and Web when scheduled."
+    },
+    {
+      "classification": "REUSABLE_FRAMEWORK",
+      "change": "Semantic venue preservation",
+      "evidence": [
+        "calendar-renderer/mobile/render-mobile-calendar.mjs",
+        "calendar-renderer/templates/cell-composer.mjs"
+      ],
+      "result": "Visually suppressed Whole Venue and recurring venue labels remain available to assistive technology and parity audit."
+    },
+    {
+      "classification": "REUSABLE_FRAMEWORK",
+      "change": "Web image treatment",
+      "evidence": [
+        "config/presentation/web-profile-registry.json",
+        "docs/web-presentation-profile.md"
+      ],
+      "result": "Performer art renders at full opacity with a lighter bounded scrim and class-driven fit."
+    },
+    {
+      "classification": "REUSABLE_FRAMEWORK",
+      "change": "Surface performance budgets",
+      "evidence": [
+        "config/presentation/performance-budgets.json",
+        "calendar-renderer/performance-budget.mjs",
+        "reports/issue-129/shared-model-performance-budget.json"
+      ],
+      "result": "Both outputs pass byte, duplicate-image, and regression limits."
+    },
+    {
+      "classification": "MONTH_SPECIFIC_OVERRIDE",
+      "change": "August actual-render verification",
+      "evidence": [
+        "reports/issue-129/actual-render-presentation-parity.json",
+        "output/mobile-calendar-prototypes/2026-08/mobile-v10/viewport-validation.json"
+      ],
+      "result": "33 records reconcile with zero unexplained differences; all five required Mobile widths pass."
+    },
+    {
+      "classification": "REUSABLE_FRAMEWORK",
+      "change": "Approved-baseline-safe performance ceiling calibration",
+      "evidence": [
+        "config/presentation/performance-budgets.json",
+        "test/performance-budget.test.mjs",
+        "reports/issue-129/shared-model-performance-budget.v34-h8.json"
+      ],
+      "result": "The fixed September Mobile generator passes at 14,473,589 bytes while August remains below its prior h6 bytes; duplicate-byte and five-percent comparison gates remain enforced."
+    }
+  ]
+}

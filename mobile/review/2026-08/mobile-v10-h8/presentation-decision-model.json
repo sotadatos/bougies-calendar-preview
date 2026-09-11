@@ -1,0 +1,1785 @@
+{
+  "schemaVersion": 1,
+  "contract": "normalized-calendar-presentation-decisions",
+  "presentationDecisionRevision": "a538765487dc83b143050318341b4bfc2190c6a4de585e2c6bcc64ef2ba95bdc",
+  "parity": {
+    "status": "PASS",
+    "unexplainedDiscrepancies": []
+  },
+  "records": [
+    {
+      "date": "2026-08-01",
+      "eventId": null,
+      "eventName": "Chronicles",
+      "canonicalPerformerIdentity": "Chronicles",
+      "selectedAsset": "chronicles-v2",
+      "selectedAssetChecksum": "f9aaf41cbea267b5d5e8f0f917f466148464ba8f7e2e0964b88d8486eddaeac1",
+      "assetClass": "landscape-band-photo",
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "VISIBLE",
+      "specialClassification": false,
+      "canonicalEventTime": "10 PM",
+      "fallbackReason": null,
+      "surfaceSpecificPresentationExceptions": [],
+      "surfaces": {
+        "web": {
+          "selectedAsset": "chronicles-v2",
+          "selectedAssetChecksum": "f9aaf41cbea267b5d5e8f0f917f466148464ba8f7e2e0964b88d8486eddaeac1",
+          "assetVisiblyRendered": true,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": "cover",
+          "position": "center 35%",
+          "fallbackReason": null,
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": "chronicles-v2",
+          "selectedAssetChecksum": "f9aaf41cbea267b5d5e8f0f917f466148464ba8f7e2e0964b88d8486eddaeac1",
+          "assetVisiblyRendered": true,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": "cover",
+          "position": "center 35%",
+          "fallbackReason": null,
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-02",
+      "eventId": null,
+      "eventName": "Whiskey Allstars",
+      "canonicalPerformerIdentity": "Whiskey Allstars",
+      "selectedAsset": null,
+      "selectedAssetChecksum": null,
+      "assetClass": null,
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [
+        {
+          "id": "in-da-biz-sundays",
+          "display": "ribbon",
+          "message": "In da Biz · 50% Off",
+          "title": null,
+          "timeLabel": null
+        }
+      ],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "SEMANTIC_ONLY",
+      "specialClassification": false,
+      "canonicalEventTime": "6ish",
+      "fallbackReason": "linked performer has no approved repository art candidates",
+      "surfaceSpecificPresentationExceptions": [
+        {
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "field": "recurringComposition",
+          "web": "WEEKDAY_COLUMN_COMPOSITION",
+          "mobile": "DATE_CARD_CONTEXT",
+          "reason": "Both surfaces preserve recurring semantics through their approved layout grammar."
+        }
+      ],
+      "surfaces": {
+        "web": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-04",
+      "eventId": null,
+      "eventName": "Karaoke Tuesday",
+      "canonicalPerformerIdentity": null,
+      "selectedAsset": null,
+      "selectedAssetChecksum": null,
+      "assetClass": null,
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [
+        {
+          "id": "late-night-hh",
+          "display": "ribbon",
+          "message": "Late Night HH 🌙 · 12 AM",
+          "title": null,
+          "timeLabel": null
+        }
+      ],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "VISIBLE",
+      "specialClassification": false,
+      "canonicalEventTime": "10 PM",
+      "fallbackReason": "event has no linked performer and no governed event override",
+      "surfaceSpecificPresentationExceptions": [
+        {
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "field": "recurringComposition",
+          "web": "WEEKDAY_COLUMN_COMPOSITION",
+          "mobile": "DATE_CARD_CONTEXT",
+          "reason": "Both surfaces preserve recurring semantics through their approved layout grammar."
+        }
+      ],
+      "surfaces": {
+        "web": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "event has no linked performer and no governed event override",
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "event has no linked performer and no governed event override",
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-05",
+      "eventId": null,
+      "eventName": "Ladies Night",
+      "canonicalPerformerIdentity": "DJ Edward",
+      "selectedAsset": null,
+      "selectedAssetChecksum": null,
+      "assetClass": null,
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [
+        {
+          "id": "ladies-drink-free",
+          "display": "ribbon",
+          "message": "Ladies drink FREE",
+          "title": null,
+          "timeLabel": null
+        }
+      ],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "SEMANTIC_ONLY",
+      "specialClassification": false,
+      "canonicalEventTime": "10 PM–2 AM",
+      "fallbackReason": "linked performer has no approved repository art candidates",
+      "surfaceSpecificPresentationExceptions": [
+        {
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "field": "recurringComposition",
+          "web": "WEEKDAY_COLUMN_COMPOSITION",
+          "mobile": "DATE_CARD_CONTEXT",
+          "reason": "Both surfaces preserve recurring semantics through their approved layout grammar."
+        }
+      ],
+      "surfaces": {
+        "web": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-06",
+      "eventId": null,
+      "eventName": "Rhinestone Cowboys",
+      "canonicalPerformerIdentity": "Rhinestone Cowboys",
+      "selectedAsset": "rhinestone-cowboys",
+      "selectedAssetChecksum": "f106325dd46c6e0e5831fdde72fd8ed267de19cf362d7834052b2edb9c562ca1",
+      "assetClass": "square-identity",
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [
+        {
+          "id": "late-night-hh",
+          "display": "ribbon",
+          "message": "Late Night HH 🌙 · 12 AM",
+          "title": null,
+          "timeLabel": null
+        }
+      ],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "VISIBLE",
+      "specialClassification": false,
+      "canonicalEventTime": "8 PM",
+      "fallbackReason": null,
+      "surfaceSpecificPresentationExceptions": [
+        {
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "field": "recurringComposition",
+          "web": "WEEKDAY_COLUMN_COMPOSITION",
+          "mobile": "DATE_CARD_CONTEXT",
+          "reason": "Both surfaces preserve recurring semantics through their approved layout grammar."
+        }
+      ],
+      "surfaces": {
+        "web": {
+          "selectedAsset": "rhinestone-cowboys",
+          "selectedAssetChecksum": "f106325dd46c6e0e5831fdde72fd8ed267de19cf362d7834052b2edb9c562ca1",
+          "assetVisiblyRendered": true,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": "contain",
+          "position": "center",
+          "fallbackReason": null,
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": "rhinestone-cowboys",
+          "selectedAssetChecksum": "f106325dd46c6e0e5831fdde72fd8ed267de19cf362d7834052b2edb9c562ca1",
+          "assetVisiblyRendered": true,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": "contain",
+          "position": "center",
+          "fallbackReason": null,
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-06",
+      "eventId": "recurring-program-dj-edward-every-thursday-2026-08-06",
+      "eventName": "DJ Edward",
+      "canonicalPerformerIdentity": "DJ Edward",
+      "selectedAsset": null,
+      "selectedAssetChecksum": null,
+      "assetClass": null,
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [
+        {
+          "id": "late-night-hh",
+          "display": "ribbon",
+          "message": "Late Night HH 🌙 · 12 AM",
+          "title": null,
+          "timeLabel": null
+        }
+      ],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "VISIBLE",
+      "specialClassification": false,
+      "canonicalEventTime": "11:30 PM",
+      "fallbackReason": "linked performer has no approved repository art candidates",
+      "surfaceSpecificPresentationExceptions": [
+        {
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "field": "eventVisibility",
+          "web": "SEMANTIC_SOURCE_ONLY",
+          "mobile": "VISIBLE_CARD",
+          "reason": "Web suppresses tactical companion detail while Mobile shows the complete chronological schedule."
+        },
+        {
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "field": "recurringComposition",
+          "web": "WEEKDAY_COLUMN_COMPOSITION",
+          "mobile": "DATE_CARD_CONTEXT",
+          "reason": "Both surfaces preserve recurring semantics through their approved layout grammar."
+        }
+      ],
+      "surfaces": {
+        "web": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": false,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-07",
+      "eventId": null,
+      "eventName": "Bougie Nights",
+      "canonicalPerformerIdentity": "DJ Alex",
+      "selectedAsset": "bougie-nights",
+      "selectedAssetChecksum": "ca443b40c88a177717a234527c097430d9fb4f18899475e3c0f2ba93c3feb809",
+      "assetClass": "event-specific-artwork",
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [],
+      "venueSemantic": "Backyard",
+      "venueVisibilitySemantic": "VISIBLE",
+      "specialClassification": true,
+      "canonicalEventTime": "8 PM",
+      "fallbackReason": null,
+      "surfaceSpecificPresentationExceptions": [
+        {
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "field": "recurringComposition",
+          "web": "WEEKDAY_COLUMN_COMPOSITION",
+          "mobile": "DATE_CARD_CONTEXT",
+          "reason": "Both surfaces preserve recurring semantics through their approved layout grammar."
+        }
+      ],
+      "surfaces": {
+        "web": {
+          "selectedAsset": "bougie-nights",
+          "selectedAssetChecksum": "ca443b40c88a177717a234527c097430d9fb4f18899475e3c0f2ba93c3feb809",
+          "assetVisiblyRendered": true,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": "contain",
+          "position": "center",
+          "fallbackReason": null,
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": "bougie-nights",
+          "selectedAssetChecksum": "ca443b40c88a177717a234527c097430d9fb4f18899475e3c0f2ba93c3feb809",
+          "assetVisiblyRendered": true,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": "contain",
+          "position": "center",
+          "fallbackReason": null,
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-07",
+      "eventId": null,
+      "eventName": "Retro Sky",
+      "canonicalPerformerIdentity": "Retro Sky",
+      "selectedAsset": "retro-sky-v2",
+      "selectedAssetChecksum": "f10cf1e1ada6570b9a1ddbabf1ac05b5092c421bf97ca89d8f977b508f8514f4",
+      "assetClass": "landscape-band-photo",
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "VISIBLE",
+      "specialClassification": false,
+      "canonicalEventTime": "10 PM",
+      "fallbackReason": null,
+      "surfaceSpecificPresentationExceptions": [],
+      "surfaces": {
+        "web": {
+          "selectedAsset": "retro-sky-v2",
+          "selectedAssetChecksum": "f10cf1e1ada6570b9a1ddbabf1ac05b5092c421bf97ca89d8f977b508f8514f4",
+          "assetVisiblyRendered": true,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": "cover",
+          "position": "center 35%",
+          "fallbackReason": null,
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": "retro-sky-v2",
+          "selectedAssetChecksum": "f10cf1e1ada6570b9a1ddbabf1ac05b5092c421bf97ca89d8f977b508f8514f4",
+          "assetVisiblyRendered": true,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": "cover",
+          "position": "center 35%",
+          "fallbackReason": null,
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-08",
+      "eventId": null,
+      "eventName": "Freestyle Party",
+      "canonicalPerformerIdentity": "DJ Edward",
+      "selectedAsset": null,
+      "selectedAssetChecksum": null,
+      "assetClass": null,
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "VISIBLE",
+      "specialClassification": false,
+      "canonicalEventTime": "10 PM",
+      "fallbackReason": "linked performer has no approved repository art candidates",
+      "surfaceSpecificPresentationExceptions": [],
+      "surfaces": {
+        "web": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-09",
+      "eventId": null,
+      "eventName": "Whiskey Allstars",
+      "canonicalPerformerIdentity": "Whiskey Allstars",
+      "selectedAsset": null,
+      "selectedAssetChecksum": null,
+      "assetClass": null,
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [
+        {
+          "id": "in-da-biz-sundays",
+          "display": "ribbon",
+          "message": "In da Biz · 50% Off",
+          "title": null,
+          "timeLabel": null
+        }
+      ],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "SEMANTIC_ONLY",
+      "specialClassification": false,
+      "canonicalEventTime": "6ish",
+      "fallbackReason": "linked performer has no approved repository art candidates",
+      "surfaceSpecificPresentationExceptions": [
+        {
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "field": "recurringComposition",
+          "web": "WEEKDAY_COLUMN_COMPOSITION",
+          "mobile": "DATE_CARD_CONTEXT",
+          "reason": "Both surfaces preserve recurring semantics through their approved layout grammar."
+        }
+      ],
+      "surfaces": {
+        "web": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-11",
+      "eventId": null,
+      "eventName": "Karaoke Tuesday",
+      "canonicalPerformerIdentity": null,
+      "selectedAsset": null,
+      "selectedAssetChecksum": null,
+      "assetClass": null,
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [
+        {
+          "id": "late-night-hh",
+          "display": "ribbon",
+          "message": "Late Night HH 🌙 · 12 AM",
+          "title": null,
+          "timeLabel": null
+        }
+      ],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "VISIBLE",
+      "specialClassification": false,
+      "canonicalEventTime": "10 PM",
+      "fallbackReason": "event has no linked performer and no governed event override",
+      "surfaceSpecificPresentationExceptions": [
+        {
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "field": "recurringComposition",
+          "web": "WEEKDAY_COLUMN_COMPOSITION",
+          "mobile": "DATE_CARD_CONTEXT",
+          "reason": "Both surfaces preserve recurring semantics through their approved layout grammar."
+        }
+      ],
+      "surfaces": {
+        "web": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "event has no linked performer and no governed event override",
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "event has no linked performer and no governed event override",
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-12",
+      "eventId": null,
+      "eventName": "Ladies Night",
+      "canonicalPerformerIdentity": "DJ Edward",
+      "selectedAsset": null,
+      "selectedAssetChecksum": null,
+      "assetClass": null,
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [
+        {
+          "id": "ladies-drink-free",
+          "display": "ribbon",
+          "message": "Ladies drink FREE",
+          "title": null,
+          "timeLabel": null
+        }
+      ],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "SEMANTIC_ONLY",
+      "specialClassification": false,
+      "canonicalEventTime": "10 PM–2 AM",
+      "fallbackReason": "linked performer has no approved repository art candidates",
+      "surfaceSpecificPresentationExceptions": [
+        {
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "field": "recurringComposition",
+          "web": "WEEKDAY_COLUMN_COMPOSITION",
+          "mobile": "DATE_CARD_CONTEXT",
+          "reason": "Both surfaces preserve recurring semantics through their approved layout grammar."
+        }
+      ],
+      "surfaces": {
+        "web": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-13",
+      "eventId": null,
+      "eventName": "KoolKidz",
+      "canonicalPerformerIdentity": "KoolKidz",
+      "selectedAsset": "koolkidz",
+      "selectedAssetChecksum": "0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b",
+      "assetClass": "square-identity",
+      "selfIdentifyingArtClaim": {
+        "state": "approved",
+        "publicName": "KoolKidz",
+        "approvalIdentity": "https://github.com/sotadatos/sotadatos-ai-platform-knowledge/issues/129#issuecomment-5640526828"
+      },
+      "canonicalPerformerTextVisible": false,
+      "promotions": [
+        {
+          "id": "late-night-hh",
+          "display": "ribbon",
+          "message": "Late Night HH 🌙 · 12 AM",
+          "title": null,
+          "timeLabel": null
+        }
+      ],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "VISIBLE",
+      "specialClassification": false,
+      "canonicalEventTime": "8 PM",
+      "fallbackReason": null,
+      "surfaceSpecificPresentationExceptions": [
+        {
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "field": "recurringComposition",
+          "web": "WEEKDAY_COLUMN_COMPOSITION",
+          "mobile": "DATE_CARD_CONTEXT",
+          "reason": "Both surfaces preserve recurring semantics through their approved layout grammar."
+        }
+      ],
+      "surfaces": {
+        "web": {
+          "selectedAsset": "koolkidz",
+          "selectedAssetChecksum": "0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b",
+          "assetVisiblyRendered": true,
+          "eventVisible": true,
+          "performerTextVisible": false,
+          "fit": "contain",
+          "position": "center",
+          "fallbackReason": null,
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": "koolkidz",
+          "selectedAssetChecksum": "0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b",
+          "assetVisiblyRendered": true,
+          "eventVisible": true,
+          "performerTextVisible": false,
+          "fit": "contain",
+          "position": "center",
+          "fallbackReason": null,
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-13",
+      "eventId": "recurring-program-dj-edward-every-thursday-2026-08-13",
+      "eventName": "DJ Edward",
+      "canonicalPerformerIdentity": "DJ Edward",
+      "selectedAsset": null,
+      "selectedAssetChecksum": null,
+      "assetClass": null,
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [
+        {
+          "id": "late-night-hh",
+          "display": "ribbon",
+          "message": "Late Night HH 🌙 · 12 AM",
+          "title": null,
+          "timeLabel": null
+        }
+      ],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "VISIBLE",
+      "specialClassification": false,
+      "canonicalEventTime": "11:30 PM",
+      "fallbackReason": "linked performer has no approved repository art candidates",
+      "surfaceSpecificPresentationExceptions": [
+        {
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "field": "eventVisibility",
+          "web": "SEMANTIC_SOURCE_ONLY",
+          "mobile": "VISIBLE_CARD",
+          "reason": "Web suppresses tactical companion detail while Mobile shows the complete chronological schedule."
+        },
+        {
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "field": "recurringComposition",
+          "web": "WEEKDAY_COLUMN_COMPOSITION",
+          "mobile": "DATE_CARD_CONTEXT",
+          "reason": "Both surfaces preserve recurring semantics through their approved layout grammar."
+        }
+      ],
+      "surfaces": {
+        "web": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": false,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-14",
+      "eventId": null,
+      "eventName": "Stereo Mix",
+      "canonicalPerformerIdentity": "Stereo Mix",
+      "selectedAsset": "stereo-mix",
+      "selectedAssetChecksum": "bfbf7343dcf45e7dcbc62852591728f6605eb8015b03b9757332825e217381dc",
+      "assetClass": "square-identity",
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [
+        {
+          "id": "titos-promo-august-14",
+          "display": "callout",
+          "message": null,
+          "title": "Tito’s Promo",
+          "timeLabel": "9:30–11:30 PM"
+        }
+      ],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "VISIBLE",
+      "specialClassification": false,
+      "canonicalEventTime": "10 PM",
+      "fallbackReason": null,
+      "surfaceSpecificPresentationExceptions": [],
+      "surfaces": {
+        "web": {
+          "selectedAsset": "stereo-mix",
+          "selectedAssetChecksum": "bfbf7343dcf45e7dcbc62852591728f6605eb8015b03b9757332825e217381dc",
+          "assetVisiblyRendered": true,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": "contain",
+          "position": "center",
+          "fallbackReason": null,
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": "stereo-mix",
+          "selectedAssetChecksum": "bfbf7343dcf45e7dcbc62852591728f6605eb8015b03b9757332825e217381dc",
+          "assetVisiblyRendered": true,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": "contain",
+          "position": "center",
+          "fallbackReason": null,
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-15",
+      "eventId": null,
+      "eventName": "Undercover",
+      "canonicalPerformerIdentity": "Undercover",
+      "selectedAsset": "undercover",
+      "selectedAssetChecksum": "eec3aa31504399ed47197611f4a6f3ba35be0f5a8b70980d701ce104c42b1c70",
+      "assetClass": "square-identity",
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "VISIBLE",
+      "specialClassification": false,
+      "canonicalEventTime": "10 PM",
+      "fallbackReason": null,
+      "surfaceSpecificPresentationExceptions": [],
+      "surfaces": {
+        "web": {
+          "selectedAsset": "undercover",
+          "selectedAssetChecksum": "eec3aa31504399ed47197611f4a6f3ba35be0f5a8b70980d701ce104c42b1c70",
+          "assetVisiblyRendered": true,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": "contain",
+          "position": "center",
+          "fallbackReason": null,
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": "undercover",
+          "selectedAssetChecksum": "eec3aa31504399ed47197611f4a6f3ba35be0f5a8b70980d701ce104c42b1c70",
+          "assetVisiblyRendered": true,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": "contain",
+          "position": "center",
+          "fallbackReason": null,
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-16",
+      "eventId": null,
+      "eventName": "Whiskey Allstars",
+      "canonicalPerformerIdentity": "Whiskey Allstars",
+      "selectedAsset": null,
+      "selectedAssetChecksum": null,
+      "assetClass": null,
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [
+        {
+          "id": "in-da-biz-sundays",
+          "display": "ribbon",
+          "message": "In da Biz · 50% Off",
+          "title": null,
+          "timeLabel": null
+        }
+      ],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "SEMANTIC_ONLY",
+      "specialClassification": false,
+      "canonicalEventTime": "6ish",
+      "fallbackReason": "linked performer has no approved repository art candidates",
+      "surfaceSpecificPresentationExceptions": [
+        {
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "field": "recurringComposition",
+          "web": "WEEKDAY_COLUMN_COMPOSITION",
+          "mobile": "DATE_CARD_CONTEXT",
+          "reason": "Both surfaces preserve recurring semantics through their approved layout grammar."
+        }
+      ],
+      "surfaces": {
+        "web": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-18",
+      "eventId": null,
+      "eventName": "Karaoke Tuesday",
+      "canonicalPerformerIdentity": null,
+      "selectedAsset": null,
+      "selectedAssetChecksum": null,
+      "assetClass": null,
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [
+        {
+          "id": "late-night-hh",
+          "display": "ribbon",
+          "message": "Late Night HH 🌙 · 12 AM",
+          "title": null,
+          "timeLabel": null
+        }
+      ],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "VISIBLE",
+      "specialClassification": false,
+      "canonicalEventTime": "10 PM",
+      "fallbackReason": "event has no linked performer and no governed event override",
+      "surfaceSpecificPresentationExceptions": [
+        {
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "field": "recurringComposition",
+          "web": "WEEKDAY_COLUMN_COMPOSITION",
+          "mobile": "DATE_CARD_CONTEXT",
+          "reason": "Both surfaces preserve recurring semantics through their approved layout grammar."
+        }
+      ],
+      "surfaces": {
+        "web": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "event has no linked performer and no governed event override",
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "event has no linked performer and no governed event override",
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-19",
+      "eventId": null,
+      "eventName": "Ladies Night",
+      "canonicalPerformerIdentity": "DJ Edward",
+      "selectedAsset": null,
+      "selectedAssetChecksum": null,
+      "assetClass": null,
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [
+        {
+          "id": "ladies-drink-free",
+          "display": "ribbon",
+          "message": "Ladies drink FREE",
+          "title": null,
+          "timeLabel": null
+        }
+      ],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "SEMANTIC_ONLY",
+      "specialClassification": false,
+      "canonicalEventTime": "10 PM–2 AM",
+      "fallbackReason": "linked performer has no approved repository art candidates",
+      "surfaceSpecificPresentationExceptions": [
+        {
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "field": "recurringComposition",
+          "web": "WEEKDAY_COLUMN_COMPOSITION",
+          "mobile": "DATE_CARD_CONTEXT",
+          "reason": "Both surfaces preserve recurring semantics through their approved layout grammar."
+        }
+      ],
+      "surfaces": {
+        "web": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-20",
+      "eventId": null,
+      "eventName": "The Lufts",
+      "canonicalPerformerIdentity": "The Lufts",
+      "selectedAsset": "the-lufts",
+      "selectedAssetChecksum": "440fed2d0014d313246a3d43e7ecc661feaf2ac784554e4d0cf604384f48fe8d",
+      "assetClass": "landscape-band-photo",
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [
+        {
+          "id": "late-night-hh",
+          "display": "ribbon",
+          "message": "Late Night HH 🌙 · 12 AM",
+          "title": null,
+          "timeLabel": null
+        }
+      ],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "VISIBLE",
+      "specialClassification": false,
+      "canonicalEventTime": "8 PM",
+      "fallbackReason": null,
+      "surfaceSpecificPresentationExceptions": [
+        {
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "field": "recurringComposition",
+          "web": "WEEKDAY_COLUMN_COMPOSITION",
+          "mobile": "DATE_CARD_CONTEXT",
+          "reason": "Both surfaces preserve recurring semantics through their approved layout grammar."
+        }
+      ],
+      "surfaces": {
+        "web": {
+          "selectedAsset": "the-lufts",
+          "selectedAssetChecksum": "440fed2d0014d313246a3d43e7ecc661feaf2ac784554e4d0cf604384f48fe8d",
+          "assetVisiblyRendered": true,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": "cover",
+          "position": "center 35%",
+          "fallbackReason": null,
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": "the-lufts",
+          "selectedAssetChecksum": "440fed2d0014d313246a3d43e7ecc661feaf2ac784554e4d0cf604384f48fe8d",
+          "assetVisiblyRendered": true,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": "cover",
+          "position": "center 35%",
+          "fallbackReason": null,
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-20",
+      "eventId": "recurring-program-dj-edward-every-thursday-2026-08-20",
+      "eventName": "DJ Edward",
+      "canonicalPerformerIdentity": "DJ Edward",
+      "selectedAsset": null,
+      "selectedAssetChecksum": null,
+      "assetClass": null,
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [
+        {
+          "id": "late-night-hh",
+          "display": "ribbon",
+          "message": "Late Night HH 🌙 · 12 AM",
+          "title": null,
+          "timeLabel": null
+        }
+      ],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "VISIBLE",
+      "specialClassification": false,
+      "canonicalEventTime": "11:30 PM",
+      "fallbackReason": "linked performer has no approved repository art candidates",
+      "surfaceSpecificPresentationExceptions": [
+        {
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "field": "eventVisibility",
+          "web": "SEMANTIC_SOURCE_ONLY",
+          "mobile": "VISIBLE_CARD",
+          "reason": "Web suppresses tactical companion detail while Mobile shows the complete chronological schedule."
+        },
+        {
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "field": "recurringComposition",
+          "web": "WEEKDAY_COLUMN_COMPOSITION",
+          "mobile": "DATE_CARD_CONTEXT",
+          "reason": "Both surfaces preserve recurring semantics through their approved layout grammar."
+        }
+      ],
+      "surfaces": {
+        "web": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": false,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-21",
+      "eventId": null,
+      "eventName": "DJ DIAGA",
+      "canonicalPerformerIdentity": "DJ DIAGA",
+      "selectedAsset": null,
+      "selectedAssetChecksum": null,
+      "assetClass": null,
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [],
+      "venueSemantic": "Backyard",
+      "venueVisibilitySemantic": "VISIBLE",
+      "specialClassification": false,
+      "canonicalEventTime": "10:30 PM",
+      "fallbackReason": "linked performer has no approved repository art candidates",
+      "surfaceSpecificPresentationExceptions": [],
+      "surfaces": {
+        "web": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-21",
+      "eventId": null,
+      "eventName": "Sunset Dreams",
+      "canonicalPerformerIdentity": "Sunset Dreams",
+      "selectedAsset": "sunset-dreams",
+      "selectedAssetChecksum": "aff501a678c2ab004628eb3dc903dd2f9fa4c4455d5b721cdba65f71c23c1da1",
+      "assetClass": "square-identity",
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "VISIBLE",
+      "specialClassification": false,
+      "canonicalEventTime": "10 PM",
+      "fallbackReason": null,
+      "surfaceSpecificPresentationExceptions": [],
+      "surfaces": {
+        "web": {
+          "selectedAsset": "sunset-dreams",
+          "selectedAssetChecksum": "aff501a678c2ab004628eb3dc903dd2f9fa4c4455d5b721cdba65f71c23c1da1",
+          "assetVisiblyRendered": true,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": "contain",
+          "position": "center",
+          "fallbackReason": null,
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": "sunset-dreams",
+          "selectedAssetChecksum": "aff501a678c2ab004628eb3dc903dd2f9fa4c4455d5b721cdba65f71c23c1da1",
+          "assetVisiblyRendered": true,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": "contain",
+          "position": "center",
+          "fallbackReason": null,
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-22",
+      "eventId": null,
+      "eventName": "DJ ICUE",
+      "canonicalPerformerIdentity": "DJ ICUE",
+      "selectedAsset": "dj-icue",
+      "selectedAssetChecksum": "2c16dcd65d3278db3cff46bdd4ad1aa89fc584677f8b57aad909a47c89fbc569",
+      "assetClass": "square-identity",
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [],
+      "venueSemantic": "Backyard",
+      "venueVisibilitySemantic": "VISIBLE",
+      "specialClassification": false,
+      "canonicalEventTime": "10:30 PM",
+      "fallbackReason": null,
+      "surfaceSpecificPresentationExceptions": [],
+      "surfaces": {
+        "web": {
+          "selectedAsset": "dj-icue",
+          "selectedAssetChecksum": "2c16dcd65d3278db3cff46bdd4ad1aa89fc584677f8b57aad909a47c89fbc569",
+          "assetVisiblyRendered": true,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": "contain",
+          "position": "center",
+          "fallbackReason": null,
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": "dj-icue",
+          "selectedAssetChecksum": "2c16dcd65d3278db3cff46bdd4ad1aa89fc584677f8b57aad909a47c89fbc569",
+          "assetVisiblyRendered": true,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": "contain",
+          "position": "center",
+          "fallbackReason": null,
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-22",
+      "eventId": null,
+      "eventName": "Private Buyout",
+      "canonicalPerformerIdentity": null,
+      "selectedAsset": null,
+      "selectedAssetChecksum": null,
+      "assetClass": null,
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "VISIBLE",
+      "specialClassification": true,
+      "canonicalEventTime": "8 PM",
+      "fallbackReason": "private-event cell is intentionally text-only; no performer or promotional artwork is required",
+      "surfaceSpecificPresentationExceptions": [],
+      "surfaces": {
+        "web": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "private-event cell is intentionally text-only; no performer or promotional artwork is required",
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "private-event cell is intentionally text-only; no performer or promotional artwork is required",
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-23",
+      "eventId": null,
+      "eventName": "Whiskey Allstars",
+      "canonicalPerformerIdentity": "Whiskey Allstars",
+      "selectedAsset": null,
+      "selectedAssetChecksum": null,
+      "assetClass": null,
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [
+        {
+          "id": "in-da-biz-sundays",
+          "display": "ribbon",
+          "message": "In da Biz · 50% Off",
+          "title": null,
+          "timeLabel": null
+        }
+      ],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "SEMANTIC_ONLY",
+      "specialClassification": false,
+      "canonicalEventTime": "6ish",
+      "fallbackReason": "linked performer has no approved repository art candidates",
+      "surfaceSpecificPresentationExceptions": [
+        {
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "field": "recurringComposition",
+          "web": "WEEKDAY_COLUMN_COMPOSITION",
+          "mobile": "DATE_CARD_CONTEXT",
+          "reason": "Both surfaces preserve recurring semantics through their approved layout grammar."
+        }
+      ],
+      "surfaces": {
+        "web": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-25",
+      "eventId": null,
+      "eventName": "Karaoke Tuesday",
+      "canonicalPerformerIdentity": null,
+      "selectedAsset": null,
+      "selectedAssetChecksum": null,
+      "assetClass": null,
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [
+        {
+          "id": "late-night-hh",
+          "display": "ribbon",
+          "message": "Late Night HH 🌙 · 12 AM",
+          "title": null,
+          "timeLabel": null
+        }
+      ],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "VISIBLE",
+      "specialClassification": false,
+      "canonicalEventTime": "10 PM",
+      "fallbackReason": "event has no linked performer and no governed event override",
+      "surfaceSpecificPresentationExceptions": [
+        {
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "field": "recurringComposition",
+          "web": "WEEKDAY_COLUMN_COMPOSITION",
+          "mobile": "DATE_CARD_CONTEXT",
+          "reason": "Both surfaces preserve recurring semantics through their approved layout grammar."
+        }
+      ],
+      "surfaces": {
+        "web": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "event has no linked performer and no governed event override",
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "event has no linked performer and no governed event override",
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-26",
+      "eventId": null,
+      "eventName": "Ladies Night",
+      "canonicalPerformerIdentity": "DJ Edward",
+      "selectedAsset": null,
+      "selectedAssetChecksum": null,
+      "assetClass": null,
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [
+        {
+          "id": "ladies-drink-free",
+          "display": "ribbon",
+          "message": "Ladies drink FREE",
+          "title": null,
+          "timeLabel": null
+        }
+      ],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "SEMANTIC_ONLY",
+      "specialClassification": false,
+      "canonicalEventTime": "10 PM–2 AM",
+      "fallbackReason": "linked performer has no approved repository art candidates",
+      "surfaceSpecificPresentationExceptions": [
+        {
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "field": "recurringComposition",
+          "web": "WEEKDAY_COLUMN_COMPOSITION",
+          "mobile": "DATE_CARD_CONTEXT",
+          "reason": "Both surfaces preserve recurring semantics through their approved layout grammar."
+        }
+      ],
+      "surfaces": {
+        "web": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-27",
+      "eventId": null,
+      "eventName": "KoolKidz",
+      "canonicalPerformerIdentity": "KoolKidz",
+      "selectedAsset": "koolkidz",
+      "selectedAssetChecksum": "0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b",
+      "assetClass": "square-identity",
+      "selfIdentifyingArtClaim": {
+        "state": "approved",
+        "publicName": "KoolKidz",
+        "approvalIdentity": "https://github.com/sotadatos/sotadatos-ai-platform-knowledge/issues/129#issuecomment-5640526828"
+      },
+      "canonicalPerformerTextVisible": false,
+      "promotions": [
+        {
+          "id": "late-night-hh",
+          "display": "ribbon",
+          "message": "Late Night HH 🌙 · 12 AM",
+          "title": null,
+          "timeLabel": null
+        }
+      ],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "VISIBLE",
+      "specialClassification": false,
+      "canonicalEventTime": "8 PM",
+      "fallbackReason": null,
+      "surfaceSpecificPresentationExceptions": [
+        {
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "field": "recurringComposition",
+          "web": "WEEKDAY_COLUMN_COMPOSITION",
+          "mobile": "DATE_CARD_CONTEXT",
+          "reason": "Both surfaces preserve recurring semantics through their approved layout grammar."
+        }
+      ],
+      "surfaces": {
+        "web": {
+          "selectedAsset": "koolkidz",
+          "selectedAssetChecksum": "0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b",
+          "assetVisiblyRendered": true,
+          "eventVisible": true,
+          "performerTextVisible": false,
+          "fit": "contain",
+          "position": "center",
+          "fallbackReason": null,
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": "koolkidz",
+          "selectedAssetChecksum": "0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b",
+          "assetVisiblyRendered": true,
+          "eventVisible": true,
+          "performerTextVisible": false,
+          "fit": "contain",
+          "position": "center",
+          "fallbackReason": null,
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-27",
+      "eventId": "recurring-program-dj-edward-every-thursday-2026-08-27",
+      "eventName": "DJ Edward",
+      "canonicalPerformerIdentity": "DJ Edward",
+      "selectedAsset": null,
+      "selectedAssetChecksum": null,
+      "assetClass": null,
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [
+        {
+          "id": "late-night-hh",
+          "display": "ribbon",
+          "message": "Late Night HH 🌙 · 12 AM",
+          "title": null,
+          "timeLabel": null
+        }
+      ],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "VISIBLE",
+      "specialClassification": false,
+      "canonicalEventTime": "11:30 PM",
+      "fallbackReason": "linked performer has no approved repository art candidates",
+      "surfaceSpecificPresentationExceptions": [
+        {
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "field": "eventVisibility",
+          "web": "SEMANTIC_SOURCE_ONLY",
+          "mobile": "VISIBLE_CARD",
+          "reason": "Web suppresses tactical companion detail while Mobile shows the complete chronological schedule."
+        },
+        {
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "field": "recurringComposition",
+          "web": "WEEKDAY_COLUMN_COMPOSITION",
+          "mobile": "DATE_CARD_CONTEXT",
+          "reason": "Both surfaces preserve recurring semantics through their approved layout grammar."
+        }
+      ],
+      "surfaces": {
+        "web": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": false,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-28",
+      "eventId": null,
+      "eventName": "Pump",
+      "canonicalPerformerIdentity": "Pump",
+      "selectedAsset": "pump",
+      "selectedAssetChecksum": "05c16e757f0e1f1218f9e914ae8c7dd092ffbb8eecfe7c02247fd30398959aac",
+      "assetClass": "square-identity",
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "VISIBLE",
+      "specialClassification": false,
+      "canonicalEventTime": "10 PM",
+      "fallbackReason": null,
+      "surfaceSpecificPresentationExceptions": [],
+      "surfaces": {
+        "web": {
+          "selectedAsset": "pump",
+          "selectedAssetChecksum": "05c16e757f0e1f1218f9e914ae8c7dd092ffbb8eecfe7c02247fd30398959aac",
+          "assetVisiblyRendered": true,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": "contain",
+          "position": "center",
+          "fallbackReason": null,
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": "pump",
+          "selectedAssetChecksum": "05c16e757f0e1f1218f9e914ae8c7dd092ffbb8eecfe7c02247fd30398959aac",
+          "assetVisiblyRendered": true,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": "contain",
+          "position": "center",
+          "fallbackReason": null,
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-29",
+      "eventId": null,
+      "eventName": "JEMM",
+      "canonicalPerformerIdentity": "JEMM",
+      "selectedAsset": "jemm",
+      "selectedAssetChecksum": "a312ff37b5e9a6add692dba8480bd3f829cb8f960ae706e43592536633d6068c",
+      "assetClass": "square-identity",
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "VISIBLE",
+      "specialClassification": false,
+      "canonicalEventTime": "10 PM",
+      "fallbackReason": null,
+      "surfaceSpecificPresentationExceptions": [],
+      "surfaces": {
+        "web": {
+          "selectedAsset": "jemm",
+          "selectedAssetChecksum": "a312ff37b5e9a6add692dba8480bd3f829cb8f960ae706e43592536633d6068c",
+          "assetVisiblyRendered": true,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": "contain",
+          "position": "center",
+          "fallbackReason": null,
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": "jemm",
+          "selectedAssetChecksum": "a312ff37b5e9a6add692dba8480bd3f829cb8f960ae706e43592536633d6068c",
+          "assetVisiblyRendered": true,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": "contain",
+          "position": "center",
+          "fallbackReason": null,
+          "exception": null
+        }
+      }
+    },
+    {
+      "date": "2026-08-30",
+      "eventId": null,
+      "eventName": "Whiskey Allstars",
+      "canonicalPerformerIdentity": "Whiskey Allstars",
+      "selectedAsset": null,
+      "selectedAssetChecksum": null,
+      "assetClass": null,
+      "selfIdentifyingArtClaim": null,
+      "canonicalPerformerTextVisible": true,
+      "promotions": [
+        {
+          "id": "in-da-biz-sundays",
+          "display": "ribbon",
+          "message": "In da Biz · 50% Off",
+          "title": null,
+          "timeLabel": null
+        }
+      ],
+      "venueSemantic": "Living Room",
+      "venueVisibilitySemantic": "SEMANTIC_ONLY",
+      "specialClassification": false,
+      "canonicalEventTime": "6ish",
+      "fallbackReason": "linked performer has no approved repository art candidates",
+      "surfaceSpecificPresentationExceptions": [
+        {
+          "classification": "SURFACE_SPECIFIC_RULE",
+          "field": "recurringComposition",
+          "web": "WEEKDAY_COLUMN_COMPOSITION",
+          "mobile": "DATE_CARD_CONTEXT",
+          "reason": "Both surfaces preserve recurring semantics through their approved layout grammar."
+        }
+      ],
+      "surfaces": {
+        "web": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        },
+        "mobile": {
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "eventVisible": true,
+          "performerTextVisible": true,
+          "fit": null,
+          "position": null,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "exception": null
+        }
+      }
+    }
+  ]
+}
