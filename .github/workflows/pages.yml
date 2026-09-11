@@ -1,0 +1,151 @@
+name: Deploy bounded GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - .github/workflows/pages.yml
+      - pages-live-policy.json
+      - scripts/build-pages-site.py
+      - scripts/test-build-pages-site.py
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out policy and required current paths
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /.github/
+            /scripts/build-pages-site.py
+            /scripts/test-build-pages-site.py
+            /pages-live-policy.json
+            /calendar.html
+            /calendar.png
+            /calendar.pdf
+            /mobile/current/
+      - name: Test fail-closed live-set assembly
+        run: python3 scripts/test-build-pages-site.py
+      - name: Assemble byte-identical bounded site
+        run: python3 scripts/build-pages-site.py --output _site --ref "$GITHUB_SHA"
+      - name: Record measured payload
+        run: |
+          tar -czf /tmp/bounded-pages.tgz -C _site .
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          manifest = json.loads(Path("_site/pages-live-manifest.json").read_text())
+          print(f"payload_files={manifest['payloadFileCount']}")
+          print(f"payload_bytes={manifest['payloadBytes']}")
+          print(f"compressed_bytes={Path('/tmp/bounded-pages.tgz').stat().st_size}")
+          PY
+      - name: Configure Pages
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+      - name: Upload bounded Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+        with:
+          path: _site
+          retention-days: 1
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy bounded Pages artifact
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
+
+  verify-and-clean:
+    if: github.event_name != 'pull_request'
+    needs: deploy
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: read
+    steps:
+      - name: Check out exact manifest sources
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /scripts/build-pages-site.py
+            /pages-live-policy.json
+            /calendar.html
+            /calendar.png
+            /calendar.pdf
+            /mobile/current/
+      - name: Rebuild exact bounded manifest
+        run: python3 scripts/build-pages-site.py --output _site --ref "$GITHUB_SHA"
+      - name: Verify deployed bytes
+        env:
+          SITE_URL: https://sotadatos.github.io/bougies-calendar-preview
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os, time
+          from pathlib import Path
+          from urllib.request import Request, urlopen
+          manifest = json.loads(Path("_site/pages-live-manifest.json").read_text())
+          required = ["calendar.html", "calendar.png", "calendar.pdf", "mobile/current/calendar.html", "mobile/current/prototype-manifest.json"]
+          required += [f"{path}/calendar.html" for path in manifest["activeReviews"].values()]
+          required += [entry["path"] for entry in manifest["files"] if any(entry["path"].startswith(prefix + "/") for prefix in manifest["provenanceDirectories"]) and entry["path"].endswith(("calendar.html", "prototype-manifest.json"))]
+          required = sorted(set(required))
+          expected = {entry["path"]: entry["sha256"] for entry in manifest["files"]}
+          for attempt in range(12):
+              try:
+                  for path in required:
+                      request = Request(f"{os.environ['SITE_URL']}/{path}", headers={"Cache-Control": "no-cache"})
+                      with urlopen(request, timeout=30) as response:
+                          body = response.read()
+                      digest = hashlib.sha256(body).hexdigest()
+                      if digest != expected[path]:
+                          raise RuntimeError(f"hash mismatch for {path}: {digest}")
+                  print(f"PAGES_LIVE_BYTES_OK files={len(required)}")
+                  break
+              except Exception:
+                  if attempt == 11:
+                      raise
+                  time.sleep(10)
+          PY
+      - name: Remove only this run's verified-obsolete deployment artifact
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        with:
+          script: |
+            const artifacts = await github.paginate(
+              github.rest.actions.listWorkflowRunArtifacts,
+              { owner: context.repo.owner, repo: context.repo.repo, run_id: context.runId, per_page: 100 }
+            );
+            const pages = artifacts.filter(a => a.name === 'github-pages' && !a.expired);
+            if (pages.length !== 1) {
+              core.setFailed(`expected exactly one current-run github-pages artifact, found ${pages.length}`);
+              return;
+            }
+            await github.rest.actions.deleteArtifact({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              artifact_id: pages[0].id,
+            });
+            core.info(`deleted verified-obsolete current-run artifact ${pages[0].id}`);
