@@ -193,8 +193,8 @@ def build(root: Path, policy_path: Path, output: Path, expected_ref: str) -> dic
     resolved_ref = run_git(root, "rev-parse", f"{expected_ref}^{{commit}}")
     if head != resolved_ref:
         raise ContractError(f"checkout HEAD {head} does not equal required source ref {resolved_ref}")
-    if output == root or output in root.parents:
-        raise ContractError("output directory must not contain the repository")
+    if output == root or root in output.parents:
+        raise ContractError("output directory must be outside the repository checkout")
 
     fixed_files = {safe_relative(value) for value in policy["fixedFiles"]}
     fixed_directories = {safe_relative(value) for value in policy["fixedDirectories"]}

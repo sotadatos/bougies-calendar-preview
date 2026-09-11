@@ -83,12 +83,11 @@ class PagesSiteTest(unittest.TestCase):
         self.assertFalse((output / "review/2026-08/v30/calendar.html").exists())
         self.assertFalse((output / "mobile/review/2026-08/mobile-v10-h4/calendar.html").exists())
 
-    def test_workflow_output_directory_inside_checkout_is_allowed(self):
+    def test_output_directory_inside_checkout_fails_closed(self):
         output = self.repo / "_site"
         head = run(self.repo, "git", "rev-parse", "HEAD")
-        manifest = MODULE.build(self.repo, self.policy, output, head)
-        self.assertEqual(manifest["payloadFileCount"], 13)
-        self.assertTrue((output / "pages-live-manifest.json").is_file())
+        with self.assertRaises(MODULE.ContractError):
+            MODULE.build(self.repo, self.policy, output, head)
 
     def test_missing_required_file_fails_closed(self):
         (self.repo / "calendar.pdf").unlink()

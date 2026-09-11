@@ -40,17 +40,19 @@ jobs:
       - name: Test fail-closed live-set assembly
         run: python3 scripts/test-build-pages-site.py
       - name: Assemble byte-identical bounded site
-        run: python3 scripts/build-pages-site.py --output _site --ref "$GITHUB_SHA"
+        run: python3 scripts/build-pages-site.py --output "$RUNNER_TEMP/pages-site" --ref "$GITHUB_SHA"
       - name: Record measured payload
         run: |
-          tar -czf /tmp/bounded-pages.tgz -C _site .
+          tar -czf "$RUNNER_TEMP/bounded-pages.tgz" -C "$RUNNER_TEMP/pages-site" .
           python3 - <<'PY'
+          import os
           import json
           from pathlib import Path
-          manifest = json.loads(Path("_site/pages-live-manifest.json").read_text())
+          runner_temp = Path(os.environ["RUNNER_TEMP"])
+          manifest = json.loads((runner_temp / "pages-site/pages-live-manifest.json").read_text())
           print(f"payload_files={manifest['payloadFileCount']}")
           print(f"payload_bytes={manifest['payloadBytes']}")
-          print(f"compressed_bytes={Path('/tmp/bounded-pages.tgz').stat().st_size}")
+          print(f"compressed_bytes={(runner_temp / 'bounded-pages.tgz').stat().st_size}")
           PY
       - name: Configure Pages
         if: github.event_name != 'pull_request'
@@ -59,7 +61,7 @@ jobs:
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
         with:
-          path: _site
+          path: ${{ runner.temp }}/pages-site
           retention-days: 1
 
   deploy:
@@ -99,7 +101,7 @@ jobs:
             /calendar.pdf
             /mobile/current/
       - name: Rebuild exact bounded manifest
-        run: python3 scripts/build-pages-site.py --output _site --ref "$GITHUB_SHA"
+        run: python3 scripts/build-pages-site.py --output "$RUNNER_TEMP/pages-site" --ref "$GITHUB_SHA"
       - name: Verify deployed bytes
         env:
           SITE_URL: https://sotadatos.github.io/bougies-calendar-preview
@@ -108,7 +110,7 @@ jobs:
           import hashlib, json, os, time
           from pathlib import Path
           from urllib.request import Request, urlopen
-          manifest = json.loads(Path("_site/pages-live-manifest.json").read_text())
+          manifest = json.loads((Path(os.environ["RUNNER_TEMP"]) / "pages-site/pages-live-manifest.json").read_text())
           required = ["calendar.html", "calendar.png", "calendar.pdf", "mobile/current/calendar.html", "mobile/current/prototype-manifest.json"]
           required += [f"{path}/calendar.html" for path in manifest["activeReviews"].values()]
           required += [entry["path"] for entry in manifest["files"] if any(entry["path"].startswith(prefix + "/") for prefix in manifest["provenanceDirectories"]) and entry["path"].endswith(("calendar.html", "prototype-manifest.json"))]
