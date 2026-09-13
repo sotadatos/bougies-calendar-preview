@@ -1,0 +1,16 @@
+name: Actions runner allocation diagnostic
+
+on:
+  push:
+    branches:
+      - diagnostic/actions-runner-20260913-issue129
+
+permissions: {}
+
+jobs:
+  allocate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Confirm hosted runner allocation
+        run: echo "RUNNER_ASSIGNED"
