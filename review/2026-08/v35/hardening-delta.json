@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "contract": "issue-129-v35-h9-hardening-delta",
+  "candidatePair": {
+    "web": "v35",
+    "mobile": "mobile-v10-h9"
+  },
+  "frameworkRevision": "8f6a4caaeea19c0fbce95211966b8f1b91680c00f40dbc0d4610af93a645e824",
+  "presentationDecisionRevision": "d73e4c07b3c8580aa3113723fc33f3ccff20d7829c3d7ff35765600c5608129a",
+  "findings": [
+    {
+      "id": "current-recurring-compositions",
+      "result": "PASS",
+      "evidence": "August inherits approved current Tuesday, Wednesday, and Sunday compositions for governed four/five occurrence geometry."
+    },
+    {
+      "id": "late-night-hh",
+      "result": "PASS",
+      "evidence": "One reusable fact renders for Tuesday and Thursday on Web and Mobile."
+    },
+    {
+      "id": "titos-tag",
+      "result": "PASS",
+      "evidence": "August 14 uses the shared standard promotion tag component."
+    },
+    {
+      "id": "dj-art-reconciliation",
+      "result": "PASS",
+      "evidence": "DJ Edward and DJ DIAGA use named fallback with a durable no-approved-art reason."
+    },
+    {
+      "id": "actual-render-parity",
+      "result": "PASS",
+      "evidence": "33 shared records, zero unexplained discrepancies."
+    },
+    {
+      "id": "framework-diff",
+      "result": "PASS",
+      "evidence": "16 required August/September topics use only approved classifications."
+    },
+    {
+      "id": "tests",
+      "result": "PASS",
+      "evidence": "512 tests passed, including browser runtime and September compatibility contracts."
+    },
+    {
+      "id": "mobile-widths",
+      "result": "PASS",
+      "evidence": "320, 375, 390, 430, and 480px: zero overflow, clipping, bounds, image-load, or image-resolution failures."
+    },
+    {
+      "id": "performance",
+      "result": "PASS",
+      "evidence": "Web 24,488,041 bytes and Mobile 10,201,990 bytes; zero duplicate image bytes; 60.16% and 75.10% first-load reductions."
+    }
+  ],
+  "unresolvedFindings": []
+}

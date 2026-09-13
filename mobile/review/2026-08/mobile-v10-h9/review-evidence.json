@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "targetMonth": "2026-08",
+  "candidatePair": {
+    "web": "v35",
+    "mobile": "mobile-v10-h9"
+  },
+  "sourceCommit": "939282bad75c0feab69fcc477557d7631f030c12",
+  "contentRevision": "d0d7657d040ad334c87865d93bd1ef3ff709d2d5b8759b76408268db9dafdbe3",
+  "frameworkRevision": "8f6a4caaeea19c0fbce95211966b8f1b91680c00f40dbc0d4610af93a645e824",
+  "approvedAssetLibraryRevision": "454ed4f771515436529194a5a8075d6f03043c9d17df219d2c7e6cc74e940943",
+  "presentationDecisionRevision": "d73e4c07b3c8580aa3113723fc33f3ccff20d7829c3d7ff35765600c5608129a",
+  "outputs": {
+    "web": {
+      "html": {
+        "path": "review/2026-08/v35/calendar.html",
+        "sha256": "1e0b1f37de1bc4c0c188e1f28f68f113dc7bf48f85ed82cb5cd1986882df2bc8"
+      },
+      "png": {
+        "path": "review/2026-08/v35/calendar.png",
+        "sha256": "214eda0dbb9182b0bdadba56709c28f9d9486200dd647837716c7a8528cea6f0"
+      },
+      "pdf": {
+        "path": "review/2026-08/v35/calendar.pdf",
+        "sha256": "5c49e58567eaa60fd7ed7bd3527980138e84d426abcb406215b909cc723871f3"
+      }
+    },
+    "mobile": {
+      "html": {
+        "path": "mobile/review/2026-08/mobile-v10-h9/calendar.html",
+        "sha256": "91603ceea9d0db2e7effa983db3321ddff7496600c8ee0ac5f561ec16ab2eb28"
+      },
+      "viewportValidation": {
+        "path": "mobile/review/2026-08/mobile-v10-h9/viewport-validation.json",
+        "sha256": "00260f5ffb00558f3c6a5070d6f914fb7ea90a3d3d7722c1fdb5f2f6a2aa0f77"
+      }
+    }
+  },
+  "qa": {
+    "status": "pass",
+    "checks": [
+      "full repository suite: 512/512",
+      "actual browser parity: 33 shared records, zero unexplained discrepancies",
+      "five device-emulated widths: 320/375/390/430/480; zero overflow, clipping, bounds, image-load, or image-resolution failures",
+      "Web and Mobile performance budgets pass with zero duplicate image bytes",
+      "September compatibility contracts pass in the full suite",
+      "no production/current, mobile/current, Wix, DNS, Airtable, merge, or label action"
+    ]
+  },
+  "reviewState": "needs-review",
+  "renderReviewRun": "6ff7dea663bcbb1f0b43674908c8cdb613a3608f3ca2e5b37d1b12e3fe819f8f",
+  "evidenceIdentity": "6ff7dea663bcbb1f0b43674908c8cdb613a3608f3ca2e5b37d1b12e3fe819f8f"
+}

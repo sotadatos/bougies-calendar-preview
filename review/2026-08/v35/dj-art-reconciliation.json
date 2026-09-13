@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "contract": "issue-129-v35-h9-dj-art-reconciliation",
+  "candidatePair": {
+    "web": "v35",
+    "mobile": "mobile-v10-h9"
+  },
+  "frameworkRevision": "8f6a4caaeea19c0fbce95211966b8f1b91680c00f40dbc0d4610af93a645e824",
+  "decision": "NAMED_TEXT_FALLBACK",
+  "reason": "linked performer has no approved repository art candidates",
+  "durableEvidence": [
+    "reports/issue-129/approved-art-history-recovery.json",
+    "reports/issue-129/residual-art-history-reaudit.json"
+  ],
+  "records": [
+    {
+      "date": "2026-08-06",
+      "identity": "DJ Edward",
+      "surfaces": {
+        "web": "SUPPRESSED_COMPANION_BY_APPROVED_SURFACE_RULE",
+        "mobile": "VISIBLE_NAMED_TEXT_FALLBACK"
+      }
+    },
+    {
+      "date": "2026-08-13",
+      "identity": "DJ Edward",
+      "surfaces": {
+        "web": "SUPPRESSED_COMPANION_BY_APPROVED_SURFACE_RULE",
+        "mobile": "VISIBLE_NAMED_TEXT_FALLBACK"
+      }
+    },
+    {
+      "date": "2026-08-20",
+      "identity": "DJ Edward",
+      "surfaces": {
+        "web": "SUPPRESSED_COMPANION_BY_APPROVED_SURFACE_RULE",
+        "mobile": "VISIBLE_NAMED_TEXT_FALLBACK"
+      }
+    },
+    {
+      "date": "2026-08-27",
+      "identity": "DJ Edward",
+      "surfaces": {
+        "web": "SUPPRESSED_COMPANION_BY_APPROVED_SURFACE_RULE",
+        "mobile": "VISIBLE_NAMED_TEXT_FALLBACK"
+      }
+    },
+    {
+      "date": "2026-08-21",
+      "identity": "DJ DIAGA",
+      "surfaces": {
+        "web": "VISIBLE_NAMED_TEXT_FALLBACK",
+        "mobile": "VISIBLE_NAMED_TEXT_FALLBACK"
+      }
+    }
+  ],
+  "inventedArtwork": false
+}
