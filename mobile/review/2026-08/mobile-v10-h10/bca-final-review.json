@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "BCA",
+  "decision": "APPROVE_PAIR",
+  "candidatePair": {
+    "web": "v36",
+    "mobile": "mobile-v10-h10"
+  },
+  "exactArtifacts": {
+    "webHtmlSha256": "a09ce614d7c6c6e4d0b4fb1c889b26a8e96e7068bc0d8c136afcf862b0aab6ee",
+    "webPngSha256": "5316ef9ee4cd0e485667ec671493c8301e80419a2ce3df1ef2feed8f45dd99e0",
+    "mobileHtmlSha256": "a25558e0165c31e5e9237979c556f2cdec27642c0a5cc47e7b9cf8bb2b5f6e34"
+  },
+  "findings": [
+    "Wednesday and Sunday compositions correctly inherit the approved presentation.",
+    "Tuesday and Thursday Late Night HH treatments are visible.",
+    "Tito’s Aug 14 uses the standard promotion component.",
+    "Approved DJ Edward and DJ DIAGA portraits render clearly with canonical names and native-safe compact sizing.",
+    "All nine USER_VISUAL_ACCEPTANCE items pass with zero unresolved items.",
+    "Actual-render parity covers 33 records with zero unexplained discrepancies.",
+    "All five Mobile widths pass with 20/20 sources, 49/49 targets, and zero overflow, clipping, bounds, or image failures.",
+    "Web and Mobile performance budgets pass with zero duplicate image bytes.",
+    "The full repository suite passes 515/515 and September compatibility generation passes."
+  ],
+  "surfaceSpecificRule": "Web suppresses the Thursday DJ Edward tactical companion while Mobile renders the complete chronological schedule.",
+  "blockingFindings": [],
+  "productionApproval": false
+}

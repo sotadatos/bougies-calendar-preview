@@ -1,0 +1,102 @@
+{
+  "status": "PASS",
+  "surface": "web",
+  "budget": {
+    "maximumHtmlBytes": 65000000,
+    "maximumUniqueImageBytes": 50000000,
+    "maximumDuplicateImageBytes": 0,
+    "maximumRegressionPercent": 5
+  },
+  "measured": {
+    "htmlBytes": 24519532,
+    "imageOccurrences": 25,
+    "uniqueImageCount": 25,
+    "repeatedImageTargets": 0,
+    "uniqueRawImageBytes": 18321633,
+    "allRawImageBytes": 18321633,
+    "encodedImageBytes": 24429427,
+    "uniqueEncodedImageBytes": 24429427,
+    "base64DataUriOverheadBytes": 6107794,
+    "markupWithoutDataUrisBytes": 90105,
+    "uniqueInlineBaselineBytes": 24519532,
+    "styleBytes": 47704,
+    "executableScriptBytes": 4444,
+    "payloadContainerBytes": 12359766,
+    "largestImages": [
+      {
+        "mimeType": "image/png",
+        "sha256": "7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+        "rawBytes": 3518631,
+        "encodedBytes": 4691530,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/png",
+        "sha256": "338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa",
+        "rawBytes": 3495744,
+        "encodedBytes": 4661014,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/png",
+        "sha256": "9763b1b81dbbca6d3a1dddb8e9250bf6b09a25fbb26209bd1d5d9c541af8257f",
+        "rawBytes": 2251500,
+        "encodedBytes": 3002022,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/png",
+        "sha256": "a1d12c406da0959b087160329ac6225798b7eb457ed3c9d3cc82d8703ccfa3f9",
+        "rawBytes": 1831497,
+        "encodedBytes": 2442018,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/png",
+        "sha256": "4f029697cb6fedbe644a353602dd6f5980643968a5f7f2a7fd983c3cf6287f55",
+        "rawBytes": 1633929,
+        "encodedBytes": 2178594,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/jpeg",
+        "sha256": "abbefa546c839ba629d6fddd2ac10e5eb8ae9996092cba91b8cc1bf79dc0a496",
+        "rawBytes": 784048,
+        "encodedBytes": 1045423,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/png",
+        "sha256": "d95b2f15554119f6f7f4a226d2886cbf8a843a7ddea3aa825dedc4fb2625ee96",
+        "rawBytes": 667563,
+        "encodedBytes": 890106,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/png",
+        "sha256": "480f85eee8adede95f62924cd2c2c1aa4dd2782743814e8ee260d66c16855f7f",
+        "rawBytes": 629393,
+        "encodedBytes": 839214,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/png",
+        "sha256": "249bf73f682bfec6f406a8e55a45cbe1e42d43504a1aef9ab05dbdde5ad6c04d",
+        "rawBytes": 629387,
+        "encodedBytes": 839206,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/png",
+        "sha256": "752909552b3978d36034d651dbf917f896101acd0f56fbf336098248336b8619",
+        "rawBytes": 623073,
+        "encodedBytes": 830786,
+        "targetCount": 1
+      }
+    ]
+  },
+  "duplicateImageBytes": 0,
+  "priorHtmlBytes": null,
+  "regressionPercent": null,
+  "failures": []
+}

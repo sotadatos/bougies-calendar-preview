@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "contract": "USER_VISUAL_ACCEPTANCE",
+  "candidatePair": {
+    "web": "v36",
+    "mobile": "mobile-v10-h10"
+  },
+  "allowedStatuses": [
+    "PASS_VISIBLE",
+    "PASS_INTENTIONAL_DIFFERENCE",
+    "RESIDUAL_ASSET_GAP",
+    "BLOCKED_BUSINESS_DECISION"
+  ],
+  "items": [
+    {
+      "comment": "DJ Edward reusable art",
+      "status": "PASS_VISIBLE",
+      "result": "The exact approved DJ Edward portrait renders wherever his performer identity is visible, including every August Mobile late-night occurrence and Freestyle Party on both surfaces.",
+      "evidence": [
+        "reports/issue-129/bca-performer-profile-candidate-review.json",
+        "reports/issue-129/actual-render-presentation-parity.v36-h10.json"
+      ]
+    },
+    {
+      "comment": "DJ DIAGA reusable art",
+      "status": "PASS_VISIBLE",
+      "result": "The exact approved DJ DIAGA portrait renders in the Aug 21 Web split cell and Mobile event card without exceeding the approved upscale limit.",
+      "evidence": [
+        "reports/issue-129/bca-performer-profile-candidate-review.json",
+        "reports/issue-129/actual-render-presentation-parity.v36-h10.json"
+      ]
+    },
+    {
+      "comment": "Tuesday Late Night HH Web",
+      "status": "PASS_VISIBLE",
+      "result": "The standard Late Night HH footer is visibly rendered below Tuesday.",
+      "evidence": ["output/calendar-renders/2026-08/calendar.png"]
+    },
+    {
+      "comment": "Thursday Late Night HH Web",
+      "status": "PASS_VISIBLE",
+      "result": "The standard Late Night HH footer is visibly rendered below Thursday while tactical DJ companion cards remain suppressed by the approved Web surface rule.",
+      "evidence": ["output/calendar-renders/2026-08/calendar.png"]
+    },
+    {
+      "comment": "Tuesday Late Night HH Mobile",
+      "status": "PASS_VISIBLE",
+      "result": "Every Tuesday Karaoke card visibly carries the Late Night HH fact.",
+      "evidence": ["output/mobile-calendar-prototypes/2026-08/mobile-v10/viewport-validation.json"]
+    },
+    {
+      "comment": "Thursday Late Night HH Mobile",
+      "status": "PASS_VISIBLE",
+      "result": "Every Thursday band card and the visible DJ Edward companion card carry the Late Night HH fact in chronological order.",
+      "evidence": ["output/mobile-calendar-prototypes/2026-08/mobile-v10/viewport-validation.json"]
+    },
+    {
+      "comment": "Wednesday vertical inheritance from latest-approved September baseline",
+      "status": "PASS_VISIBLE",
+      "result": "The approved self-describing Ladies Night Wednesday composition is inherited and segmented across all August Wednesday occurrences.",
+      "evidence": [
+        "reports/issue-129/august-september-framework-diff.v36-h10.json",
+        "output/calendar-renders/2026-08/calendar.png"
+      ]
+    },
+    {
+      "comment": "Sunday vertical inheritance from latest-approved September baseline",
+      "status": "PASS_VISIBLE",
+      "result": "The approved Whiskey Allstars Sunday composition is inherited and segmented across all August Sunday occurrences.",
+      "evidence": [
+        "reports/issue-129/august-september-framework-diff.v36-h10.json",
+        "output/calendar-renders/2026-08/calendar.png"
+      ]
+    },
+    {
+      "comment": "Tito’s promo uses standard promo component",
+      "status": "PASS_VISIBLE",
+      "result": "The Aug 14 Tito’s promotion renders through the standard promotion component with its public time fact.",
+      "evidence": [
+        "reports/issue-129/actual-render-presentation-parity.v36-h10.json",
+        "output/calendar-renders/2026-08/calendar.png"
+      ]
+    }
+  ],
+  "unresolvedCount": 0
+}

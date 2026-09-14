@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "contract": "issue-129-v36-h10-hardening-delta",
+  "candidatePair": {
+    "web": "v36",
+    "mobile": "mobile-v10-h10"
+  },
+  "frameworkRevision": "a24b741653e793603a1cbe49556d70ba7bc88c13c3d75bea94e8ee956770c5cf",
+  "approvedAssetLibraryRevision": "31ec86f0357bd0fe8c6df2376b356a70a953a7c2db42eee4e4ae2237d36c6f03",
+  "presentationDecisionRevision": "34c33b34d204da151fcb651a1c56cc0661f2f33c2d9bfdd3dbce6d56234a3d93",
+  "findings": [
+    { "id": "dj-edward-art", "result": "PASS", "evidence": "Exact BCA-approved portrait checksum renders on all visible August occurrences; the four Web companion events remain explicitly suppressed." },
+    { "id": "dj-diaga-art", "result": "PASS", "evidence": "Exact BCA-approved portrait checksum renders on Aug 21 Web and Mobile within the compact native-safe presentation." },
+    { "id": "actual-render-parity", "result": "PASS", "evidence": "33 shared records reconcile in Chrome with zero unexplained discrepancies." },
+    { "id": "user-visual-acceptance", "result": "PASS", "evidence": "All nine required user visual comments have explicit PASS_VISIBLE dispositions." },
+    { "id": "mobile-widths", "result": "PASS", "evidence": "320, 375, 390, 430, and 480px have zero overflow, clipping, bounds, image-load, or image-resolution failures." },
+    { "id": "september-compatibility", "result": "PASS", "evidence": "The fixed September Mobile-v1 fixture regenerates under the shared framework at 15,843,235 HTML bytes and 11,860,262 unique image bytes." },
+    { "id": "tests", "result": "PASS", "evidence": "515 repository tests pass, including the browser runtime check." },
+    { "id": "performance", "result": "PASS", "evidence": "August Web is 24,519,532 bytes; August Mobile is 10,237,245 bytes; both have zero duplicate image bytes." },
+    { "id": "production-safety", "result": "PASS", "evidence": "Production/current and the approved September v12 preview retain their recorded exact hashes." }
+  ],
+  "unresolvedFindings": []
+}

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "contract": "issue-129-v36-h10-dj-art-reconciliation",
+  "candidatePair": {
+    "web": "v36",
+    "mobile": "mobile-v10-h10"
+  },
+  "decision": "APPROVED_REUSABLE_ASSET",
+  "records": [
+    {
+      "identity": "DJ Edward",
+      "asset": "dj-edward-v1.jpg",
+      "sha256": "fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e",
+      "surfaces": {
+        "web": "VISIBLE_WHERE_EVENT_IS_VISIBLE; LATE_NIGHT_COMPANION_SUPPRESSED_BY_APPROVED_SURFACE_RULE",
+        "mobile": "VISIBLE_APPROVED_ASSET"
+      }
+    },
+    {
+      "identity": "DJ DIAGA",
+      "asset": "dj-diaga-v1.jpg",
+      "sha256": "f375d3e1d1195d3e7895dd3fea383b3db1b16b1b42fa92f14f76c5ce3398e539",
+      "surfaces": {
+        "web": "VISIBLE_APPROVED_ASSET",
+        "mobile": "VISIBLE_APPROVED_ASSET"
+      }
+    }
+  ],
+  "candidateReview": "reports/issue-129/bca-performer-profile-candidate-review.json",
+  "actualRenderEvidence": "reports/issue-129/actual-render-presentation-parity.v36-h10.json",
+  "residualAssetGaps": []
+}

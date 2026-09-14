@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "targetMonth": "2026-08",
+  "candidatePair": {
+    "web": "v36",
+    "mobile": "mobile-v10-h10"
+  },
+  "sourceCommit": "ed39343671f452fdca8802196d87bfb282e24962",
+  "contentRevision": "d0d7657d040ad334c87865d93bd1ef3ff709d2d5b8759b76408268db9dafdbe3",
+  "frameworkRevision": "a24b741653e793603a1cbe49556d70ba7bc88c13c3d75bea94e8ee956770c5cf",
+  "approvedAssetLibraryRevision": "31ec86f0357bd0fe8c6df2376b356a70a953a7c2db42eee4e4ae2237d36c6f03",
+  "presentationDecisionRevision": "34c33b34d204da151fcb651a1c56cc0661f2f33c2d9bfdd3dbce6d56234a3d93",
+  "outputs": {
+    "web": {
+      "html": {
+        "path": "review/2026-08/v36/calendar.html",
+        "sha256": "a09ce614d7c6c6e4d0b4fb1c889b26a8e96e7068bc0d8c136afcf862b0aab6ee"
+      },
+      "png": {
+        "path": "review/2026-08/v36/calendar.png",
+        "sha256": "5316ef9ee4cd0e485667ec671493c8301e80419a2ce3df1ef2feed8f45dd99e0"
+      },
+      "pdf": {
+        "path": "review/2026-08/v36/calendar.pdf",
+        "sha256": "6af76e44381d45441df698dec1903f414d41b49cd585182fa414d0b985ec69a6"
+      }
+    },
+    "mobile": {
+      "html": {
+        "path": "mobile/review/2026-08/mobile-v10-h10/calendar.html",
+        "sha256": "a25558e0165c31e5e9237979c556f2cdec27642c0a5cc47e7b9cf8bb2b5f6e34"
+      },
+      "viewportValidation": {
+        "path": "mobile/review/2026-08/mobile-v10-h10/viewport-validation.json",
+        "sha256": "c92bafaabb3ee0f341c7c7ae984be16da098930446bc457f4e5bc87f5b0e42bb"
+      }
+    }
+  },
+  "qa": {
+    "status": "pass",
+    "checks": [
+      "full repository suite: 515/515",
+      "September Mobile-v1 compatibility generation passes",
+      "actual browser parity: 33 shared records and zero unexplained discrepancies",
+      "five Mobile widths: zero overflow, clipping, bounds, image-load, or image-resolution failures",
+      "DJ Edward and DJ DIAGA exact approved bytes render visibly at native-safe compact sizes",
+      "USER_VISUAL_ACCEPTANCE: 9/9 pass",
+      "Web and Mobile performance budgets pass with zero duplicate image bytes",
+      "production/current and approved September v12 exact hashes unchanged"
+    ]
+  },
+  "reviewState": "approved-by-bca",
+  "bcaDecision": "APPROVE_PAIR",
+  "renderReviewRun": "1bb1d035712a38a86d9393003cd7ccc9062302e2f354b4241ad776d4d9654251",
+  "evidenceIdentity": "1bb1d035712a38a86d9393003cd7ccc9062302e2f354b4241ad776d4d9654251"
+}

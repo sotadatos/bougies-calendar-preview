@@ -1,0 +1,1988 @@
+{
+  "schemaVersion": 2,
+  "contract": "actual-render-web-mobile-presentation-parity",
+  "candidatePair": {
+    "web": "v36",
+    "mobile": "mobile-v10-h10"
+  },
+  "targetMonth": "2026-08",
+  "frameworkRevision": "a24b741653e793603a1cbe49556d70ba7bc88c13c3d75bea94e8ee956770c5cf",
+  "approvedAssetLibraryRevision": "31ec86f0357bd0fe8c6df2376b356a70a953a7c2db42eee4e4ae2237d36c6f03",
+  "presentationDecisionRevision": "34c33b34d204da151fcb651a1c56cc0661f2f33c2d9bfdd3dbce6d56234a3d93",
+  "driver": "WebDriver with system Chrome",
+  "auditFields": [
+    "promo facts and visibility",
+    "selected asset and checksum",
+    "render visibility",
+    "performer identity",
+    "recurring composition",
+    "venue",
+    "time",
+    "fallback reason"
+  ],
+  "summary": {
+    "recordCount": 33,
+    "unexplainedDiscrepancyCount": 0
+  },
+  "surfaces": {
+    "web": {
+      "recordCount": 33,
+      "discrepancies": [],
+      "records": [
+        {
+          "date": "2026-08-01",
+          "eventName": "Chronicles",
+          "eventVisible": true,
+          "selectedAsset": "chronicles-v2.jpg",
+          "selectedAssetChecksum": "f9aaf41cbea267b5d5e8f0f917f466148464ba8f7e2e0964b88d8486eddaeac1",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-02",
+          "eventName": "Whiskey Allstars",
+          "eventVisible": true,
+          "selectedAsset": "sunday-v2-whiskey-allstars-self-describing.png",
+          "selectedAssetChecksum": "7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": true,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-04",
+          "eventName": "Karaoke Tuesday",
+          "eventVisible": true,
+          "selectedAsset": "tuesday-v2-karaoke-self-describing.png",
+          "selectedAssetChecksum": "0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": true,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "event has no linked performer and no governed event override",
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-05",
+          "eventName": "Ladies Night",
+          "eventVisible": true,
+          "selectedAsset": "wednesday-v2-ladies-night-self-describing.png",
+          "selectedAssetChecksum": "338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": true,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-06",
+          "eventName": "Rhinestone Cowboys",
+          "eventVisible": true,
+          "selectedAsset": "thursday-v1-rhinestone-cowboys.png",
+          "selectedAssetChecksum": "f106325dd46c6e0e5831fdde72fd8ed267de19cf362d7834052b2edb9c562ca1",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-06",
+          "eventName": "DJ Edward",
+          "eventVisible": false,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": false,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": false,
+          "timeSemanticPreserved": false,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-07",
+          "eventName": "Bougie Nights",
+          "eventVisible": true,
+          "selectedAsset": "friday-v2-bougie-nights.png",
+          "selectedAssetChecksum": "ca443b40c88a177717a234527c097430d9fb4f18899475e3c0f2ba93c3feb809",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-07",
+          "eventName": "Retro Sky",
+          "eventVisible": true,
+          "selectedAsset": "retro-sky-v2.jpg",
+          "selectedAssetChecksum": "f10cf1e1ada6570b9a1ddbabf1ac05b5092c421bf97ca89d8f977b508f8514f4",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-08",
+          "eventName": "Freestyle Party",
+          "eventVisible": true,
+          "selectedAsset": "dj-edward-v1.jpg",
+          "selectedAssetChecksum": "fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-09",
+          "eventName": "Whiskey Allstars",
+          "eventVisible": true,
+          "selectedAsset": "sunday-v2-whiskey-allstars-self-describing.png",
+          "selectedAssetChecksum": "7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": true,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-11",
+          "eventName": "Karaoke Tuesday",
+          "eventVisible": true,
+          "selectedAsset": "tuesday-v2-karaoke-self-describing.png",
+          "selectedAssetChecksum": "0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": true,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "event has no linked performer and no governed event override",
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-12",
+          "eventName": "Ladies Night",
+          "eventVisible": true,
+          "selectedAsset": "wednesday-v2-ladies-night-self-describing.png",
+          "selectedAssetChecksum": "338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": true,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-13",
+          "eventName": "KoolKidz",
+          "eventVisible": true,
+          "selectedAsset": "koolkidz-v1.jpg",
+          "selectedAssetChecksum": "0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-13",
+          "eventName": "DJ Edward",
+          "eventVisible": false,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": false,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": false,
+          "timeSemanticPreserved": false,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-14",
+          "eventName": "Stereo Mix",
+          "eventVisible": true,
+          "selectedAsset": "stereo-mix-v1.jpg",
+          "selectedAssetChecksum": "bfbf7343dcf45e7dcbc62852591728f6605eb8015b03b9757332825e217381dc",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-15",
+          "eventName": "Undercover",
+          "eventVisible": true,
+          "selectedAsset": "undercover-v1.jpg",
+          "selectedAssetChecksum": "eec3aa31504399ed47197611f4a6f3ba35be0f5a8b70980d701ce104c42b1c70",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-16",
+          "eventName": "Whiskey Allstars",
+          "eventVisible": true,
+          "selectedAsset": "sunday-v2-whiskey-allstars-self-describing.png",
+          "selectedAssetChecksum": "7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": true,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-18",
+          "eventName": "Karaoke Tuesday",
+          "eventVisible": true,
+          "selectedAsset": "tuesday-v2-karaoke-self-describing.png",
+          "selectedAssetChecksum": "0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": true,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "event has no linked performer and no governed event override",
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-19",
+          "eventName": "Ladies Night",
+          "eventVisible": true,
+          "selectedAsset": "wednesday-v2-ladies-night-self-describing.png",
+          "selectedAssetChecksum": "338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": true,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-20",
+          "eventName": "The Lufts",
+          "eventVisible": true,
+          "selectedAsset": "luftz-v1.jpg",
+          "selectedAssetChecksum": "440fed2d0014d313246a3d43e7ecc661feaf2ac784554e4d0cf604384f48fe8d",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-20",
+          "eventName": "DJ Edward",
+          "eventVisible": false,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": false,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": false,
+          "timeSemanticPreserved": false,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-21",
+          "eventName": "DJ DIAGA",
+          "eventVisible": true,
+          "selectedAsset": "dj-diaga-v1.jpg",
+          "selectedAssetChecksum": "f375d3e1d1195d3e7895dd3fea383b3db1b16b1b42fa92f14f76c5ce3398e539",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-21",
+          "eventName": "Sunset Dreams",
+          "eventVisible": true,
+          "selectedAsset": "sunset-dreams-v1.jpg",
+          "selectedAssetChecksum": "aff501a678c2ab004628eb3dc903dd2f9fa4c4455d5b721cdba65f71c23c1da1",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-22",
+          "eventName": "DJ ICUE",
+          "eventVisible": true,
+          "selectedAsset": "dj-icue-v1.webp",
+          "selectedAssetChecksum": "2c16dcd65d3278db3cff46bdd4ad1aa89fc584677f8b57aad909a47c89fbc569",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-22",
+          "eventName": "Private Buyout",
+          "eventVisible": true,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "private-event cell is intentionally text-only; no performer or promotional artwork is required",
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-23",
+          "eventName": "Whiskey Allstars",
+          "eventVisible": true,
+          "selectedAsset": "sunday-v2-whiskey-allstars-self-describing.png",
+          "selectedAssetChecksum": "7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": true,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-25",
+          "eventName": "Karaoke Tuesday",
+          "eventVisible": true,
+          "selectedAsset": "tuesday-v2-karaoke-self-describing.png",
+          "selectedAssetChecksum": "0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": true,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "event has no linked performer and no governed event override",
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-26",
+          "eventName": "Ladies Night",
+          "eventVisible": true,
+          "selectedAsset": "wednesday-v2-ladies-night-self-describing.png",
+          "selectedAssetChecksum": "338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": true,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-27",
+          "eventName": "KoolKidz",
+          "eventVisible": true,
+          "selectedAsset": "koolkidz-v1.jpg",
+          "selectedAssetChecksum": "0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-27",
+          "eventName": "DJ Edward",
+          "eventVisible": false,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": false,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": false,
+          "timeSemanticPreserved": false,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-28",
+          "eventName": "Pump",
+          "eventVisible": true,
+          "selectedAsset": "pump-v1.jpg",
+          "selectedAssetChecksum": "05c16e757f0e1f1218f9e914ae8c7dd092ffbb8eecfe7c02247fd30398959aac",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-29",
+          "eventName": "JEMM",
+          "eventVisible": true,
+          "selectedAsset": "jemm-v1.jpg",
+          "selectedAssetChecksum": "a312ff37b5e9a6add692dba8480bd3f829cb8f960ae706e43592536633d6068c",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-30",
+          "eventName": "Whiskey Allstars",
+          "eventVisible": true,
+          "selectedAsset": "sunday-v2-whiskey-allstars-self-describing.png",
+          "selectedAssetChecksum": "7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "visiblePromotionIds": [
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": true,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        }
+      ]
+    },
+    "mobile": {
+      "recordCount": 33,
+      "discrepancies": [],
+      "records": [
+        {
+          "date": "2026-08-01",
+          "eventName": "Chronicles",
+          "eventVisible": true,
+          "selectedAsset": "chronicles-v2.jpg",
+          "selectedAssetChecksum": "f9aaf41cbea267b5d5e8f0f917f466148464ba8f7e2e0964b88d8486eddaeac1",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-02",
+          "eventName": "Whiskey Allstars",
+          "eventVisible": true,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-04",
+          "eventName": "Karaoke Tuesday",
+          "eventVisible": true,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "event has no linked performer and no governed event override",
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-05",
+          "eventName": "Ladies Night",
+          "eventVisible": true,
+          "selectedAsset": "dj-edward-v1.jpg",
+          "selectedAssetChecksum": "fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-06",
+          "eventName": "Rhinestone Cowboys",
+          "eventVisible": true,
+          "selectedAsset": "thursday-v1-rhinestone-cowboys.png",
+          "selectedAssetChecksum": "f106325dd46c6e0e5831fdde72fd8ed267de19cf362d7834052b2edb9c562ca1",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-06",
+          "eventName": "DJ Edward",
+          "eventVisible": true,
+          "selectedAsset": "dj-edward-v1.jpg",
+          "selectedAssetChecksum": "fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-07",
+          "eventName": "Bougie Nights",
+          "eventVisible": true,
+          "selectedAsset": "friday-v2-bougie-nights.png",
+          "selectedAssetChecksum": "ca443b40c88a177717a234527c097430d9fb4f18899475e3c0f2ba93c3feb809",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-07",
+          "eventName": "Retro Sky",
+          "eventVisible": true,
+          "selectedAsset": "retro-sky-v2.jpg",
+          "selectedAssetChecksum": "f10cf1e1ada6570b9a1ddbabf1ac05b5092c421bf97ca89d8f977b508f8514f4",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-08",
+          "eventName": "Freestyle Party",
+          "eventVisible": true,
+          "selectedAsset": "dj-edward-v1.jpg",
+          "selectedAssetChecksum": "fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-09",
+          "eventName": "Whiskey Allstars",
+          "eventVisible": true,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-11",
+          "eventName": "Karaoke Tuesday",
+          "eventVisible": true,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "event has no linked performer and no governed event override",
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-12",
+          "eventName": "Ladies Night",
+          "eventVisible": true,
+          "selectedAsset": "dj-edward-v1.jpg",
+          "selectedAssetChecksum": "fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-13",
+          "eventName": "KoolKidz",
+          "eventVisible": true,
+          "selectedAsset": "koolkidz-v1.jpg",
+          "selectedAssetChecksum": "0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-13",
+          "eventName": "DJ Edward",
+          "eventVisible": true,
+          "selectedAsset": "dj-edward-v1.jpg",
+          "selectedAssetChecksum": "fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-14",
+          "eventName": "Stereo Mix",
+          "eventVisible": true,
+          "selectedAsset": "stereo-mix-v1.jpg",
+          "selectedAssetChecksum": "bfbf7343dcf45e7dcbc62852591728f6605eb8015b03b9757332825e217381dc",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-15",
+          "eventName": "Undercover",
+          "eventVisible": true,
+          "selectedAsset": "undercover-v1.jpg",
+          "selectedAssetChecksum": "eec3aa31504399ed47197611f4a6f3ba35be0f5a8b70980d701ce104c42b1c70",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-16",
+          "eventName": "Whiskey Allstars",
+          "eventVisible": true,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-18",
+          "eventName": "Karaoke Tuesday",
+          "eventVisible": true,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "event has no linked performer and no governed event override",
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-19",
+          "eventName": "Ladies Night",
+          "eventVisible": true,
+          "selectedAsset": "dj-edward-v1.jpg",
+          "selectedAssetChecksum": "fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-20",
+          "eventName": "The Lufts",
+          "eventVisible": true,
+          "selectedAsset": "luftz-v1.jpg",
+          "selectedAssetChecksum": "440fed2d0014d313246a3d43e7ecc661feaf2ac784554e4d0cf604384f48fe8d",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-20",
+          "eventName": "DJ Edward",
+          "eventVisible": true,
+          "selectedAsset": "dj-edward-v1.jpg",
+          "selectedAssetChecksum": "fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-21",
+          "eventName": "DJ DIAGA",
+          "eventVisible": true,
+          "selectedAsset": "dj-diaga-v1.jpg",
+          "selectedAssetChecksum": "f375d3e1d1195d3e7895dd3fea383b3db1b16b1b42fa92f14f76c5ce3398e539",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-21",
+          "eventName": "Sunset Dreams",
+          "eventVisible": true,
+          "selectedAsset": "sunset-dreams-v1.jpg",
+          "selectedAssetChecksum": "aff501a678c2ab004628eb3dc903dd2f9fa4c4455d5b721cdba65f71c23c1da1",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-22",
+          "eventName": "DJ ICUE",
+          "eventVisible": true,
+          "selectedAsset": "dj-icue-v1.webp",
+          "selectedAssetChecksum": "2c16dcd65d3278db3cff46bdd4ad1aa89fc584677f8b57aad909a47c89fbc569",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-22",
+          "eventName": "Private Buyout",
+          "eventVisible": true,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "private-event cell is intentionally text-only; no performer or promotional artwork is required",
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-23",
+          "eventName": "Whiskey Allstars",
+          "eventVisible": true,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-25",
+          "eventName": "Karaoke Tuesday",
+          "eventVisible": true,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "event has no linked performer and no governed event override",
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-26",
+          "eventName": "Ladies Night",
+          "eventVisible": true,
+          "selectedAsset": "dj-edward-v1.jpg",
+          "selectedAssetChecksum": "fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-27",
+          "eventName": "KoolKidz",
+          "eventVisible": true,
+          "selectedAsset": "koolkidz-v1.jpg",
+          "selectedAssetChecksum": "0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-27",
+          "eventName": "DJ Edward",
+          "eventVisible": true,
+          "selectedAsset": "dj-edward-v1.jpg",
+          "selectedAssetChecksum": "fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-28",
+          "eventName": "Pump",
+          "eventVisible": true,
+          "selectedAsset": "pump-v1.jpg",
+          "selectedAssetChecksum": "05c16e757f0e1f1218f9e914ae8c7dd092ffbb8eecfe7c02247fd30398959aac",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-29",
+          "eventName": "JEMM",
+          "eventVisible": true,
+          "selectedAsset": "jemm-v1.jpg",
+          "selectedAssetChecksum": "a312ff37b5e9a6add692dba8480bd3f829cb8f960ae706e43592536633d6068c",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        },
+        {
+          "date": "2026-08-30",
+          "eventName": "Whiskey Allstars",
+          "eventVisible": true,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": true,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays",
+            "ladies-drink-free",
+            "late-night-hh",
+            "titos-promo-august-14"
+          ],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true
+          }
+        }
+      ]
+    }
+  }
+}
