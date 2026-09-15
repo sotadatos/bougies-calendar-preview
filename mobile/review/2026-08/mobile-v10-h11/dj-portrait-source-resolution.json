@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "contract": "issue-129-dj-portrait-source-resolution",
+  "candidatePair": { "web": "v37", "mobile": "mobile-v10-h11" },
+  "searchOrder": [
+    "durable repository assets and history",
+    "official performer site or profile",
+    "verified Instagram profile or accessible original",
+    "other attributable official public source"
+  ],
+  "performers": [
+    {
+      "performer": "DJ ICUE",
+      "sourceAsset": "assets/calendar/event-artwork/candidates/dj-icue-v1.webp",
+      "sourceDimensions": { "width": 1000, "height": 1000 },
+      "sourceEffectFinding": "The dark radial vignette is baked into the opaque square source; circular clipping, border, and shadow are renderer presentation.",
+      "disposition": "PASS_VISIBLE",
+      "presentation": { "assetClass": "dj-portrait", "shape": "circle", "fit": "cover", "position": "center 25%", "maximumUpscaleFactor": 1.25, "sourceAltered": false }
+    },
+    {
+      "performer": "DJ Edward",
+      "sourceAsset": "assets/calendar/event-artwork/candidates/dj-edward-v1.jpg",
+      "sourceDimensions": { "width": 320, "height": 320 },
+      "searchFinding": "No higher-resolution clean portrait was found in repository history, the verified Instagram profile, or the official Podomatic presence. The Podomatic 3000x3000 results are promotional cover composites and are not suitable reusable portraits.",
+      "disposition": "RESIDUAL_ASSET_GAP",
+      "renderDisposition": "The existing approved portrait is enlarged to the largest policy-safe Mobile region (78% width) and uses the reusable circular DJ treatment without altering the source.",
+      "nextAction": "If DJ Edward or his representative supplies a clean original portrait larger than 320x320, ingest the exact bytes and route them to BCA before replacing this asset.",
+      "presentation": { "assetClass": "dj-portrait", "shape": "circle", "fit": "cover", "position": "center 25%", "mobileRegionWidthFraction": 0.78, "maximumUpscaleFactor": 1.25, "sourceAltered": false }
+    },
+    {
+      "performer": "DJ DIAGA",
+      "sourceAsset": "assets/calendar/event-artwork/candidates/dj-diaga-v2.jpg",
+      "sourceDimensions": { "width": 960, "height": 960 },
+      "sourceUrl": "https://www.scientificsound.asia/wp-content/uploads/2026/07/download-244.jpg",
+      "attributionUrl": "https://www.scientificsound.asia/news/gerard-s-the-hit-list-31-featuring-diaga-uploaded-to-mixcloud/",
+      "sha256": "983ce16aed0b9a3ffeebde4eceb79279f9dc887d1032ba243f990fd7cec6a2f6",
+      "searchFinding": "Repository history and official profile sources had no better clean portrait; this attributable editorial source provides a clean 960x960 portrait explicitly identified as DJ DIAGA.",
+      "bcaDecision": "APPROVE_REUSABLE_ASSET",
+      "bcaDecisionIdentity": "codex-task:6aa0b255-f1c0-83e8-a70c-3b2aa75f2360#message=6c32b51b-2d89-44b9-bcbe-a8b32f712dfb",
+      "disposition": "PASS_VISIBLE",
+      "presentation": { "assetClass": "dj-portrait", "shape": "circle", "fit": "cover", "position": "center 25%", "maximumUpscaleFactor": 1.25, "sourceAltered": false }
+    }
+  ]
+}

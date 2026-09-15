@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "contract": "ACCEPTED_IMMUTABLE_RENDER_BINDING",
+  "candidatePair": {
+    "web": "v44",
+    "mobile": "mobile-v10-h11"
+  },
+  "surface": "mobile",
+  "targetMonth": "2026-08",
+  "htmlSha256": "f7270bd5c59d27eb71575458070c9bbca6302068d9c2a2ffd2d196d3b5e94977",
+  "viewportValidationSha256": "0e664fee942258e78bde1ab47025518c7107e323674cae0c3c6d89be53987527",
+  "presentationDecisionModelFileSha256": "0811098a67310e8ebe2a2675a73a0a3d1ef5a8910111de7271aea7c1b3153da4",
+  "presentationDecisionRevision": "ef3dd9d29627374331cb9e5eb8a211d36c6df46162b0000107edb21c0266ded3",
+  "acceptedFrameworkRevision": "bd828906d77f1cef92a590a56c37d1fdba4c7f913c6ac200bb4c3c86b69746c4",
+  "acceptedAssetLibraryRevision": "7d843d7d43f6898834ef095e11f9c8a1188efd9739434b9a1a8790a48e75237b",
+  "currentWebFrameworkRevision": "daeda4c3861351d39d7ea66638ae821af77dabb9df8a41819f488b8e2b0ef5da",
+  "currentWebAssetLibraryRevision": "91708d27160842028285d1b3a98f402a936aa76a44983b647b7f9f7d01e237ce",
+  "allowedFrozenPresentationDeltas": [
+    {
+      "eventName": "Pump",
+      "field": "rendererTitle",
+      "mobile": "VISIBLE_IN_ACCEPTED_BYTES",
+      "web": "SUPPRESSED_BY_APPROVED_EXACT_BYTE_SELF_IDENTIFICATION",
+      "classification": "SURFACE_VERSION_BINDING"
+    },
+    {
+      "eventName": "Freestyle Party",
+      "field": "specialClassification",
+      "mobile": "UNCHANGED_ACCEPTED_PRESENTATION",
+      "web": "SPECIAL_EVENT_ACCENT",
+      "classification": "SURFACE_VERSION_BINDING"
+    },
+    {
+      "eventName": "Private Buyout",
+      "field": "publicPresentation",
+      "mobile": "UNCHANGED_ACCEPTED_PRESENTATION",
+      "web": "PRIVATE_PARTY_INFORMATION_WITH_FULL_RANGE_AND_VENUE",
+      "classification": "SURFACE_VERSION_BINDING"
+    },
+    {
+      "eventName": "Whiskey Allstars",
+      "field": "sundayPromotionCopy",
+      "mobile": "UNCHANGED_ACCEPTED_PRESENTATION",
+      "web": "VISIBLE_WEEKDAY_FOOTER",
+      "classification": "SURFACE_VERSION_BINDING"
+    }
+  ],
+  "regenerated": false
+}

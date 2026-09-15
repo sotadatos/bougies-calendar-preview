@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "contract": "USER_VISUAL_ACCEPTANCE",
+  "candidatePair": {
+    "web": "v44",
+    "mobile": "mobile-v10-h11"
+  },
+  "allowedResults": [
+    "PASS_VISIBLE",
+    "PASS_INTENTIONAL_DIFFERENCE",
+    "RESIDUAL_ASSET_GAP",
+    "BLOCKED_BUSINESS_DECISION"
+  ],
+  "items": [
+    {
+      "id": "mobile-dj-consistency",
+      "surface": "MOBILE",
+      "comment": "Keep DJ ICUE, DJ Edward, and DJ DIAGA presentation consistent.",
+      "result": "PASS_VISIBLE",
+      "evidence": "Accepted h11 applies the governed circular DJ portrait treatment to each mapped DJ while preserving exact source identity."
+    },
+    {
+      "id": "mobile-edward-size",
+      "surface": "MOBILE",
+      "comment": "Show DJ Edward as large as quality limits allow.",
+      "result": "PASS_VISIBLE",
+      "evidence": "Accepted h11 uses the bounded enlarged portrait presentation for the available 320×320 source without violating the upscale policy."
+    },
+    {
+      "id": "mobile-edward-source",
+      "surface": "MOBILE",
+      "comment": "Use a higher-resolution DJ Edward source if one is available.",
+      "result": "RESIDUAL_ASSET_GAP",
+      "evidence": "No larger attributable clean original was found in governed repository history or the bounded official-source search.",
+      "nextAction": "If a performer or representative supplies a larger clean original, ingest its exact bytes and route it through BCA before use."
+    },
+    {
+      "id": "mobile-diaga-size",
+      "surface": "MOBILE",
+      "comment": "Use a larger DJ DIAGA source and presentation.",
+      "result": "PASS_VISIBLE",
+      "evidence": "The prior 150×150 source was replaced by the approved 960×960 DJ DIAGA v2 source and accepted h11 renders it with the governed portrait treatment."
+    },
+    {
+      "id": "mobile-circular-treatment",
+      "surface": "MOBILE",
+      "comment": "Use a reusable circular DJ portrait treatment where feasible.",
+      "result": "PASS_VISIBLE",
+      "evidence": "The circular effect is renderer-driven and applied through the reusable dj-portrait class rather than a DJ-name or date selector."
+    },
+    {
+      "id": "mobile-private-range",
+      "surface": "MOBILE",
+      "comment": "Show the Private Buyout start and end time when both exist in canonical source.",
+      "result": "PASS_VISIBLE",
+      "evidence": "Accepted h11 displays the canonical 8 PM–10:30 PM range for August 22."
+    },
+    {
+      "id": "mobile-rest-preserved",
+      "surface": "MOBILE",
+      "comment": "Preserve all other accepted Mobile behavior.",
+      "result": "PASS_VISIBLE",
+      "evidence": "Mobile HTML and five-width validation remain byte-identical to accepted h11."
+    },
+    {
+      "id": "web-self-identifying",
+      "surface": "WEB",
+      "comment": "Suppress duplicate performer text only when exact approved artwork is self-identifying.",
+      "result": "PASS_VISIBLE",
+      "evidence": "Exact asset-level claims suppress duplicate renderer identity for Stereo Mix, Sunset Dreams, Undercover, Pump, and other approved self-identifying assets; filename inference is not used."
+    },
+    {
+      "id": "web-nonself-name-placement",
+      "surface": "WEB",
+      "comment": "Place required canonical performer text bottom-center above metadata.",
+      "result": "PASS_VISIBLE",
+      "evidence": "Full cells retain the bottom-center rule; split cells use measured metadata-center placement with an adjacent-row fallback, independent of performer name and date."
+    },
+    {
+      "id": "web-stereo-fill",
+      "surface": "WEB",
+      "comment": "Make Stereo Mix fill its event cell without an empty neutral mat.",
+      "result": "PASS_VISIBLE",
+      "evidence": "The approved identity-safe layered fill preserves the full exact asset while filling the region."
+    },
+    {
+      "id": "web-sunset-fill",
+      "surface": "WEB",
+      "comment": "Make Sunset Dreams fill its event region and preserve its baked title.",
+      "result": "PASS_VISIBLE",
+      "evidence": "The approved larger region, cover fill, and top-anchored 150% identity layer remain frozen from v43."
+    },
+    {
+      "id": "web-undercover-fill",
+      "surface": "WEB",
+      "comment": "Make Undercover fill its event cell without cropping its identity.",
+      "result": "PASS_VISIBLE",
+      "evidence": "The approved identity-safe cover plus contained identity layer fills the cell and preserves the exact baked name."
+    },
+    {
+      "id": "web-ladies-pink",
+      "surface": "WEB",
+      "comment": "Render Ladies Night recurring promotions in pink.",
+      "result": "PASS_VISIBLE",
+      "evidence": "The semantic ladies promotion class remains visibly pink without an August date selector."
+    },
+    {
+      "id": "web-late-hh-grey",
+      "surface": "WEB",
+      "comment": "Render Late Night Happy Hour promotions in light grey.",
+      "result": "PASS_VISIBLE",
+      "evidence": "The semantic late-night promotion class remains light grey without an August date selector."
+    },
+    {
+      "id": "web-titos-yellow",
+      "surface": "WEB",
+      "comment": "Render the one-day Tito’s vendor promotion in yellow.",
+      "result": "PASS_VISIBLE",
+      "evidence": "The semantic vendor promotion remains visibly yellow."
+    },
+    {
+      "id": "web-titos-placement",
+      "surface": "WEB",
+      "comment": "Place Tito’s between location and time at the bottom of August 14.",
+      "result": "PASS_VISIBLE",
+      "evidence": "Measured browser geometry keeps the Tito’s callout inside the bottom metadata lane and clear of both anchors."
+    },
+    {
+      "id": "web-performer-above-vendor",
+      "surface": "WEB",
+      "comment": "Place performer text immediately above the vendor row when both are present.",
+      "result": "PASS_VISIBLE",
+      "evidence": "The reusable vendor-promo composition reserves the lower row and positions required performer identity directly above it."
+    },
+    {
+      "id": "web-vertical-inheritance",
+      "surface": "WEB",
+      "comment": "Preserve Wednesday and Sunday September-baseline vertical compositions.",
+      "result": "PASS_VISIBLE",
+      "evidence": "Actual render parity confirms inherited recurring compositions and their exact selected assets remain visible and unchanged."
+    },
+    {
+      "id": "freeze-web-art-placement",
+      "surface": "WEB",
+      "comment": "Freeze the accepted image rectangles, scales, crops, source bytes, and semantic split ratios.",
+      "result": "PASS_VISIBLE",
+      "evidence": "Browser comparison against v43 proves identical artwork geometry and computed fit at 1800, 1366, 1000, and 980px."
+    },
+    {
+      "id": "friday-art-visibility",
+      "surface": "WEB",
+      "comment": "Brighten overly dim Friday artwork without moving it.",
+      "result": "PASS_VISIBLE",
+      "evidence": "The full-plane split scrim is removed; art stays opacity 1 with no filter and normal blend, while contrast is localized behind text."
+    },
+    {
+      "id": "bougie-label-lower",
+      "surface": "WEB",
+      "comment": "Place the Bougie Nights title and DJ Alex lower.",
+      "result": "PASS_VISIBLE",
+      "evidence": "The 18px semantic title and performer use the lower measured composition with no mutual or metadata collision."
+    },
+    {
+      "id": "diaga-label-lower",
+      "surface": "WEB",
+      "comment": "Put DJ DIAGA in the lower metadata-center lane.",
+      "result": "PASS_VISIBLE",
+      "evidence": "The generic measured policy places DJ DIAGA low and keeps it clear of venue, time, and its checksum-bound face region at all four widths."
+    },
+    {
+      "id": "icue-face-clearance",
+      "surface": "WEB",
+      "comment": "Move DJ ICUE away from the face into the lower lane.",
+      "result": "PASS_VISIBLE",
+      "evidence": "The same generic policy keeps the label clear of the checksum-bound ICUE face region at all four widths."
+    },
+    {
+      "id": "narrow-header",
+      "surface": "WEB",
+      "comment": "Fix Home/brand overlap around 1000px without changing the grid.",
+      "result": "PASS_VISIBLE",
+      "evidence": "Navigation stacks at 1000–1120px; measured brand and navigation text do not overlap, while grid and artwork geometry remain frozen."
+    },
+    {
+      "id": "web-private-party",
+      "surface": "WEB",
+      "comment": "Show Private Party as informational closure with exact time and venue.",
+      "result": "PASS_VISIBLE",
+      "evidence": "Private Party remains visible with 8 PM–10:30 PM and Living Room and has no promotional glow."
+    },
+    {
+      "id": "web-special-accent",
+      "surface": "WEB",
+      "comment": "Keep Bougie Nights and Freestyle Party visibly highlighted.",
+      "result": "PASS_VISIBLE",
+      "evidence": "Both retain semantic special-event hierarchy and the complete approved outline/glow treatment."
+    },
+    {
+      "id": "web-semantic-priority",
+      "surface": "WEB",
+      "comment": "Allocate split cells by semantic priority.",
+      "result": "PASS_VISIBLE",
+      "evidence": "Measured heights retain Special Night over Band, Band over DJ, and DJ over informational closure without date/name ratio rules."
+    },
+    {
+      "id": "web-sunday-offer",
+      "surface": "WEB",
+      "comment": "Show the exact Sunday offer.",
+      "result": "PASS_VISIBLE",
+      "evidence": "The Sunday footer remains exactly In 'Da Biz 🍻 50% off."
+    },
+    {
+      "id": "web-pump-identity",
+      "surface": "WEB",
+      "comment": "Preserve Pump provenance without adding a duplicate title.",
+      "result": "PASS_VISIBLE",
+      "evidence": "The exact approved Pump bytes continue to own visible identity and no duplicate renderer title is added."
+    },
+    {
+      "id": "web-responsive-readability",
+      "surface": "WEB",
+      "comment": "Keep the responsive desktop review readable.",
+      "result": "PASS_VISIBLE",
+      "evidence": "1800, 1366, 1000, and 980px checks show no horizontal overflow, content geometry failure, or protected-region collision."
+    }
+  ],
+  "blockingBcaDecisions": [],
+  "residualArtworkGaps": [
+    {
+      "gap": "DJ Edward higher-resolution source remains unavailable.",
+      "nextAction": "Ingest and independently review a larger clean original if one becomes available."
+    }
+  ],
+  "publicationState": "LOCAL_CANDIDATE_ONLY"
+}

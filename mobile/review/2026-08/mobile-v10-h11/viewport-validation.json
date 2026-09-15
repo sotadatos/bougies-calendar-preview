@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "contract": "issue-129-v37-h11-five-width-validation",
+  "widths": [
+    320,
+    375,
+    390,
+    430,
+    480
+  ],
+  "results": [
+    {
+      "width": 320,
+      "sourceCount": 20,
+      "loadedSourceCount": 20,
+      "failedSourceCount": 0,
+      "targetCount": 49,
+      "resolvedTargetCount": 49,
+      "unresolvedTargetCount": 0,
+      "viewportWidth": 320,
+      "horizontalOverflow": 0,
+      "clippedCount": 0,
+      "boundsViolationCount": 0,
+      "measuredHeight": 10551,
+      "screenshot": "viewport-screenshots/320.png"
+    },
+    {
+      "width": 375,
+      "sourceCount": 20,
+      "loadedSourceCount": 20,
+      "failedSourceCount": 0,
+      "targetCount": 49,
+      "resolvedTargetCount": 49,
+      "unresolvedTargetCount": 0,
+      "viewportWidth": 375,
+      "horizontalOverflow": 0,
+      "clippedCount": 0,
+      "boundsViolationCount": 0,
+      "measuredHeight": 11738,
+      "screenshot": "viewport-screenshots/375.png"
+    },
+    {
+      "width": 390,
+      "sourceCount": 20,
+      "loadedSourceCount": 20,
+      "failedSourceCount": 0,
+      "targetCount": 49,
+      "resolvedTargetCount": 49,
+      "unresolvedTargetCount": 0,
+      "viewportWidth": 390,
+      "horizontalOverflow": 0,
+      "clippedCount": 0,
+      "boundsViolationCount": 0,
+      "measuredHeight": 12146,
+      "screenshot": "viewport-screenshots/390.png"
+    },
+    {
+      "width": 430,
+      "sourceCount": 20,
+      "loadedSourceCount": 20,
+      "failedSourceCount": 0,
+      "targetCount": 49,
+      "resolvedTargetCount": 49,
+      "unresolvedTargetCount": 0,
+      "viewportWidth": 430,
+      "horizontalOverflow": 0,
+      "clippedCount": 0,
+      "boundsViolationCount": 0,
+      "measuredHeight": 13231,
+      "screenshot": "viewport-screenshots/430.png"
+    },
+    {
+      "width": 480,
+      "sourceCount": 20,
+      "loadedSourceCount": 20,
+      "failedSourceCount": 0,
+      "targetCount": 49,
+      "resolvedTargetCount": 49,
+      "unresolvedTargetCount": 0,
+      "viewportWidth": 480,
+      "horizontalOverflow": 0,
+      "clippedCount": 0,
+      "boundsViolationCount": 0,
+      "measuredHeight": 14561,
+      "screenshot": "viewport-screenshots/480.png"
+    }
+  ]
+}

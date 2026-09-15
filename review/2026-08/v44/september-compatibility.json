@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "contract": "issue-129-september-framework-compatibility",
+  "candidatePair": { "web": "v44", "mobile": "mobile-v10-h11" },
+  "sourcePackageSha256": "f6f58fc6c3bda1610c239eb647ce3d5a1054c23af9d4217263c66eef1e4e93e2",
+  "recurringGeometrySha256": "58650e039e3d585cdc0fb63d0321d5b41b4b1db8c4d3a4528c642716191d2212",
+  "frameworkRevision": "daeda4c3861351d39d7ea66638ae821af77dabb9df8a41819f488b8e2b0ef5da",
+  "render": {
+    "htmlSha256": "3b6a97b3f38f5dd7767c16a849028ecce17d0eca0e6c882bda0ffce7d7b7ef58",
+    "pngSha256": "847178cce752e308577cd03598ffc087931c7e1aa1d9d884df9a6ed6a0789fb3",
+    "pdfSha256": "7a6144a19d5ef617b4ec1ac358cfdfeccdc70f06ded6bbee9ff054c287d72856"
+  },
+  "presentationDecisionRecords": 43,
+  "presentationParity": "PASS",
+  "performanceBudget": "PASS",
+  "duplicateImageBytes": 0,
+  "recurringComposition": {
+    "series": "Karaoke Tuesday",
+    "selectedDates": ["2026-09-08", "2026-09-15", "2026-09-22", "2026-09-29"],
+    "september1Disposition": "ARTWORKLESS_RECURRING_BASE_UNDER_APPROVED_SPECIAL_OVERLAY"
+  },
+  "status": "PASS",
+  "publicationState": "LOCAL_COMPATIBILITY_VALIDATION_ONLY"
+}

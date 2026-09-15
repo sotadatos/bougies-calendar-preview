@@ -1,0 +1,855 @@
+{
+  "schemaVersion": 1,
+  "contract": "web-calendar-display-sizing-diagnosis",
+  "candidatePair": {
+    "web": "v44",
+    "mobile": "mobile-v10-h11"
+  },
+  "localMeasurements": [
+    {
+      "viewport": {
+        "width": 1800,
+        "height": 913
+      },
+      "page": {
+        "width": 1800,
+        "height": 1200,
+        "cssWidth": "1800px",
+        "zoom": "1",
+        "transform": "none"
+      },
+      "grid": {
+        "width": 1720,
+        "height": 607.40625
+      },
+      "body": {
+        "scrollWidth": 1800,
+        "scrollHeight": 1200
+      },
+      "sampleEventFont": "20px",
+      "horizontalOverflow": false,
+      "cellPromotions": [
+        {
+          "date": "14",
+          "eventName": "Stereo Mix",
+          "promotionId": "titos-promo-august-14",
+          "text": "Tito’s Promo9:30–11:30 PM",
+          "geometry": {
+            "cell": {
+              "left": 777.5625,
+              "right": 1022.421875,
+              "top": 684.359375,
+              "bottom": 805.03125,
+              "width": 244.859375,
+              "height": 120.671875,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "promo": {
+              "left": 786.5625,
+              "right": 1013.421875,
+              "top": 769.984375,
+              "bottom": 784.03125,
+              "width": 226.859375,
+              "height": 14.046875,
+              "clientWidth": 225,
+              "scrollWidth": 225
+            },
+            "venue": {
+              "left": 786.5625,
+              "right": 846.625,
+              "top": 786.03125,
+              "bottom": 797.03125,
+              "width": 60.0625,
+              "height": 11,
+              "clientWidth": 58,
+              "scrollWidth": 58
+            },
+            "time": {
+              "left": 987.734375,
+              "right": 1014.421875,
+              "top": 789.03125,
+              "bottom": 798.03125,
+              "width": 26.6875,
+              "height": 9,
+              "clientWidth": 27,
+              "scrollWidth": 27
+            }
+          },
+          "pass": true
+        }
+      ],
+      "privateGeometry": {
+        "cell": {
+          "left": 1023.421875,
+          "right": 1268.28125,
+          "top": 806.03125,
+          "bottom": 926.71875,
+          "width": 244.859375,
+          "height": 120.6875,
+          "clientWidth": 243,
+          "scrollWidth": 243
+        },
+        "event": {
+          "left": 1024.421875,
+          "right": 1267.28125,
+          "top": 807.03125,
+          "bottom": 855.6875,
+          "width": 242.859375,
+          "height": 48.65625,
+          "clientWidth": 243,
+          "scrollWidth": 243
+        },
+        "date": {
+          "left": 1031.421875,
+          "right": 1061.46875,
+          "top": 813.03125,
+          "bottom": 835.03125,
+          "width": 30.046875,
+          "height": 22,
+          "clientWidth": 28,
+          "scrollWidth": 28
+        },
+        "title": {
+          "left": 1063.299072265625,
+          "right": 1259.404052734375,
+          "top": 822.9199829101562,
+          "bottom": 840.7987670898438,
+          "width": 196.10498046875,
+          "height": 17.8787841796875,
+          "clientWidth": 196,
+          "scrollWidth": 196
+        },
+        "venue": {
+          "left": 1030.421875,
+          "right": 1085.6875,
+          "top": 839.6875,
+          "bottom": 850.6875,
+          "width": 55.265625,
+          "height": 11,
+          "clientWidth": 53,
+          "scrollWidth": 53
+        },
+        "time": {
+          "left": 1203.171875,
+          "right": 1261.28125,
+          "top": 842.6875,
+          "bottom": 850.6875,
+          "width": 58.109375,
+          "height": 8,
+          "clientWidth": 58,
+          "scrollWidth": 58
+        }
+      },
+      "privatePass": true,
+      "contentGeometryPass": true
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 913
+      },
+      "page": {
+        "width": 1440,
+        "height": 1200,
+        "cssWidth": "1440px",
+        "zoom": "1",
+        "transform": "none"
+      },
+      "grid": {
+        "width": 1396,
+        "height": 607.40625
+      },
+      "body": {
+        "scrollWidth": 1440,
+        "scrollHeight": 1200
+      },
+      "sampleEventFont": "20px",
+      "horizontalOverflow": false,
+      "cellPromotions": [
+        {
+          "date": "14",
+          "eventName": "Stereo Mix",
+          "promotionId": "titos-promo-august-14",
+          "text": "Tito’s Promo9:30–11:30 PM",
+          "geometry": {
+            "cell": {
+              "left": 620.703125,
+              "right": 819.28125,
+              "top": 684.359375,
+              "bottom": 805.03125,
+              "width": 198.578125,
+              "height": 120.671875,
+              "clientWidth": 197,
+              "scrollWidth": 197
+            },
+            "promo": {
+              "left": 629.703125,
+              "right": 810.28125,
+              "top": 769.984375,
+              "bottom": 784.03125,
+              "width": 180.578125,
+              "height": 14.046875,
+              "clientWidth": 179,
+              "scrollWidth": 179
+            },
+            "venue": {
+              "left": 629.703125,
+              "right": 689.765625,
+              "top": 786.03125,
+              "bottom": 797.03125,
+              "width": 60.0625,
+              "height": 11,
+              "clientWidth": 58,
+              "scrollWidth": 58
+            },
+            "time": {
+              "left": 784.59375,
+              "right": 811.28125,
+              "top": 789.03125,
+              "bottom": 798.03125,
+              "width": 26.6875,
+              "height": 9,
+              "clientWidth": 27,
+              "scrollWidth": 27
+            }
+          },
+          "pass": true
+        }
+      ],
+      "privateGeometry": {
+        "cell": {
+          "left": 820.28125,
+          "right": 1018.84375,
+          "top": 806.03125,
+          "bottom": 926.71875,
+          "width": 198.5625,
+          "height": 120.6875,
+          "clientWidth": 197,
+          "scrollWidth": 197
+        },
+        "event": {
+          "left": 821.28125,
+          "right": 1017.84375,
+          "top": 807.03125,
+          "bottom": 855.6875,
+          "width": 196.5625,
+          "height": 48.65625,
+          "clientWidth": 197,
+          "scrollWidth": 197
+        },
+        "date": {
+          "left": 828.28125,
+          "right": 858.328125,
+          "top": 813.03125,
+          "bottom": 835.03125,
+          "width": 30.046875,
+          "height": 22,
+          "clientWidth": 28,
+          "scrollWidth": 28
+        },
+        "title": {
+          "left": 860.1533813476562,
+          "right": 1009.9716796875,
+          "top": 823.40478515625,
+          "bottom": 840.31396484375,
+          "width": 149.81829833984375,
+          "height": 16.9091796875,
+          "clientWidth": 150,
+          "scrollWidth": 150
+        },
+        "venue": {
+          "left": 827.28125,
+          "right": 882.546875,
+          "top": 839.6875,
+          "bottom": 850.6875,
+          "width": 55.265625,
+          "height": 11,
+          "clientWidth": 53,
+          "scrollWidth": 53
+        },
+        "time": {
+          "left": 953.734375,
+          "right": 1011.84375,
+          "top": 842.6875,
+          "bottom": 850.6875,
+          "width": 58.109375,
+          "height": 8,
+          "clientWidth": 58,
+          "scrollWidth": 58
+        }
+      },
+      "privatePass": true,
+      "contentGeometryPass": true
+    },
+    {
+      "viewport": {
+        "width": 1366,
+        "height": 913
+      },
+      "page": {
+        "width": 1366,
+        "height": 1200,
+        "cssWidth": "1366px",
+        "zoom": "1",
+        "transform": "none"
+      },
+      "grid": {
+        "width": 1322,
+        "height": 607.40625
+      },
+      "body": {
+        "scrollWidth": 1366,
+        "scrollHeight": 1200
+      },
+      "sampleEventFont": "20px",
+      "horizontalOverflow": false,
+      "cellPromotions": [
+        {
+          "date": "14",
+          "eventName": "Stereo Mix",
+          "promotionId": "titos-promo-august-14",
+          "text": "Tito’s Promo9:30–11:30 PM",
+          "geometry": {
+            "cell": {
+              "left": 589,
+              "right": 777,
+              "top": 684.359375,
+              "bottom": 805.03125,
+              "width": 188,
+              "height": 120.671875,
+              "clientWidth": 186,
+              "scrollWidth": 186
+            },
+            "promo": {
+              "left": 598,
+              "right": 768,
+              "top": 769.984375,
+              "bottom": 784.03125,
+              "width": 170,
+              "height": 14.046875,
+              "clientWidth": 168,
+              "scrollWidth": 168
+            },
+            "venue": {
+              "left": 598,
+              "right": 658.0625,
+              "top": 786.03125,
+              "bottom": 797.03125,
+              "width": 60.0625,
+              "height": 11,
+              "clientWidth": 58,
+              "scrollWidth": 58
+            },
+            "time": {
+              "left": 742.3125,
+              "right": 769,
+              "top": 789.03125,
+              "bottom": 798.03125,
+              "width": 26.6875,
+              "height": 9,
+              "clientWidth": 27,
+              "scrollWidth": 27
+            }
+          },
+          "pass": true
+        }
+      ],
+      "privateGeometry": {
+        "cell": {
+          "left": 778,
+          "right": 966,
+          "top": 806.03125,
+          "bottom": 926.71875,
+          "width": 188,
+          "height": 120.6875,
+          "clientWidth": 186,
+          "scrollWidth": 186
+        },
+        "event": {
+          "left": 779,
+          "right": 965,
+          "top": 807.03125,
+          "bottom": 855.6875,
+          "width": 186,
+          "height": 48.65625,
+          "clientWidth": 186,
+          "scrollWidth": 186
+        },
+        "date": {
+          "left": 786,
+          "right": 816.046875,
+          "top": 813.03125,
+          "bottom": 835.03125,
+          "width": 30.046875,
+          "height": 22,
+          "clientWidth": 28,
+          "scrollWidth": 28
+        },
+        "title": {
+          "left": 817.8709716796875,
+          "right": 957.1290283203125,
+          "top": 823.515380859375,
+          "bottom": 840.203369140625,
+          "width": 139.258056640625,
+          "height": 16.68798828125,
+          "clientWidth": 139,
+          "scrollWidth": 139
+        },
+        "venue": {
+          "left": 785,
+          "right": 840.265625,
+          "top": 839.6875,
+          "bottom": 850.6875,
+          "width": 55.265625,
+          "height": 11,
+          "clientWidth": 53,
+          "scrollWidth": 53
+        },
+        "time": {
+          "left": 900.890625,
+          "right": 959,
+          "top": 842.6875,
+          "bottom": 850.6875,
+          "width": 58.109375,
+          "height": 8,
+          "clientWidth": 58,
+          "scrollWidth": 58
+        }
+      },
+      "privatePass": true,
+      "contentGeometryPass": true
+    },
+    {
+      "viewport": {
+        "width": 1000,
+        "height": 913
+      },
+      "page": {
+        "width": 1000,
+        "height": 1200,
+        "cssWidth": "1000px",
+        "zoom": "1",
+        "transform": "none"
+      },
+      "grid": {
+        "width": 956,
+        "height": 607.40625
+      },
+      "body": {
+        "scrollWidth": 1000,
+        "scrollHeight": 1200
+      },
+      "sampleEventFont": "20px",
+      "horizontalOverflow": false,
+      "cellPromotions": [
+        {
+          "date": "14",
+          "eventName": "Stereo Mix",
+          "promotionId": "titos-promo-august-14",
+          "text": "Tito’s Promo9:30–11:30 PM",
+          "geometry": {
+            "cell": {
+              "left": 432.140625,
+              "right": 567.84375,
+              "top": 684.359375,
+              "bottom": 805.03125,
+              "width": 135.703125,
+              "height": 120.671875,
+              "clientWidth": 134,
+              "scrollWidth": 134
+            },
+            "promo": {
+              "left": 441.140625,
+              "right": 558.84375,
+              "top": 761.9375,
+              "bottom": 784.03125,
+              "width": 117.703125,
+              "height": 22.09375,
+              "clientWidth": 116,
+              "scrollWidth": 116
+            },
+            "venue": {
+              "left": 441.140625,
+              "right": 501.203125,
+              "top": 786.03125,
+              "bottom": 797.03125,
+              "width": 60.0625,
+              "height": 11,
+              "clientWidth": 58,
+              "scrollWidth": 58
+            },
+            "time": {
+              "left": 533.15625,
+              "right": 559.84375,
+              "top": 789.03125,
+              "bottom": 798.03125,
+              "width": 26.6875,
+              "height": 9,
+              "clientWidth": 27,
+              "scrollWidth": 27
+            }
+          },
+          "pass": true
+        }
+      ],
+      "privateGeometry": {
+        "cell": {
+          "left": 568.84375,
+          "right": 704.5625,
+          "top": 806.03125,
+          "bottom": 926.71875,
+          "width": 135.71875,
+          "height": 120.6875,
+          "clientWidth": 134,
+          "scrollWidth": 134
+        },
+        "event": {
+          "left": 569.84375,
+          "right": 703.5625,
+          "top": 807.03125,
+          "bottom": 855.6875,
+          "width": 133.71875,
+          "height": 48.65625,
+          "clientWidth": 134,
+          "scrollWidth": 134
+        },
+        "date": {
+          "left": 576.84375,
+          "right": 606.890625,
+          "top": 813.03125,
+          "bottom": 835.03125,
+          "width": 30.046875,
+          "height": 22,
+          "clientWidth": 28,
+          "scrollWidth": 28
+        },
+        "title": {
+          "left": 608.708984375,
+          "right": 695.697265625,
+          "top": 824.0628662109375,
+          "bottom": 839.6558837890625,
+          "width": 86.98828125,
+          "height": 15.593017578125,
+          "clientWidth": 87,
+          "scrollWidth": 87
+        },
+        "venue": {
+          "left": 575.84375,
+          "right": 631.109375,
+          "top": 839.6875,
+          "bottom": 850.6875,
+          "width": 55.265625,
+          "height": 11,
+          "clientWidth": 53,
+          "scrollWidth": 53
+        },
+        "time": {
+          "left": 639.453125,
+          "right": 697.5625,
+          "top": 842.6875,
+          "bottom": 850.6875,
+          "width": 58.109375,
+          "height": 8,
+          "clientWidth": 58,
+          "scrollWidth": 58
+        }
+      },
+      "privatePass": true,
+      "contentGeometryPass": true
+    },
+    {
+      "viewport": {
+        "width": 999,
+        "height": 913
+      },
+      "page": {
+        "width": 999,
+        "height": 666,
+        "cssWidth": "1800px",
+        "zoom": "0.555",
+        "transform": "none"
+      },
+      "grid": {
+        "width": 954.625,
+        "height": 336.8125
+      },
+      "body": {
+        "scrollWidth": 999,
+        "scrollHeight": 666
+      },
+      "sampleEventFont": "20px",
+      "horizontalOverflow": false,
+      "cellPromotions": [
+        {
+          "date": "14",
+          "eventName": "Stereo Mix",
+          "promotionId": "titos-promo-august-14",
+          "text": "Tito’s Promo9:30–11:30 PM",
+          "geometry": {
+            "cell": {
+              "left": 431.546875,
+              "right": 567.453125,
+              "top": 380.234375,
+              "bottom": 447.15625,
+              "width": 135.90625,
+              "height": 66.921875,
+              "clientWidth": 241,
+              "scrollWidth": 241
+            },
+            "promo": {
+              "left": 436.984375,
+              "right": 562,
+              "top": 426.375,
+              "bottom": 435.0625,
+              "width": 125.015625,
+              "height": 8.6875,
+              "clientWidth": 222,
+              "scrollWidth": 222
+            },
+            "venue": {
+              "left": 436.984375,
+              "right": 471.15625,
+              "top": 435.296875,
+              "bottom": 442.28125,
+              "width": 34.171875,
+              "height": 6.984375,
+              "clientWidth": 58,
+              "scrollWidth": 58
+            },
+            "time": {
+              "left": 547.78125,
+              "right": 562.578125,
+              "top": 437.828125,
+              "bottom": 442.828125,
+              "width": 14.796875,
+              "height": 5,
+              "clientWidth": 27,
+              "scrollWidth": 27
+            }
+          },
+          "pass": true
+        }
+      ],
+      "privateGeometry": {
+        "cell": {
+          "left": 568,
+          "right": 703.90625,
+          "top": 447.703125,
+          "bottom": 514.625,
+          "width": 135.90625,
+          "height": 66.921875,
+          "clientWidth": 241,
+          "scrollWidth": 241
+        },
+        "event": {
+          "left": 569,
+          "right": 702.90625,
+          "top": 448.703125,
+          "bottom": 475.3125,
+          "width": 133.90625,
+          "height": 26.609375,
+          "clientWidth": 241,
+          "scrollWidth": 241
+        },
+        "date": {
+          "left": 572.875,
+          "right": 590.453125,
+          "top": 452.03125,
+          "bottom": 465.125,
+          "width": 17.578125,
+          "height": 13.09375,
+          "clientWidth": 28,
+          "scrollWidth": 28
+        },
+        "title": {
+          "left": 590.5723266601562,
+          "right": 698.5370483398438,
+          "top": 457.1083068847656,
+          "bottom": 467.0166931152344,
+          "width": 107.9647216796875,
+          "height": 9.90838623046875,
+          "clientWidth": 194,
+          "scrollWidth": 194
+        },
+        "venue": {
+          "left": 572.328125,
+          "right": 603.875,
+          "top": 465.671875,
+          "bottom": 472.09375,
+          "width": 31.546875,
+          "height": 6.421875,
+          "clientWidth": 53,
+          "scrollWidth": 53
+        },
+        "time": {
+          "left": 667.328125,
+          "right": 699.578125,
+          "top": 467.65625,
+          "bottom": 472.09375,
+          "width": 32.25,
+          "height": 4.4375,
+          "clientWidth": 58,
+          "scrollWidth": 58
+        }
+      },
+      "privatePass": true,
+      "contentGeometryPass": true
+    },
+    {
+      "viewport": {
+        "width": 980,
+        "height": 913
+      },
+      "page": {
+        "width": 980,
+        "height": 653.328125,
+        "cssWidth": "1800px",
+        "zoom": "0.544444",
+        "transform": "none"
+      },
+      "grid": {
+        "width": 936.46875,
+        "height": 332.703125
+      },
+      "body": {
+        "scrollWidth": 980,
+        "scrollHeight": 653
+      },
+      "sampleEventFont": "20px",
+      "horizontalOverflow": false,
+      "cellPromotions": [
+        {
+          "date": "14",
+          "eventName": "Stereo Mix",
+          "promotionId": "titos-promo-august-14",
+          "text": "Tito’s Promo9:30–11:30 PM",
+          "geometry": {
+            "cell": {
+              "left": 423.328125,
+              "right": 556.65625,
+              "top": 372.296875,
+              "bottom": 438.421875,
+              "width": 133.328125,
+              "height": 66.125,
+              "clientWidth": 241,
+              "scrollWidth": 241
+            },
+            "promo": {
+              "left": 428.671875,
+              "right": 551.28125,
+              "top": 418.015625,
+              "bottom": 426.546875,
+              "width": 122.609375,
+              "height": 8.53125,
+              "clientWidth": 222,
+              "scrollWidth": 222
+            },
+            "venue": {
+              "left": 428.671875,
+              "right": 462.265625,
+              "top": 426.75,
+              "bottom": 433.625,
+              "width": 33.59375,
+              "height": 6.875,
+              "clientWidth": 58,
+              "scrollWidth": 58
+            },
+            "time": {
+              "left": 537.328125,
+              "right": 551.859375,
+              "top": 429.25,
+              "bottom": 434.15625,
+              "width": 14.53125,
+              "height": 4.90625,
+              "clientWidth": 27,
+              "scrollWidth": 27
+            }
+          },
+          "pass": true
+        }
+      ],
+      "privateGeometry": {
+        "cell": {
+          "left": 557.1875,
+          "right": 690.515625,
+          "top": 438.953125,
+          "bottom": 505.0625,
+          "width": 133.328125,
+          "height": 66.109375,
+          "clientWidth": 241,
+          "scrollWidth": 241
+        },
+        "event": {
+          "left": 558.1875,
+          "right": 689.515625,
+          "top": 439.953125,
+          "bottom": 466.234375,
+          "width": 131.328125,
+          "height": 26.28125,
+          "clientWidth": 241,
+          "scrollWidth": 241
+        },
+        "date": {
+          "left": 561.984375,
+          "right": 579.25,
+          "top": 443.21875,
+          "bottom": 456.09375,
+          "width": 17.265625,
+          "height": 12.875,
+          "clientWidth": 28,
+          "scrollWidth": 28
+        },
+        "title": {
+          "left": 579.3392944335938,
+          "right": 685.2388305664062,
+          "top": 448.2747497558594,
+          "bottom": 457.99090576171875,
+          "width": 105.8995361328125,
+          "height": 9.716156005859375,
+          "clientWidth": 194,
+          "scrollWidth": 194
+        },
+        "venue": {
+          "left": 561.453125,
+          "right": 592.390625,
+          "top": 456.734375,
+          "bottom": 463.0625,
+          "width": 30.9375,
+          "height": 6.328125,
+          "clientWidth": 53,
+          "scrollWidth": 53
+        },
+        "time": {
+          "left": 654.65625,
+          "right": 686.25,
+          "top": 458.703125,
+          "bottom": 463.0625,
+          "width": 31.59375,
+          "height": 4.359375,
+          "clientWidth": 58,
+          "scrollWidth": 58
+        }
+      },
+      "privatePass": true,
+      "contentGeometryPass": true
+    }
+  ],
+  "findings": [
+    "The previous Web rule uniformly scaled the 1800px master below 1800px, shrinking all event text and artwork on common desktop widths.",
+    "v44 lays out the calendar at the available desktop width from 1000px through 1799px while retaining the governed font sizes and no horizontal overflow.",
+    "At 999px and below the Web artifact preserves its 1800px layout width and applies one zoom factor, filling the viewport without the former flex-shrink plus transform double contraction.",
+    "Every calendar-cell promotion is measured inside its cell and against its venue/time anchors at each viewport; the private title, location, time and date badge are also checked for containment and collision.",
+    "The public Wix page currently exposes the approved September v12 as a Wix-hosted 1800x1204 image record and also stores its review URL; customer readability therefore depends on the Wix component/container fit, not only the source bitmap dimensions."
+  ],
+  "wixReadOnlyEvidence": {
+    "publicUrl": "https://www.bougiesbar.com/calendar",
+    "currentMonth": "2026-09",
+    "currentReviewVersion": "v12",
+    "currentImageIntrinsicSize": "1800x1204",
+    "rendererModeObservedInServerHtml": "WIX_HOSTED_IMAGE_RECORD_WITH_APP_CONTROLLER",
+    "iframeGeometryVerified": false
+  },
+  "minimalFutureWixIntegrationChange": "After separate Wix approval, size the desktop Calendar component/container to the available content width without a fixed small image box and give it an aspect-ratio-derived height; retain the existing Mobile-specific presentation below the site breakpoint. Do not nest scrollable calendar documents.",
+  "publicationState": "LOCAL_DIAGNOSIS_ONLY"
+}

@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "targetMonth": "2026-08",
+  "contentRevision": "d0d7657d040ad334c87865d93bd1ef3ff709d2d5b8759b76408268db9dafdbe3",
+  "outputs": {
+    "web": {
+      "path": "review/2026-08/v44/calendar.html",
+      "sha256": "5e85dc066a63f384078b549c5324441fc8a91367862fcbe91a4a3c6e26657851"
+    },
+    "mobile": {
+      "path": "mobile/review/2026-08/mobile-v10-h11/calendar.html",
+      "sha256": "f7270bd5c59d27eb71575458070c9bbca6302068d9c2a2ffd2d196d3b5e94977"
+    }
+  },
+  "frameworkRevision": "daeda4c3861351d39d7ea66638ae821af77dabb9df8a41819f488b8e2b0ef5da",
+  "approvedAssetLibraryRevision": "91708d27160842028285d1b3a98f402a936aa76a44983b647b7f9f7d01e237ce",
+  "qa": {
+    "status": "pass",
+    "checks": [
+      "full repository suite 551/551",
+      "Web v44 exact artifact hashes and actual browser parity pass",
+      "accepted immutable Mobile h11 HTML and five-width validation hashes preserved",
+      "surface-specific framework and presentation revisions are explicitly reconciled in mobile-accepted-render-binding.v44-h11.json",
+      "all 30 USER_VISUAL_ACCEPTANCE items use the closed result vocabulary and include the DJ Edward residual next action",
+      "direct September generation, presentation parity, and performance budget pass",
+      "production/current and mobile/current are outside the candidate path scope"
+    ]
+  },
+  "timing": {},
+  "runtime": {
+    "node": "v26.6.0",
+    "chrome": "153.0.8010.36",
+    "browserDriver": "Chrome DevTools Protocol with system Chrome",
+    "platform": "darwin",
+    "architecture": "arm64"
+  },
+  "reviewState": "needs-review",
+  "recordedAt": "2026-09-15T00:38:57.516417Z",
+  "evidenceIdentity": "069968d16d912f519a84a8a85231b462789bbe3488590aa7be5368bb6c8053d6",
+  "renderReviewRun": "069968d16d912f519a84a8a85231b462789bbe3488590aa7be5368bb6c8053d6"
+}

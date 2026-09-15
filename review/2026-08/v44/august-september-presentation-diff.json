@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 2,
+  "contract": "august-september-framework-difference-classification",
+  "candidatePair": {
+    "web": "v44",
+    "mobile": "mobile-v10-h11"
+  },
+  "frameworkRevision": "daeda4c3861351d39d7ea66638ae821af77dabb9df8a41819f488b8e2b0ef5da",
+  "approvedAssetLibraryRevision": "91708d27160842028285d1b3a98f402a936aa76a44983b647b7f9f7d01e237ce",
+  "allowedClassifications": [
+    "REUSABLE_FRAMEWORK",
+    "SURFACE_SPECIFIC_RULE",
+    "MONTH_SPECIFIC_OVERRIDE"
+  ],
+  "unexplainedDifferenceCount": 0,
+  "topics": [
+    {
+      "topic": "performer art selection",
+      "classification": "REUSABLE_FRAMEWORK",
+      "reason": "Both surfaces resolve one approved asset library and exact checksums."
+    },
+    {
+      "topic": "art fit",
+      "classification": "REUSABLE_FRAMEWORK",
+      "reason": "Asset-class presentation metadata governs fit, focal point, padding, crop and upscale limits."
+    },
+    {
+      "topic": "performer-name suppression",
+      "classification": "REUSABLE_FRAMEWORK",
+      "reason": "Text suppression requires an approved self-identifying asset or recurring composition claim."
+    },
+    {
+      "topic": "venue-tag visibility and placement",
+      "classification": "SURFACE_SPECIFIC_RULE",
+      "reason": "Web recurring compositions may retain venue semantically; Mobile keeps customer-facing venue chips."
+    },
+    {
+      "topic": "recurring composition identity",
+      "classification": "SURFACE_SPECIFIC_RULE",
+      "reason": "Web uses approved weekday vertical compositions; Mobile uses date-card identity with the same series."
+    },
+    {
+      "topic": "special-event accent",
+      "classification": "REUSABLE_FRAMEWORK",
+      "reason": "Both surfaces derive special treatment from shared event and series classifications."
+    },
+    {
+      "topic": "promo grammar",
+      "classification": "SURFACE_SPECIFIC_RULE",
+      "reason": "Web uses standard tags at cell or weekday scope; Mobile repeats the same public fact in each applicable date card."
+    },
+    {
+      "topic": "recurring time suppression",
+      "classification": "SURFACE_SPECIFIC_RULE",
+      "reason": "Self-describing Web composition may own visible time; Mobile retains explicit time text."
+    },
+    {
+      "topic": "multi-event layout",
+      "classification": "SURFACE_SPECIFIC_RULE",
+      "reason": "Web uses bounded stacked regions; Mobile uses chronological cards."
+    },
+    {
+      "topic": "background and overlay",
+      "classification": "REUSABLE_FRAMEWORK",
+      "reason": "August inherits the approved reusable background and overlay contract."
+    },
+    {
+      "topic": "tag and badge styling",
+      "classification": "SURFACE_SPECIFIC_RULE",
+      "reason": "The surfaces use their approved compact tag and chip presentations with shared facts."
+    },
+    {
+      "topic": "navigation and archive behavior",
+      "classification": "REUSABLE_FRAMEWORK",
+      "reason": "Both surfaces preserve the approved Home link and immutable review routing."
+    },
+    {
+      "topic": "month content",
+      "classification": "MONTH_SPECIFIC_OVERRIDE",
+      "reason": "August event dates and the August 14 Tito’s promotion remain month-bound data."
+    },
+    {
+      "topic": "recurring promotion facts",
+      "classification": "REUSABLE_FRAMEWORK",
+      "reason": "Ladies, Sunday industry, and Tuesday/Thursday Late Night HH facts are reusable and date-free."
+    },
+    {
+      "topic": "recurring occurrence geometry",
+      "classification": "REUSABLE_FRAMEWORK",
+      "reason": "Current approved compositions support governed four- and five-occurrence month geometry."
+    },
+    {
+      "topic": "performer fallback",
+      "classification": "REUSABLE_FRAMEWORK",
+      "reason": "A named text fallback and durable reason are required when no approved art exists."
+    }
+  ]
+}

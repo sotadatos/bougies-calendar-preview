@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "candidatePair": {
+    "web": "v44",
+    "mobile": "mobile-v10-h11"
+  },
+  "supersedesLocalCandidate": {
+    "web": "v43",
+    "mobile": "mobile-v10-h11"
+  },
+  "web": {
+    "htmlSha256": "5e85dc066a63f384078b549c5324441fc8a91367862fcbe91a4a3c6e26657851",
+    "pngSha256": "38ce4808056c839dda93b3475c54faae7e74194f984e4e355b2e112f0c286ee8",
+    "pdfSha256": "e8426a2162d21b1eb27384bf1d7c6377a770cda41868a05e8cbb06aefe47c04b",
+    "responsive1366PngSha256": "e0f2449a5322836f9534435d9ea7e8d71fffed10477925dfe73ea5d458526409",
+    "responsive1000PngSha256": "a742e943f52e7dbafb3baca0dff5f5320c85e0d92c180b5e5e1e54facd681c6f",
+    "responsive980PngSha256": "930ca58f89aa612cb9a2295644fed2f37e1a363ad60de1e9a3320300dcfcd0d6"
+  },
+  "mobile": {
+    "htmlSha256": "f7270bd5c59d27eb71575458070c9bbca6302068d9c2a2ffd2d196d3b5e94977",
+    "viewportValidationSha256": "0e664fee942258e78bde1ab47025518c7107e323674cae0c3c6d89be53987527",
+    "disposition": "UNCHANGED_ACCEPTED_BYTES"
+  },
+  "frameworkRevision": "daeda4c3861351d39d7ea66638ae821af77dabb9df8a41819f488b8e2b0ef5da",
+  "approvedAssetLibraryRevision": "91708d27160842028285d1b3a98f402a936aa76a44983b647b7f9f7d01e237ce",
+  "webPresentationDecisionRevision": "52ea8c455f3d6808e7205e095fef638434ff7e539ed9fd38e34bf39e6affd838",
+  "mobileAcceptedPresentationDecisionRevision": "ef3dd9d29627374331cb9e5eb8a211d36c6df46162b0000107edb21c0266ded3",
+  "changes": [
+    "Removed the split-region full-plane renderer scrim while retaining exact source bytes and all artwork rectangles, scales, crops, and semantic split ratios.",
+    "Added one reusable checksum-bound label-safety contract and a measured split-label resolver with metadata-center and adjacent-row profiles.",
+    "Moved Bougie Nights, Retro Sky, DJ DIAGA, and DJ ICUE labels into the measured lower lane where geometry permits, with no event-name or date exception.",
+    "Stacked the review navigation at 1000\u20131120px so its text does not overlap the centered Bougies brand."
+  ],
+  "geometry": {
+    "baseline": "v43",
+    "checkedWidths": [
+      1800,
+      1366,
+      1000,
+      980
+    ],
+    "frozenArtworkGeometry": true,
+    "labelCollisionCount": 0,
+    "metadataCollisionCount": 0,
+    "protectedRegionCollisionCount": 0,
+    "headerOverlapCount": 0
+  },
+  "actualRenderAudit": {
+    "recordCount": 33,
+    "unexplainedDiscrepancyCount": 0
+  },
+  "tests": {
+    "count": 551,
+    "passed": 551,
+    "failed": 0
+  },
+  "publicationState": "LOCAL_CANDIDATE_ONLY",
+  "septemberCompatibility": {
+    "status": "PASS",
+    "recordCount": 43,
+    "presentationParity": "PASS",
+    "performanceBudget": "PASS",
+    "duplicateImageBytes": 0,
+    "explicitKaraokeCompositionDates": [
+      "2026-09-08",
+      "2026-09-15",
+      "2026-09-22",
+      "2026-09-29"
+    ],
+    "september1ArtworklessBasePreserved": true
+  }
+}

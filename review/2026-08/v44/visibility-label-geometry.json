@@ -1,0 +1,6174 @@
+{
+  "schemaVersion": 1,
+  "contract": "issue-129-v44-visibility-label-geometry",
+  "candidatePair": {
+    "web": "v44",
+    "mobile": "mobile-v10-h11"
+  },
+  "baseline": {
+    "web": "v43",
+    "htmlSha256": "fe8c6c0b21aa023a7c7728285b3388edce3ea9721271908993f8be469d61be13"
+  },
+  "currentHtmlSha256": "5e85dc066a63f384078b549c5324441fc8a91367862fcbe91a4a3c6e26657851",
+  "checkedWidths": [
+    1800,
+    1366,
+    1000,
+    980
+  ],
+  "frozenArtworkGeometry": true,
+  "removedRendererWideSplitScrim": true,
+  "localTextContrastOnly": true,
+  "labelPolicy": "geometry-aware metadata lane with adjacent-row fallback",
+  "measurements": [
+    {
+      "width": 1800,
+      "pass": true,
+      "frozenGeometry": [
+        {
+          "key": "1|Chronicles|f9aaf41cbea267b5d5e8f0f917f466148464ba8f7e2e0964b88d8486eddaeac1",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 118.67
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 118.67
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "2|Whiskey Allstars|7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 119.67
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 0%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 119.67
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 0%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "4|Karaoke Tuesday|0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.84,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 0%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.84,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 0%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "5|Ladies Night|338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 0%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 0%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "6|Rhinestone Cowboys|f106325dd46c6e0e5831fdde72fd8ed267de19cf362d7834052b2edb9c562ca1",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 118.69
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 118.69
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "7|Bougie Nights|ca443b40c88a177717a234527c097430d9fb4f18899475e3c0f2ba93c3feb809",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 0,
+              "top": 0,
+              "width": 242.86,
+              "height": 73.17
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 0,
+              "top": 0,
+              "width": 242.86,
+              "height": 73.17
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "7|Retro Sky|f10cf1e1ada6570b9a1ddbabf1ac05b5092c421bf97ca89d8f977b508f8514f4",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 0,
+              "top": 0,
+              "width": 242.86,
+              "height": 44.52
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 0,
+              "top": 0,
+              "width": 242.86,
+              "height": 44.52
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "8|Freestyle Party|fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 67.42,
+              "top": 6,
+              "width": 110,
+              "height": 82
+            },
+            "backgroundSize": "110px 110px",
+            "backgroundPosition": "50% 0%",
+            "transform": "matrix(1, 0, 0, 1, -55, 0)",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 67.42,
+              "top": 6,
+              "width": 110,
+              "height": 82
+            },
+            "backgroundSize": "110px 110px",
+            "backgroundPosition": "50% 0%",
+            "transform": "matrix(1, 0, 0, 1, -55, 0)",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "9|Whiskey Allstars|7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 120.69
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 25%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 120.69
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 25%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "11|Karaoke Tuesday|0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.84,
+              "height": 120.67
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 33.3333%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.84,
+              "height": 120.67
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 33.3333%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "12|Ladies Night|338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 120.67
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 33.3333%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 120.67
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 33.3333%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "13|KoolKidz|0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 118.67
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 118.67
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "14|Stereo Mix|bfbf7343dcf45e7dcbc62852591728f6605eb8015b03b9757332825e217381dc",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 118.67
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 118.67
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "15|Undercover|eec3aa31504399ed47197611f4a6f3ba35be0f5a8b70980d701ce104c42b1c70",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 118.67
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 118.67
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "16|Whiskey Allstars|7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 120.67
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 120.67
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "18|Karaoke Tuesday|0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.84,
+              "height": 120.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 66.6667%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.84,
+              "height": 120.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 66.6667%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "19|Ladies Night|338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 120.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 66.6667%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 120.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 66.6667%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "20|The Lufts|440fed2d0014d313246a3d43e7ecc661feaf2ac784554e4d0cf604384f48fe8d",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 118.69
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 118.69
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "21|Sunset Dreams|aff501a678c2ab004628eb3dc903dd2f9fa4c4455d5b721cdba65f71c23c1da1",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 0,
+              "top": 0,
+              "width": 242.86,
+              "height": 69.02
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "auto 150%",
+              "backgroundPosition": "50% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 0,
+              "top": 0,
+              "width": 242.86,
+              "height": 69.02
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "auto 150%",
+              "backgroundPosition": "50% 0%"
+            }
+          }
+        },
+        {
+          "key": "21|DJ DIAGA|983ce16aed0b9a3ffeebde4eceb79279f9dc887d1032ba243f990fd7cec6a2f6",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 69.42,
+              "top": 2,
+              "width": 104,
+              "height": 45.66
+            },
+            "backgroundSize": "104px 104px",
+            "backgroundPosition": "50% 0%",
+            "transform": "matrix(1, 0, 0, 1, -52, 0)",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 69.42,
+              "top": 2,
+              "width": 104,
+              "height": 45.66
+            },
+            "backgroundSize": "104px 104px",
+            "backgroundPosition": "50% 0%",
+            "transform": "matrix(1, 0, 0, 1, -52, 0)",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "22|DJ ICUE|2c16dcd65d3278db3cff46bdd4ad1aa89fc584677f8b57aad909a47c89fbc569",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 69.42,
+              "top": 2,
+              "width": 104,
+              "height": 67.02
+            },
+            "backgroundSize": "104px 104px",
+            "backgroundPosition": "50% 0%",
+            "transform": "matrix(1, 0, 0, 1, -52, 0)",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 69.42,
+              "top": 2,
+              "width": 104,
+              "height": 67.02
+            },
+            "backgroundSize": "104px 104px",
+            "backgroundPosition": "50% 0%",
+            "transform": "matrix(1, 0, 0, 1, -52, 0)",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "23|Whiskey Allstars|7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 120.69
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 75%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 120.69
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 75%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "25|Karaoke Tuesday|0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.84,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 100%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.84,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 100%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "26|Ladies Night|338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 100%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 100%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "27|KoolKidz|0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 118.69
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 118.69
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "28|Pump|05c16e757f0e1f1218f9e914ae8c7dd092ffbb8eecfe7c02247fd30398959aac",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 118.69
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 118.69
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "29|JEMM|a312ff37b5e9a6add692dba8480bd3f829cb8f960ae706e43592536633d6068c",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 118.69
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 118.69
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "30|Whiskey Allstars|7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 100%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 242.86,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 100%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        }
+      ],
+      "labelChecks": [
+        {
+          "date": "7",
+          "eventName": "Bougie Nights",
+          "layout": "metadata-center",
+          "reason": "measured-lane-fit",
+          "available": "161.24",
+          "required": "49.59",
+          "assetChecksum": "ca443b40c88a177717a234527c097430d9fb4f18899475e3c0f2ba93c3feb809",
+          "labelBoxes": [
+            {
+              "left": 785.5625,
+              "right": 1014.421875,
+              "top": 598.123779296875,
+              "bottom": 617.563720703125
+            },
+            {
+              "left": 832.03125,
+              "right": 993.15625,
+              "top": 620.84375,
+              "bottom": 632.84375
+            }
+          ],
+          "metadataBoxes": [
+            {
+              "left": 784.5625,
+              "right": 829.015625,
+              "top": 620.84375,
+              "bottom": 631.84375
+            },
+            {
+              "left": 996.15625,
+              "right": 1015.421875,
+              "top": 624.84375,
+              "bottom": 632.84375
+            }
+          ],
+          "protectedBoxes": [],
+          "noLabelCollision": true,
+          "noMetadataCollision": true,
+          "noProtectedCollision": true,
+          "pass": true
+        },
+        {
+          "date": "7",
+          "eventName": "Retro Sky",
+          "layout": "metadata-center",
+          "reason": "measured-lane-fit",
+          "available": "148.61",
+          "required": "85.97",
+          "assetChecksum": "f10cf1e1ada6570b9a1ddbabf1ac05b5092c421bf97ca89d8f977b508f8514f4",
+          "labelBoxes": [
+            {
+              "left": 839.7693481445312,
+              "right": 989.1369018554688,
+              "top": 662.79345703125,
+              "bottom": 679.92529296875
+            }
+          ],
+          "metadataBoxes": [
+            {
+              "left": 784.5625,
+              "right": 837.1875,
+              "top": 666.359375,
+              "bottom": 677.359375
+            },
+            {
+              "left": 991.703125,
+              "right": 1015.421875,
+              "top": 670.359375,
+              "bottom": 678.359375
+            }
+          ],
+          "protectedBoxes": [],
+          "noLabelCollision": true,
+          "noMetadataCollision": true,
+          "noProtectedCollision": true,
+          "pass": true
+        },
+        {
+          "date": "21",
+          "eventName": "Sunset Dreams",
+          "layout": null,
+          "reason": null,
+          "available": null,
+          "required": null,
+          "assetChecksum": "aff501a678c2ab004628eb3dc903dd2f9fa4c4455d5b721cdba65f71c23c1da1",
+          "labelBoxes": [],
+          "metadataBoxes": [
+            {
+              "left": 784.5625,
+              "right": 837.1875,
+              "top": 860.046875,
+              "bottom": 871.046875
+            },
+            {
+              "left": 991.703125,
+              "right": 1015.421875,
+              "top": 864.046875,
+              "bottom": 872.046875
+            }
+          ],
+          "protectedBoxes": [],
+          "noLabelCollision": true,
+          "noMetadataCollision": true,
+          "noProtectedCollision": true,
+          "pass": true
+        },
+        {
+          "date": "21",
+          "eventName": "DJ DIAGA",
+          "layout": "metadata-center",
+          "reason": "measured-lane-fit",
+          "available": "145.65",
+          "required": "72.71",
+          "assetChecksum": "983ce16aed0b9a3ffeebde4eceb79279f9dc887d1032ba243f990fd7cec6a2f6",
+          "labelBoxes": [
+            {
+              "left": 831.89892578125,
+              "right": 977.69482421875,
+              "top": 907.7921752929688,
+              "bottom": 923.6140747070312
+            }
+          ],
+          "metadataBoxes": [
+            {
+              "left": 784.5625,
+              "right": 829.015625,
+              "top": 909.703125,
+              "bottom": 920.703125
+            },
+            {
+              "left": 980.578125,
+              "right": 1015.421875,
+              "top": 913.703125,
+              "bottom": 921.703125
+            }
+          ],
+          "protectedBoxes": [
+            {
+              "left": 876.064375,
+              "right": 911.424375,
+              "top": 855.075,
+              "bottom": 886.275
+            }
+          ],
+          "noLabelCollision": true,
+          "noMetadataCollision": true,
+          "noProtectedCollision": true,
+          "pass": true
+        },
+        {
+          "date": "22",
+          "eventName": "DJ ICUE",
+          "layout": "metadata-center",
+          "reason": "measured-lane-fit",
+          "available": "145.65",
+          "required": "44.01",
+          "assetChecksum": "2c16dcd65d3278db3cff46bdd4ad1aa89fc584677f8b57aad909a47c89fbc569",
+          "labelBoxes": [
+            {
+              "left": 1077.890625,
+              "right": 1223.421875,
+              "top": 909.22314453125,
+              "bottom": 922.18310546875
+            }
+          ],
+          "metadataBoxes": [
+            {
+              "left": 1030.421875,
+              "right": 1074.875,
+              "top": 909.703125,
+              "bottom": 920.703125
+            },
+            {
+              "left": 1226.4375,
+              "right": 1261.28125,
+              "top": 913.703125,
+              "bottom": 921.703125
+            }
+          ],
+          "protectedBoxes": [
+            {
+              "left": 1125.04375,
+              "right": 1166.64375,
+              "top": 847.5153125,
+              "bottom": 892.2353125
+            }
+          ],
+          "noLabelCollision": true,
+          "noMetadataCollision": true,
+          "noProtectedCollision": true,
+          "pass": true
+        }
+      ],
+      "compositing": [
+        {
+          "date": "7",
+          "eventName": "Bougie Nights",
+          "regionAfterContent": "none",
+          "artOpacity": "1",
+          "artFilter": "none",
+          "artBlendMode": "normal",
+          "pass": true
+        },
+        {
+          "date": "7",
+          "eventName": "Retro Sky",
+          "regionAfterContent": "none",
+          "artOpacity": "1",
+          "artFilter": "none",
+          "artBlendMode": "normal",
+          "pass": true
+        },
+        {
+          "date": "21",
+          "eventName": "Sunset Dreams",
+          "regionAfterContent": "none",
+          "artOpacity": "1",
+          "artFilter": "none",
+          "artBlendMode": "normal",
+          "pass": true
+        },
+        {
+          "date": "21",
+          "eventName": "DJ DIAGA",
+          "regionAfterContent": "none",
+          "artOpacity": "1",
+          "artFilter": "none",
+          "artBlendMode": "normal",
+          "pass": true
+        },
+        {
+          "date": "22",
+          "eventName": "DJ ICUE",
+          "regionAfterContent": "none",
+          "artOpacity": "1",
+          "artFilter": "none",
+          "artBlendMode": "normal",
+          "pass": true
+        }
+      ],
+      "headerOverlap": false
+    },
+    {
+      "width": 1366,
+      "pass": true,
+      "frozenGeometry": [
+        {
+          "key": "1|Chronicles|f9aaf41cbea267b5d5e8f0f917f466148464ba8f7e2e0964b88d8486eddaeac1",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 118.67
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 118.67
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "2|Whiskey Allstars|7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 119.67
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 0%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 119.67
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 0%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "4|Karaoke Tuesday|0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 0%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 0%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "5|Ladies Night|338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 0%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 0%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "6|Rhinestone Cowboys|f106325dd46c6e0e5831fdde72fd8ed267de19cf362d7834052b2edb9c562ca1",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 118.69
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 118.69
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "7|Bougie Nights|ca443b40c88a177717a234527c097430d9fb4f18899475e3c0f2ba93c3feb809",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 0,
+              "top": 0,
+              "width": 186,
+              "height": 73.17
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 0,
+              "top": 0,
+              "width": 186,
+              "height": 73.17
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "7|Retro Sky|f10cf1e1ada6570b9a1ddbabf1ac05b5092c421bf97ca89d8f977b508f8514f4",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 0,
+              "top": 0,
+              "width": 186,
+              "height": 44.52
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 0,
+              "top": 0,
+              "width": 186,
+              "height": 44.52
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "8|Freestyle Party|fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 39,
+              "top": 6,
+              "width": 110,
+              "height": 82
+            },
+            "backgroundSize": "110px 110px",
+            "backgroundPosition": "50% 0%",
+            "transform": "matrix(1, 0, 0, 1, -55, 0)",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 39,
+              "top": 6,
+              "width": 110,
+              "height": 82
+            },
+            "backgroundSize": "110px 110px",
+            "backgroundPosition": "50% 0%",
+            "transform": "matrix(1, 0, 0, 1, -55, 0)",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "9|Whiskey Allstars|7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 120.69
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 25%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 120.69
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 25%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "11|Karaoke Tuesday|0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 120.67
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 33.3333%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 120.67
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 33.3333%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "12|Ladies Night|338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 120.67
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 33.3333%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 120.67
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 33.3333%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "13|KoolKidz|0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 118.67
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 118.67
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "14|Stereo Mix|bfbf7343dcf45e7dcbc62852591728f6605eb8015b03b9757332825e217381dc",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 118.67
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 118.67
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "15|Undercover|eec3aa31504399ed47197611f4a6f3ba35be0f5a8b70980d701ce104c42b1c70",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 118.67
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 118.67
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "16|Whiskey Allstars|7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 120.67
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 120.67
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "18|Karaoke Tuesday|0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 120.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 66.6667%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 120.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 66.6667%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "19|Ladies Night|338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 120.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 66.6667%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 120.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 66.6667%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "20|The Lufts|440fed2d0014d313246a3d43e7ecc661feaf2ac784554e4d0cf604384f48fe8d",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 118.69
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 118.69
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "21|Sunset Dreams|aff501a678c2ab004628eb3dc903dd2f9fa4c4455d5b721cdba65f71c23c1da1",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 0,
+              "top": 0,
+              "width": 186,
+              "height": 69.02
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "auto 150%",
+              "backgroundPosition": "50% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 0,
+              "top": 0,
+              "width": 186,
+              "height": 69.02
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "auto 150%",
+              "backgroundPosition": "50% 0%"
+            }
+          }
+        },
+        {
+          "key": "21|DJ DIAGA|983ce16aed0b9a3ffeebde4eceb79279f9dc887d1032ba243f990fd7cec6a2f6",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 41,
+              "top": 2,
+              "width": 104,
+              "height": 45.66
+            },
+            "backgroundSize": "104px 104px",
+            "backgroundPosition": "50% 0%",
+            "transform": "matrix(1, 0, 0, 1, -52, 0)",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 41,
+              "top": 2,
+              "width": 104,
+              "height": 45.66
+            },
+            "backgroundSize": "104px 104px",
+            "backgroundPosition": "50% 0%",
+            "transform": "matrix(1, 0, 0, 1, -52, 0)",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "22|DJ ICUE|2c16dcd65d3278db3cff46bdd4ad1aa89fc584677f8b57aad909a47c89fbc569",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 41,
+              "top": 2,
+              "width": 104,
+              "height": 67.02
+            },
+            "backgroundSize": "104px 104px",
+            "backgroundPosition": "50% 0%",
+            "transform": "matrix(1, 0, 0, 1, -52, 0)",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 41,
+              "top": 2,
+              "width": 104,
+              "height": 67.02
+            },
+            "backgroundSize": "104px 104px",
+            "backgroundPosition": "50% 0%",
+            "transform": "matrix(1, 0, 0, 1, -52, 0)",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "23|Whiskey Allstars|7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 120.69
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 75%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 120.69
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 75%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "25|Karaoke Tuesday|0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 100%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 100%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "26|Ladies Night|338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 100%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 100%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "27|KoolKidz|0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 118.69
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 118.69
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "28|Pump|05c16e757f0e1f1218f9e914ae8c7dd092ffbb8eecfe7c02247fd30398959aac",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 118.69
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 118.69
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "29|JEMM|a312ff37b5e9a6add692dba8480bd3f829cb8f960ae706e43592536633d6068c",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 118.69
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 118.69
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "30|Whiskey Allstars|7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 100%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 186,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 100%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        }
+      ],
+      "labelChecks": [
+        {
+          "date": "7",
+          "eventName": "Bougie Nights",
+          "layout": "metadata-center",
+          "reason": "measured-lane-fit",
+          "available": "104.28",
+          "required": "49.56",
+          "assetChecksum": "ca443b40c88a177717a234527c097430d9fb4f18899475e3c0f2ba93c3feb809",
+          "labelBoxes": [
+            {
+              "left": 597,
+              "right": 769,
+              "top": 598.123779296875,
+              "bottom": 617.563720703125
+            },
+            {
+              "left": 643.453125,
+              "right": 747.734375,
+              "top": 620.84375,
+              "bottom": 632.84375
+            }
+          ],
+          "metadataBoxes": [
+            {
+              "left": 596,
+              "right": 640.453125,
+              "top": 620.84375,
+              "bottom": 631.84375
+            },
+            {
+              "left": 750.734375,
+              "right": 770,
+              "top": 624.84375,
+              "bottom": 632.84375
+            }
+          ],
+          "protectedBoxes": [],
+          "noLabelCollision": true,
+          "noMetadataCollision": true,
+          "noProtectedCollision": true,
+          "pass": true
+        },
+        {
+          "date": "7",
+          "eventName": "Retro Sky",
+          "layout": "metadata-center",
+          "reason": "measured-lane-fit",
+          "available": "91.66",
+          "required": "85.92",
+          "assetChecksum": "f10cf1e1ada6570b9a1ddbabf1ac05b5092c421bf97ca89d8f977b508f8514f4",
+          "labelBoxes": [
+            {
+              "left": 651.1693725585938,
+              "right": 743.7368774414062,
+              "top": 663.3883056640625,
+              "bottom": 679.3304443359375
+            }
+          ],
+          "metadataBoxes": [
+            {
+              "left": 596,
+              "right": 648.625,
+              "top": 666.359375,
+              "bottom": 677.359375
+            },
+            {
+              "left": 746.28125,
+              "right": 770,
+              "top": 670.359375,
+              "bottom": 678.359375
+            }
+          ],
+          "protectedBoxes": [],
+          "noLabelCollision": true,
+          "noMetadataCollision": true,
+          "noProtectedCollision": true,
+          "pass": true
+        },
+        {
+          "date": "21",
+          "eventName": "Sunset Dreams",
+          "layout": null,
+          "reason": null,
+          "available": null,
+          "required": null,
+          "assetChecksum": "aff501a678c2ab004628eb3dc903dd2f9fa4c4455d5b721cdba65f71c23c1da1",
+          "labelBoxes": [],
+          "metadataBoxes": [
+            {
+              "left": 596,
+              "right": 648.625,
+              "top": 860.046875,
+              "bottom": 871.046875
+            },
+            {
+              "left": 746.28125,
+              "right": 770,
+              "top": 864.046875,
+              "bottom": 872.046875
+            }
+          ],
+          "protectedBoxes": [],
+          "noLabelCollision": true,
+          "noMetadataCollision": true,
+          "noProtectedCollision": true,
+          "pass": true
+        },
+        {
+          "date": "21",
+          "eventName": "DJ DIAGA",
+          "layout": "metadata-center",
+          "reason": "measured-lane-fit",
+          "available": "88.70",
+          "required": "72.67",
+          "assetChecksum": "983ce16aed0b9a3ffeebde4eceb79279f9dc887d1032ba243f990fd7cec6a2f6",
+          "labelBoxes": [
+            {
+              "left": 643.31103515625,
+              "right": 732.29833984375,
+              "top": 908.5359497070312,
+              "bottom": 922.8703002929688
+            }
+          ],
+          "metadataBoxes": [
+            {
+              "left": 596,
+              "right": 640.453125,
+              "top": 909.703125,
+              "bottom": 920.703125
+            },
+            {
+              "left": 735.15625,
+              "right": 770,
+              "top": 913.703125,
+              "bottom": 921.703125
+            }
+          ],
+          "protectedBoxes": [
+            {
+              "left": 659.08,
+              "right": 694.44,
+              "top": 855.075,
+              "bottom": 886.275
+            }
+          ],
+          "noLabelCollision": true,
+          "noMetadataCollision": true,
+          "noProtectedCollision": true,
+          "pass": true
+        },
+        {
+          "date": "22",
+          "eventName": "DJ ICUE",
+          "layout": "metadata-center",
+          "reason": "measured-lane-fit",
+          "available": "88.70",
+          "required": "43.98",
+          "assetChecksum": "2c16dcd65d3278db3cff46bdd4ad1aa89fc584677f8b57aad909a47c89fbc569",
+          "labelBoxes": [
+            {
+              "left": 832.453125,
+              "right": 921.15625,
+              "top": 909.22314453125,
+              "bottom": 922.18310546875
+            }
+          ],
+          "metadataBoxes": [
+            {
+              "left": 785,
+              "right": 829.453125,
+              "top": 909.703125,
+              "bottom": 920.703125
+            },
+            {
+              "left": 924.15625,
+              "right": 959,
+              "top": 913.703125,
+              "bottom": 921.703125
+            }
+          ],
+          "protectedBoxes": [
+            {
+              "left": 851.2,
+              "right": 892.8,
+              "top": 847.5153125,
+              "bottom": 892.2353125
+            }
+          ],
+          "noLabelCollision": true,
+          "noMetadataCollision": true,
+          "noProtectedCollision": true,
+          "pass": true
+        }
+      ],
+      "compositing": [
+        {
+          "date": "7",
+          "eventName": "Bougie Nights",
+          "regionAfterContent": "none",
+          "artOpacity": "1",
+          "artFilter": "none",
+          "artBlendMode": "normal",
+          "pass": true
+        },
+        {
+          "date": "7",
+          "eventName": "Retro Sky",
+          "regionAfterContent": "none",
+          "artOpacity": "1",
+          "artFilter": "none",
+          "artBlendMode": "normal",
+          "pass": true
+        },
+        {
+          "date": "21",
+          "eventName": "Sunset Dreams",
+          "regionAfterContent": "none",
+          "artOpacity": "1",
+          "artFilter": "none",
+          "artBlendMode": "normal",
+          "pass": true
+        },
+        {
+          "date": "21",
+          "eventName": "DJ DIAGA",
+          "regionAfterContent": "none",
+          "artOpacity": "1",
+          "artFilter": "none",
+          "artBlendMode": "normal",
+          "pass": true
+        },
+        {
+          "date": "22",
+          "eventName": "DJ ICUE",
+          "regionAfterContent": "none",
+          "artOpacity": "1",
+          "artFilter": "none",
+          "artBlendMode": "normal",
+          "pass": true
+        }
+      ],
+      "headerOverlap": false
+    },
+    {
+      "width": 1000,
+      "pass": true,
+      "frozenGeometry": [
+        {
+          "key": "1|Chronicles|f9aaf41cbea267b5d5e8f0f917f466148464ba8f7e2e0964b88d8486eddaeac1",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 118.67
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 118.67
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "2|Whiskey Allstars|7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 119.67
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 0%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 119.67
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 0%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "4|Karaoke Tuesday|0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.7,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 0%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.7,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 0%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "5|Ladies Night|338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 0%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 0%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "6|Rhinestone Cowboys|f106325dd46c6e0e5831fdde72fd8ed267de19cf362d7834052b2edb9c562ca1",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 118.69
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 118.69
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "7|Bougie Nights|ca443b40c88a177717a234527c097430d9fb4f18899475e3c0f2ba93c3feb809",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 0,
+              "top": 0,
+              "width": 133.7,
+              "height": 73.17
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 0,
+              "top": 0,
+              "width": 133.7,
+              "height": 73.17
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "7|Retro Sky|f10cf1e1ada6570b9a1ddbabf1ac05b5092c421bf97ca89d8f977b508f8514f4",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 0,
+              "top": 0,
+              "width": 133.7,
+              "height": 44.52
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 0,
+              "top": 0,
+              "width": 133.7,
+              "height": 44.52
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "8|Freestyle Party|fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 12.86,
+              "top": 6,
+              "width": 110,
+              "height": 82
+            },
+            "backgroundSize": "110px 110px",
+            "backgroundPosition": "50% 0%",
+            "transform": "matrix(1, 0, 0, 1, -55, 0)",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 12.86,
+              "top": 6,
+              "width": 110,
+              "height": 82
+            },
+            "backgroundSize": "110px 110px",
+            "backgroundPosition": "50% 0%",
+            "transform": "matrix(1, 0, 0, 1, -55, 0)",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "9|Whiskey Allstars|7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 120.69
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 25%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 120.69
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 25%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "11|Karaoke Tuesday|0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.7,
+              "height": 120.67
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 33.3333%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.7,
+              "height": 120.67
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 33.3333%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "12|Ladies Night|338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 120.67
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 33.3333%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 120.67
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 33.3333%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "13|KoolKidz|0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 118.67
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 118.67
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "14|Stereo Mix|bfbf7343dcf45e7dcbc62852591728f6605eb8015b03b9757332825e217381dc",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.7,
+              "height": 118.67
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.7,
+              "height": 118.67
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "15|Undercover|eec3aa31504399ed47197611f4a6f3ba35be0f5a8b70980d701ce104c42b1c70",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 118.67
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 118.67
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "16|Whiskey Allstars|7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 120.67
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 120.67
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "18|Karaoke Tuesday|0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.7,
+              "height": 120.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 66.6667%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.7,
+              "height": 120.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 66.6667%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "19|Ladies Night|338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 120.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 66.6667%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 120.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 66.6667%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "20|The Lufts|440fed2d0014d313246a3d43e7ecc661feaf2ac784554e4d0cf604384f48fe8d",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 118.69
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 118.69
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "21|Sunset Dreams|aff501a678c2ab004628eb3dc903dd2f9fa4c4455d5b721cdba65f71c23c1da1",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 0,
+              "top": 0,
+              "width": 133.7,
+              "height": 69.02
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "auto 150%",
+              "backgroundPosition": "50% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 0,
+              "top": 0,
+              "width": 133.7,
+              "height": 69.02
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "auto 150%",
+              "backgroundPosition": "50% 0%"
+            }
+          }
+        },
+        {
+          "key": "21|DJ DIAGA|983ce16aed0b9a3ffeebde4eceb79279f9dc887d1032ba243f990fd7cec6a2f6",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 14.84,
+              "top": 2,
+              "width": 104,
+              "height": 45.66
+            },
+            "backgroundSize": "104px 104px",
+            "backgroundPosition": "50% 0%",
+            "transform": "matrix(1, 0, 0, 1, -52, 0)",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 14.84,
+              "top": 2,
+              "width": 104,
+              "height": 45.66
+            },
+            "backgroundSize": "104px 104px",
+            "backgroundPosition": "50% 0%",
+            "transform": "matrix(1, 0, 0, 1, -52, 0)",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "22|DJ ICUE|2c16dcd65d3278db3cff46bdd4ad1aa89fc584677f8b57aad909a47c89fbc569",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 14.86,
+              "top": 2,
+              "width": 104,
+              "height": 67.02
+            },
+            "backgroundSize": "104px 104px",
+            "backgroundPosition": "50% 0%",
+            "transform": "matrix(1, 0, 0, 1, -52, 0)",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 14.86,
+              "top": 2,
+              "width": 104,
+              "height": 67.02
+            },
+            "backgroundSize": "104px 104px",
+            "backgroundPosition": "50% 0%",
+            "transform": "matrix(1, 0, 0, 1, -52, 0)",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "23|Whiskey Allstars|7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 120.69
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 75%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 120.69
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 75%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "25|Karaoke Tuesday|0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.7,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 100%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.7,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 100%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "26|Ladies Night|338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 100%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 100%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "27|KoolKidz|0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 118.69
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 118.69
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "28|Pump|05c16e757f0e1f1218f9e914ae8c7dd092ffbb8eecfe7c02247fd30398959aac",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.7,
+              "height": 118.69
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.7,
+              "height": 118.69
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "29|JEMM|a312ff37b5e9a6add692dba8480bd3f829cb8f960ae706e43592536633d6068c",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 118.69
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 118.69
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "30|Whiskey Allstars|7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 100%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 133.72,
+              "height": 119.69
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 100%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        }
+      ],
+      "labelChecks": [
+        {
+          "date": "7",
+          "eventName": "Bougie Nights",
+          "layout": "metadata-center",
+          "reason": "measured-lane-fit",
+          "available": "52.11",
+          "required": "49.67",
+          "assetChecksum": "ca443b40c88a177717a234527c097430d9fb4f18899475e3c0f2ba93c3feb809",
+          "labelBoxes": [
+            {
+              "left": 440.140625,
+              "right": 559.84375,
+              "top": 579.4037475585938,
+              "bottom": 618.2837524414062
+            },
+            {
+              "left": 486.703125,
+              "right": 538.53125,
+              "top": 620.84375,
+              "bottom": 632.84375
+            }
+          ],
+          "metadataBoxes": [
+            {
+              "left": 439.140625,
+              "right": 483.59375,
+              "top": 620.84375,
+              "bottom": 631.84375
+            },
+            {
+              "left": 541.578125,
+              "right": 560.84375,
+              "top": 624.84375,
+              "bottom": 632.84375
+            }
+          ],
+          "protectedBoxes": [],
+          "noLabelCollision": true,
+          "noMetadataCollision": true,
+          "noProtectedCollision": true,
+          "pass": true
+        },
+        {
+          "date": "7",
+          "eventName": "Retro Sky",
+          "layout": "adjacent-row",
+          "reason": "insufficient-lane",
+          "available": "39.46",
+          "required": "86.11",
+          "assetChecksum": "f10cf1e1ada6570b9a1ddbabf1ac05b5092c421bf97ca89d8f977b508f8514f4",
+          "labelBoxes": [
+            {
+              "left": 439.68804931640625,
+              "right": 560.2963256835938,
+              "top": 647.0946655273438,
+              "bottom": 663.6240844726562
+            }
+          ],
+          "metadataBoxes": [
+            {
+              "left": 439.140625,
+              "right": 491.765625,
+              "top": 666.359375,
+              "bottom": 677.359375
+            },
+            {
+              "left": 537.125,
+              "right": 560.84375,
+              "top": 670.359375,
+              "bottom": 678.359375
+            }
+          ],
+          "protectedBoxes": [],
+          "noLabelCollision": true,
+          "noMetadataCollision": true,
+          "noProtectedCollision": true,
+          "pass": true
+        },
+        {
+          "date": "21",
+          "eventName": "Sunset Dreams",
+          "layout": null,
+          "reason": null,
+          "available": null,
+          "required": null,
+          "assetChecksum": "aff501a678c2ab004628eb3dc903dd2f9fa4c4455d5b721cdba65f71c23c1da1",
+          "labelBoxes": [],
+          "metadataBoxes": [
+            {
+              "left": 439.140625,
+              "right": 491.765625,
+              "top": 860.046875,
+              "bottom": 871.046875
+            },
+            {
+              "left": 537.125,
+              "right": 560.84375,
+              "top": 864.046875,
+              "bottom": 872.046875
+            }
+          ],
+          "protectedBoxes": [],
+          "noLabelCollision": true,
+          "noMetadataCollision": true,
+          "noProtectedCollision": true,
+          "pass": true
+        },
+        {
+          "date": "21",
+          "eventName": "DJ DIAGA",
+          "layout": "adjacent-row",
+          "reason": "insufficient-lane",
+          "available": "36.50",
+          "required": "67.24",
+          "assetChecksum": "983ce16aed0b9a3ffeebde4eceb79279f9dc887d1032ba243f990fd7cec6a2f6",
+          "labelBoxes": [
+            {
+              "left": 440.0169677734375,
+              "right": 559.9674072265625,
+              "top": 893.1307373046875,
+              "bottom": 907.2755126953125
+            }
+          ],
+          "metadataBoxes": [
+            {
+              "left": 439.140625,
+              "right": 483.59375,
+              "top": 909.703125,
+              "bottom": 920.703125
+            },
+            {
+              "left": 526,
+              "right": 560.84375,
+              "top": 913.703125,
+              "bottom": 921.703125
+            }
+          ],
+          "protectedBoxes": [
+            {
+              "left": 476.064375,
+              "right": 511.424375,
+              "top": 855.075,
+              "bottom": 886.275
+            }
+          ],
+          "noLabelCollision": true,
+          "noMetadataCollision": true,
+          "noProtectedCollision": true,
+          "pass": true
+        },
+        {
+          "date": "22",
+          "eventName": "DJ ICUE",
+          "layout": "adjacent-row",
+          "reason": "insufficient-lane",
+          "available": "36.51",
+          "required": "40.90",
+          "assetChecksum": "2c16dcd65d3278db3cff46bdd4ad1aa89fc584677f8b57aad909a47c89fbc569",
+          "labelBoxes": [
+            {
+              "left": 576.84375,
+              "right": 696.5625,
+              "top": 894.2631225585938,
+              "bottom": 906.1431274414062
+            }
+          ],
+          "metadataBoxes": [
+            {
+              "left": 575.84375,
+              "right": 620.296875,
+              "top": 909.703125,
+              "bottom": 920.703125
+            },
+            {
+              "left": 662.71875,
+              "right": 697.5625,
+              "top": 913.703125,
+              "bottom": 921.703125
+            }
+          ],
+          "protectedBoxes": [
+            {
+              "left": 615.903125,
+              "right": 657.503125,
+              "top": 847.5153125,
+              "bottom": 892.2353125
+            }
+          ],
+          "noLabelCollision": true,
+          "noMetadataCollision": true,
+          "noProtectedCollision": true,
+          "pass": true
+        }
+      ],
+      "compositing": [
+        {
+          "date": "7",
+          "eventName": "Bougie Nights",
+          "regionAfterContent": "none",
+          "artOpacity": "1",
+          "artFilter": "none",
+          "artBlendMode": "normal",
+          "pass": true
+        },
+        {
+          "date": "7",
+          "eventName": "Retro Sky",
+          "regionAfterContent": "none",
+          "artOpacity": "1",
+          "artFilter": "none",
+          "artBlendMode": "normal",
+          "pass": true
+        },
+        {
+          "date": "21",
+          "eventName": "Sunset Dreams",
+          "regionAfterContent": "none",
+          "artOpacity": "1",
+          "artFilter": "none",
+          "artBlendMode": "normal",
+          "pass": true
+        },
+        {
+          "date": "21",
+          "eventName": "DJ DIAGA",
+          "regionAfterContent": "none",
+          "artOpacity": "1",
+          "artFilter": "none",
+          "artBlendMode": "normal",
+          "pass": true
+        },
+        {
+          "date": "22",
+          "eventName": "DJ ICUE",
+          "regionAfterContent": "none",
+          "artOpacity": "1",
+          "artFilter": "none",
+          "artBlendMode": "normal",
+          "pass": true
+        }
+      ],
+      "headerOverlap": false
+    },
+    {
+      "width": 980,
+      "pass": true,
+      "frozenGeometry": [
+        {
+          "key": "1|Chronicles|f9aaf41cbea267b5d5e8f0f917f466148464ba8f7e2e0964b88d8486eddaeac1",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 64.11
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 64.11
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "2|Whiskey Allstars|7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 64.64
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 0%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 64.64
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 0%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "4|Karaoke Tuesday|0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.31,
+              "height": 64.64
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 0%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.31,
+              "height": 64.64
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 0%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "5|Ladies Night|338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 64.64
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 0%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 64.64
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 0%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "6|Rhinestone Cowboys|f106325dd46c6e0e5831fdde72fd8ed267de19cf362d7834052b2edb9c562ca1",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 64.11
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 64.11
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "7|Bougie Nights|ca443b40c88a177717a234527c097430d9fb4f18899475e3c0f2ba93c3feb809",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 0,
+              "top": 0,
+              "width": 131.33,
+              "height": 39.06
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 0,
+              "top": 0,
+              "width": 131.33,
+              "height": 39.06
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "7|Retro Sky|f10cf1e1ada6570b9a1ddbabf1ac05b5092c421bf97ca89d8f977b508f8514f4",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 0,
+              "top": 0,
+              "width": 131.33,
+              "height": 24.05
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 0,
+              "top": 0,
+              "width": 131.33,
+              "height": 24.05
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "8|Freestyle Party|fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 36.72,
+              "top": 3.72,
+              "width": 59.88,
+              "height": 44.64
+            },
+            "backgroundSize": "110px 110px",
+            "backgroundPosition": "50% 0%",
+            "transform": "matrix(1, 0, 0, 1, -54.9872, 0)",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 36.72,
+              "top": 3.72,
+              "width": 59.88,
+              "height": 44.64
+            },
+            "backgroundSize": "110px 110px",
+            "backgroundPosition": "50% 0%",
+            "transform": "matrix(1, 0, 0, 1, -54.9872, 0)",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "9|Whiskey Allstars|7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 65.17
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 25%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 65.17
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 25%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "11|Karaoke Tuesday|0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.31,
+              "height": 65.19
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 33.3333%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.31,
+              "height": 65.19
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 33.3333%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "12|Ladies Night|338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 65.19
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 33.3333%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 65.19
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 33.3333%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "13|KoolKidz|0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 64.13
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 64.13
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "14|Stereo Mix|bfbf7343dcf45e7dcbc62852591728f6605eb8015b03b9757332825e217381dc",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 64.13
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 64.13
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "15|Undercover|eec3aa31504399ed47197611f4a6f3ba35be0f5a8b70980d701ce104c42b1c70",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 64.13
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 64.13
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "16|Whiskey Allstars|7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 65.19
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 65.19
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "18|Karaoke Tuesday|0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.31,
+              "height": 65.17
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 66.6667%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.31,
+              "height": 65.17
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 66.6667%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "19|Ladies Night|338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 65.17
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 66.6667%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 65.17
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 66.6667%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "20|The Lufts|440fed2d0014d313246a3d43e7ecc661feaf2ac784554e4d0cf604384f48fe8d",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 64.11
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 64.11
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "21|Sunset Dreams|aff501a678c2ab004628eb3dc903dd2f9fa4c4455d5b721cdba65f71c23c1da1",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 0,
+              "top": 0,
+              "width": 131.33,
+              "height": 36.81
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "auto 150%",
+              "backgroundPosition": "50% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 0,
+              "top": 0,
+              "width": 131.33,
+              "height": 36.81
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "auto 150%",
+              "backgroundPosition": "50% 0%"
+            }
+          }
+        },
+        {
+          "key": "21|DJ DIAGA|983ce16aed0b9a3ffeebde4eceb79279f9dc887d1032ba243f990fd7cec6a2f6",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 37.35,
+              "top": 1.07,
+              "width": 56.61,
+              "height": 24.64
+            },
+            "backgroundSize": "104px 104px",
+            "backgroundPosition": "50% 0%",
+            "transform": "matrix(1, 0, 0, 1, -51.9882, 0)",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 37.35,
+              "top": 1.07,
+              "width": 56.61,
+              "height": 24.64
+            },
+            "backgroundSize": "104px 104px",
+            "backgroundPosition": "50% 0%",
+            "transform": "matrix(1, 0, 0, 1, -51.9882, 0)",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "22|DJ ICUE|2c16dcd65d3278db3cff46bdd4ad1aa89fc584677f8b57aad909a47c89fbc569",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 37.35,
+              "top": 1.08,
+              "width": 56.61,
+              "height": 36.17
+            },
+            "backgroundSize": "104px 104px",
+            "backgroundPosition": "50% 0%",
+            "transform": "matrix(1, 0, 0, 1, -51.9882, 0)",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 37.35,
+              "top": 1.08,
+              "width": 56.61,
+              "height": 36.17
+            },
+            "backgroundSize": "104px 104px",
+            "backgroundPosition": "50% 0%",
+            "transform": "matrix(1, 0, 0, 1, -51.9882, 0)",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "23|Whiskey Allstars|7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 65.17
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 75%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 65.17
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 75%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "25|Karaoke Tuesday|0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.31,
+              "height": 64.64
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 100%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.31,
+              "height": 64.64
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 100%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "26|Ladies Night|338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 64.64
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 100%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 64.64
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 100%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        },
+        {
+          "key": "27|KoolKidz|0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 64.11
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 64.11
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "28|Pump|05c16e757f0e1f1218f9e914ae8c7dd092ffbb8eecfe7c02247fd30398959aac",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 64.11
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 64.11
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "29|JEMM|a312ff37b5e9a6add692dba8480bd3f829cb8f960ae706e43592536633d6068c",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 64.11
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 64.11
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "transform": "none",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover",
+              "backgroundPosition": "50% 50%"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain",
+              "backgroundPosition": "50% 50%"
+            }
+          }
+        },
+        {
+          "key": "30|Whiskey Allstars|7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "pass": true,
+          "baseline": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 64.64
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 100%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          },
+          "current": {
+            "art": {
+              "left": 1,
+              "top": 1,
+              "width": 131.33,
+              "height": 64.64
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 100%",
+            "transform": "none",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto",
+              "backgroundPosition": "0% 0%"
+            }
+          }
+        }
+      ],
+      "labelChecks": [
+        {
+          "date": "7",
+          "eventName": "Bougie Nights",
+          "layout": "metadata-center",
+          "reason": "measured-lane-fit",
+          "available": "157.78",
+          "required": "54.51",
+          "assetChecksum": "ca443b40c88a177717a234527c097430d9fb4f18899475e3c0f2ba93c3feb809",
+          "labelBoxes": [
+            {
+              "left": 428.125,
+              "right": 551.859375,
+              "top": 324.6549987792969,
+              "bottom": 335.2356262207031
+            },
+            {
+              "left": 454.25,
+              "right": 540.296875,
+              "top": 337.015625,
+              "bottom": 343.546875
+            }
+          ],
+          "metadataBoxes": [
+            {
+              "left": 427.59375,
+              "right": 452.65625,
+              "top": 336.671875,
+              "bottom": 343
+            },
+            {
+              "left": 541.90625,
+              "right": 552.390625,
+              "top": 339.1875,
+              "bottom": 343.546875
+            }
+          ],
+          "protectedBoxes": [],
+          "noLabelCollision": true,
+          "noMetadataCollision": true,
+          "noProtectedCollision": true,
+          "pass": true
+        },
+        {
+          "date": "7",
+          "eventName": "Retro Sky",
+          "layout": "metadata-center",
+          "reason": "measured-lane-fit",
+          "available": "145.19",
+          "required": "90.89",
+          "assetChecksum": "f10cf1e1ada6570b9a1ddbabf1ac05b5092c421bf97ca89d8f977b508f8514f4",
+          "labelBoxes": [
+            {
+              "left": 458.44256591796875,
+              "right": 538.1199340820312,
+              "top": 360.1334228515625,
+              "bottom": 369.4290771484375
+            }
+          ],
+          "metadataBoxes": [
+            {
+              "left": 427.59375,
+              "right": 457.09375,
+              "top": 361.71875,
+              "bottom": 368.046875
+            },
+            {
+              "left": 539.484375,
+              "right": 552.390625,
+              "top": 364.234375,
+              "bottom": 368.59375
+            }
+          ],
+          "protectedBoxes": [],
+          "noLabelCollision": true,
+          "noMetadataCollision": true,
+          "noProtectedCollision": true,
+          "pass": true
+        },
+        {
+          "date": "21",
+          "eventName": "Sunset Dreams",
+          "layout": null,
+          "reason": null,
+          "available": null,
+          "required": null,
+          "assetChecksum": "aff501a678c2ab004628eb3dc903dd2f9fa4c4455d5b721cdba65f71c23c1da1",
+          "labelBoxes": [],
+          "metadataBoxes": [
+            {
+              "left": 427.59375,
+              "right": 457.09375,
+              "top": 467.71875,
+              "bottom": 474.046875
+            },
+            {
+              "left": 539.484375,
+              "right": 552.390625,
+              "top": 470.234375,
+              "bottom": 474.59375
+            }
+          ],
+          "protectedBoxes": [],
+          "noLabelCollision": true,
+          "noMetadataCollision": true,
+          "noProtectedCollision": true,
+          "pass": true
+        },
+        {
+          "date": "21",
+          "eventName": "DJ DIAGA",
+          "layout": "metadata-center",
+          "reason": "measured-lane-fit",
+          "available": "142.24",
+          "required": "77.56",
+          "assetChecksum": "983ce16aed0b9a3ffeebde4eceb79279f9dc887d1032ba243f990fd7cec6a2f6",
+          "labelBoxes": [
+            {
+              "left": 454.1777038574219,
+              "right": 531.9004516601562,
+              "top": 494.32501220703125,
+              "bottom": 502.89373779296875
+            }
+          ],
+          "metadataBoxes": [
+            {
+              "left": 427.59375,
+              "right": 452.65625,
+              "top": 495,
+              "bottom": 501.328125
+            },
+            {
+              "left": 533.4375,
+              "right": 552.390625,
+              "top": 497.515625,
+              "bottom": 501.875
+            }
+          ],
+          "protectedBoxes": [
+            {
+              "left": 466.064375,
+              "right": 501.424375,
+              "top": 444.3640625,
+              "bottom": 475.5640625
+            }
+          ],
+          "noLabelCollision": true,
+          "noMetadataCollision": true,
+          "noProtectedCollision": true,
+          "pass": true
+        },
+        {
+          "date": "22",
+          "eventName": "DJ ICUE",
+          "layout": "metadata-center",
+          "reason": "measured-lane-fit",
+          "available": "142.24",
+          "required": "48.95",
+          "assetChecksum": "2c16dcd65d3278db3cff46bdd4ad1aa89fc584677f8b57aad909a47c89fbc569",
+          "labelBoxes": [
+            {
+              "left": 588.109375,
+              "right": 665.6875,
+              "top": 495.0824890136719,
+              "bottom": 502.1362609863281
+            }
+          ],
+          "metadataBoxes": [
+            {
+              "left": 561.453125,
+              "right": 586.515625,
+              "top": 495,
+              "bottom": 501.328125
+            },
+            {
+              "left": 667.296875,
+              "right": 686.25,
+              "top": 497.515625,
+              "bottom": 501.875
+            }
+          ],
+          "protectedBoxes": [
+            {
+              "left": 603.04375,
+              "right": 644.64375,
+              "top": 441.7184375,
+              "bottom": 486.4384375
+            }
+          ],
+          "noLabelCollision": true,
+          "noMetadataCollision": true,
+          "noProtectedCollision": true,
+          "pass": true
+        }
+      ],
+      "compositing": [
+        {
+          "date": "7",
+          "eventName": "Bougie Nights",
+          "regionAfterContent": "none",
+          "artOpacity": "1",
+          "artFilter": "none",
+          "artBlendMode": "normal",
+          "pass": true
+        },
+        {
+          "date": "7",
+          "eventName": "Retro Sky",
+          "regionAfterContent": "none",
+          "artOpacity": "1",
+          "artFilter": "none",
+          "artBlendMode": "normal",
+          "pass": true
+        },
+        {
+          "date": "21",
+          "eventName": "Sunset Dreams",
+          "regionAfterContent": "none",
+          "artOpacity": "1",
+          "artFilter": "none",
+          "artBlendMode": "normal",
+          "pass": true
+        },
+        {
+          "date": "21",
+          "eventName": "DJ DIAGA",
+          "regionAfterContent": "none",
+          "artOpacity": "1",
+          "artFilter": "none",
+          "artBlendMode": "normal",
+          "pass": true
+        },
+        {
+          "date": "22",
+          "eventName": "DJ ICUE",
+          "regionAfterContent": "none",
+          "artOpacity": "1",
+          "artFilter": "none",
+          "artBlendMode": "normal",
+          "pass": true
+        }
+      ],
+      "headerOverlap": false
+    }
+  ],
+  "status": "PASS"
+}

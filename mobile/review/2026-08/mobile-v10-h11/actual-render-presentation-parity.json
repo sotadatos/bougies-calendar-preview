@@ -1,0 +1,5186 @@
+{
+  "schemaVersion": 2,
+  "contract": "actual-render-web-mobile-presentation-parity",
+  "candidatePair": {
+    "web": "v41",
+    "mobile": "mobile-v10-h11"
+  },
+  "targetMonth": "2026-08",
+  "frameworkRevision": "bd828906d77f1cef92a590a56c37d1fdba4c7f913c6ac200bb4c3c86b69746c4",
+  "approvedAssetLibraryRevision": "7d843d7d43f6898834ef095e11f9c8a1188efd9739434b9a1a8790a48e75237b",
+  "presentationDecisionRevision": "ef3dd9d29627374331cb9e5eb8a211d36c6df46162b0000107edb21c0266ded3",
+  "driver": "WebDriver with system Chrome",
+  "auditFields": [
+    "promo facts and visibility",
+    "selected asset and checksum",
+    "render visibility",
+    "performer identity, portrait containment, and measured separation",
+    "occurrence-scoped promotions",
+    "class-aware self-identifying artwork preservation",
+    "review-only historical navigation",
+    "recurring composition",
+    "venue",
+    "time",
+    "fallback reason"
+  ],
+  "summary": {
+    "recordCount": 33,
+    "unexplainedDiscrepancyCount": 0
+  },
+  "surfaces": {
+    "web": {
+      "recordCount": 33,
+      "discrepancies": [],
+      "records": [
+        {
+          "date": "2026-08-01",
+          "eventName": "Chronicles",
+          "eventVisible": true,
+          "selectedAsset": "chronicles-v2.jpg",
+          "selectedAssetChecksum": "f9aaf41cbea267b5d5e8f0f917f466148464ba8f7e2e0964b88d8486eddaeac1",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [
+              {
+                "left": 1032.421875,
+                "right": 1260.703125,
+                "top": 510.09564208984375,
+                "bottom": 538.7324829101562,
+                "width": 228.28125,
+                "clientWidth": 228,
+                "scrollWidth": 228
+              }
+            ],
+            "performers": []
+          },
+          "performerGeometry": {
+            "event": {
+              "left": 1023.421875,
+              "right": 1268.28125,
+              "top": 441,
+              "bottom": 561.671875,
+              "width": 244.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 1024.421875,
+              "right": 1267.28125,
+              "top": 442,
+              "bottom": 560.671875,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "performer": {
+              "left": 1032.421875,
+              "right": 1260.703125,
+              "top": 510.09564208984375,
+              "bottom": 538.7324829101562,
+              "width": 228.28125,
+              "clientWidth": 228,
+              "scrollWidth": 228
+            },
+            "venue": {
+              "left": 1032.421875,
+              "right": 1092.484375,
+              "top": 542.671875,
+              "bottom": 553.671875,
+              "width": 60.0625,
+              "clientWidth": 58,
+              "scrollWidth": 58
+            },
+            "time": {
+              "left": 1233.59375,
+              "right": 1260.28125,
+              "top": 545.671875,
+              "bottom": 554.671875,
+              "width": 26.6875,
+              "clientWidth": 27,
+              "scrollWidth": 27
+            },
+            "promotion": null
+          },
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 1023.421875,
+              "right": 1268.28125,
+              "top": 441,
+              "bottom": 561.671875,
+              "width": 244.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 1024.421875,
+              "right": 1267.28125,
+              "top": 442,
+              "bottom": 560.671875,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-02",
+          "eventName": "Whiskey Allstars",
+          "eventVisible": true,
+          "selectedAsset": "sunday-v2-whiskey-allstars-self-describing.png",
+          "selectedAssetChecksum": "7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 1269.28125,
+              "right": 1514.140625,
+              "top": 441,
+              "bottom": 562.671875,
+              "width": 244.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 1270.28125,
+              "right": 1513.140625,
+              "top": 442,
+              "bottom": 561.671875,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 0%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [
+            "in-da-biz-sundays"
+          ],
+          "recurringCompositionRendered": true,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-04",
+          "eventName": "Karaoke Tuesday",
+          "eventVisible": true,
+          "selectedAsset": "tuesday-v2-karaoke-self-describing.png",
+          "selectedAssetChecksum": "0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 40,
+              "right": 284.84375,
+              "top": 562.671875,
+              "bottom": 684.359375,
+              "width": 244.84375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 41,
+              "right": 283.84375,
+              "top": 563.671875,
+              "bottom": 683.359375,
+              "width": 242.84375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 0%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [
+            "late-night-hh"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": true,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "event has no linked performer and no governed event override",
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-05",
+          "eventName": "Ladies Night",
+          "eventVisible": true,
+          "selectedAsset": "wednesday-v2-ladies-night-self-describing.png",
+          "selectedAssetChecksum": "338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 285.84375,
+              "right": 530.703125,
+              "top": 562.671875,
+              "bottom": 684.359375,
+              "width": 244.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 286.84375,
+              "right": 529.703125,
+              "top": 563.671875,
+              "bottom": 683.359375,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 0%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [
+            "ladies-drink-free"
+          ],
+          "approvedRecurringPromotionIds": [
+            "ladies-drink-free"
+          ],
+          "recurringCompositionRendered": true,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-06",
+          "eventName": "Rhinestone Cowboys",
+          "eventVisible": true,
+          "selectedAsset": "thursday-v1-rhinestone-cowboys.png",
+          "selectedAssetChecksum": "f106325dd46c6e0e5831fdde72fd8ed267de19cf362d7834052b2edb9c562ca1",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [
+              {
+                "left": 540.703125,
+                "right": 768.984375,
+                "top": 604.2068481445312,
+                "bottom": 661.4805908203125,
+                "width": 228.28125,
+                "clientWidth": 228,
+                "scrollWidth": 228
+              }
+            ],
+            "performers": []
+          },
+          "performerGeometry": {
+            "event": {
+              "left": 531.703125,
+              "right": 776.5625,
+              "top": 562.671875,
+              "bottom": 683.359375,
+              "width": 244.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 532.703125,
+              "right": 775.5625,
+              "top": 563.671875,
+              "bottom": 682.359375,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 251
+            },
+            "performer": {
+              "left": 540.703125,
+              "right": 768.984375,
+              "top": 604.2068481445312,
+              "bottom": 661.4805908203125,
+              "width": 228.28125,
+              "clientWidth": 228,
+              "scrollWidth": 228
+            },
+            "venue": {
+              "left": 540.703125,
+              "right": 600.765625,
+              "top": 664.359375,
+              "bottom": 675.359375,
+              "width": 60.0625,
+              "clientWidth": 58,
+              "scrollWidth": 58
+            },
+            "time": {
+              "left": 746.875,
+              "right": 768.5625,
+              "top": 667.359375,
+              "bottom": 676.359375,
+              "width": 21.6875,
+              "clientWidth": 22,
+              "scrollWidth": 22
+            },
+            "promotion": null
+          },
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 531.703125,
+              "right": 776.5625,
+              "top": 562.671875,
+              "bottom": 683.359375,
+              "width": 244.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 532.703125,
+              "right": 775.5625,
+              "top": 563.671875,
+              "bottom": 682.359375,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 251
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "padding": "0px",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain"
+            }
+          },
+          "visiblePromotionIds": [
+            "late-night-hh"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-06",
+          "eventName": "DJ Edward",
+          "eventVisible": false,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": null,
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": false,
+          "timeSemanticPreserved": false,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-07",
+          "eventName": "Bougie Nights",
+          "eventVisible": true,
+          "selectedAsset": "friday-v2-bougie-nights.png",
+          "selectedAssetChecksum": "ca443b40c88a177717a234527c097430d9fb4f18899475e3c0f2ba93c3feb809",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [
+              {
+                "left": 785.5625,
+                "right": 1014.421875,
+                "top": 593.36376953125,
+                "bottom": 606.32373046875,
+                "width": 228.859375,
+                "clientWidth": 229,
+                "scrollWidth": 229
+              }
+            ],
+            "performers": [
+              {
+                "left": 785.5625,
+                "right": 1014.421875,
+                "top": 608.84375,
+                "bottom": 619.84375,
+                "width": 228.859375,
+                "clientWidth": 229,
+                "scrollWidth": 229
+              }
+            ]
+          },
+          "performerGeometry": {
+            "event": {
+              "left": 778.5625,
+              "right": 1021.421875,
+              "top": 563.671875,
+              "bottom": 637.84375,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 778.5625,
+              "right": 1021.421875,
+              "top": 563.671875,
+              "bottom": 636.84375,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "performer": {
+              "left": 785.5625,
+              "right": 1014.421875,
+              "top": 608.84375,
+              "bottom": 619.84375,
+              "width": 228.859375,
+              "clientWidth": 229,
+              "scrollWidth": 229
+            },
+            "venue": {
+              "left": 784.5625,
+              "right": 829.015625,
+              "top": 620.84375,
+              "bottom": 631.84375,
+              "width": 44.453125,
+              "clientWidth": 42,
+              "scrollWidth": 42
+            },
+            "time": {
+              "left": 996.15625,
+              "right": 1015.421875,
+              "top": 624.84375,
+              "bottom": 632.84375,
+              "width": 19.265625,
+              "clientWidth": 19,
+              "scrollWidth": 19
+            },
+            "promotion": null
+          },
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 778.5625,
+              "right": 1021.421875,
+              "top": 563.671875,
+              "bottom": 637.84375,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 778.5625,
+              "right": 1021.421875,
+              "top": 563.671875,
+              "bottom": 636.84375,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-07",
+          "eventName": "Retro Sky",
+          "eventVisible": true,
+          "selectedAsset": "retro-sky-v2.jpg",
+          "selectedAssetChecksum": "f10cf1e1ada6570b9a1ddbabf1ac05b5092c421bf97ca89d8f977b508f8514f4",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [
+              {
+                "left": 785.1884155273438,
+                "right": 1014.7959594726562,
+                "top": 647.9532470703125,
+                "bottom": 664.7655029296875,
+                "width": 229.6075439453125,
+                "clientWidth": 229,
+                "scrollWidth": 229
+              }
+            ],
+            "performers": []
+          },
+          "performerGeometry": {
+            "event": {
+              "left": 778.5625,
+              "right": 1021.421875,
+              "top": 637.84375,
+              "bottom": 682.359375,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 778.5625,
+              "right": 1021.421875,
+              "top": 637.84375,
+              "bottom": 682.359375,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "performer": {
+              "left": 785.1884155273438,
+              "right": 1014.7959594726562,
+              "top": 647.9532470703125,
+              "bottom": 664.7655029296875,
+              "width": 229.6075439453125,
+              "clientWidth": 229,
+              "scrollWidth": 229
+            },
+            "venue": {
+              "left": 784.5625,
+              "right": 837.1875,
+              "top": 666.359375,
+              "bottom": 677.359375,
+              "width": 52.625,
+              "clientWidth": 51,
+              "scrollWidth": 51
+            },
+            "time": {
+              "left": 991.703125,
+              "right": 1015.421875,
+              "top": 670.359375,
+              "bottom": 678.359375,
+              "width": 23.71875,
+              "clientWidth": 24,
+              "scrollWidth": 24
+            },
+            "promotion": null
+          },
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 778.5625,
+              "right": 1021.421875,
+              "top": 637.84375,
+              "bottom": 682.359375,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 778.5625,
+              "right": 1021.421875,
+              "top": 637.84375,
+              "bottom": 682.359375,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-08",
+          "eventName": "Freestyle Party",
+          "eventVisible": true,
+          "selectedAsset": "dj-edward-v1.jpg",
+          "selectedAssetChecksum": "fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [
+              {
+                "left": 1032.421875,
+                "right": 1260.703125,
+                "top": 627.7993774414062,
+                "bottom": 642.9193725585938,
+                "width": 228.28125,
+                "clientWidth": 228,
+                "scrollWidth": 228
+              }
+            ],
+            "performers": [
+              {
+                "left": 1032.421875,
+                "right": 1259.28125,
+                "top": 648.359375,
+                "bottom": 660.359375,
+                "width": 226.859375,
+                "clientWidth": 227,
+                "scrollWidth": 227
+              }
+            ]
+          },
+          "performerGeometry": {
+            "event": {
+              "left": 1023.421875,
+              "right": 1268.28125,
+              "top": 562.671875,
+              "bottom": 683.359375,
+              "width": 244.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 1121.84375,
+              "right": 1169.84375,
+              "top": 568.671875,
+              "bottom": 616.671875,
+              "width": 48,
+              "clientWidth": 44,
+              "scrollWidth": 44
+            },
+            "performer": {
+              "left": 1032.421875,
+              "right": 1259.28125,
+              "top": 648.359375,
+              "bottom": 660.359375,
+              "width": 226.859375,
+              "clientWidth": 227,
+              "scrollWidth": 227
+            },
+            "venue": {
+              "left": 1032.421875,
+              "right": 1092.484375,
+              "top": 664.359375,
+              "bottom": 675.359375,
+              "width": 60.0625,
+              "clientWidth": 58,
+              "scrollWidth": 58
+            },
+            "time": {
+              "left": 1233.59375,
+              "right": 1260.28125,
+              "top": 667.359375,
+              "bottom": 676.359375,
+              "width": 26.6875,
+              "clientWidth": 27,
+              "scrollWidth": 27
+            },
+            "promotion": null
+          },
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 1023.421875,
+              "right": 1268.28125,
+              "top": 562.671875,
+              "bottom": 683.359375,
+              "width": 244.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 1121.84375,
+              "right": 1169.84375,
+              "top": 568.671875,
+              "bottom": 616.671875,
+              "width": 48,
+              "clientWidth": 44,
+              "scrollWidth": 44
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 25%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-09",
+          "eventName": "Whiskey Allstars",
+          "eventVisible": true,
+          "selectedAsset": "sunday-v2-whiskey-allstars-self-describing.png",
+          "selectedAssetChecksum": "7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 1269.28125,
+              "right": 1514.140625,
+              "top": 561.671875,
+              "bottom": 684.359375,
+              "width": 244.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 1270.28125,
+              "right": 1513.140625,
+              "top": 562.671875,
+              "bottom": 683.359375,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 25%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [
+            "in-da-biz-sundays"
+          ],
+          "recurringCompositionRendered": true,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-11",
+          "eventName": "Karaoke Tuesday",
+          "eventVisible": true,
+          "selectedAsset": "tuesday-v2-karaoke-self-describing.png",
+          "selectedAssetChecksum": "0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 40,
+              "right": 284.84375,
+              "top": 683.359375,
+              "bottom": 806.03125,
+              "width": 244.84375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 41,
+              "right": 283.84375,
+              "top": 684.359375,
+              "bottom": 805.03125,
+              "width": 242.84375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 33.3333%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [
+            "late-night-hh"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": true,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "event has no linked performer and no governed event override",
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-12",
+          "eventName": "Ladies Night",
+          "eventVisible": true,
+          "selectedAsset": "wednesday-v2-ladies-night-self-describing.png",
+          "selectedAssetChecksum": "338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 285.84375,
+              "right": 530.703125,
+              "top": 683.359375,
+              "bottom": 806.03125,
+              "width": 244.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 286.84375,
+              "right": 529.703125,
+              "top": 684.359375,
+              "bottom": 805.03125,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 33.3333%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [
+            "ladies-drink-free"
+          ],
+          "approvedRecurringPromotionIds": [
+            "ladies-drink-free"
+          ],
+          "recurringCompositionRendered": true,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-13",
+          "eventName": "KoolKidz",
+          "eventVisible": true,
+          "selectedAsset": "koolkidz-v1.jpg",
+          "selectedAssetChecksum": "0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 531.703125,
+              "right": 776.5625,
+              "top": 684.359375,
+              "bottom": 805.03125,
+              "width": 244.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 532.703125,
+              "right": 775.5625,
+              "top": 685.359375,
+              "bottom": 804.03125,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "cover"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "contain"
+            }
+          },
+          "visiblePromotionIds": [
+            "late-night-hh"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-13",
+          "eventName": "DJ Edward",
+          "eventVisible": false,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": null,
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": false,
+          "timeSemanticPreserved": false,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-14",
+          "eventName": "Stereo Mix",
+          "eventVisible": true,
+          "selectedAsset": "stereo-mix-v1.jpg",
+          "selectedAssetChecksum": "bfbf7343dcf45e7dcbc62852591728f6605eb8015b03b9757332825e217381dc",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 777.5625,
+              "right": 1022.421875,
+              "top": 684.359375,
+              "bottom": 805.03125,
+              "width": 244.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 778.5625,
+              "right": 1021.421875,
+              "top": 685.359375,
+              "bottom": 804.03125,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 251
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "padding": "0px",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain"
+            }
+          },
+          "visiblePromotionIds": [
+            "titos-promo-august-14"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": {
+            "cell": {
+              "left": 777.5625,
+              "right": 1022.421875,
+              "top": 684.359375,
+              "bottom": 805.03125,
+              "width": 244.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "promo": {
+              "left": 848.5625,
+              "right": 980.5625,
+              "top": 784.984375,
+              "bottom": 799.03125,
+              "width": 132,
+              "clientWidth": 130,
+              "scrollWidth": 130
+            },
+            "venue": {
+              "left": 786.5625,
+              "right": 846.625,
+              "top": 786.03125,
+              "bottom": 797.03125,
+              "width": 60.0625,
+              "clientWidth": 58,
+              "scrollWidth": 58
+            },
+            "time": {
+              "left": 987.734375,
+              "right": 1014.421875,
+              "top": 789.03125,
+              "bottom": 798.03125,
+              "width": 26.6875,
+              "clientWidth": 27,
+              "scrollWidth": 27
+            }
+          },
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-15",
+          "eventName": "Undercover",
+          "eventVisible": true,
+          "selectedAsset": "undercover-v1.jpg",
+          "selectedAssetChecksum": "eec3aa31504399ed47197611f4a6f3ba35be0f5a8b70980d701ce104c42b1c70",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 1023.421875,
+              "right": 1268.28125,
+              "top": 684.359375,
+              "bottom": 805.03125,
+              "width": 244.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 1024.421875,
+              "right": 1267.28125,
+              "top": 685.359375,
+              "bottom": 804.03125,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 251
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "padding": "0px",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain"
+            }
+          },
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-16",
+          "eventName": "Whiskey Allstars",
+          "eventVisible": true,
+          "selectedAsset": "sunday-v2-whiskey-allstars-self-describing.png",
+          "selectedAssetChecksum": "7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 1269.28125,
+              "right": 1514.140625,
+              "top": 683.359375,
+              "bottom": 806.03125,
+              "width": 244.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 1270.28125,
+              "right": 1513.140625,
+              "top": 684.359375,
+              "bottom": 805.03125,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 50%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [
+            "in-da-biz-sundays"
+          ],
+          "recurringCompositionRendered": true,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-18",
+          "eventName": "Karaoke Tuesday",
+          "eventVisible": true,
+          "selectedAsset": "tuesday-v2-karaoke-self-describing.png",
+          "selectedAssetChecksum": "0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 40,
+              "right": 284.84375,
+              "top": 805.03125,
+              "bottom": 927.71875,
+              "width": 244.84375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 41,
+              "right": 283.84375,
+              "top": 806.03125,
+              "bottom": 926.71875,
+              "width": 242.84375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 66.6667%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [
+            "late-night-hh"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": true,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "event has no linked performer and no governed event override",
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-19",
+          "eventName": "Ladies Night",
+          "eventVisible": true,
+          "selectedAsset": "wednesday-v2-ladies-night-self-describing.png",
+          "selectedAssetChecksum": "338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 285.84375,
+              "right": 530.703125,
+              "top": 805.03125,
+              "bottom": 927.71875,
+              "width": 244.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 286.84375,
+              "right": 529.703125,
+              "top": 806.03125,
+              "bottom": 926.71875,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 66.6667%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [
+            "ladies-drink-free"
+          ],
+          "approvedRecurringPromotionIds": [
+            "ladies-drink-free"
+          ],
+          "recurringCompositionRendered": true,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-20",
+          "eventName": "The Lufts",
+          "eventVisible": true,
+          "selectedAsset": "luftz-v1.jpg",
+          "selectedAssetChecksum": "440fed2d0014d313246a3d43e7ecc661feaf2ac784554e4d0cf604384f48fe8d",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [
+              {
+                "left": 540.5191650390625,
+                "right": 767.7464599609375,
+                "top": 882.7407836914062,
+                "bottom": 905.6967163085938,
+                "width": 227.227294921875,
+                "clientWidth": 227,
+                "scrollWidth": 227
+              }
+            ],
+            "performers": []
+          },
+          "performerGeometry": {
+            "event": {
+              "left": 531.703125,
+              "right": 776.5625,
+              "top": 806.03125,
+              "bottom": 926.71875,
+              "width": 244.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 532.703125,
+              "right": 775.5625,
+              "top": 807.03125,
+              "bottom": 925.71875,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "performer": {
+              "left": 540.5191650390625,
+              "right": 767.7464599609375,
+              "top": 882.7407836914062,
+              "bottom": 905.6967163085938,
+              "width": 227.227294921875,
+              "clientWidth": 227,
+              "scrollWidth": 227
+            },
+            "venue": {
+              "left": 540.703125,
+              "right": 600.765625,
+              "top": 907.71875,
+              "bottom": 918.71875,
+              "width": 60.0625,
+              "clientWidth": 58,
+              "scrollWidth": 58
+            },
+            "time": {
+              "left": 746.875,
+              "right": 768.5625,
+              "top": 910.71875,
+              "bottom": 919.71875,
+              "width": 21.6875,
+              "clientWidth": 22,
+              "scrollWidth": 22
+            },
+            "promotion": null
+          },
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 531.703125,
+              "right": 776.5625,
+              "top": 806.03125,
+              "bottom": 926.71875,
+              "width": 244.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 532.703125,
+              "right": 775.5625,
+              "top": 807.03125,
+              "bottom": 925.71875,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [
+            "late-night-hh"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-20",
+          "eventName": "DJ Edward",
+          "eventVisible": false,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": null,
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": false,
+          "timeSemanticPreserved": false,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-21",
+          "eventName": "DJ DIAGA",
+          "eventVisible": true,
+          "selectedAsset": "dj-diaga-v2.jpg",
+          "selectedAssetChecksum": "983ce16aed0b9a3ffeebde4eceb79279f9dc887d1032ba243f990fd7cec6a2f6",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [
+              {
+                "left": 785.4444580078125,
+                "right": 1014.5399169921875,
+                "top": 890.7171630859375,
+                "bottom": 908.7203369140625,
+                "width": 229.095458984375,
+                "clientWidth": 229,
+                "scrollWidth": 229
+              }
+            ],
+            "performers": []
+          },
+          "performerGeometry": {
+            "event": {
+              "left": 778.5625,
+              "right": 1021.421875,
+              "top": 847.375,
+              "bottom": 925.71875,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 880.984375,
+              "right": 918.984375,
+              "top": 850.375,
+              "bottom": 888.375,
+              "width": 38,
+              "clientWidth": 34,
+              "scrollWidth": 34
+            },
+            "performer": {
+              "left": 785.4444580078125,
+              "right": 1014.5399169921875,
+              "top": 890.7171630859375,
+              "bottom": 908.7203369140625,
+              "width": 229.095458984375,
+              "clientWidth": 229,
+              "scrollWidth": 229
+            },
+            "venue": {
+              "left": 784.5625,
+              "right": 829.015625,
+              "top": 909.71875,
+              "bottom": 920.71875,
+              "width": 44.453125,
+              "clientWidth": 42,
+              "scrollWidth": 42
+            },
+            "time": {
+              "left": 980.578125,
+              "right": 1015.421875,
+              "top": 913.71875,
+              "bottom": 921.71875,
+              "width": 34.84375,
+              "clientWidth": 35,
+              "scrollWidth": 35
+            },
+            "promotion": null
+          },
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 778.5625,
+              "right": 1021.421875,
+              "top": 847.375,
+              "bottom": 925.71875,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 880.984375,
+              "right": 918.984375,
+              "top": 850.375,
+              "bottom": 888.375,
+              "width": 38,
+              "clientWidth": 34,
+              "scrollWidth": 34
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 25%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-21",
+          "eventName": "Sunset Dreams",
+          "eventVisible": true,
+          "selectedAsset": "sunset-dreams-v1.jpg",
+          "selectedAssetChecksum": "aff501a678c2ab004628eb3dc903dd2f9fa4c4455d5b721cdba65f71c23c1da1",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 778.5625,
+              "right": 1021.421875,
+              "top": 807.03125,
+              "bottom": 847.375,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 778.5625,
+              "right": 1021.421875,
+              "top": 807.03125,
+              "bottom": 846.375,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 251
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "padding": "0px",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain"
+            }
+          },
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-22",
+          "eventName": "DJ ICUE",
+          "eventVisible": true,
+          "selectedAsset": "dj-icue-v1.webp",
+          "selectedAssetChecksum": "2c16dcd65d3278db3cff46bdd4ad1aa89fc584677f8b57aad909a47c89fbc569",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [
+              {
+                "left": 1031.421875,
+                "right": 1260.28125,
+                "top": 893.23876953125,
+                "bottom": 906.19873046875,
+                "width": 228.859375,
+                "clientWidth": 229,
+                "scrollWidth": 229
+              }
+            ],
+            "performers": []
+          },
+          "performerGeometry": {
+            "event": {
+              "left": 1024.421875,
+              "right": 1267.28125,
+              "top": 847.375,
+              "bottom": 925.71875,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 1126.84375,
+              "right": 1164.84375,
+              "top": 850.375,
+              "bottom": 888.375,
+              "width": 38,
+              "clientWidth": 34,
+              "scrollWidth": 34
+            },
+            "performer": {
+              "left": 1031.421875,
+              "right": 1260.28125,
+              "top": 893.23876953125,
+              "bottom": 906.19873046875,
+              "width": 228.859375,
+              "clientWidth": 229,
+              "scrollWidth": 229
+            },
+            "venue": {
+              "left": 0,
+              "right": 0,
+              "top": 0,
+              "bottom": 0,
+              "width": 0,
+              "clientWidth": 0,
+              "scrollWidth": 0
+            },
+            "time": {
+              "left": 1226.4375,
+              "right": 1261.28125,
+              "top": 913.71875,
+              "bottom": 921.71875,
+              "width": 34.84375,
+              "clientWidth": 35,
+              "scrollWidth": 35
+            },
+            "promotion": null
+          },
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 1024.421875,
+              "right": 1267.28125,
+              "top": 847.375,
+              "bottom": 925.71875,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 1126.84375,
+              "right": 1164.84375,
+              "top": 850.375,
+              "bottom": 888.375,
+              "width": 38,
+              "clientWidth": 34,
+              "scrollWidth": 34
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 25%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-22",
+          "eventName": "Private Buyout",
+          "eventVisible": true,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [
+              {
+                "left": 1063.2213134765625,
+                "right": 1259.4818115234375,
+                "top": 815.0545654296875,
+                "bottom": 840.3516845703125,
+                "width": 196.260498046875,
+                "clientWidth": 196,
+                "scrollWidth": 196
+              }
+            ],
+            "performers": []
+          },
+          "performerGeometry": {
+            "event": {
+              "left": 1024.421875,
+              "right": 1267.28125,
+              "top": 807.03125,
+              "bottom": 847.375,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": null,
+            "performer": {
+              "left": 1063.2213134765625,
+              "right": 1259.4818115234375,
+              "top": 815.0545654296875,
+              "bottom": 840.3516845703125,
+              "width": 196.260498046875,
+              "clientWidth": 196,
+              "scrollWidth": 196
+            },
+            "venue": null,
+            "time": {
+              "left": 1242.015625,
+              "right": 1261.28125,
+              "top": 834.375,
+              "bottom": 842.375,
+              "width": 19.265625,
+              "clientWidth": 19,
+              "scrollWidth": 19
+            },
+            "promotion": null
+          },
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": null,
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "private-event cell is intentionally text-only; no performer or promotional artwork is required",
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-23",
+          "eventName": "Whiskey Allstars",
+          "eventVisible": true,
+          "selectedAsset": "sunday-v2-whiskey-allstars-self-describing.png",
+          "selectedAssetChecksum": "7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 1269.28125,
+              "right": 1514.140625,
+              "top": 805.03125,
+              "bottom": 927.71875,
+              "width": 244.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 1270.28125,
+              "right": 1513.140625,
+              "top": 806.03125,
+              "bottom": 926.71875,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 75%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [
+            "in-da-biz-sundays"
+          ],
+          "recurringCompositionRendered": true,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-25",
+          "eventName": "Karaoke Tuesday",
+          "eventVisible": true,
+          "selectedAsset": "tuesday-v2-karaoke-self-describing.png",
+          "selectedAssetChecksum": "0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 40,
+              "right": 284.84375,
+              "top": 926.71875,
+              "bottom": 1048.40625,
+              "width": 244.84375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 41,
+              "right": 283.84375,
+              "top": 927.71875,
+              "bottom": 1047.40625,
+              "width": 242.84375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 100%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [
+            "late-night-hh"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": true,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "event has no linked performer and no governed event override",
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-26",
+          "eventName": "Ladies Night",
+          "eventVisible": true,
+          "selectedAsset": "wednesday-v2-ladies-night-self-describing.png",
+          "selectedAssetChecksum": "338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 285.84375,
+              "right": 530.703125,
+              "top": 926.71875,
+              "bottom": 1048.40625,
+              "width": 244.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 286.84375,
+              "right": 529.703125,
+              "top": 927.71875,
+              "bottom": 1047.40625,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "backgroundSize": "100% 400%",
+            "backgroundPosition": "50% 100%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [
+            "ladies-drink-free"
+          ],
+          "approvedRecurringPromotionIds": [
+            "ladies-drink-free"
+          ],
+          "recurringCompositionRendered": true,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-27",
+          "eventName": "KoolKidz",
+          "eventVisible": true,
+          "selectedAsset": "koolkidz-v1.jpg",
+          "selectedAssetChecksum": "0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 531.703125,
+              "right": 776.5625,
+              "top": 927.71875,
+              "bottom": 1048.40625,
+              "width": 244.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 532.703125,
+              "right": 775.5625,
+              "top": 928.71875,
+              "bottom": 1047.40625,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 50%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "cover"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "contain"
+            }
+          },
+          "visiblePromotionIds": [
+            "late-night-hh"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-27",
+          "eventName": "DJ Edward",
+          "eventVisible": false,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": null,
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": false,
+          "timeSemanticPreserved": false,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-28",
+          "eventName": "Pump",
+          "eventVisible": true,
+          "selectedAsset": "pump-v1.jpg",
+          "selectedAssetChecksum": "05c16e757f0e1f1218f9e914ae8c7dd092ffbb8eecfe7c02247fd30398959aac",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [
+              {
+                "left": 786.1346435546875,
+                "right": 1013.8497314453125,
+                "top": 1005.43310546875,
+                "bottom": 1026.37939453125,
+                "width": 227.715087890625,
+                "clientWidth": 227,
+                "scrollWidth": 227
+              }
+            ],
+            "performers": []
+          },
+          "performerGeometry": {
+            "event": {
+              "left": 777.5625,
+              "right": 1022.421875,
+              "top": 927.71875,
+              "bottom": 1048.40625,
+              "width": 244.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 778.5625,
+              "right": 1021.421875,
+              "top": 928.71875,
+              "bottom": 1047.40625,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 251
+            },
+            "performer": {
+              "left": 786.1346435546875,
+              "right": 1013.8497314453125,
+              "top": 1005.43310546875,
+              "bottom": 1026.37939453125,
+              "width": 227.715087890625,
+              "clientWidth": 227,
+              "scrollWidth": 227
+            },
+            "venue": {
+              "left": 786.5625,
+              "right": 846.625,
+              "top": 1029.40625,
+              "bottom": 1040.40625,
+              "width": 60.0625,
+              "clientWidth": 58,
+              "scrollWidth": 58
+            },
+            "time": {
+              "left": 987.734375,
+              "right": 1014.421875,
+              "top": 1032.40625,
+              "bottom": 1041.40625,
+              "width": 26.6875,
+              "clientWidth": 27,
+              "scrollWidth": 27
+            },
+            "promotion": null
+          },
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 777.5625,
+              "right": 1022.421875,
+              "top": 927.71875,
+              "bottom": 1048.40625,
+              "width": 244.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 778.5625,
+              "right": 1021.421875,
+              "top": 928.71875,
+              "bottom": 1047.40625,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 251
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "padding": "0px",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain"
+            }
+          },
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-29",
+          "eventName": "JEMM",
+          "eventVisible": true,
+          "selectedAsset": "jemm-v1.jpg",
+          "selectedAssetChecksum": "a312ff37b5e9a6add692dba8480bd3f829cb8f960ae706e43592536633d6068c",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [
+              {
+                "left": 1031.8812255859375,
+                "right": 1259.8218994140625,
+                "top": 1005.0170288085938,
+                "bottom": 1026.79541015625,
+                "width": 227.940673828125,
+                "clientWidth": 227,
+                "scrollWidth": 227
+              }
+            ],
+            "performers": []
+          },
+          "performerGeometry": {
+            "event": {
+              "left": 1023.421875,
+              "right": 1268.28125,
+              "top": 927.71875,
+              "bottom": 1048.40625,
+              "width": 244.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 1024.421875,
+              "right": 1267.28125,
+              "top": 928.71875,
+              "bottom": 1047.40625,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 251
+            },
+            "performer": {
+              "left": 1031.8812255859375,
+              "right": 1259.8218994140625,
+              "top": 1005.0170288085938,
+              "bottom": 1026.79541015625,
+              "width": 227.940673828125,
+              "clientWidth": 227,
+              "scrollWidth": 227
+            },
+            "venue": {
+              "left": 1032.421875,
+              "right": 1092.484375,
+              "top": 1029.40625,
+              "bottom": 1040.40625,
+              "width": 60.0625,
+              "clientWidth": 58,
+              "scrollWidth": 58
+            },
+            "time": {
+              "left": 1233.59375,
+              "right": 1260.28125,
+              "top": 1032.40625,
+              "bottom": 1041.40625,
+              "width": 26.6875,
+              "clientWidth": 27,
+              "scrollWidth": 27
+            },
+            "promotion": null
+          },
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 1023.421875,
+              "right": 1268.28125,
+              "top": 927.71875,
+              "bottom": 1048.40625,
+              "width": 244.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 1024.421875,
+              "right": 1267.28125,
+              "top": 928.71875,
+              "bottom": 1047.40625,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 251
+            },
+            "backgroundSize": "0px 0px",
+            "backgroundPosition": "50% 50%",
+            "padding": "0px",
+            "before": {
+              "content": "\"\"",
+              "backgroundSize": "cover"
+            },
+            "after": {
+              "content": "\"\"",
+              "backgroundSize": "contain"
+            }
+          },
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-30",
+          "eventName": "Whiskey Allstars",
+          "eventVisible": true,
+          "selectedAsset": "sunday-v2-whiskey-allstars-self-describing.png",
+          "selectedAssetChecksum": "7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 1269.28125,
+              "right": 1514.140625,
+              "top": 926.71875,
+              "bottom": 1048.40625,
+              "width": 244.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "art": {
+              "left": 1270.28125,
+              "right": 1513.140625,
+              "top": 927.71875,
+              "bottom": 1047.40625,
+              "width": 242.859375,
+              "clientWidth": 243,
+              "scrollWidth": 243
+            },
+            "backgroundSize": "100% 500%",
+            "backgroundPosition": "50% 100%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [
+            "in-da-biz-sundays"
+          ],
+          "recurringCompositionRendered": true,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        }
+      ],
+      "layout": {
+        "monthTitle": {
+          "naturalWidth": 2048,
+          "naturalHeight": 768,
+          "renderedWidth": 720,
+          "renderedHeight": 270,
+          "marginBottom": "6px"
+        },
+        "footerPromotionVisible": true,
+        "reviewNavigationVisible": true,
+        "reviewDestinations": [
+          "https://sotadatos.github.io/bougies-calendar-preview/review/2026-09/v12/calendar.html",
+          "https://sotadatos.github.io/bougies-calendar-preview/review/2026-08/v36/calendar.html"
+        ],
+        "titleContainedByHeader": true,
+        "pass": true
+      }
+    },
+    "mobile": {
+      "recordCount": 33,
+      "discrepancies": [],
+      "records": [
+        {
+          "date": "2026-08-01",
+          "eventName": "Chronicles",
+          "eventVisible": true,
+          "selectedAsset": "chronicles-v2.jpg",
+          "selectedAssetChecksum": "f9aaf41cbea267b5d5e8f0f917f466148464ba8f7e2e0964b88d8486eddaeac1",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 100.5,
+              "right": 480,
+              "top": 952.8125,
+              "bottom": 1271.125,
+              "width": 379.5,
+              "clientWidth": 378,
+              "scrollWidth": 378
+            },
+            "art": {
+              "left": 117.5,
+              "right": 463,
+              "top": 969.8125,
+              "bottom": 1164.15625,
+              "width": 345.5,
+              "clientWidth": 346,
+              "scrollWidth": 346
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-02",
+          "eventName": "Whiskey Allstars",
+          "eventVisible": true,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": null,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-04",
+          "eventName": "Karaoke Tuesday",
+          "eventVisible": true,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": null,
+          "visiblePromotionIds": [
+            "late-night-hh"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "event has no linked performer and no governed event override",
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-05",
+          "eventName": "Ladies Night",
+          "eventVisible": true,
+          "selectedAsset": "dj-edward-v1.jpg",
+          "selectedAssetChecksum": "fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 100.5,
+              "right": 480,
+              "top": 2061.484375,
+              "bottom": 2375.90625,
+              "width": 379.5,
+              "clientWidth": 378,
+              "scrollWidth": 378
+            },
+            "art": {
+              "left": 141.5,
+              "right": 329.828125,
+              "top": 2075.921875,
+              "bottom": 2264.25,
+              "width": 188.328125,
+              "clientWidth": 182,
+              "scrollWidth": 182
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 25%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [
+            "ladies-drink-free"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-06",
+          "eventName": "Rhinestone Cowboys",
+          "eventVisible": true,
+          "selectedAsset": "thursday-v1-rhinestone-cowboys.png",
+          "selectedAssetChecksum": "f106325dd46c6e0e5831fdde72fd8ed267de19cf362d7834052b2edb9c562ca1",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 100.5,
+              "right": 480,
+              "top": 2534.40625,
+              "bottom": 3030.78125,
+              "width": 379.5,
+              "clientWidth": 378,
+              "scrollWidth": 378
+            },
+            "art": {
+              "left": 117.5,
+              "right": 463,
+              "top": 2551.40625,
+              "bottom": 2896.90625,
+              "width": 345.5,
+              "clientWidth": 346,
+              "scrollWidth": 346
+            },
+            "backgroundSize": "contain",
+            "backgroundPosition": "50% 50%",
+            "padding": "10.3594px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [
+            "late-night-hh"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-06",
+          "eventName": "DJ Edward",
+          "eventVisible": true,
+          "selectedAsset": "dj-edward-v1.jpg",
+          "selectedAssetChecksum": "fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 100.5,
+              "right": 480,
+              "top": 3042.78125,
+              "bottom": 3378.515625,
+              "width": 379.5,
+              "clientWidth": 378,
+              "scrollWidth": 378
+            },
+            "art": {
+              "left": 144.5,
+              "right": 354.140625,
+              "top": 3057.21875,
+              "bottom": 3266.859375,
+              "width": 209.640625,
+              "clientWidth": 204,
+              "scrollWidth": 204
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 25%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [
+            "late-night-hh"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-07",
+          "eventName": "Bougie Nights",
+          "eventVisible": true,
+          "selectedAsset": "friday-v2-bougie-nights.png",
+          "selectedAssetChecksum": "ca443b40c88a177717a234527c097430d9fb4f18899475e3c0f2ba93c3feb809",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 100.5,
+              "right": 480,
+              "top": 3537.015625,
+              "bottom": 3875.796875,
+              "width": 379.5,
+              "clientWidth": 378,
+              "scrollWidth": 378
+            },
+            "art": {
+              "left": 117.5,
+              "right": 463,
+              "top": 3554.015625,
+              "bottom": 3748.359375,
+              "width": 345.5,
+              "clientWidth": 346,
+              "scrollWidth": 346
+            },
+            "backgroundSize": "contain",
+            "backgroundPosition": "50% 50%",
+            "padding": "6.90625px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-07",
+          "eventName": "Retro Sky",
+          "eventVisible": true,
+          "selectedAsset": "retro-sky-v2.jpg",
+          "selectedAssetChecksum": "f10cf1e1ada6570b9a1ddbabf1ac05b5092c421bf97ca89d8f977b508f8514f4",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 100.5,
+              "right": 480,
+              "top": 3887.796875,
+              "bottom": 4206.109375,
+              "width": 379.5,
+              "clientWidth": 378,
+              "scrollWidth": 378
+            },
+            "art": {
+              "left": 117.5,
+              "right": 463,
+              "top": 3904.796875,
+              "bottom": 4099.140625,
+              "width": 345.5,
+              "clientWidth": 346,
+              "scrollWidth": 346
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-08",
+          "eventName": "Freestyle Party",
+          "eventVisible": true,
+          "selectedAsset": "dj-edward-v1.jpg",
+          "selectedAssetChecksum": "fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 100.5,
+              "right": 480,
+              "top": 4364.609375,
+              "bottom": 4713.1875,
+              "width": 379.5,
+              "clientWidth": 378,
+              "scrollWidth": 378
+            },
+            "art": {
+              "left": 147.21875,
+              "right": 376.140625,
+              "top": 4379.046875,
+              "bottom": 4607.96875,
+              "width": 228.921875,
+              "clientWidth": 223,
+              "scrollWidth": 223
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 25%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-09",
+          "eventName": "Whiskey Allstars",
+          "eventVisible": true,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": null,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-11",
+          "eventName": "Karaoke Tuesday",
+          "eventVisible": true,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": null,
+          "visiblePromotionIds": [
+            "late-night-hh"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "event has no linked performer and no governed event override",
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-12",
+          "eventName": "Ladies Night",
+          "eventVisible": true,
+          "selectedAsset": "dj-edward-v1.jpg",
+          "selectedAssetChecksum": "fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 100.5,
+              "right": 480,
+              "top": 5503.546875,
+              "bottom": 5817.96875,
+              "width": 379.5,
+              "clientWidth": 378,
+              "scrollWidth": 378
+            },
+            "art": {
+              "left": 141.5,
+              "right": 329.828125,
+              "top": 5517.984375,
+              "bottom": 5706.3125,
+              "width": 188.328125,
+              "clientWidth": 182,
+              "scrollWidth": 182
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 25%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [
+            "ladies-drink-free"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-13",
+          "eventName": "KoolKidz",
+          "eventVisible": true,
+          "selectedAsset": "koolkidz-v1.jpg",
+          "selectedAssetChecksum": "0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 100.5,
+              "right": 480,
+              "top": 5976.46875,
+              "bottom": 6442.453125,
+              "width": 379.5,
+              "clientWidth": 378,
+              "scrollWidth": 378
+            },
+            "art": {
+              "left": 117.5,
+              "right": 463,
+              "top": 5993.46875,
+              "bottom": 6338.96875,
+              "width": 345.5,
+              "clientWidth": 346,
+              "scrollWidth": 346
+            },
+            "backgroundSize": "contain",
+            "backgroundPosition": "50% 50%",
+            "padding": "10.3594px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [
+            "late-night-hh"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-13",
+          "eventName": "DJ Edward",
+          "eventVisible": true,
+          "selectedAsset": "dj-edward-v1.jpg",
+          "selectedAssetChecksum": "fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 100.5,
+              "right": 480,
+              "top": 6454.453125,
+              "bottom": 6790.1875,
+              "width": 379.5,
+              "clientWidth": 378,
+              "scrollWidth": 378
+            },
+            "art": {
+              "left": 144.5,
+              "right": 354.140625,
+              "top": 6468.890625,
+              "bottom": 6678.53125,
+              "width": 209.640625,
+              "clientWidth": 204,
+              "scrollWidth": 204
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 25%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [
+            "late-night-hh"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-14",
+          "eventName": "Stereo Mix",
+          "eventVisible": true,
+          "selectedAsset": "stereo-mix-v1.jpg",
+          "selectedAssetChecksum": "bfbf7343dcf45e7dcbc62852591728f6605eb8015b03b9757332825e217381dc",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 100.5,
+              "right": 480,
+              "top": 6948.6875,
+              "bottom": 7414.671875,
+              "width": 379.5,
+              "clientWidth": 378,
+              "scrollWidth": 378
+            },
+            "art": {
+              "left": 117.5,
+              "right": 463,
+              "top": 6965.6875,
+              "bottom": 7311.1875,
+              "width": 345.5,
+              "clientWidth": 346,
+              "scrollWidth": 346
+            },
+            "backgroundSize": "contain",
+            "backgroundPosition": "50% 50%",
+            "padding": "10.3594px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [
+            "titos-promo-august-14"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-15",
+          "eventName": "Undercover",
+          "eventVisible": true,
+          "selectedAsset": "undercover-v1.jpg",
+          "selectedAssetChecksum": "eec3aa31504399ed47197611f4a6f3ba35be0f5a8b70980d701ce104c42b1c70",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 100.5,
+              "right": 480,
+              "top": 7573.171875,
+              "bottom": 8012.25,
+              "width": 379.5,
+              "clientWidth": 378,
+              "scrollWidth": 378
+            },
+            "art": {
+              "left": 117.5,
+              "right": 463,
+              "top": 7590.171875,
+              "bottom": 7935.671875,
+              "width": 345.5,
+              "clientWidth": 346,
+              "scrollWidth": 346
+            },
+            "backgroundSize": "contain",
+            "backgroundPosition": "50% 50%",
+            "padding": "10.3594px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-16",
+          "eventName": "Whiskey Allstars",
+          "eventVisible": true,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": null,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-18",
+          "eventName": "Karaoke Tuesday",
+          "eventVisible": true,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": null,
+          "visiblePromotionIds": [
+            "late-night-hh"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "event has no linked performer and no governed event override",
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-19",
+          "eventName": "Ladies Night",
+          "eventVisible": true,
+          "selectedAsset": "dj-edward-v1.jpg",
+          "selectedAssetChecksum": "fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 100.5,
+              "right": 480,
+              "top": 8802.609375,
+              "bottom": 9117.03125,
+              "width": 379.5,
+              "clientWidth": 378,
+              "scrollWidth": 378
+            },
+            "art": {
+              "left": 141.5,
+              "right": 329.828125,
+              "top": 8817.046875,
+              "bottom": 9005.375,
+              "width": 188.328125,
+              "clientWidth": 182,
+              "scrollWidth": 182
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 25%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [
+            "ladies-drink-free"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-20",
+          "eventName": "The Lufts",
+          "eventVisible": true,
+          "selectedAsset": "luftz-v1.jpg",
+          "selectedAssetChecksum": "440fed2d0014d313246a3d43e7ecc661feaf2ac784554e4d0cf604384f48fe8d",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 100.5,
+              "right": 480,
+              "top": 9275.53125,
+              "bottom": 9620.75,
+              "width": 379.5,
+              "clientWidth": 378,
+              "scrollWidth": 378
+            },
+            "art": {
+              "left": 117.5,
+              "right": 463,
+              "top": 9292.53125,
+              "bottom": 9486.875,
+              "width": 345.5,
+              "clientWidth": 346,
+              "scrollWidth": 346
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 35%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [
+            "late-night-hh"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-20",
+          "eventName": "DJ Edward",
+          "eventVisible": true,
+          "selectedAsset": "dj-edward-v1.jpg",
+          "selectedAssetChecksum": "fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 100.5,
+              "right": 480,
+              "top": 9632.75,
+              "bottom": 9968.484375,
+              "width": 379.5,
+              "clientWidth": 378,
+              "scrollWidth": 378
+            },
+            "art": {
+              "left": 144.5,
+              "right": 354.140625,
+              "top": 9647.1875,
+              "bottom": 9856.828125,
+              "width": 209.640625,
+              "clientWidth": 204,
+              "scrollWidth": 204
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 25%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [
+            "late-night-hh"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-21",
+          "eventName": "DJ DIAGA",
+          "eventVisible": true,
+          "selectedAsset": "dj-diaga-v2.jpg",
+          "selectedAssetChecksum": "983ce16aed0b9a3ffeebde4eceb79279f9dc887d1032ba243f990fd7cec6a2f6",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 100.5,
+              "right": 480,
+              "top": 10578.0625,
+              "bottom": 10882.421875,
+              "width": 379.5,
+              "clientWidth": 378,
+              "scrollWidth": 378
+            },
+            "art": {
+              "left": 144.5,
+              "right": 354.140625,
+              "top": 10592.5,
+              "bottom": 10802.140625,
+              "width": 209.640625,
+              "clientWidth": 204,
+              "scrollWidth": 204
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 25%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-21",
+          "eventName": "Sunset Dreams",
+          "eventVisible": true,
+          "selectedAsset": "sunset-dreams-v1.jpg",
+          "selectedAssetChecksum": "aff501a678c2ab004628eb3dc903dd2f9fa4c4455d5b721cdba65f71c23c1da1",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 100.5,
+              "right": 480,
+              "top": 10126.984375,
+              "bottom": 10566.0625,
+              "width": 379.5,
+              "clientWidth": 378,
+              "scrollWidth": 378
+            },
+            "art": {
+              "left": 117.5,
+              "right": 463,
+              "top": 10143.984375,
+              "bottom": 10489.484375,
+              "width": 345.5,
+              "clientWidth": 346,
+              "scrollWidth": 346
+            },
+            "backgroundSize": "contain",
+            "backgroundPosition": "50% 50%",
+            "padding": "10.3594px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-22",
+          "eventName": "DJ ICUE",
+          "eventVisible": true,
+          "selectedAsset": "dj-icue-v1.webp",
+          "selectedAssetChecksum": "2c16dcd65d3278db3cff46bdd4ad1aa89fc584677f8b57aad909a47c89fbc569",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 100.5,
+              "right": 480,
+              "top": 11163.890625,
+              "bottom": 11468.25,
+              "width": 379.5,
+              "clientWidth": 378,
+              "scrollWidth": 378
+            },
+            "art": {
+              "left": 144.5,
+              "right": 354.140625,
+              "top": 11178.328125,
+              "bottom": 11387.96875,
+              "width": 209.640625,
+              "clientWidth": 204,
+              "scrollWidth": 204
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 25%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-22",
+          "eventName": "Private Buyout",
+          "eventVisible": true,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": null,
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "private-event cell is intentionally text-only; no performer or promotional artwork is required",
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-23",
+          "eventName": "Whiskey Allstars",
+          "eventVisible": true,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": null,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-25",
+          "eventName": "Karaoke Tuesday",
+          "eventVisible": true,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": null,
+          "visiblePromotionIds": [
+            "late-night-hh"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "event has no linked performer and no governed event override",
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-26",
+          "eventName": "Ladies Night",
+          "eventVisible": true,
+          "selectedAsset": "dj-edward-v1.jpg",
+          "selectedAssetChecksum": "fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 100.5,
+              "right": 480,
+              "top": 12258.609375,
+              "bottom": 12573.03125,
+              "width": 379.5,
+              "clientWidth": 378,
+              "scrollWidth": 378
+            },
+            "art": {
+              "left": 141.5,
+              "right": 329.828125,
+              "top": 12273.046875,
+              "bottom": 12461.375,
+              "width": 188.328125,
+              "clientWidth": 182,
+              "scrollWidth": 182
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 25%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [
+            "ladies-drink-free"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-27",
+          "eventName": "KoolKidz",
+          "eventVisible": true,
+          "selectedAsset": "koolkidz-v1.jpg",
+          "selectedAssetChecksum": "0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": false,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 100.5,
+              "right": 480,
+              "top": 12731.53125,
+              "bottom": 13197.515625,
+              "width": 379.5,
+              "clientWidth": 378,
+              "scrollWidth": 378
+            },
+            "art": {
+              "left": 117.5,
+              "right": 463,
+              "top": 12748.53125,
+              "bottom": 13094.03125,
+              "width": 345.5,
+              "clientWidth": 346,
+              "scrollWidth": 346
+            },
+            "backgroundSize": "contain",
+            "backgroundPosition": "50% 50%",
+            "padding": "10.3594px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [
+            "late-night-hh"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-27",
+          "eventName": "DJ Edward",
+          "eventVisible": true,
+          "selectedAsset": "dj-edward-v1.jpg",
+          "selectedAssetChecksum": "fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 100.5,
+              "right": 480,
+              "top": 13209.515625,
+              "bottom": 13545.25,
+              "width": 379.5,
+              "clientWidth": 378,
+              "scrollWidth": 378
+            },
+            "art": {
+              "left": 144.5,
+              "right": 354.140625,
+              "top": 13223.953125,
+              "bottom": 13433.59375,
+              "width": 209.640625,
+              "clientWidth": 204,
+              "scrollWidth": 204
+            },
+            "backgroundSize": "cover",
+            "backgroundPosition": "50% 25%",
+            "padding": "0px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [
+            "late-night-hh"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-28",
+          "eventName": "Pump",
+          "eventVisible": true,
+          "selectedAsset": "pump-v1.jpg",
+          "selectedAssetChecksum": "05c16e757f0e1f1218f9e914ae8c7dd092ffbb8eecfe7c02247fd30398959aac",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 100.5,
+              "right": 480,
+              "top": 13703.75,
+              "bottom": 14173.21875,
+              "width": 379.5,
+              "clientWidth": 378,
+              "scrollWidth": 378
+            },
+            "art": {
+              "left": 117.5,
+              "right": 463,
+              "top": 13720.75,
+              "bottom": 14066.25,
+              "width": 345.5,
+              "clientWidth": 346,
+              "scrollWidth": 346
+            },
+            "backgroundSize": "contain",
+            "backgroundPosition": "50% 50%",
+            "padding": "10.3594px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-29",
+          "eventName": "JEMM",
+          "eventVisible": true,
+          "selectedAsset": "jemm-v1.jpg",
+          "selectedAssetChecksum": "a312ff37b5e9a6add692dba8480bd3f829cb8f960ae706e43592536633d6068c",
+          "assetVisiblyRendered": true,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": {
+            "event": {
+              "left": 100.5,
+              "right": 480,
+              "top": 14331.71875,
+              "bottom": 14801.1875,
+              "width": 379.5,
+              "clientWidth": 378,
+              "scrollWidth": 378
+            },
+            "art": {
+              "left": 117.5,
+              "right": 463,
+              "top": 14348.71875,
+              "bottom": 14694.21875,
+              "width": 345.5,
+              "clientWidth": 346,
+              "scrollWidth": 346
+            },
+            "backgroundSize": "contain",
+            "backgroundPosition": "50% 50%",
+            "padding": "10.3594px",
+            "before": {
+              "content": "none",
+              "backgroundSize": "auto"
+            },
+            "after": {
+              "content": "none",
+              "backgroundSize": "auto"
+            }
+          },
+          "visiblePromotionIds": [],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": null,
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        },
+        {
+          "date": "2026-08-30",
+          "eventName": "Whiskey Allstars",
+          "eventVisible": true,
+          "selectedAsset": null,
+          "selectedAssetChecksum": null,
+          "assetVisiblyRendered": false,
+          "performerTextVisible": true,
+          "performerPlacementPass": true,
+          "visibleLabelSeparationPass": true,
+          "visibleLabelGeometry": {
+            "titles": [],
+            "performers": []
+          },
+          "performerGeometry": null,
+          "artworkContainmentPass": true,
+          "identitySafeFitPass": true,
+          "artGeometry": null,
+          "visiblePromotionIds": [
+            "in-da-biz-sundays"
+          ],
+          "approvedRecurringPromotionIds": [],
+          "recurringCompositionRendered": false,
+          "venueSemanticPreserved": true,
+          "timeSemanticPreserved": true,
+          "fallbackReason": "linked performer has no approved repository art candidates",
+          "vendorPromoBoundsPass": true,
+          "vendorPromoGeometry": null,
+          "checks": {
+            "eventVisibility": true,
+            "selectedAsset": true,
+            "selectedAssetChecksum": true,
+            "performerIdentity": true,
+            "performerPlacement": true,
+            "visibleLabelSeparation": true,
+            "artworkContainment": true,
+            "identitySafeFit": true,
+            "promotions": true,
+            "recurringComposition": true,
+            "venueSemantic": true,
+            "time": true,
+            "fallbackReason": true,
+            "vendorPromoBounds": true
+          }
+        }
+      ],
+      "layout": null
+    }
+  }
+}

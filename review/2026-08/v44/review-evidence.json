@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "targetMonth": "2026-08",
+  "candidatePair": {
+    "web": "v44",
+    "mobile": "mobile-v10-h11"
+  },
+  "sourceCommit": "b254d55149c996a82bcfefb4dcdf5fec09e7b929",
+  "contentRevision": "d0d7657d040ad334c87865d93bd1ef3ff709d2d5b8759b76408268db9dafdbe3",
+  "webBinding": {
+    "frameworkRevision": "daeda4c3861351d39d7ea66638ae821af77dabb9df8a41819f488b8e2b0ef5da",
+    "approvedAssetLibraryRevision": "91708d27160842028285d1b3a98f402a936aa76a44983b647b7f9f7d01e237ce",
+    "presentationDecisionRevision": "52ea8c455f3d6808e7205e095fef638434ff7e539ed9fd38e34bf39e6affd838"
+  },
+  "mobileAcceptedBinding": {
+    "classification": "ACCEPTED_IMMUTABLE_RENDER_BINDING",
+    "presentationDecisionRevision": "ef3dd9d29627374331cb9e5eb8a211d36c6df46162b0000107edb21c0266ded3",
+    "bindingArtifact": "review/2026-08/v44/mobile-accepted-render-binding.json",
+    "regenerated": false
+  },
+  "outputs": {
+    "web": {
+      "html": {
+        "path": "review/2026-08/v44/calendar.html",
+        "sha256": "5e85dc066a63f384078b549c5324441fc8a91367862fcbe91a4a3c6e26657851"
+      },
+      "png": {
+        "path": "review/2026-08/v44/calendar.png",
+        "sha256": "38ce4808056c839dda93b3475c54faae7e74194f984e4e355b2e112f0c286ee8"
+      },
+      "pdf": {
+        "path": "review/2026-08/v44/calendar.pdf",
+        "sha256": "e8426a2162d21b1eb27384bf1d7c6377a770cda41868a05e8cbb06aefe47c04b"
+      },
+      "responsive1366Png": {
+        "path": "review/2026-08/v44/calendar-1366.png",
+        "sha256": "e0f2449a5322836f9534435d9ea7e8d71fffed10477925dfe73ea5d458526409"
+      },
+      "responsive1000Png": {
+        "path": "review/2026-08/v44/calendar-1000.png",
+        "sha256": "a742e943f52e7dbafb3baca0dff5f5320c85e0d92c180b5e5e1e54facd681c6f"
+      },
+      "responsive980Png": {
+        "path": "review/2026-08/v44/calendar-980.png",
+        "sha256": "930ca58f89aa612cb9a2295644fed2f37e1a363ad60de1e9a3320300dcfcd0d6"
+      }
+    },
+    "mobile": {
+      "html": {
+        "path": "mobile/review/2026-08/mobile-v10-h11/calendar.html",
+        "sha256": "f7270bd5c59d27eb71575458070c9bbca6302068d9c2a2ffd2d196d3b5e94977"
+      },
+      "viewportValidation": {
+        "path": "mobile/review/2026-08/mobile-v10-h11/viewport-validation.json",
+        "sha256": "0e664fee942258e78bde1ab47025518c7107e323674cae0c3c6d89be53987527"
+      }
+    }
+  },
+  "qa": {
+    "status": "pass",
+    "checks": [
+      "full repository suite: 551/551",
+      "actual browser parity: 33 records, zero unexplained discrepancies",
+      "v43 artwork geometry frozen at 1800, 1366, 1000, and 980px",
+      "split renderer scrim removed; art opacity, filters, and blend modes remain neutral",
+      "measured labels clear metadata and checksum-bound protected face regions",
+      "brand and review navigation do not overlap at required widths",
+      "accepted Mobile HTML and viewport-validation exact bytes preserved"
+    ]
+  },
+  "reviewState": "pending-bca",
+  "publicationState": "local-candidate-only",
+  "requiredBcaDecision": "Approve or reject exact Web v44 plus unchanged Mobile h11 candidate pair.",
+  "residualArtworkGaps": [
+    {
+      "gap": "DJ Edward higher-resolution source remains unavailable.",
+      "nextAction": "Ingest and independently review a larger clean original if one becomes available."
+    }
+  ],
+  "renderReviewRun": "069968d16d912f519a84a8a85231b462789bbe3488590aa7be5368bb6c8053d6",
+  "renderReviewEvidence": "review/2026-08/v44/render-review-evidence.json"
+}
