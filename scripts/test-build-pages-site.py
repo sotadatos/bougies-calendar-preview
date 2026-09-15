@@ -35,6 +35,7 @@ class PagesSiteTest(unittest.TestCase):
             "mobile/review/2026-09/mobile-v10/calendar.html": "approved mobile",
             "mobile/review/2026-09/mobile-v10/prototype-manifest.json": "{}",
             "review/2026-08/v30/calendar.html": "old web",
+            "review/2026-08/v36/calendar.html": "retained linked web",
             "mobile/review/2026-08/mobile-v10-h4/calendar.html": "old mobile",
             "mobile/current/calendar.html": "current mobile",
         }.items():
@@ -80,6 +81,7 @@ class PagesSiteTest(unittest.TestCase):
         self.assertEqual(manifest["activeReviews"]["mobile"], "mobile/review/2026-08/mobile-v10-h5")
         self.assertEqual((output / "calendar.html").read_text(), "customer html")
         self.assertEqual((output / "review/2026-08/v31/calendar.html").read_text(), "active web")
+        self.assertEqual((output / "review/2026-08/v36/calendar.html").read_text(), "retained linked web")
         self.assertFalse((output / "review/2026-08/v30/calendar.html").exists())
         self.assertFalse((output / "mobile/review/2026-08/mobile-v10-h4/calendar.html").exists())
 

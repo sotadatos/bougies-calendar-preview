@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "siteBaseUrl": "https://sotadatos.github.io/bougies-calendar-preview/",
   "fixedFiles": ["calendar.html", "calendar.png", "calendar.pdf"],
-  "fixedDirectories": ["mobile/current"],
+  "fixedDirectories": ["mobile/current", "review/2026-08/v36"],
   "provenanceUrls": [
     {"document": "mobile/current/prototype-manifest.json", "pointer": ["approvedImmutableReviewUrl"]},
     {"document": "mobile/current/prototype-manifest.json", "pointer": ["approvedImmutableManifestUrl"]},
