@@ -38,6 +38,10 @@ class PagesSiteTest(unittest.TestCase):
             "review/2026-08/v36/calendar.html": "retained linked web",
             "mobile/review/2026-08/mobile-v10-h4/calendar.html": "old mobile",
             "mobile/current/calendar.html": "current mobile",
+            "customer/2026-08/web/calendar.html": "customer archive web",
+            "customer/2026-08/web/provenance.json": "{}",
+            "customer/2026-08/mobile/calendar.html": "customer archive mobile",
+            "customer/2026-08/mobile/provenance.json": "{}",
         }.items():
             self.write(name, value)
         self.write_current_manifest()
@@ -82,6 +86,11 @@ class PagesSiteTest(unittest.TestCase):
         self.assertEqual((output / "calendar.html").read_text(), "customer html")
         self.assertEqual((output / "review/2026-08/v31/calendar.html").read_text(), "active web")
         self.assertEqual((output / "review/2026-08/v36/calendar.html").read_text(), "retained linked web")
+        self.assertEqual((output / "mobile/current/calendar.html").read_text(), "current mobile")
+        self.assertEqual((output / "customer/2026-08/web/calendar.html").read_text(), "customer archive web")
+        self.assertEqual((output / "customer/2026-08/mobile/calendar.html").read_text(), "customer archive mobile")
+        self.assertTrue((output / "customer/2026-08/web/provenance.json").is_file())
+        self.assertTrue((output / "customer/2026-08/mobile/provenance.json").is_file())
         self.assertFalse((output / "review/2026-08/v30/calendar.html").exists())
         self.assertFalse((output / "mobile/review/2026-08/mobile-v10-h4/calendar.html").exists())
 

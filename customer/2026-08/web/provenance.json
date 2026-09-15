@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "customer-calendar-navigation-derivative",
+  "surface": "web",
+  "source": {
+    "path": "output/calendar-renders/2026-08/calendar.html",
+    "sha256": "5e85dc066a63f384078b549c5324441fc8a91367862fcbe91a4a3c6e26657851",
+    "bytes": 28340408
+  },
+  "derivative": {
+    "path": "output/customer-calendar-derivatives/2026-08/web/calendar.html",
+    "sha256": "58f870319eb745acf9f290a692e439c3bc019204119a3ddc97994a0435caa480",
+    "bytes": 28340082
+  },
+  "equivalence": {
+    "scope": "all bytes outside the single customer-navigation region",
+    "sourceContentSha256": "c940415f44e466dfe229b2be712e076450a55493fc7c80c1bdbf9e90e158c24a",
+    "derivativeContentSha256": "c940415f44e466dfe229b2be712e076450a55493fc7c80c1bdbf9e90e158c24a",
+    "status": "PASS"
+  },
+  "navigationContext": "top-level browsing context via user-activated target=_top; actual Wix sandbox behavior requires draft QA",
+  "destinations": {
+    "currentCalendar": "https://www.bougiesbar.com/calendar",
+    "pastCalendars": "https://www.bougiesbar.com/calendars"
+  }
+}
