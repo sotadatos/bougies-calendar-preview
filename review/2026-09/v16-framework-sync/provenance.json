@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "surface": "web",
+  "month": "2026-09",
+  "source": {
+    "path": "output/calendar-renders/2026-09/calendar.html",
+    "sha256": "f0f11ff5623519fa2d17ca27d353b9dbbbf0de4759600096326948b6d0882216"
+  },
+  "derivative": {
+    "path": "output/inline-review/sep-web/calendar.html",
+    "sha256": "8e790daa3811093243555e1e9e46656363888730d3719bb797aa3260768dff47"
+  },
+  "restoration": {
+    "sha256": "f0f11ff5623519fa2d17ca27d353b9dbbbf0de4759600096326948b6d0882216",
+    "matchesSource": true
+  }
+}

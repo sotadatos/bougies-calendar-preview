@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "surface": "mobile",
+  "month": "2026-09",
+  "source": {
+    "path": "output/mobile-calendar-prototypes/2026-09/mobile-v10/calendar.html",
+    "sha256": "e180edc9213571a31480c9d270aa19f4db7630d761b296f5aa18e9da00084cb5"
+  },
+  "derivative": {
+    "path": "output/inline-review/sep-mobile/calendar.html",
+    "sha256": "7f53de0bd4649146045d3e6682e9ace8f6c0be2e05b153558a98e67c8c191568"
+  },
+  "restoration": {
+    "sha256": "e180edc9213571a31480c9d270aa19f4db7630d761b296f5aa18e9da00084cb5",
+    "matchesSource": true
+  }
+}
