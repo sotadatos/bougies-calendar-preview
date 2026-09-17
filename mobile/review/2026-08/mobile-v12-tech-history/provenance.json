@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "surface": "mobile",
+  "month": "2026-08",
+  "source": {
+    "path": "output/mobile-calendar-prototypes/2026-08/mobile-v12/calendar.html",
+    "sha256": "8d80ede6e19044f4a4344b2e858535d9a7de92aebf4ff84d2dd80d787aea4187"
+  },
+  "derivative": {
+    "path": "output/inline-review/aug-mobile/calendar.html",
+    "sha256": "e38434dab65975d6b5f582caeaa1742ad3ad4bcc19323eccef051a32fe75e475"
+  },
+  "restoration": {
+    "sha256": "8d80ede6e19044f4a4344b2e858535d9a7de92aebf4ff84d2dd80d787aea4187",
+    "matchesSource": true
+  }
+}

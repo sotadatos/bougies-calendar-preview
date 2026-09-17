@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "surface": "web",
+  "month": "2026-08",
+  "source": {
+    "path": "output/calendar-renders/2026-08/calendar.html",
+    "sha256": "758f41853f35d3c12a1ea386daa27d63b48bf61a1d6c78fb38085092a62f4d91"
+  },
+  "derivative": {
+    "path": "output/inline-review/aug-web/calendar.html",
+    "sha256": "b24e98677d8a83a262f7bcb29997ea915ba795343d2882a5e1846319ef4cc4d7"
+  },
+  "restoration": {
+    "sha256": "758f41853f35d3c12a1ea386daa27d63b48bf61a1d6c78fb38085092a62f4d91",
+    "matchesSource": true
+  }
+}
