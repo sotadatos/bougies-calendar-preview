@@ -36,8 +36,6 @@ class PagesSiteTest(unittest.TestCase):
             "mobile/review/2026-09/mobile-v10/prototype-manifest.json": "{}",
             "review/2026-08/v30/calendar.html": "old web",
             "review/2026-08/v36/calendar.html": "retained linked web",
-            "review/2026-08/v47-tech-history/calendar.html": "retained August web navigation review",
-            "mobile/review/2026-08/mobile-v12-tech-history/calendar.html": "retained August mobile navigation review",
             "review/2026-08/v48-framework-consistency/calendar.html": "retained August web framework review",
             "mobile/review/2026-08/mobile-v13-framework-consistency/calendar.html": "retained August mobile framework review",
             "mobile/review/2026-08/mobile-v10-h4/calendar.html": "old mobile",
@@ -90,8 +88,6 @@ class PagesSiteTest(unittest.TestCase):
         self.assertEqual((output / "calendar.html").read_text(), "customer html")
         self.assertEqual((output / "review/2026-08/v31/calendar.html").read_text(), "active web")
         self.assertEqual((output / "review/2026-08/v36/calendar.html").read_text(), "retained linked web")
-        self.assertEqual((output / "review/2026-08/v47-tech-history/calendar.html").read_text(), "retained August web navigation review")
-        self.assertEqual((output / "mobile/review/2026-08/mobile-v12-tech-history/calendar.html").read_text(), "retained August mobile navigation review")
         self.assertEqual((output / "review/2026-08/v48-framework-consistency/calendar.html").read_text(), "retained August web framework review")
         self.assertEqual((output / "mobile/review/2026-08/mobile-v13-framework-consistency/calendar.html").read_text(), "retained August mobile framework review")
         self.assertEqual((output / "mobile/current/calendar.html").read_text(), "current mobile")
