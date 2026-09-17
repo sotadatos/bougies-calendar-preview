@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "customer-calendar-mobile-successor",
+  "surface": "mobile",
+  "targetMonth": "2026-08",
+  "status": "approved-local-review-candidate",
+  "artifact": {
+    "path": "customer/2026-08/mobile/mobile-v10-h12/calendar.html",
+    "sha256": "eae873077324aadb96de29648eff97b5316ffb7fd155fbd8b9521c15de239949",
+    "bytes": 10389503
+  },
+  "baseline": {
+    "reviewRung": "mobile-v10-h11",
+    "sha256": "f7270bd5c59d27eb71575458070c9bbca6302068d9c2a2ffd2d196d3b5e94977"
+  },
+  "approvedCorrections": [
+    {"date": "2026-08-08", "display": "Freestyle Party", "special": true},
+    {"date": "2026-08-22", "display": "Private Party", "special": false, "venue": "Living Room", "time": "8 PM–10:30 PM"}
+  ],
+  "navigationContext": "Wix Past Calendars index opens this artifact in the top-level browsing context.",
+  "scope": "No current or September artifact is changed by this candidate."
+}
