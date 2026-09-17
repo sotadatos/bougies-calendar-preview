@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "thursday-primary-companion-overlay-review",
+  "surface": "web",
+  "month": "2026-09",
+  "source": {
+    "commit": "0d315350a1e50ef24f981b610ac5f5fbde0a51f2",
+    "path": "output/calendar-renders/2026-09/calendar.html",
+    "sha256": "697ca30d0cebf3ac9219eafdaa4fc6e661cc02a0453b3cc32dae0ee4b2d86cb2"
+  },
+  "derivative": {
+    "path": "output/thursday-overlay-review/sep-web/calendar.html",
+    "sha256": "1b6ad99fac92313715b3d15e8b6f46885c3df603b669f4f98f7be0dfb1163869"
+  },
+  "restoration": {
+    "sha256": "697ca30d0cebf3ac9219eafdaa4fc6e661cc02a0453b3cc32dae0ee4b2d86cb2",
+    "matchesSource": true
+  },
+  "scope": [
+    "September Thursdays only",
+    "primary band artwork fills cell",
+    "companion DJ uses bottom-right circular portrait",
+    "band and DJ names/times use paired distinct colors",
+    "existing promotion footer lane retained"
+  ]
+}
