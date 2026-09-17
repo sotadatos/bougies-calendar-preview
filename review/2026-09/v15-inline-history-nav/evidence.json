@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "surface": "web",
+  "month": "2026-09",
+  "source": {
+    "path": "/Users/ldelvat/.codex/.chatgpt-projects/g-p-6a987ff70ffc8191a6a0fc5db09f38d0/work/preview-issue129-inline-nav/review/2026-09/v12/calendar.html",
+    "sha256": "5d0b7060f79b8b6115e5f26b53bffd406448bf0b730ec6674629e0e681020343"
+  },
+  "derivative": {
+    "path": "/Users/ldelvat/.codex/.chatgpt-projects/g-p-6a987ff70ffc8191a6a0fc5db09f38d0/work/preview-issue129-inline-nav/review/2026-09/v15-inline-history-nav/calendar.html",
+    "sha256": "ac5e10aa574cf720e854706d02be88a7af71f3a02afe16c4e21e24e3910eda95"
+  },
+  "restoration": {
+    "sha256": "5d0b7060f79b8b6115e5f26b53bffd406448bf0b730ec6674629e0e681020343",
+    "matchesSource": true
+  }
+}
