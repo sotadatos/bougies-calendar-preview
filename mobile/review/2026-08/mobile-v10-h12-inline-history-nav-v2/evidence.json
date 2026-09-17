@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "surface": "mobile",
+  "month": "2026-08",
+  "source": {
+    "path": "/Users/ldelvat/.codex/.chatgpt-projects/g-p-6a987ff70ffc8191a6a0fc5db09f38d0/work/preview-issue129-inline-nav/customer/2026-08/mobile/mobile-v10-h12/calendar.html",
+    "sha256": "eae873077324aadb96de29648eff97b5316ffb7fd155fbd8b9521c15de239949"
+  },
+  "derivative": {
+    "path": "/Users/ldelvat/.codex/.chatgpt-projects/g-p-6a987ff70ffc8191a6a0fc5db09f38d0/work/preview-issue129-inline-nav/mobile/review/2026-08/mobile-v10-h12-inline-history-nav-v2/calendar.html",
+    "sha256": "2a0746fb7a57eac9f7fc53edbd9353c42103051c78273f477f02bcb16b73d060"
+  },
+  "restoration": {
+    "sha256": "eae873077324aadb96de29648eff97b5316ffb7fd155fbd8b9521c15de239949",
+    "matchesSource": true
+  }
+}

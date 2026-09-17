@@ -6,8 +6,8 @@
     "mobile/current",
     "review/2026-08/v36",
     "customer/2026-08",
-    "review/2026-08/v45-inline-history-nav",
-    "mobile/review/2026-08/mobile-v10-h12-inline-history-nav"
+    "review/2026-08/v46-inline-history-nav",
+    "mobile/review/2026-08/mobile-v10-h12-inline-history-nav-v2"
   ],
   "provenanceUrls": [
     {"document": "mobile/current/prototype-manifest.json", "pointer": ["approvedImmutableReviewUrl"]},
