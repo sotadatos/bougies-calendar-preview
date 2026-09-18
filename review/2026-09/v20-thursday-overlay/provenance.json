@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "thursday-primary-companion-overlay-v2-review",
+  "surface": "web",
+  "month": "2026-09",
+  "source": {
+    "commit": "d70f765d6455ad95d9d84a3b87b5d74cf6db23df",
+    "path": "output/calendar-renders/2026-09/calendar.html",
+    "sha256": "7d3967fa9d39d89083de778b34cb47af2a58a1c9e5e303a8e1017acce84f5088"
+  },
+  "derivative": {
+    "path": "output/thursday-overlay-v2-review/sep-web/calendar.html",
+    "sha256": "60d86ebd3b57358f198626a5a7cdd0e21d287c8908e725a702db8d67e3f2eb99"
+  },
+  "restoration": {
+    "sha256": "7d3967fa9d39d89083de778b34cb47af2a58a1c9e5e303a8e1017acce84f5088",
+    "matchesSource": true
+  },
+  "changes": [
+    "DJ companion portrait reduced from 88px to 36px",
+    "KoolKidz duplicate title suppressed on September 10 and 24",
+    "September 10 football promotion occupies full-width bottom lane"
+  ]
+}
