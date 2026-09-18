@@ -1,0 +1,15 @@
+{
+  "sourceCommit": "6e9f2c6",
+  "sourceHtmlSha256": "3d6617b38a31cc8aac824b4a0ed230ffba9b866e6fb7be0ac56a761c3cd6b789",
+  "reviewHtmlSha256": "55741c1832f39d4d619f972adcf63ec628eedb82dd3a0eb3e42b432debe54342",
+  "derivation": "Exact generated September review HTML with the previously approved inline history navigation substituted for the generated customer nav.",
+  "changes": [
+    "September 10 now uses the same reusable 70/30 horizontal KoolKidz/DJ Edward split as the other Thursdays.",
+    "The football promotion remains a single full-width edge-to-edge footer spanning both panels.",
+    "The split layout reserves an 18px footer lane so the promotion stays flush at the bottom without obscuring either panel.",
+    "All other approved Thursday and Friday treatments remain unchanged."
+  ],
+  "implementationEngine": "Claude Code 2.1.276 was attempted first but was not authenticated; bounded implementation completed in Codex and verified with focused tests.",
+  "focusedTests": "53/53 passed",
+  "productionApproval": false
+}
