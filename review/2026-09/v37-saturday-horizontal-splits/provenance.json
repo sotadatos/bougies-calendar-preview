@@ -1,0 +1,15 @@
+{
+  "sourceCommit": "c599bbf",
+  "sourceHtmlSha256": "5293529188e848d3ec76072359eb413cf74fd4fac6eaa2e6af853944dee3c55e",
+  "reviewHtmlSha256": "ea3f9c511b5652eadc6f0f9e9f98e85acef3b82670afe28a53eea6bcb84d287f",
+  "derivation": "Exact generated September review HTML with the previously approved inline history navigation substituted for the generated customer nav.",
+  "changes": [
+    "September 5, 12, and 26 use the reusable 70/30 horizontal band-primary and DJ-secondary split.",
+    "DJ portraits, two-line names, colors, and times inherit the approved Thursday and Friday split framework.",
+    "September 19 remains a stacked exception: Millennial Party is the larger top primary special event and Veta Ceti is the smaller bottom secondary band.",
+    "Black complete-day outlines from the prior review remain in effect for populated Thursday, Friday, and Saturday image cells."
+  ],
+  "implementationEngine": "Claude Code 2.1.276 remained unavailable because it was not authenticated; bounded implementation completed in Codex and verified with focused tests.",
+  "focusedTests": "53/53 passed",
+  "productionApproval": false
+}
