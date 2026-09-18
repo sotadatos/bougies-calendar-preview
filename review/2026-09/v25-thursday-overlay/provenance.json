@@ -1,0 +1,11 @@
+{
+  "sourceCommit": "09ffc265b90aa7fd5b722ff1ca9e6dbcd4533dd7",
+  "sourceHtmlSha256": "df2d2ca0013e9c0a4b0a0ebb9dc4ac35620e898f1a4be4d671ba18edc8fa528a",
+  "reviewHtmlSha256": "e53937fe1bab91a4f4073c9b19578db100783f652dfa077b71c9a6e8197793a0",
+  "derivation": "Exact generated September review HTML with the previously approved inline history navigation substituted for the generated customer nav.",
+  "changes": [
+    "Thursday band name and time use bright green #6ee7a8; DJ name and time remain cyan #67e8f9.",
+    "September 10 fitted KoolKidz artwork and bottom-anchored promo footer remain unchanged."
+  ],
+  "productionApproval": false
+}
