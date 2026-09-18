@@ -1,0 +1,22 @@
+{
+  "sourceCommit": "47a8708",
+  "sourceHtmlSha256": "34f4c69c313dfa05021c80b89dbb02d23ea2d6ed82d48e42862aa0e2caea7d09",
+  "reviewHtmlSha256": "2eca5e5c85ac2f3d147228b8858b61cb809b93050194590ddc23eee2b908dcfd",
+  "derivation": "Exact generated September review HTML with the previously approved inline history navigation substituted for the generated customer nav.",
+  "changes": [
+    "September 25 uses a new landscape Web-specific BOUGS-TOBERFEST artwork generated from the approved portrait flyer as a visual reference.",
+    "The Web artwork contains only BOUGS-TOBERFEST and SEPT 25\u201327 so it remains legible inside the calendar cell.",
+    "The image uses cover fit to fill the primary special-event panel.",
+    "The existing portrait flyer and mobile mapping remain unchanged.",
+    "All prior horizontal splits, priority rules, and complete-day outlines remain in effect."
+  ],
+  "imageGeneration": {
+    "engine": "Built-in image generation tool",
+    "sourceAsset": "assets/calendar/event-artwork/candidates/bougs-toberfest-weekend-v1.png",
+    "generatedAsset": "assets/calendar/event-artwork/candidates/bougs-toberfest-weekend-web-v2.png",
+    "intendedSurface": "web"
+  },
+  "implementationEngine": "Bounded asset integration completed in Codex after built-in image generation.",
+  "focusedTests": "76/76 passed",
+  "productionApproval": false
+}
