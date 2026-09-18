@@ -1,0 +1,11 @@
+{
+  "sourceCommit": "c01a9bd31b20ec46021f94a867a43721bbf4adab",
+  "sourceHtmlSha256": "2f5f4ca0133f19a5803f2b46d4dfd23b19bb14443f7e2c1764b91d471bf9df1c",
+  "reviewHtmlSha256": "516ce25b00a01dd35451545e2558ba2437277850ecd9049641e37bfa03b0eb4a",
+  "derivation": "Exact generated September review HTML with the previously approved inline history navigation substituted for the generated customer nav.",
+  "changes": [
+    "September 10 football promotion is anchored to the actual day-cell bottom after every shared vendor-placement rule.",
+    "DJ Edward companion portrait remains at the approved 44px size."
+  ],
+  "productionApproval": false
+}
