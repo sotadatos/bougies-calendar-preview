@@ -1,0 +1,15 @@
+{
+  "sourceCommit": "adfaa32",
+  "sourceHtmlSha256": "c08c692392b38027f30baa6b7b268dd20aac3a5a0d47e13b95927e5a98f8295c",
+  "reviewHtmlSha256": "7be03aae8bbb6fb9998e248f8eda81c8566de963eab65e439e7b4501ffc1af7b",
+  "derivation": "Exact generated September review HTML with the previously approved inline history navigation substituted for the generated customer nav.",
+  "changes": [
+    "September 3, 17, and 24 now use the approved reusable 70/30 horizontal band/DJ split.",
+    "Their DJ Edward panels inherit the centered 43px portrait, two-line DJ/name title, and 9px time treatment.",
+    "September 10 remains a primary-companion overlay so its football promotion retains the dedicated bottom footer lane.",
+    "September 11 and 18 retain the same approved horizontal treatment."
+  ],
+  "implementationEngine": "Claude Code 2.1.276 was attempted first but was not authenticated; bounded implementation completed in Codex and verified with focused tests.",
+  "focusedTests": "53/53 passed",
+  "productionApproval": false
+}
