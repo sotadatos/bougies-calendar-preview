@@ -1,0 +1,11 @@
+{
+  "sourceCommit": "2464597404ddc0cf6f6e602f240170a7767716cb",
+  "sourceHtmlSha256": "8314866ad57321ec3bc9dbb2252dd85bc4d7deb4e1bfc1729385a3f22f797f9b",
+  "reviewHtmlSha256": "f6c79970aaec23525ae302ab65691d64cf87bd18c8c0a30ec646628e0c50bc2d",
+  "derivation": "Exact generated September review HTML with the previously approved inline history navigation substituted for the generated customer nav.",
+  "changes": [
+    "September 10 KoolKidz square artwork uses contain within the area above the 18px promo footer, preserving the complete logo without distortion.",
+    "Promo footer remains bottom-anchored and DJ Edward remains at 44px."
+  ],
+  "productionApproval": false
+}
