@@ -1,0 +1,15 @@
+{
+  "sourceCommit": "aef1baa",
+  "sourceHtmlSha256": "a5a343c3e1275040acf2d261811a45e47d972b276aeb8210411a7eb5c7694d02",
+  "reviewHtmlSha256": "7282e8bc23c5a88ac6c0305df3124a6562757a932e8df911e6e1958eba64ac37",
+  "derivation": "Exact generated September review HTML with the previously approved inline history navigation substituted for the generated customer nav.",
+  "changes": [
+    "September 11 and 18 retain the reusable 70/30 horizontal band/DJ split.",
+    "Centered DJ portraits increase from 36px to 43px, approximately 20 percent.",
+    "DJ names increase from 6px to 12px, exactly 100 percent.",
+    "DJ times remain at the approved 9px size; other panels and dates are unchanged."
+  ],
+  "implementationEngine": "Claude Code 2.1.276 was attempted first but was not authenticated; bounded implementation completed in Codex and verified with focused tests.",
+  "focusedTests": "53/53 passed",
+  "productionApproval": false
+}
