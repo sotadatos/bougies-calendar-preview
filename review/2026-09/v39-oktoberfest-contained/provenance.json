@@ -1,0 +1,15 @@
+{
+  "sourceCommit": "f0831d5",
+  "sourceHtmlSha256": "b5b063ac0bda29a927fb00cb4ffc5c82056c235ff3656201319f0d0de9b150ac",
+  "reviewHtmlSha256": "a3b134dd9cc1eb6e8555d54d656dbd8ddd68902747ae852cc3a9750f1233b40e",
+  "derivation": "Exact generated September review HTML with the previously approved inline history navigation substituted for the generated customer nav.",
+  "changes": [
+    "September 25 keeps the approved landscape BOUGS-TOBERFEST artwork.",
+    "The artwork now uses centered contain fit so the complete title and SEPT 25\u201327 line remain visible without cropping.",
+    "The existing mobile flyer and mobile mapping remain unchanged.",
+    "All prior horizontal splits, priority rules, and complete-day outlines remain in effect."
+  ],
+  "implementationEngine": "Bounded presentation correction completed in Codex.",
+  "focusedTests": "76/76 passed",
+  "productionApproval": false
+}
