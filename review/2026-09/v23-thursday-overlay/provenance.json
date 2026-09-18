@@ -1,0 +1,11 @@
+{
+  "sourceCommit": "2c2e735b509126d200820257d59338f7d6d8947f",
+  "sourceHtmlSha256": "a6da4d67df8701abc03c614c6f86f34dbc339f9973e48c81008b1b1b3e534cd5",
+  "reviewHtmlSha256": "7e9accef76d4b3d2550d114f1ee9f8b2e85e49c652975187f2abbdfedd01bece",
+  "derivation": "Exact generated September review HTML with the previously approved inline history navigation substituted for the generated customer nav.",
+  "changes": [
+    "September 10 KoolKidz identity artwork scales to 84% width within the promoted Thursday layout so lower logo content remains visible.",
+    "Promo footer remains bottom-anchored and DJ Edward remains at 44px."
+  ],
+  "productionApproval": false
+}
