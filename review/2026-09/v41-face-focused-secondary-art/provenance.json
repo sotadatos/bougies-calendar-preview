@@ -1,0 +1,16 @@
+{
+  "sourceCommit": "275fb95",
+  "sourceHtmlSha256": "ba2beb65bc7ad8d786ea17ee25b33b90d6cddd9fa7a05510f35fe7de4ccbfd52",
+  "reviewHtmlSha256": "206f13b04fbec25b58e08d6f59a260e23c540aa07f567b365ed3c950f4c5c296",
+  "derivation": "Exact generated September review HTML with the previously approved inline history navigation substituted for the generated customer nav.",
+  "changes": [
+    "A reusable face-focused photo presentation class now supports per-image zoom and focal Y positioning.",
+    "September 19 Veta Ceti uses a 115% cover zoom focused at 45% vertical position to keep faces visible.",
+    "September 25 Brothers Of Others uses a 125% cover zoom focused at 25% vertical position to keep the trio faces visible.",
+    "September 25 BOUGS-TOBERFEST remains stretched edge to edge across its complete primary panel.",
+    "All prior horizontal splits, priority rules, and complete-day outlines remain in effect."
+  ],
+  "implementationEngine": "Bounded presentation framework correction completed in Codex.",
+  "focusedTests": "78/78 passed",
+  "productionApproval": false
+}
