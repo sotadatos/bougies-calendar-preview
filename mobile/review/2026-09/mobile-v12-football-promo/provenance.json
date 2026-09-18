@@ -1,0 +1,14 @@
+{
+  "sourceCommit": "f5fffc5",
+  "sourceHtmlSha256": "3b50c58400fe405cfbd6eb19ae3f83905a85f864aba39b110aa79e7831719e78",
+  "reviewHtmlSha256": "92486c9d7c3f668b400d03f0970d92a198050f45dd584da3453a742889e1f541",
+  "derivation": "Exact generated September Mobile-v12 review HTML with the previously approved inline history navigation substituted for the generated mobile nav.",
+  "changes": [
+    "UM football promos use the reusable orange treatment.",
+    "September 18 adds UM vs Wake Forest at 7:30 PM with Watch + After Party copy.",
+    "The BOUGS-TOBERFEST spanning Web strip remains Web-only; Mobile keeps its full portrait event card."
+  ],
+  "implementationEngine": "Bounded calendar presentation and promotion changes completed in Codex.",
+  "focusedTests": "103/103 passed",
+  "productionApproval": false
+}\n

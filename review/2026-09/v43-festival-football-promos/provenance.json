@@ -1,0 +1,14 @@
+{
+  "sourceCommit": "f5fffc5",
+  "sourceHtmlSha256": "a5166cf61c33b6d2d5a54f3bdbe49e0a7625a3495a297fa88703068efe9662b7",
+  "reviewHtmlSha256": "7037945f14996a0e440ac74458e76e95722675eee48b09e555c3a8e3cb5ee124",
+  "derivation": "Exact generated September review HTML with the previously approved inline history navigation substituted for the generated customer nav.",
+  "changes": [
+    "September 19 Veta Ceti and September 25 Brothers Of Others move slightly upward from a 5% to a 12% vertical anchor so more faces remain visible.",
+    "A yellow BOUGS-TOBERFEST drink-specials tag spans September 25 through 27 and sits flush with the bottom of the three-day range.",
+    "UM football promos use the reusable orange treatment; September 10 remains and September 18 adds UM vs Wake Forest at 7:30 PM with Watch + After Party copy."
+  ],
+  "implementationEngine": "Bounded calendar presentation and promotion changes completed in Codex.",
+  "focusedTests": "103/103 passed",
+  "productionApproval": false
+}\n
