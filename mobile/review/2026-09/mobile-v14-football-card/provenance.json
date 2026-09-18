@@ -1,0 +1,14 @@
+{
+  "sourceCommit": "e48d861",
+  "sourceHtmlSha256": "abb80301ea6af096f280c9f35ee88134ba161d8abe20636445a9968f531313bb",
+  "reviewHtmlSha256": "f36867b99226e44ff6752cb5edfc8c9e071e092c06d426d89d929b8476fd058d",
+  "derivation": "Exact generated September Mobile-v14 review HTML with the previously approved inline history navigation substituted for the generated navigation.",
+  "changes": [
+    "September 18 now shows the full UM vs Wake Forest event card and supplied portrait artwork, consistent with September 10.",
+    "Football promo context uses the same compact one-row copy as Web.",
+    "The at-a-glance calendar marks the current Bougies-local date with a reusable outline and aria-current date semantics."
+  ],
+  "implementationEngine": "Bounded calendar presentation, Mobile event-card, and current-day framework changes completed in Codex.",
+  "focusedTests": "134/134 passed",
+  "productionApproval": false
+}

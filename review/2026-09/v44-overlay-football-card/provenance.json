@@ -1,0 +1,14 @@
+{
+  "sourceCommit": "e48d861",
+  "sourceHtmlSha256": "019f114a2fd1e9fb78dae261ea389e0958a2ce847a4d383e0b985875b27f526a",
+  "reviewHtmlSha256": "b3c3b75ed2052cde0509a10d5e40c1ade3d3d39c8761528ebe59f031a5e0e45e",
+  "derivation": "Exact generated September Web review HTML with the previously approved inline history navigation substituted for the generated navigation.",
+  "changes": [
+    "Football promo ribbons use one compact row: UM vs Florida A&M \u00b7 7:30 and UM vs Wake Forest \u00b7 7:30.",
+    "The BOUGS-TOBERFEST drink-specials strip is a true bottom overlay spanning September 25\u201327 and no longer changes grid placement.",
+    "September dates remain in chronological calendar cells while the existing reviewed artwork and split layouts are preserved."
+  ],
+  "implementationEngine": "Bounded calendar presentation, Mobile event-card, and current-day framework changes completed in Codex.",
+  "focusedTests": "134/134 passed",
+  "productionApproval": false
+}
