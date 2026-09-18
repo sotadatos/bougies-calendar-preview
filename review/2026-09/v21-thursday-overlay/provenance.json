@@ -1,0 +1,11 @@
+{
+  "sourceCommit": "1561de75a0cc7ff37eeee2e9b631d7c050784778",
+  "sourceHtmlSha256": "65d9d518e60414f21a6577be02f628219484fbb58a27e0aae16273cdf65ec60d",
+  "reviewHtmlSha256": "04c25f0012feeb0b8d3f4798fa45e67eca9b243b74c026da809717ceb3fcea94",
+  "derivation": "Exact generated September review HTML with the previously approved inline history navigation marker substituted for the generated customer nav.",
+  "changes": [
+    "DJ Edward companion portrait increased from 36px to 44px.",
+    "September 10 football promotion fixed to the full-width bottom edge after shared vendor styling."
+  ],
+  "productionApproval": false
+}
