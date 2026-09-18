@@ -1,0 +1,12 @@
+{
+  "sourceCommit": "ae9a6a0adcdc9028d05aa811ec274e46d56f7aff",
+  "sourceHtmlSha256": "4d9584498da6ecc65db75a5078c5720b591b25f3dc5e03d5377565eda2c0d747",
+  "reviewHtmlSha256": "ced3835349d6373fd6f095d0765db1aa3b5d540cb0594b8f6dee6a5ecba6bd01",
+  "derivation": "Exact generated September review HTML with the previously approved inline history navigation substituted for the generated customer nav.",
+  "changes": [
+    "September 11 Fire Brigade + DJ Proof and September 18 Tremora + DJ DIAGA use the reusable primary-band/circular-DJ overlay.",
+    "Band name/time remain green and DJ name/time remain cyan.",
+    "September 4 remains on its existing stacked layout for separate review."
+  ],
+  "productionApproval": false
+}
