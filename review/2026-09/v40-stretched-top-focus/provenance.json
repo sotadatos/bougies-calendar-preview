@@ -1,0 +1,16 @@
+{
+  "sourceCommit": "b2fcd5c",
+  "sourceHtmlSha256": "9c49003b4cd8df88bc4c4bcc3187a5228487d1f6c00ea2a2bf2181094768d60f",
+  "reviewHtmlSha256": "37bf66d79d393dad1e34618c7cb16201b8ae65f17c01cea5ab89fc1727e3681a",
+  "derivation": "Exact generated September review HTML with the previously approved inline history navigation substituted for the generated customer nav.",
+  "changes": [
+    "September 25 BOUGS-TOBERFEST artwork stretches edge to edge across its complete primary panel without cropping.",
+    "September 25 Brothers Of Others uses top-focused cover framing.",
+    "September 19 Veta Ceti uses top-focused cover framing.",
+    "Mobile treats the Web-only stretch instruction as contain, preserving mobile behavior.",
+    "All prior horizontal splits, priority rules, and complete-day outlines remain in effect."
+  ],
+  "implementationEngine": "Bounded presentation framework correction completed in Codex.",
+  "focusedTests": "77/77 passed",
+  "productionApproval": false
+}
