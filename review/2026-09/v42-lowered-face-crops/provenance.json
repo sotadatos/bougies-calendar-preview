@@ -1,0 +1,14 @@
+{
+  "sourceCommit": "c665f62",
+  "sourceHtmlSha256": "118b829817bf8b06bfbdcaca1babbd5f388dba0ddf74223b265ea85e2ac7b9f1",
+  "reviewHtmlSha256": "5aebc78f4c44d393396ed6b818230a7fe459318115fb7ca0bb0c45687e54664a",
+  "derivation": "Exact generated September review HTML with the previously approved inline history navigation substituted for the generated customer nav.",
+  "changes": [
+    "September 19 Veta Ceti retains its face-focused zoom and moves down from 45% to a 5% vertical anchor.",
+    "September 25 Brothers Of Others retains its face-focused zoom and moves down from 25% to a 5% vertical anchor.",
+    "September 25 BOUGS-TOBERFEST and all other calendar cells remain unchanged."
+  ],
+  "implementationEngine": "Bounded focal-position correction completed in Codex.",
+  "focusedTests": "78/78 passed",
+  "productionApproval": false
+}
