@@ -1,0 +1,13 @@
+{
+  "sourceCommit": "92843520c95df0185ef28d6691d63819d275a614",
+  "sourceHtmlSha256": "e298554b8033703f1902b11918980b1284fb827abd92ac319b4868ddddb4347c",
+  "reviewHtmlSha256": "5fdf83a73dc2519ef3ac8b9c757459c6db6bc0965a8f07ba07f0ca741b627b31",
+  "derivation": "Exact generated September review HTML with the previously approved inline history navigation substituted for the generated customer nav.",
+  "changes": [
+    "September 11 and 18 use a reusable 70/30 horizontal primary-secondary split: band left, DJ right.",
+    "Band metadata is green; DJ metadata is cyan; identity-led band titles remain suppressed.",
+    "September 4 and Thursday overlays remain unchanged."
+  ],
+  "implementationEngine": "Claude Code 2.1.276 was attempted first but was not authenticated; bounded implementation completed in Codex and independently verified with focused tests.",
+  "productionApproval": false
+}
