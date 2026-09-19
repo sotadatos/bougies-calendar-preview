@@ -1,0 +1,14 @@
+{
+  "sourceCommit": "e161b76",
+  "sourceHtmlSha256": "674cc2a5b7ed194d084b8d2343b3cc3a5a1c8c4fd7ecf49659c25ad8df4ed56e",
+  "reviewHtmlSha256": "b262756dbe2f69f27cfd7f323ea0d35db796c1e5a4160f595ba22c78e865ea2b",
+  "derivation": "Exact generated September Mobile-v15 review HTML with the previously approved inline history navigation substituted for the generated navigation.",
+  "changes": [
+    "Sep 18 uses the supplied UM vs Wake Forest poster rather than the previous incorrect image.",
+    "The reusable at-a-glance today highlight remains enabled.",
+    "Mobile event and promotion semantics remain unchanged otherwise."
+  ],
+  "implementationEngine": "Bounded calendar presentation and artwork corrections completed in Codex.",
+  "focusedTests": "134/134 passed",
+  "productionApproval": false
+}

@@ -1,0 +1,14 @@
+{
+  "sourceCommit": "e161b76",
+  "sourceHtmlSha256": "c0580006fe18eff7511c07b8623375a9deb324875b9f09329270eb813b45d883",
+  "reviewHtmlSha256": "3ae7aa0e0737812022e2950580358b1e6e70dbda2315db196c4664a13d8d91e9",
+  "derivation": "Exact generated September Web review HTML with the previously approved inline history navigation substituted for the generated navigation.",
+  "changes": [
+    "BOUGS-TOBERFEST SEP 25-27 now leads the drink-specials ribbon.",
+    "Sep 25 and Sep 26 reserve the bottom ribbon lane so artwork remains fully visible; Sep 27 vertical artwork is unchanged.",
+    "The football promo copy remains compact and one-row."
+  ],
+  "implementationEngine": "Bounded calendar presentation and artwork corrections completed in Codex.",
+  "focusedTests": "134/134 passed",
+  "productionApproval": false
+}
