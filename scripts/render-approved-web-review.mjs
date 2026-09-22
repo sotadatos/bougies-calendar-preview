@@ -135,8 +135,12 @@ async function captureValidatedPng(chrome, fileUrl, pngPath) {
     return height;
   } finally {
     socket?.close();
-    browser.kill();
-    fs.rmSync(profile, { recursive: true, force: true });
+    if (browser.exitCode === null && browser.signalCode === null) {
+      const exited = new Promise((resolve) => browser.once("exit", resolve));
+      browser.kill();
+      await exited;
+    }
+    fs.rmSync(profile, { recursive: true, force: true, maxRetries: 10, retryDelay: 100 });
   }
 }
 
