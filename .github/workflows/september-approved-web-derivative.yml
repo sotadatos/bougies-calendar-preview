@@ -18,6 +18,8 @@ permissions:
 jobs:
   render-approved-review:
     runs-on: ubuntu-24.04
+    permissions:
+      contents: write
     env:
       SOURCE_COMMIT: df503f170c26c39c602e2cde82de232de52d3f87
       SOURCE_PATH: review/2026-09/v46-central-michigan-promo/calendar.html
@@ -57,7 +59,7 @@ jobs:
       - name: Publish a new immutable Web review candidate
         if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
         env:
-          PREVIEW_DEPLOY_TOKEN: ${{ secrets.PREVIEW_DEPLOY_TOKEN }}
+          PREVIEW_DEPLOY_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           set -euo pipefail
