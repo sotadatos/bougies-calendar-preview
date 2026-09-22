@@ -33,6 +33,11 @@ jobs:
             review/2026-09/v46-central-michigan-promo
             review/2026-09/v47
 
+      - name: Use Node.js with native WebSocket support
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
       - name: Validate export rules without launching a browser
         run: node --test scripts/test-render-approved-web-review.mjs
 

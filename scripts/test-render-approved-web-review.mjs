@@ -17,7 +17,7 @@ test("export height follows the rendered page after all images resolve", () => {
 
 test("macOS and other non-CI hosts fail before browser launch", () => {
   assert.throws(() => requireLinuxCi("darwin", "true"), /only on an isolated Linux/);
-  assert.throws(() => requireLinuxCi("linux", undefined), /only on an isolated Linux/);
+  assert.throws(() => requireLinuxCi("linux", "false"), /only on an isolated Linux/);
   assert.doesNotThrow(() => requireLinuxCi("linux", "true"));
 });
 
