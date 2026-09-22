@@ -1,0 +1,86 @@
+name: September approved Web image derivative
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: september-approved-web-derivative
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  render-approved-review:
+    runs-on: ubuntu-24.04
+    env:
+      SOURCE_COMMIT: df503f170c26c39c602e2cde82de232de52d3f87
+      SOURCE_PATH: review/2026-09/v46-central-michigan-promo/calendar.html
+      SOURCE_SHA256: 63b4f12cfff90edee909e62e0b34432be81e0c5877c056f5fd0c56cd5d862731
+      DEST: review/2026-09/v47
+    steps:
+      - name: Check out approved review and export code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          sparse-checkout: |
+            scripts
+            review/2026-09/v46-central-michigan-promo
+            review/2026-09/v47
+
+      - name: Validate export rules without launching a browser
+        run: node --test scripts/test-render-approved-web-review.mjs
+
+      - name: Read exact approved HTML from its immutable commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          test ! -e "${DEST}"
+          git fetch --depth 1 origin "${SOURCE_COMMIT}"
+          git show "${SOURCE_COMMIT}:${SOURCE_PATH}" > "${RUNNER_TEMP}/approved-calendar.html"
+          echo "${SOURCE_SHA256}  ${RUNNER_TEMP}/approved-calendar.html" | sha256sum --check --strict
+          echo "${SOURCE_SHA256}  ${SOURCE_PATH}" | sha256sum --check --strict
+
+      - name: Render and validate image derivatives on isolated Linux
+        run: node scripts/render-approved-web-review.mjs "${RUNNER_TEMP}/approved-calendar.html" "${DEST}" "${SOURCE_SHA256}"
+
+      - name: Publish a new immutable Web review candidate
+        env:
+          PREVIEW_DEPLOY_TOKEN: ${{ secrets.PREVIEW_DEPLOY_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "${PREVIEW_DEPLOY_TOKEN:-}"
+          echo "${SOURCE_SHA256}  ${DEST}/calendar.html" | sha256sum --check --strict
+          test -s "${DEST}/calendar.png"
+          test -s "${DEST}/calendar.pdf"
+          git add "${DEST}/calendar.html" "${DEST}/calendar.png" "${DEST}/calendar.pdf"
+          mapfile -t CHANGED < <(git diff --cached --name-only)
+          test "${#CHANGED[@]}" -eq 3
+          for changed in "${CHANGED[@]}"; do
+            case "${changed}" in
+              "${DEST}/calendar.html"|"${DEST}/calendar.png"|"${DEST}/calendar.pdf") ;;
+              *) echo "Unexpected change: ${changed}" >&2; exit 1 ;;
+            esac
+          done
+          git config user.name "bougies-calendar-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git commit -m "Publish approved September Web v47 derivative [automated]"
+          git remote set-url origin "https://x-access-token:${PREVIEW_DEPLOY_TOKEN}@github.com/sotadatos/bougies-calendar-preview.git"
+          git push origin HEAD:main
+
+      - name: Record candidate evidence
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo "## Approved September Web candidate"
+            echo "- Source commit: ${SOURCE_COMMIT}"
+            echo "- Source HTML SHA-256: ${SOURCE_SHA256}"
+            echo "- New review: ${DEST}"
+            if [ -f "${DEST}/calendar.png" ]; then
+              echo "- PNG SHA-256: $(sha256sum "${DEST}/calendar.png" | cut -d ' ' -f1)"
+              echo "- PDF SHA-256: $(sha256sum "${DEST}/calendar.pdf" | cut -d ' ' -f1)"
+            fi
+            echo "- Web production pointer: unchanged"
+          } >> "${GITHUB_STEP_SUMMARY}"
