@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { createHash } from "node:crypto";
-import { execFileSync } from "node:child_process";
+import { execFileSync, spawn } from "node:child_process";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
@@ -28,6 +28,14 @@ export function validateRuntime(attributes) {
   return Math.max(1200, height + 4);
 }
 
+export function validateFinalCapture(attributes, viewportHeight, pageHeight) {
+  const measuredHeight = validateRuntime(attributes);
+  if (measuredHeight > viewportHeight || pageHeight > viewportHeight) {
+    throw new Error(`Final page exceeds PNG viewport: measured ${measuredHeight}, page ${pageHeight}, viewport ${viewportHeight}.`);
+  }
+  return measuredHeight;
+}
+
 export function requireLinuxCi(platform = process.platform, actions = process.env.GITHUB_ACTIONS) {
   if (platform !== "linux" || actions !== "true") {
     throw new Error("Approved Web image export runs only on an isolated Linux GitHub Actions runner.");
@@ -46,7 +54,93 @@ function findChrome() {
   throw new Error("No Chrome/Chromium browser is available on the Linux runner.");
 }
 
-function run() {
+async function captureValidatedPng(chrome, fileUrl, pngPath) {
+  const profile = fs.mkdtempSync(path.join(os.tmpdir(), "bougies-approved-chrome-"));
+  const browser = spawn(chrome, ["--headless", "--disable-gpu", "--disable-dev-shm-usage",
+    "--no-first-run", `--user-data-dir=${profile}`, "--remote-debugging-port=0", "about:blank"],
+  { stdio: "ignore" });
+  let socket;
+  try {
+    const portFile = path.join(profile, "DevToolsActivePort");
+    const deadline = Date.now() + 15000;
+    while (!fs.existsSync(portFile)) {
+      if (browser.exitCode !== null || Date.now() > deadline) throw new Error("Linux Chrome did not start for approved export.");
+      await new Promise((resolve) => setTimeout(resolve, 100));
+    }
+    const port = fs.readFileSync(portFile, "utf8").split("\n")[0];
+    const targets = await (await fetch(`http://127.0.0.1:${port}/json/list`)).json();
+    const page = targets.find((target) => target.type === "page");
+    if (!page?.webSocketDebuggerUrl) throw new Error("Linux Chrome did not expose a page target.");
+    socket = new WebSocket(page.webSocketDebuggerUrl);
+    await new Promise((resolve, reject) => {
+      socket.addEventListener("open", resolve, { once: true });
+      socket.addEventListener("error", reject, { once: true });
+    });
+    let nextId = 0;
+    const pending = new Map();
+    socket.addEventListener("message", ({ data }) => {
+      const message = JSON.parse(data);
+      const item = pending.get(message.id);
+      if (!item) return;
+      pending.delete(message.id);
+      if (message.error) item.reject(new Error(`${item.method}: ${message.error.message}`));
+      else item.resolve(message.result);
+    });
+    const command = (method, params = {}) => new Promise((resolve, reject) => {
+      const id = ++nextId;
+      pending.set(id, { resolve, reject, method });
+      socket.send(JSON.stringify({ id, method, params }));
+    });
+    const evaluate = async (expression) => {
+      const result = await command("Runtime.evaluate", { expression, awaitPromise: true, returnByValue: true });
+      if (result.exceptionDetails) throw new Error(`Final page evaluation failed: ${result.exceptionDetails.text}`);
+      return result.result.value;
+    };
+    await command("Page.enable");
+    await command("Emulation.setDeviceMetricsOverride", { width: 1800, height: 1200, deviceScaleFactor: 1, mobile: false });
+    const loaded = new Promise((resolve) => {
+      const onMessage = ({ data }) => {
+        if (JSON.parse(data).method !== "Page.loadEventFired") return;
+        socket.removeEventListener("message", onMessage);
+        resolve();
+      };
+      socket.addEventListener("message", onMessage);
+    });
+    await command("Page.navigate", { url: fileUrl });
+    await loaded;
+    const pageState = `new Promise(async (resolve, reject) => {
+      try {
+        if (document.readyState !== 'complete') await new Promise(r => addEventListener('load', r, {once:true}));
+        await document.fonts.ready;
+        for (let i=0;i<80;i++) {
+          const root=document.documentElement;
+          const names=['measured-height','promotion-overflow-count','inline-image-source-count','inline-image-target-count','inline-image-resolved-count'];
+          if (names.every(n=>root.hasAttribute('data-'+n))) {
+            const attrs=Array.from(root.attributes).filter(a=>a.name.startsWith('data-')).map(a=>a.name+'="'+a.value+'"').join(' ');
+            resolve({tag:'<html '+attrs+'>',height:Math.ceil(Math.max(root.scrollHeight,document.body.scrollHeight))});return;
+          }
+          await new Promise(r=>setTimeout(r,100));
+        }
+        reject(Error('Calendar image checks did not complete'));
+      } catch(e) { reject(e); }
+    })`;
+    const initial = await evaluate(pageState);
+    const height = validateRuntime(initial.tag);
+    await command("Emulation.setDeviceMetricsOverride", { width: 1800, height, deviceScaleFactor: 1, mobile: false });
+    await evaluate("new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))");
+    const final = await evaluate(pageState);
+    validateFinalCapture(final.tag, height, final.height);
+    const captured = await command("Page.captureScreenshot", { format: "png", fromSurface: true, captureBeyondViewport: false });
+    fs.writeFileSync(pngPath, Buffer.from(captured.data, "base64"));
+    return height;
+  } finally {
+    socket?.close();
+    browser.kill();
+    fs.rmSync(profile, { recursive: true, force: true });
+  }
+}
+
+async function run() {
   requireLinuxCi();
   const [sourcePath, outputDir, expectedSha] = process.argv.slice(2);
   if (!sourcePath || !outputDir || !/^[0-9a-f]{64}$/.test(expectedSha ?? "")) {
@@ -65,15 +159,7 @@ function run() {
   const chrome = findChrome();
   const browserArgs = ["--headless", "--disable-gpu", "--disable-dev-shm-usage"];
   const fileUrl = pathToFileURL(path.resolve(htmlPath)).href;
-  const rendered = execFileSync(chrome,
-    [...browserArgs, "--window-size=1800,1200", "--dump-dom", fileUrl],
-    { encoding: "utf8", maxBuffer: 128 * 1024 * 1024 });
-  const htmlTag = rendered.match(/<html\b[^>]*>/i)?.[0];
-  if (!htmlTag) throw new Error("Chromium did not return a rendered HTML element.");
-  const height = validateRuntime(htmlTag);
-  execFileSync(chrome,
-    [...browserArgs, `--window-size=1800,${height}`, `--screenshot=${pngPath}`, fileUrl],
-    { maxBuffer: 1024 * 1024 });
+  const height = await captureValidatedPng(chrome, fileUrl, pngPath);
   const png = fs.readFileSync(pngPath);
   if (png.subarray(0, 8).toString("hex") !== "89504e470d0a1a0a"
     || png.readUInt32BE(16) !== 1800 || png.readUInt32BE(20) !== height) {
@@ -97,4 +183,6 @@ function run() {
     pngHeight: height, pdfSha256: sha256(fs.readFileSync(pdfPath)), chromeVersion: execFileSync(chrome, ["--version"], { encoding: "utf8" }).trim() }));
 }
 
-if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(new URL(import.meta.url).pathname)) run();
+if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(new URL(import.meta.url).pathname)) {
+  run().catch((error) => { console.error(error); process.exitCode = 1; });
+}
