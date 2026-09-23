@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "surface": "mobile",
+  "month": "2026-09",
+  "source": {
+    "path": "mobile/review/2026-09/mobile-v16-central-michigan-card/calendar.html",
+    "sha256": "54ceef81249fd85714f01f5d86bb8640bddf01f736505ea7bad2f88e3eaf90d7"
+  },
+  "derivative": {
+    "path": "mobile/review/2026-09/mobile-v18/calendar.html",
+    "sha256": "a38202cc53c06ac47841bc9cc14b5e59a6578ebb4c6b9be67c70d780236d6125"
+  },
+  "restoration": {
+    "sha256": "54ceef81249fd85714f01f5d86bb8640bddf01f736505ea7bad2f88e3eaf90d7",
+    "matchesSource": true
+  }
+}

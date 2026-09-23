@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "surface": "mobile",
+  "month": "2026-08",
+  "source": {
+    "path": "customer/2026-08/mobile/mobile-v10-h12/calendar.html",
+    "sha256": "eae873077324aadb96de29648eff97b5316ffb7fd155fbd8b9521c15de239949"
+  },
+  "derivative": {
+    "path": "customer/2026-08/mobile/mobile-v10-h12-history/calendar.html",
+    "sha256": "f2792fca47ea77a37def738a766190ce6eb1cbd89ae67c4d4c89e242f077caf3"
+  },
+  "restoration": {
+    "sha256": "eae873077324aadb96de29648eff97b5316ffb7fd155fbd8b9521c15de239949",
+    "matchesSource": true
+  }
+}
