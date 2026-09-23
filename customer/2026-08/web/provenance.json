@@ -1,26 +1,27 @@
 {
   "schemaVersion": 1,
-  "artifactType": "customer-calendar-navigation-derivative",
+  "artifactType": "approved-customer-calendar-promotion",
   "surface": "web",
-  "source": {
-    "path": "output/calendar-renders/2026-08/calendar.html",
-    "sha256": "5e85dc066a63f384078b549c5324441fc8a91367862fcbe91a4a3c6e26657851",
-    "bytes": 28340408
+  "sourceReview": {
+    "path": "review/2026-08/v50-inline-history/calendar.html",
+    "sha256": "bc256167c59d13bf74b3b2d6ace9ae07cb8c22eb99bbd6fb8f98d69ba7e3eedf",
+    "bytes": 28343207
   },
   "derivative": {
-    "path": "output/customer-calendar-derivatives/2026-08/web/calendar.html",
-    "sha256": "58f870319eb745acf9f290a692e439c3bc019204119a3ddc97994a0435caa480",
-    "bytes": 28340082
+    "path": "customer/2026-08/web/calendar.html",
+    "sha256": "bc256167c59d13bf74b3b2d6ace9ae07cb8c22eb99bbd6fb8f98d69ba7e3eedf",
+    "bytes": 28343207
   },
   "equivalence": {
-    "scope": "all bytes outside the single customer-navigation region",
-    "sourceContentSha256": "c940415f44e466dfe229b2be712e076450a55493fc7c80c1bdbf9e90e158c24a",
-    "derivativeContentSha256": "c940415f44e466dfe229b2be712e076450a55493fc7c80c1bdbf9e90e158c24a",
+    "scope": "full file",
+    "sourceSha256": "bc256167c59d13bf74b3b2d6ace9ae07cb8c22eb99bbd6fb8f98d69ba7e3eedf",
+    "derivativeSha256": "bc256167c59d13bf74b3b2d6ace9ae07cb8c22eb99bbd6fb8f98d69ba7e3eedf",
     "status": "PASS"
   },
-  "navigationContext": "top-level browsing context via user-activated target=_top; actual Wix sandbox behavior requires draft QA",
-  "destinations": {
-    "currentCalendar": "https://www.bougiesbar.com/calendar",
-    "pastCalendars": "https://www.bougiesbar.com/calendars"
+  "navigation": {
+    "home": "https://www.bougiesbar.com/",
+    "september2026": "https://www.bougiesbar.com/calendar",
+    "august2026": "current page",
+    "july2026": "disabled — Coming soon"
   }
 }
