@@ -62,7 +62,7 @@ async function captureValidatedPng(chrome, fileUrl, pngPath) {
   let socket;
   try {
     const portFile = path.join(profile, "DevToolsActivePort");
-    const deadline = Date.now() + 15000;
+    const deadline = Date.now() + 60000;
     while (!fs.existsSync(portFile)) {
       if (browser.exitCode !== null || Date.now() > deadline) throw new Error("Linux Chrome did not start for approved export.");
       await new Promise((resolve) => setTimeout(resolve, 100));
@@ -140,7 +140,14 @@ async function captureValidatedPng(chrome, fileUrl, pngPath) {
       browser.kill();
       await exited;
     }
-    fs.rmSync(profile, { recursive: true, force: true, maxRetries: 10, retryDelay: 100 });
+    try {
+      fs.rmSync(profile, { recursive: true, force: true, maxRetries: 10, retryDelay: 100 });
+    } catch (error) {
+      // Chrome subprocesses can still write the profile after the parent exits.
+      // This isolated CI runner discards its temp directory at job teardown.
+      if (error.code !== "ENOTEMPTY") throw error;
+      console.warn(`Chrome profile cleanup deferred to runner teardown: ${error.code}`);
+    }
   }
 }
 
