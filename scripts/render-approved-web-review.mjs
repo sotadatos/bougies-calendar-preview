@@ -42,6 +42,51 @@ export function requireLinuxCi(platform = process.platform, actions = process.en
   }
 }
 
+function signalGroup(pgid, signal) {
+  try {
+    process.kill(-pgid, signal);
+    return true;
+  } catch (error) {
+    if (error.code === "ESRCH") return false;
+    throw error;
+  }
+}
+
+// Chrome is spawned as a process-group leader so every helper it forks can be
+// stopped together; cleanup fails loudly if any member survives SIGKILL.
+export async function stopProcessGroup(child, { graceMs = 5000, killMs = 5000 } = {}) {
+  const pgid = child.pid;
+  if (!pgid) return;
+  const gone = async (ms) => {
+    const deadline = Date.now() + ms;
+    while (signalGroup(pgid, 0)) {
+      if (Date.now() > deadline) return false;
+      await new Promise((resolve) => setTimeout(resolve, 50));
+    }
+    return true;
+  };
+  if (!signalGroup(pgid, "SIGTERM") || await gone(graceMs)) return;
+  if (!signalGroup(pgid, "SIGKILL") || await gone(killMs)) return;
+  throw new Error(`Chrome process group ${pgid} survived SIGKILL.`);
+}
+
+async function runChrome(chrome, args, timeoutMs = 120000) {
+  const child = spawn(chrome, args, { detached: true, stdio: ["ignore", "ignore", "inherit"] });
+  try {
+    await new Promise((resolve, reject) => {
+      const timer = setTimeout(() => reject(new Error("Linux Chrome PDF export timed out.")), timeoutMs);
+      child.once("error", (error) => { clearTimeout(timer); reject(error); });
+      child.once("exit", (code, signal) => {
+        clearTimeout(timer);
+        if (code === 0) resolve();
+        else reject(new Error(`Linux Chrome PDF export failed: ${signal ?? code}.`));
+      });
+    });
+  } finally {
+    await stopProcessGroup(child);
+  }
+}
+
 function sha256(bytes) {
   return createHash("sha256").update(bytes).digest("hex");
 }
@@ -58,11 +103,11 @@ async function captureValidatedPng(chrome, fileUrl, pngPath) {
   const profile = fs.mkdtempSync(path.join(os.tmpdir(), "bougies-approved-chrome-"));
   const browser = spawn(chrome, ["--headless", "--disable-gpu", "--disable-dev-shm-usage",
     "--no-first-run", `--user-data-dir=${profile}`, "--remote-debugging-port=0", "about:blank"],
-  { stdio: "ignore" });
+  { detached: true, stdio: "ignore" });
   let socket;
   try {
     const portFile = path.join(profile, "DevToolsActivePort");
-    const deadline = Date.now() + 15000;
+    const deadline = Date.now() + 60000;
     while (!fs.existsSync(portFile)) {
       if (browser.exitCode !== null || Date.now() > deadline) throw new Error("Linux Chrome did not start for approved export.");
       await new Promise((resolve) => setTimeout(resolve, 100));
@@ -135,11 +180,7 @@ async function captureValidatedPng(chrome, fileUrl, pngPath) {
     return height;
   } finally {
     socket?.close();
-    if (browser.exitCode === null && browser.signalCode === null) {
-      const exited = new Promise((resolve) => browser.once("exit", resolve));
-      browser.kill();
-      await exited;
-    }
+    await stopProcessGroup(browser);
     fs.rmSync(profile, { recursive: true, force: true, maxRetries: 10, retryDelay: 100 });
   }
 }
@@ -175,9 +216,8 @@ async function run() {
   const printCss = `<style>@page{size:1800px ${height}px;margin:0}@media print{html,body,.calendar-page{width:1800px;height:${height}px;margin:0}}</style>`;
   try {
     fs.writeFileSync(printPath, original.toString("utf8").replace("</head>", `${printCss}</head>`));
-    execFileSync(chrome,
-      [...browserArgs, `--print-to-pdf=${pdfPath}`, "--no-pdf-header-footer", pathToFileURL(printPath).href],
-      { maxBuffer: 1024 * 1024 });
+    await runChrome(chrome,
+      [...browserArgs, `--print-to-pdf=${pdfPath}`, "--no-pdf-header-footer", pathToFileURL(printPath).href]);
   } finally {
     fs.rmSync(printDir, { recursive: true, force: true });
   }
