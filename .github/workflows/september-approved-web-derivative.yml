@@ -30,10 +30,20 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
+          persist-credentials: false
           sparse-checkout: |
             scripts
             review/2026-09/v46-central-michigan-promo
             review/2026-09/v47
+
+      - name: Check out exact approved source commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.SOURCE_COMMIT }}
+          path: approved-source
+          fetch-depth: 1
+          persist-credentials: false
+          sparse-checkout: review/2026-09/v46-central-michigan-promo
 
       - name: Use Node.js with native WebSocket support
         uses: actions/setup-node@v4
@@ -48,13 +58,26 @@ jobs:
         run: |
           set -euo pipefail
           test ! -e "${DEST}"
-          git fetch --depth 1 origin "${SOURCE_COMMIT}"
-          git show "${SOURCE_COMMIT}:${SOURCE_PATH}" > "${RUNNER_TEMP}/approved-calendar.html"
+          test "$(git -C approved-source rev-parse HEAD)" = "${SOURCE_COMMIT}"
+          git -C approved-source show "${SOURCE_COMMIT}:${SOURCE_PATH}" > "${RUNNER_TEMP}/approved-calendar.html"
           echo "${SOURCE_SHA256}  ${RUNNER_TEMP}/approved-calendar.html" | sha256sum --check --strict
           echo "${SOURCE_SHA256}  ${SOURCE_PATH}" | sha256sum --check --strict
 
       - name: Render and validate image derivatives on isolated Linux
-        run: node scripts/render-approved-web-review.mjs "${RUNNER_TEMP}/approved-calendar.html" "${DEST}" "${SOURCE_SHA256}"
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Rendering must run without any repository credential in env or git config.
+          test -z "${GITHUB_TOKEN:-}${PREVIEW_DEPLOY_TOKEN:-}"
+          for repo in . approved-source; do
+            if git -C "${repo}" config --local --name-only --get-regexp '^(http\..*extraheader|credential\..*|url\..*)$'; then
+              echo "Repository credential persisted in ${repo}." >&2; exit 1
+            fi
+          done
+          node scripts/render-approved-web-review.mjs "${RUNNER_TEMP}/approved-calendar.html" "${DEST}" "${SOURCE_SHA256}"
+          if pgrep -u "$(id -u)" -l chrom; then
+            echo "Chrome processes outlived the export." >&2; exit 1
+          fi
 
       - name: Publish a new immutable Web review candidate
         if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
@@ -78,9 +101,13 @@ jobs:
           done
           git config user.name "bougies-calendar-bot"
           git config user.email "actions@users.noreply.github.com"
-          git commit -m "Publish approved September Web v47 derivative [automated]"
-          git remote set-url origin "https://x-access-token:${PREVIEW_DEPLOY_TOKEN}@github.com/sotadatos/bougies-calendar-preview.git"
-          git push origin HEAD:main
+          git -c core.hooksPath=/dev/null commit --no-verify -m "Publish approved September Web v47 derivative [automated]"
+          # Pass the token through git's environment only: never argv or .git/config.
+          AUTH="$(printf 'x-access-token:%s' "${PREVIEW_DEPLOY_TOKEN}" | base64 -w0)"
+          echo "::add-mask::${AUTH}"
+          GIT_CONFIG_COUNT=1 GIT_CONFIG_KEY_0=http.https://github.com/.extraheader \
+            GIT_CONFIG_VALUE_0="AUTHORIZATION: basic ${AUTH}" \
+            git -c core.hooksPath=/dev/null push --no-verify https://github.com/sotadatos/bougies-calendar-preview.git HEAD:main
 
       - name: Record candidate evidence
         if: always()
