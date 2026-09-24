@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "productionPointer": true,
   "targetMonth": "2026-09",
-  "mobileReviewVersion": "mobile-v18",
+  "mobileReviewVersion": "mobile-v20",
   "renderMode": "review",
-  "approvedImmutableReviewUrl": "https://sotadatos.github.io/bougies-calendar-preview/mobile/review/2026-09/mobile-v18/calendar.html",
-  "approvedImmutableManifestUrl": "https://sotadatos.github.io/bougies-calendar-preview/mobile/review/2026-09/mobile-v18/prototype-manifest.json",
-  "sourcePreviewCommit": "62fd17b064ea7c33d6778358e99b18bcd6bb861e",
-  "calendarHtmlSha256": "a38202cc53c06ac47841bc9cc14b5e59a6578ebb4c6b9be67c70d780236d6125",
-  "sourceManifestSha256": "569946212d6141ad7878a4a1db3d2bafdba51559b08f0684325426ec257a13b6",
+  "approvedImmutableReviewUrl": "https://sotadatos.github.io/bougies-calendar-preview/mobile/review/2026-09/mobile-v20/calendar.html",
+  "approvedImmutableManifestUrl": "https://sotadatos.github.io/bougies-calendar-preview/mobile/review/2026-09/mobile-v20/prototype-manifest.json",
+  "sourcePreviewCommit": "326b2f8da41e33c2244505f92db10aea3ad005a1",
+  "calendarHtmlSha256": "f6ec9ebcd063389d6c9de53b5a33a4b1d674ee47b3b3ed835c0004b217e682d7",
+  "sourceManifestSha256": "22a16d73b98fb553a0533395027c646ad69a34c60ad975b434a31f5d8b9b67e6",
   "eventCount": 45,
   "sourceDesktopReview": {
     "version": "v12",
@@ -16,13 +16,13 @@
     "htmlSha256": "5d0b7060f79b8b6115e5f26b53bffd406448bf0b730ec6674629e0e681020343",
     "previewCommit": "f086440516663403bc16ec4501d21542e7211c94"
   },
-  "publishedAt": "2026-09-23T14:50:01.937Z",
-  "sourceReviewManifestJson": "{\n  \"schemaVersion\": 1,\n  \"prototypeOnly\": true,\n  \"targetMonth\": \"2026-09\",\n  \"mobileReviewVersion\": \"mobile-v18\",\n  \"renderMode\": \"review\",\n  \"sourceDesktopReview\": {\n    \"version\": \"v12\",\n    \"htmlUrl\": \"https://sotadatos.github.io/bougies-calendar-preview/review/2026-09/v12/calendar.html\",\n    \"htmlSha256\": \"5d0b7060f79b8b6115e5f26b53bffd406448bf0b730ec6674629e0e681020343\",\n    \"previewCommit\": \"f086440516663403bc16ec4501d21542e7211c94\"\n  },\n  \"sourceFixture\": {\n    \"path\": \"calendar-renderer/mobile/fixtures/2026-09-mobile-v13.events.public.json\",\n    \"sha256\": \"009d60be8828d0b26cd256cbbecf361578b50bcf5b1f71486d818b1ab5eb3460\",\n    \"eventCount\": 45,\n    \"representativeDates\": [\n      \"2026-09-01\",\n      \"2026-09-02\",\n      \"2026-09-03\",\n      \"2026-09-04\",\n      \"2026-09-05\",\n      \"2026-09-06\",\n      \"2026-09-07\",\n      \"2026-09-08\",\n      \"2026-09-09\",\n      \"2026-09-10\",\n      \"2026-09-11\",\n      \"2026-09-12\",\n      \"2026-09-13\",\n      \"2026-09-14\",\n      \"2026-09-15\",\n      \"2026-09-16\",\n      \"2026-09-17\",\n      \"2026-09-18\",\n      \"2026-09-19\",\n      \"2026-09-20\",\n      \"2026-09-21\",\n      \"2026-09-22\",\n      \"2026-09-23\",\n      \"2026-09-24\",\n      \"2026-09-25\",\n      \"2026-09-26\",\n      \"2026-09-27\",\n      \"2026-09-28\",\n      \"2026-09-29\",\n      \"2026-09-30\"\n    ]\n  },\n  \"sourceProvenance\": {\n    \"path\": \"calendar-renderer/mobile/fixtures/2026-09-mobile-v13.source-provenance.json\",\n    \"sha256\": \"baf2964f89e20d58e9c7366ad6553857287d08b8a2f4fdb8e25b83fa9bce7661\",\n    \"sourceSystem\": \"airtable\",\n    \"baseId\": \"appO1Poo0qe1dG0QQ\",\n    \"tableId\": \"tbl6Akw4TYff1oZPF\",\n    \"bindingCount\": 21,\n    \"capturedAt\": \"2026-09-22T00:00:00.000Z\"\n  },\n  \"embeddedImages\": {\n    \"sourceCount\": 31,\n    \"targetCount\": 60\n  },\n  \"imageDelivery\": {\n    \"htmlBytes\": 15532570,\n    \"imageOccurrences\": 31,\n    \"uniqueImageCount\": 31,\n    \"repeatedImageTargets\": 0,\n    \"uniqueRawImageBytes\": 11559479,\n    \"allRawImageBytes\": 11559479,\n    \"encodedImageBytes\": 15413379,\n    \"uniqueEncodedImageBytes\": 15413379,\n    \"base64DataUriOverheadBytes\": 3853900,\n    \"markupWithoutDataUrisBytes\": 119191,\n    \"uniqueInlineBaselineBytes\": 15532570,\n    \"styleBytes\": 28904,\n    \"executableScriptBytes\": 5549,\n    \"payloadContainerBytes\": 15414022,\n    \"largestImages\": [\n      {\n        \"mimeType\": \"image/png\",\n        \"sha256\": \"a1d12c406da0959b087160329ac6225798b7eb457ed3c9d3cc82d8703ccfa3f9\",\n        \"rawBytes\": 1831497,\n        \"encodedBytes\": 2442018,\n        \"targetCount\": 1\n      },\n      {\n        \"mimeType\": \"image/png\",\n        \"sha256\": \"4f029697cb6fedbe644a353602dd6f5980643968a5f7f2a7fd983c3cf6287f55\",\n        \"rawBytes\": 1633929,\n        \"encodedBytes\": 2178594,\n        \"targetCount\": 1\n      },\n      {\n        \"mimeType\": \"image/png\",\n        \"sha256\": \"3e81bca270512ea963d6b3a708f9b3b822691a07a556d2f12acbb8375f2b1487\",\n        \"rawBytes\": 911481,\n        \"encodedBytes\": 1215330,\n        \"targetCount\": 1\n      },\n      {\n        \"mimeType\": \"image/png\",\n        \"sha256\": \"d95b2f15554119f6f7f4a226d2886cbf8a843a7ddea3aa825dedc4fb2625ee96\",\n        \"rawBytes\": 667563,\n        \"encodedBytes\": 890106,\n        \"targetCount\": 1\n      },\n      {\n        \"mimeType\": \"image/png\",\n        \"sha256\": \"480f85eee8adede95f62924cd2c2c1aa4dd2782743814e8ee260d66c16855f7f\",\n        \"rawBytes\": 629393,\n        \"encodedBytes\": 839214,\n        \"targetCount\": 1\n      },\n      {\n        \"mimeType\": \"image/png\",\n        \"sha256\": \"249bf73f682bfec6f406a8e55a45cbe1e42d43504a1aef9ab05dbdde5ad6c04d\",\n        \"rawBytes\": 629387,\n        \"encodedBytes\": 839206,\n        \"targetCount\": 1\n      },\n      {\n        \"mimeType\": \"image/png\",\n        \"sha256\": \"752909552b3978d36034d651dbf917f896101acd0f56fbf336098248336b8619\",\n        \"rawBytes\": 623073,\n        \"encodedBytes\": 830786,\n        \"targetCount\": 1\n      },\n      {\n        \"mimeType\": \"image/png\",\n        \"sha256\": \"5f626940ca33f833820f7045a95d6ea49d9ea5375f7682fd2835b32729eb097b\",\n        \"rawBytes\": 617420,\n        \"encodedBytes\": 823250,\n        \"targetCount\": 1\n      },\n      {\n        \"mimeType\": \"image/png\",\n        \"sha256\": \"55df05f3354139b71bb3fd523f27a59cc743d5f6a4108a5aa5c6e010ee2c2ae6\",\n        \"rawBytes\": 616949,\n        \"encodedBytes\": 822622,\n        \"targetCount\": 1\n      },\n      {\n        \"mimeType\": \"image/jpeg\",\n        \"sha256\": \"a89bdb60a1637e54c64c41fb55d727203d852fc3085ccc514c210d08abf68747\",\n        \"rawBytes\": 593793,\n        \"encodedBytes\": 791747,\n        \"targetCount\": 1\n      }\n    ]\n  },\n  \"htmlBytes\": 15532570,\n  \"inlineHistoryDerivative\": {\n    \"sourceReviewVersion\": \"mobile-v16-central-michigan-card\",\n    \"sourceHtmlSha256\": \"54ceef81249fd85714f01f5d86bb8640bddf01f736505ea7bad2f88e3eaf90d7\",\n    \"restorationMatchesSource\": true,\n    \"augustCustomerUrl\": \"https://sotadatos.github.io/bougies-calendar-preview/customer/2026-08/mobile/mobile-v10-h12-history/calendar.html\",\n    \"augustCustomerSha256\": \"f2792fca47ea77a37def738a766190ce6eb1cbd89ae67c4d4c89e242f077caf3\"\n  }\n}\n",
+  "publishedAt": "2026-09-24T15:13:44.856Z",
+  "sourceReviewManifestJson": "{\n  \"schemaVersion\": 1,\n  \"prototypeOnly\": true,\n  \"targetMonth\": \"2026-09\",\n  \"mobileReviewVersion\": \"mobile-v20\",\n  \"renderMode\": \"review\",\n  \"sourceDesktopReview\": {\n    \"version\": \"v12\",\n    \"htmlUrl\": \"https://sotadatos.github.io/bougies-calendar-preview/review/2026-09/v12/calendar.html\",\n    \"htmlSha256\": \"5d0b7060f79b8b6115e5f26b53bffd406448bf0b730ec6674629e0e681020343\",\n    \"previewCommit\": \"f086440516663403bc16ec4501d21542e7211c94\"\n  },\n  \"sourceFixture\": {\n    \"path\": \"calendar-renderer/mobile/fixtures/2026-09-mobile-v13.events.public.json\",\n    \"sha256\": \"009d60be8828d0b26cd256cbbecf361578b50bcf5b1f71486d818b1ab5eb3460\",\n    \"eventCount\": 45,\n    \"representativeDates\": [\n      \"2026-09-01\",\n      \"2026-09-02\",\n      \"2026-09-03\",\n      \"2026-09-04\",\n      \"2026-09-05\",\n      \"2026-09-06\",\n      \"2026-09-07\",\n      \"2026-09-08\",\n      \"2026-09-09\",\n      \"2026-09-10\",\n      \"2026-09-11\",\n      \"2026-09-12\",\n      \"2026-09-13\",\n      \"2026-09-14\",\n      \"2026-09-15\",\n      \"2026-09-16\",\n      \"2026-09-17\",\n      \"2026-09-18\",\n      \"2026-09-19\",\n      \"2026-09-20\",\n      \"2026-09-21\",\n      \"2026-09-22\",\n      \"2026-09-23\",\n      \"2026-09-24\",\n      \"2026-09-25\",\n      \"2026-09-26\",\n      \"2026-09-27\",\n      \"2026-09-28\",\n      \"2026-09-29\",\n      \"2026-09-30\"\n    ]\n  },\n  \"sourceProvenance\": {\n    \"path\": \"calendar-renderer/mobile/fixtures/2026-09-mobile-v13.source-provenance.json\",\n    \"sha256\": \"baf2964f89e20d58e9c7366ad6553857287d08b8a2f4fdb8e25b83fa9bce7661\",\n    \"sourceSystem\": \"airtable\",\n    \"baseId\": \"appO1Poo0qe1dG0QQ\",\n    \"tableId\": \"tbl6Akw4TYff1oZPF\",\n    \"bindingCount\": 21,\n    \"capturedAt\": \"2026-09-22T00:00:00.000Z\"\n  },\n  \"embeddedImages\": {\n    \"sourceCount\": 31,\n    \"targetCount\": 60\n  },\n  \"imageDelivery\": {\n    \"htmlBytes\": 15532797,\n    \"imageOccurrences\": 31,\n    \"uniqueImageCount\": 31,\n    \"repeatedImageTargets\": 0,\n    \"uniqueRawImageBytes\": 11559479,\n    \"allRawImageBytes\": 11559479,\n    \"encodedImageBytes\": 15413379,\n    \"uniqueEncodedImageBytes\": 15413379,\n    \"base64DataUriOverheadBytes\": 3853900,\n    \"markupWithoutDataUrisBytes\": 119418,\n    \"uniqueInlineBaselineBytes\": 15532797,\n    \"styleBytes\": 29101,\n    \"executableScriptBytes\": 5723,\n    \"payloadContainerBytes\": 15414022,\n    \"largestImages\": [\n      {\n        \"mimeType\": \"image/png\",\n        \"sha256\": \"a1d12c406da0959b087160329ac6225798b7eb457ed3c9d3cc82d8703ccfa3f9\",\n        \"rawBytes\": 1831497,\n        \"encodedBytes\": 2442018,\n        \"targetCount\": 1\n      },\n      {\n        \"mimeType\": \"image/png\",\n        \"sha256\": \"4f029697cb6fedbe644a353602dd6f5980643968a5f7f2a7fd983c3cf6287f55\",\n        \"rawBytes\": 1633929,\n        \"encodedBytes\": 2178594,\n        \"targetCount\": 1\n      },\n      {\n        \"mimeType\": \"image/png\",\n        \"sha256\": \"3e81bca270512ea963d6b3a708f9b3b822691a07a556d2f12acbb8375f2b1487\",\n        \"rawBytes\": 911481,\n        \"encodedBytes\": 1215330,\n        \"targetCount\": 1\n      },\n      {\n        \"mimeType\": \"image/png\",\n        \"sha256\": \"d95b2f15554119f6f7f4a226d2886cbf8a843a7ddea3aa825dedc4fb2625ee96\",\n        \"rawBytes\": 667563,\n        \"encodedBytes\": 890106,\n        \"targetCount\": 1\n      },\n      {\n        \"mimeType\": \"image/png\",\n        \"sha256\": \"480f85eee8adede95f62924cd2c2c1aa4dd2782743814e8ee260d66c16855f7f\",\n        \"rawBytes\": 629393,\n        \"encodedBytes\": 839214,\n        \"targetCount\": 1\n      },\n      {\n        \"mimeType\": \"image/png\",\n        \"sha256\": \"249bf73f682bfec6f406a8e55a45cbe1e42d43504a1aef9ab05dbdde5ad6c04d\",\n        \"rawBytes\": 629387,\n        \"encodedBytes\": 839206,\n        \"targetCount\": 1\n      },\n      {\n        \"mimeType\": \"image/png\",\n        \"sha256\": \"752909552b3978d36034d651dbf917f896101acd0f56fbf336098248336b8619\",\n        \"rawBytes\": 623073,\n        \"encodedBytes\": 830786,\n        \"targetCount\": 1\n      },\n      {\n        \"mimeType\": \"image/png\",\n        \"sha256\": \"5f626940ca33f833820f7045a95d6ea49d9ea5375f7682fd2835b32729eb097b\",\n        \"rawBytes\": 617420,\n        \"encodedBytes\": 823250,\n        \"targetCount\": 1\n      },\n      {\n        \"mimeType\": \"image/png\",\n        \"sha256\": \"55df05f3354139b71bb3fd523f27a59cc743d5f6a4108a5aa5c6e010ee2c2ae6\",\n        \"rawBytes\": 616949,\n        \"encodedBytes\": 822622,\n        \"targetCount\": 1\n      },\n      {\n        \"mimeType\": \"image/jpeg\",\n        \"sha256\": \"a89bdb60a1637e54c64c41fb55d727203d852fc3085ccc514c210d08abf68747\",\n        \"rawBytes\": 593793,\n        \"encodedBytes\": 791747,\n        \"targetCount\": 1\n      }\n    ]\n  },\n  \"htmlBytes\": 15532797,\n  \"sourceMergeSha\": \"d9b8d72e939dffaec17213711d701ad8291168bd\",\n  \"authorizationId\": \"loic-public-mobile-history-2026-09-24\"\n}\n",
   "sourceReviewManifest": {
     "schemaVersion": 1,
     "prototypeOnly": true,
     "targetMonth": "2026-09",
-    "mobileReviewVersion": "mobile-v18",
+    "mobileReviewVersion": "mobile-v20",
     "renderMode": "review",
     "sourceDesktopReview": {
       "version": "v12",
@@ -81,7 +81,7 @@
       "targetCount": 60
     },
     "imageDelivery": {
-      "htmlBytes": 15532570,
+      "htmlBytes": 15532797,
       "imageOccurrences": 31,
       "uniqueImageCount": 31,
       "repeatedImageTargets": 0,
@@ -90,10 +90,10 @@
       "encodedImageBytes": 15413379,
       "uniqueEncodedImageBytes": 15413379,
       "base64DataUriOverheadBytes": 3853900,
-      "markupWithoutDataUrisBytes": 119191,
-      "uniqueInlineBaselineBytes": 15532570,
-      "styleBytes": 28904,
-      "executableScriptBytes": 5549,
+      "markupWithoutDataUrisBytes": 119418,
+      "uniqueInlineBaselineBytes": 15532797,
+      "styleBytes": 29101,
+      "executableScriptBytes": 5723,
       "payloadContainerBytes": 15414022,
       "largestImages": [
         {
@@ -168,13 +168,8 @@
         }
       ]
     },
-    "htmlBytes": 15532570,
-    "inlineHistoryDerivative": {
-      "sourceReviewVersion": "mobile-v16-central-michigan-card",
-      "sourceHtmlSha256": "54ceef81249fd85714f01f5d86bb8640bddf01f736505ea7bad2f88e3eaf90d7",
-      "restorationMatchesSource": true,
-      "augustCustomerUrl": "https://sotadatos.github.io/bougies-calendar-preview/customer/2026-08/mobile/mobile-v10-h12-history/calendar.html",
-      "augustCustomerSha256": "f2792fca47ea77a37def738a766190ce6eb1cbd89ae67c4d4c89e242f077caf3"
-    }
+    "htmlBytes": 15532797,
+    "sourceMergeSha": "d9b8d72e939dffaec17213711d701ad8291168bd",
+    "authorizationId": "loic-public-mobile-history-2026-09-24"
   }
 }

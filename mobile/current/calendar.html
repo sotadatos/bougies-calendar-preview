@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-mobile-prototype-version="mobile-v16" data-mobile-presentation-contract="mobile-v10">
+<html lang="en" data-mobile-prototype-version="mobile-v20" data-mobile-presentation-contract="mobile-v10">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -93,6 +93,63 @@ body {
   background: #15110c;
 }
 .mobile-archive-links a { padding: 0.4rem; color: var(--gold); text-decoration: none; }
+
+/* Inline month history: when present, actions may wrap below the brand on
+   narrow screens, and the menu is capped to the padded viewport width while
+   anchored to the right edge so it never causes horizontal overflow. */
+.mobile-calendar-navigation:has(.month-history) { flex-wrap: wrap; row-gap: 0.5rem; }
+.mobile-calendar-navigation:has(.month-history) .mobile-brand { flex: 1 1 10rem; }
+.mobile-calendar-navigation:has(.month-history) .mobile-navigation-actions { margin-left: auto; }
+.month-history { position: relative; }
+.month-history summary { cursor: pointer; list-style: none; }
+.month-history summary::-webkit-details-marker { display: none; }
+.month-history summary::after {
+  content: "";
+  margin-left: 0.4rem;
+  border: 0.25rem solid transparent;
+  border-top-color: currentColor;
+  transform: translateY(0.125rem);
+}
+.month-history[open] summary::after { transform: translateY(-0.125rem) rotate(180deg); }
+.mobile-history-link:focus-visible,
+.month-history__item--link:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+.month-history--mobile .month-history__menu {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 0.35rem);
+  right: 0;
+  display: grid;
+  gap: 0.1rem;
+  width: min(15rem, calc(100vw - (var(--page-padding) * 2)));
+  margin: 0;
+  padding: 0.35rem;
+  border: 1px solid rgba(255, 201, 79, 0.58);
+  border-radius: 0.5rem;
+  background: rgba(15, 10, 7, 0.88);
+  box-shadow: 0 0.6rem 1.4rem rgba(0, 0, 0, 0.45);
+  list-style: none;
+}
+.month-history--mobile .month-history__item {
+  display: block;
+  min-height: 2.75rem;
+  padding: 0.8rem 0.6rem;
+  border-radius: 0.35rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+/* Modifiers share the surface scope so they win over the base item rule. */
+.month-history--mobile .month-history__item--link { color: var(--gold); }
+.month-history--mobile .month-history__item--link:active { background: rgba(255, 201, 79, 0.16); }
+.month-history--mobile .month-history__item--disabled { opacity: 0.55; }
+.month-history__state { font-weight: 600; }
 
 .mobile-home-link {
   display: inline-flex;
@@ -983,13 +1040,14 @@ html[data-mobile-presentation-contract="mobile-v10"] .mobile-event-card--dj-comp
   white-space: nowrap;
 }
 </style>
-<!-- INLINE_HISTORY_STYLE_START --><style>
-.inline-history-actions{position:absolute;z-index:8;display:flex;align-items:center;gap:8px}.calendar-header>.inline-history-actions{top:14px;right:40px}.calendar-page>.inline-history-actions{top:18px;right:28px}.calendar-nav-link{display:inline-flex;min-height:36px;align-items:center;padding:7px 11px;border:1px solid rgba(255,201,79,.58);border-radius:999px;background:rgba(15,10,7,.72);color:#f4c86e;font:900 11px/1 var(--font-body);letter-spacing:.08em;text-decoration:none;text-transform:uppercase}.history-nav{position:relative;z-index:8;text-align:left}.history-nav summary{cursor:pointer;list-style:none}.history-nav summary::-webkit-details-marker{display:none}.history-nav summary::after{content:"▾";margin-left:.4rem}.history-nav[open] summary::after{transform:rotate(180deg)}.history-nav summary:focus-visible,.history-nav a:focus-visible,.history-home-link:focus-visible{outline:2px solid #f4c86e;outline-offset:3px}.history-nav__menu{position:absolute;top:calc(100% + .45rem);right:0;width:15.5rem;padding:.35rem;border:1px solid rgba(255,201,79,.68);border-radius:.55rem;background:rgba(8,12,11,.96);box-shadow:0 .75rem 1.8rem rgba(0,0,0,.45)}.history-nav__row{display:flex;align-items:center;justify-content:space-between;gap:.7rem;min-height:2.4rem;padding:.48rem .55rem;border-radius:.3rem;color:#f4c86e;font:700 .78rem/1.2 var(--font-display,Georgia,serif);letter-spacing:.035em;text-decoration:none}.history-nav__row em{color:rgba(255,248,223,.68);font-size:.63rem;font-style:normal;letter-spacing:.06em;text-transform:uppercase}.history-nav a.history-nav__row:hover{background:rgba(255,201,79,.14)}.history-nav__disabled{color:rgba(227,214,186,.52)}.mobile-navigation-actions{display:flex;align-items:center;gap:.45rem;margin-left:auto}.mobile-navigation-actions .history-nav__menu{width:min(16.5rem,calc(100vw - (var(--page-padding,1rem) * 2)))}.mobile-calendar-navigation{flex-wrap:wrap}@media(max-width:23.5rem){.mobile-brand{flex:1 0 100%}}
-</style><!-- INLINE_HISTORY_STYLE_END --></head>
+</head>
 <body>
-<main class="mobile-calendar" data-mobile-prototype="mobile-v16">
+<main class="mobile-calendar" data-mobile-prototype="mobile-v20">
     <header class="mobile-month-header">
-      <nav class="mobile-calendar-navigation" aria-label="Bougies calendar navigation"><span class="mobile-brand">Bougies · An Old Florida Tavern</span><span class="mobile-navigation-actions"><!-- INLINE_HISTORY_NAV_START --><details class="history-nav" data-inline-history-nav data-surface="mobile"><summary class="mobile-home-link" aria-label="Open past calendars">Past Calendars</summary><div class="history-nav__menu" role="group" aria-label="Calendar months"><span class="history-nav__row" aria-current="page"><span>September 2026</span><em>Current</em></span><a class="history-nav__row" href="https://sotadatos.github.io/bougies-calendar-preview/customer/2026-08/mobile/mobile-v10-h12-history/calendar.html" target="_top" aria-label="Open August 2026 calendar"><span>August 2026</span></a><span class="history-nav__row history-nav__disabled" aria-disabled="true"><span>July 2026</span><em>Coming soon</em></span></div></details><script>(()=>{const host=document.currentScript.previousElementSibling;const menu=host?.matches("[data-inline-history-nav]")?host:host?.querySelector("[data-inline-history-nav]");if(!menu)return;const trigger=menu.querySelector("summary");document.addEventListener("keydown",event=>{if(event.key==="Escape"&&menu.open){menu.open=false;trigger.focus()}});document.addEventListener("pointerdown",event=>{if(menu.open&&!menu.contains(event.target))menu.open=false})})()</script><!-- INLINE_HISTORY_NAV_END --><a class="mobile-home-link" href="https://www.bougiesbar.com/" target="_top" aria-label="Return to Bougies home">Home</a></span></nav>
+      <nav class="mobile-calendar-navigation" aria-label="Bougies calendar navigation">
+        <span class="mobile-brand">Bougies · An Old Florida Tavern</span>
+        <div class="mobile-navigation-actions"><a class="mobile-home-link" href="https://www.bougiesbar.com/" aria-label="Return to Bougies home">Home</a><details class="month-history month-history--mobile" data-month-history><summary class="mobile-home-link mobile-history-link">Past Calendars</summary><ul class="month-history__menu" aria-label="Past Calendars"><li><span class="month-history__item month-history__item--current" aria-current="page">September 2026<span class="month-history__state"> — Current</span></span></li><li><a class="month-history__item month-history__item--link" href="https://calendar.bougiesbar.com/2026-08/" target="_top">August 2026</a></li><li><span class="month-history__item month-history__item--disabled" aria-disabled="true">July 2026<span class="month-history__state"> — Coming soon</span></span></li></ul></details><script>(()=>{const menu=document.currentScript.previousElementSibling;if(!menu||!menu.matches("[data-month-history]"))return;const trigger=menu.querySelector("summary");document.addEventListener("keydown",(event)=>{if(event.key!=="Escape"||!menu.open)return;const inside=menu.contains(document.activeElement)||document.activeElement===document.body;menu.open=false;if(inside)trigger.focus()});document.addEventListener("pointerdown",(event)=>{if(menu.open&&!menu.contains(event.target))menu.open=false});menu.addEventListener("focusout",(event)=>{if(menu.open&&event.relatedTarget&&!menu.contains(event.relatedTarget))menu.open=false})})()</script></div>
+      </nav>
       <div class="mobile-month-title" data-mobile-image-ref="mobile-image-1" role="img" aria-label="September 2026" data-mobile-required></div>
       <p class="mobile-theme-name" data-mobile-required>September Sounds at Bougies</p>
       
