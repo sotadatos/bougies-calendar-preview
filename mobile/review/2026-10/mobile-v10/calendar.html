@@ -1,0 +1,1874 @@
+<!doctype html>
+<html lang="en" data-mobile-prototype-version="mobile-v10" data-mobile-presentation-contract="mobile-v10">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Bougies Mobile Calendar Prototype — October 2026</title>
+<style>:root {
+  color-scheme: dark;
+  --page-padding: clamp(0.75rem, 4vw, 1.5rem);
+  --date-rail-width: clamp(3rem, 14vw, 4.25rem);
+  --row-gap: clamp(0.65rem, 2.8vw, 1rem);
+  --card-padding: clamp(0.75rem, 3.2vw, 1.1rem);
+  --ink: #fff8df;
+  --muted: #e3d6ba;
+  --gold: #ffc94f;
+  --pink: #ff4fa3;
+  --cyan: #38d9d0;
+  --panel: rgba(15, 20, 20, 0.92);
+  --line: rgba(255, 221, 148, 0.2);
+  font-family: "Avenir Next Condensed", "Futura Condensed ExtraBold", "Trebuchet MS", sans-serif;
+  background: #07100f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-width: 0;
+  overflow-x: clip;
+}
+
+body {
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(0, 137, 123, 0.24), transparent 33rem),
+    radial-gradient(circle at 88% 20%, rgba(255, 79, 163, 0.16), transparent 26rem),
+    linear-gradient(180deg, #07100f 0%, #11120f 55%, #080c0b 100%);
+}
+
+.mobile-calendar {
+  width: 100%;
+  max-width: 35rem;
+  min-width: 0;
+  margin: 0 auto;
+  padding: var(--page-padding);
+}
+
+.mobile-month-header {
+  display: grid;
+  gap: clamp(0.7rem, 3vw, 1.1rem);
+  margin-bottom: clamp(1.2rem, 5vw, 2rem);
+}
+
+.mobile-calendar-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.mobile-brand {
+  min-width: 0;
+  color: var(--muted);
+  font-size: clamp(0.67rem, 2.9vw, 0.82rem);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.mobile-navigation-actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 0.42rem;
+}
+
+.mobile-archive-menu { position: relative; }
+.mobile-archive-menu summary { cursor: pointer; list-style: none; }
+.mobile-archive-menu summary::-webkit-details-marker { display: none; }
+.mobile-archive-links {
+  position: absolute;
+  z-index: 5;
+  right: 0;
+  top: calc(100% + 0.25rem);
+  display: grid;
+  min-width: 8rem;
+  padding: 0.35rem;
+  border: 1px solid rgba(255, 201, 79, 0.58);
+  border-radius: 0.5rem;
+  background: #15110c;
+}
+.mobile-archive-links a { padding: 0.4rem; color: var(--gold); text-decoration: none; }
+
+/* Inline month history: when present, actions may wrap below the brand on
+   narrow screens, and the menu is capped to the padded viewport width while
+   anchored to the right edge so it never causes horizontal overflow. */
+.mobile-calendar-navigation:has(.month-history) { flex-wrap: wrap; row-gap: 0.5rem; }
+.mobile-calendar-navigation:has(.month-history) .mobile-brand { flex: 1 1 10rem; }
+.mobile-calendar-navigation:has(.month-history) .mobile-navigation-actions { margin-left: auto; }
+.month-history { position: relative; }
+.month-history summary { cursor: pointer; list-style: none; }
+.month-history summary::-webkit-details-marker { display: none; }
+.month-history summary::after {
+  content: "";
+  margin-left: 0.4rem;
+  border: 0.25rem solid transparent;
+  border-top-color: currentColor;
+  transform: translateY(0.125rem);
+}
+.month-history[open] summary::after { transform: translateY(-0.125rem) rotate(180deg); }
+.mobile-history-link:focus-visible,
+.month-history__item--link:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+.month-history--mobile .month-history__menu {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 0.35rem);
+  right: 0;
+  display: grid;
+  gap: 0.1rem;
+  width: min(15rem, calc(100vw - (var(--page-padding) * 2)));
+  margin: 0;
+  padding: 0.35rem;
+  border: 1px solid rgba(255, 201, 79, 0.58);
+  border-radius: 0.5rem;
+  background: rgba(15, 10, 7, 0.88);
+  box-shadow: 0 0.6rem 1.4rem rgba(0, 0, 0, 0.45);
+  list-style: none;
+}
+.month-history--mobile .month-history__item {
+  display: block;
+  min-height: 2.75rem;
+  padding: 0.8rem 0.6rem;
+  border-radius: 0.35rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+/* Modifiers share the surface scope so they win over the base item rule. */
+.month-history--mobile .month-history__item--link { color: var(--gold); }
+.month-history--mobile .month-history__item--link:active { background: rgba(255, 201, 79, 0.16); }
+.month-history--mobile .month-history__item--disabled { opacity: 0.55; }
+.month-history__state { font-weight: 600; }
+
+.mobile-home-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.25rem;
+  flex: 0 0 auto;
+  padding: 0.42rem 0.68rem;
+  border: 1px solid rgba(255, 201, 79, 0.58);
+  border-radius: 999px;
+  color: var(--gold);
+  font-size: clamp(0.62rem, 2.7vw, 0.76rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.mobile-home-link:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.mobile-home-link:active {
+  background: rgba(255, 201, 79, 0.18);
+}
+
+.mobile-month-title {
+  width: 100%;
+  aspect-ratio: 3 / 1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.mobile-prototype-note {
+  margin: -0.35rem 0 0;
+  color: rgba(255, 248, 223, 0.67);
+  font-size: clamp(0.65rem, 2.7vw, 0.78rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.mobile-theme-name {
+  margin: -0.35rem 0 0;
+  color: var(--gold);
+  font-size: clamp(0.78rem, 3.3vw, 0.94rem);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.mobile-glance {
+  display: grid;
+  gap: 0.5rem;
+  padding: clamp(0.65rem, 2.8vw, 0.9rem);
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  background: rgba(15, 20, 20, 0.6);
+}
+
+.mobile-glance-heading {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(0.7rem, 3vw, 0.82rem);
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.mobile-glance-weekdays,
+.mobile-glance-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.28rem;
+}
+
+.mobile-glance-weekday {
+  color: var(--muted);
+  font-size: clamp(0.55rem, 2.3vw, 0.65rem);
+  font-weight: 800;
+  text-align: center;
+  opacity: 0.75;
+}
+
+.mobile-glance-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.4rem;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  font-size: clamp(0.6rem, 2.5vw, 0.72rem);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.mobile-glance-day--outside {
+  visibility: hidden;
+}
+
+.mobile-glance-day--empty {
+  opacity: 0.45;
+}
+
+.mobile-glance-day--band {
+  border-color: rgba(56, 217, 208, 0.5);
+  background: rgba(56, 217, 208, 0.14);
+  color: var(--ink);
+}
+
+.mobile-glance-day--recurring {
+  border-color: rgba(255, 201, 79, 0.55);
+  background: rgba(255, 201, 79, 0.14);
+  color: var(--ink);
+}
+
+.mobile-glance-day--special {
+  border-color: rgba(255, 79, 163, 0.65);
+  background: rgba(255, 79, 163, 0.18);
+  color: var(--ink);
+}
+
+.mobile-glance-day--closed {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0 0.2rem, transparent 0.2rem 0.4rem);
+  color: var(--muted);
+}
+
+.mobile-glance-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.55rem 0.85rem;
+  margin: 0.15rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mobile-glance-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--muted);
+  font-size: clamp(0.56rem, 2.35vw, 0.66rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.mobile-glance-swatch {
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 0.2rem;
+  border: 1px solid var(--line);
+}
+
+.mobile-promotion-strip {
+  display: grid;
+  gap: 0.22rem;
+  padding: clamp(0.7rem, 3vw, 0.95rem);
+  border: 1px solid rgba(255, 201, 79, 0.4);
+  border-radius: 0.9rem;
+  background: linear-gradient(135deg, rgba(255, 201, 79, 0.14), rgba(255, 79, 163, 0.08));
+  box-shadow: inset 0 0 1.1rem rgba(255, 201, 79, 0.05);
+  text-align: center;
+}
+
+.mobile-promotion-strip strong {
+  color: var(--gold);
+  font-size: clamp(0.88rem, 3.8vw, 1.05rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.mobile-promotion-strip span {
+  color: var(--muted);
+  font-size: clamp(0.67rem, 2.9vw, 0.82rem);
+  font-weight: 700;
+  line-height: 1.28;
+}
+
+.mobile-week-list,
+.mobile-date-list {
+  display: grid;
+  gap: var(--row-gap);
+  min-width: 0;
+}
+
+.mobile-week {
+  display: grid;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.mobile-week-heading {
+  margin: 0;
+  padding: 0 0.1rem 0.42rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--gold);
+  font-size: clamp(0.78rem, 3.3vw, 0.94rem);
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.mobile-date-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mobile-date-row {
+  display: grid;
+  grid-template-columns: var(--date-rail-width) minmax(0, 1fr);
+  gap: clamp(0.55rem, 2.5vw, 0.85rem);
+  min-width: 0;
+}
+
+.mobile-date-rail {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0;
+  padding: clamp(0.58rem, 2.6vw, 0.78rem) 0.25rem;
+  border: 1px solid rgba(56, 217, 208, 0.3);
+  border-radius: 0.82rem;
+  background: linear-gradient(180deg, rgba(11, 83, 78, 0.75), rgba(9, 25, 24, 0.96));
+  box-shadow: inset 0 0 1rem rgba(56, 217, 208, 0.08);
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.mobile-date-weekday {
+  color: var(--cyan);
+  font-size: clamp(0.57rem, 2.55vw, 0.72rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.mobile-date-number {
+  margin-top: 0.1rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: clamp(1.65rem, 8vw, 2.35rem);
+  line-height: 0.98;
+}
+
+.mobile-date-content {
+  display: grid;
+  gap: clamp(0.52rem, 2.4vw, 0.78rem);
+  min-width: 0;
+}
+
+.mobile-event-card,
+.mobile-closed-card {
+  position: relative;
+  min-width: 0;
+  overflow: visible;
+  padding: var(--card-padding);
+  border: 1px solid var(--line);
+  border-radius: clamp(0.86rem, 3.8vw, 1.15rem);
+  background: var(--panel);
+  box-shadow: 0 0.38rem 1.2rem rgba(0, 0, 0, 0.22);
+}
+
+.mobile-event-card--artwork-led {
+  background: linear-gradient(145deg, rgba(21, 27, 25, 0.96), rgba(10, 13, 13, 0.96));
+}
+
+.mobile-event-card--special {
+  border-color: rgba(255, 79, 163, 0.72);
+  background: linear-gradient(145deg, rgba(62, 13, 42, 0.97), rgba(18, 15, 24, 0.98));
+  box-shadow:
+    0 0 0.8rem rgba(255, 79, 163, 0.2),
+    inset 0 0 1.15rem rgba(255, 79, 163, 0.09);
+}
+
+.mobile-event-card--text-led {
+  background:
+    linear-gradient(120deg, rgba(255, 201, 79, 0.12), transparent 56%),
+    var(--panel);
+}
+
+.mobile-event-card--recurring-compact {
+  padding: clamp(0.6rem, 2.6vw, 0.85rem) var(--card-padding);
+  border-left: 0.25rem solid var(--gold);
+  background: linear-gradient(120deg, rgba(255, 201, 79, 0.08), transparent 65%), var(--panel);
+}
+
+.mobile-event-card--recurring-compact[data-recurring-weekday="tuesday"] {
+  border-left-color: var(--cyan);
+}
+
+.mobile-event-card--recurring-compact[data-recurring-weekday="wednesday"] {
+  border-left-color: var(--pink);
+}
+
+.mobile-event-card--recurring-compact[data-recurring-weekday="sunday"] {
+  border-left-color: var(--gold);
+}
+
+.mobile-event-recurring-tag {
+  display: inline-flex;
+  margin-bottom: 0.3rem;
+  padding: 0.16rem 0.4rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: clamp(0.54rem, 2.2vw, 0.64rem);
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.mobile-event-artwork {
+  width: 100%;
+  min-width: 0;
+  margin-bottom: clamp(0.58rem, 2.6vw, 0.82rem);
+  border-radius: 0.65rem;
+  background-color: rgba(0, 0, 0, 0.22);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.mobile-event-artwork--identity {
+  aspect-ratio: 3 / 1;
+  background-size: contain;
+}
+
+.mobile-event-artwork--event {
+  aspect-ratio: 16 / 9;
+  box-sizing: border-box;
+  padding: var(--mobile-artwork-padding, 0);
+  background-color: var(--mobile-artwork-background, rgba(0, 0, 0, 0.22));
+  background-origin: content-box;
+  background-size: var(--mobile-artwork-fit, cover);
+  background-position: var(--mobile-artwork-position, center);
+}
+
+.mobile-event-classification {
+  display: inline-flex;
+  margin-bottom: 0.38rem;
+  padding: 0.2rem 0.42rem;
+  border: 1px solid rgba(255, 79, 163, 0.56);
+  border-radius: 999px;
+  color: #ff9dcd;
+  font-size: clamp(0.56rem, 2.35vw, 0.68rem);
+  font-weight: 900;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.mobile-event-title {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.08rem, 5.1vw, 1.52rem);
+  font-weight: 900;
+  letter-spacing: 0.015em;
+  line-height: 1.02;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+.mobile-event-time {
+  margin: 0.35rem 0 0;
+  color: var(--gold);
+  font-size: clamp(0.82rem, 3.7vw, 1.02rem);
+  font-weight: 850;
+  letter-spacing: 0.025em;
+  line-height: 1.15;
+}
+
+.mobile-event-performer,
+.mobile-event-venue,
+.mobile-series-context {
+  margin: 0.28rem 0 0;
+  color: var(--muted);
+  font-size: clamp(0.67rem, 2.95vw, 0.82rem);
+  font-weight: 750;
+  line-height: 1.22;
+}
+
+.mobile-event-venue {
+  color: #9ce8df;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.mobile-series-context {
+  padding-top: 0.34rem;
+  border-top: 1px solid rgba(255, 201, 79, 0.2);
+  color: #ffd978;
+}
+
+.mobile-closed-card {
+  display: grid;
+  grid-template-columns: clamp(3.8rem, 22vw, 5.6rem) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(0.68rem, 3vw, 1rem);
+  padding: clamp(0.62rem, 2.7vw, 0.85rem);
+  background: rgba(21, 24, 22, 0.78);
+}
+
+.mobile-holiday-artwork {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 0.65rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.mobile-closed-title {
+  margin: 0;
+  font-size: clamp(1rem, 4.6vw, 1.35rem);
+  font-weight: 900;
+}
+
+.mobile-closed-status {
+  margin: 0.18rem 0 0;
+  color: var(--gold);
+  font-size: clamp(0.7rem, 3vw, 0.84rem);
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+@media (max-width: 22.5rem) {
+  .mobile-calendar {
+    --page-padding: 0.68rem;
+    --date-rail-width: 2.85rem;
+  }
+
+  .mobile-event-card,
+  .mobile-closed-card {
+    border-radius: 0.78rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] {
+  --mobile-special: #ffc447;
+  --mobile-live: #b58cff;
+  --mobile-recurring: #39d9a5;
+  --mobile-closed: #9ba8a3;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance {
+  padding: clamp(0.55rem, 2.4vw, 0.82rem);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-weekdays,
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-grid {
+  gap: 0.2rem;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-day {
+  position: relative;
+  flex-direction: column;
+  gap: 0.08rem;
+  min-width: 0;
+  padding: 0.12rem;
+  text-decoration: none;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] a.mobile-glance-day {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] a.mobile-glance-day:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+/* The venue-local current date is applied at view time so archived and current
+   months share one stable schema without baking a review date into the HTML. */
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-day--today {
+  z-index: 2;
+  outline: 3px solid #fff2c7;
+  outline-offset: -3px;
+  box-shadow:
+    inset 0 0 0 1px #2de1d1,
+    0 0 0.55rem rgba(45, 225, 209, 0.82),
+    0 0 0.25rem rgba(255, 242, 199, 0.92);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-day-number {
+  font-size: clamp(0.58rem, 2.35vw, 0.7rem);
+  line-height: 1;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-markers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.12rem;
+  min-width: 0;
+  min-height: 0.62rem;
+  line-height: 1;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-marker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0.62rem;
+  height: 0.62rem;
+  color: var(--ink);
+  font-size: clamp(0.47rem, 1.9vw, 0.58rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-marker--karaoke,
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-marker--ladies,
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-marker--whiskey,
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-marker--recurring {
+  color: var(--mobile-recurring);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-marker--live {
+  color: var(--mobile-live);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-marker--special,
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-marker--specialClosure {
+  color: var(--mobile-special);
+  text-shadow: 0 0 0.32rem rgba(255, 196, 71, 0.5);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-marker--closed {
+  width: auto;
+  color: var(--mobile-closed);
+  font-size: clamp(0.32rem, 1.35vw, 0.4rem);
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-day--band {
+  border-color: rgba(181, 140, 255, 0.72);
+  background: rgba(111, 69, 174, 0.22);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-day--recurring {
+  border-color: rgba(57, 217, 165, 0.7);
+  background: rgba(22, 120, 91, 0.24);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-day--special,
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-day--special-closure {
+  border-color: rgba(255, 196, 71, 0.82);
+  background: rgba(175, 112, 15, 0.25);
+  box-shadow: inset 0 0 0.5rem rgba(255, 196, 71, 0.16), 0 0 0.35rem rgba(255, 196, 71, 0.13);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-day--special-closure {
+  justify-content: flex-start;
+  gap: 0.02rem;
+  padding: 0.08rem;
+  background:
+    repeating-linear-gradient(135deg, rgba(255, 196, 71, 0.17) 0 0.22rem, transparent 0.22rem 0.44rem),
+    rgba(117, 72, 8, 0.25);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-special-closure {
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  gap: 0.03rem;
+  color: var(--mobile-special);
+  font-weight: 900;
+  line-height: 0.92;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-special-closure-title {
+  min-width: 0;
+  font-size: clamp(0.3rem, 1.25vw, 0.42rem);
+  letter-spacing: 0.015em;
+  overflow-wrap: anywhere;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-special-closure-status {
+  min-width: 0;
+  font-size: clamp(0.28rem, 1.05vw, 0.36rem);
+  letter-spacing: 0.04em;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-day--closed {
+  border-color: rgba(155, 168, 163, 0.42);
+  background: repeating-linear-gradient(135deg, rgba(155, 168, 163, 0.1) 0 0.2rem, transparent 0.2rem 0.4rem);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-date-row[data-mobile-date-target] {
+  scroll-margin-top: 0.75rem;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-weekday-identity {
+  display: grid;
+  min-width: 0;
+  padding: clamp(0.18rem, 0.9vw, 0.3rem) clamp(0.3rem, 1.3vw, 0.48rem);
+  border: 1px solid rgba(57, 217, 165, 0.32);
+  border-radius: clamp(0.72rem, 3vw, 0.95rem);
+  background: linear-gradient(145deg, rgba(11, 47, 40, 0.5), rgba(10, 13, 13, 0.72));
+  box-shadow: inset 0 0 0.8rem rgba(57, 217, 165, 0.05);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-weekday-identity-artwork {
+  width: 100%;
+  aspect-ratio: 3 / 1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-weekday-identity[data-weekday-identity="monday"] .mobile-weekday-identity-artwork {
+  width: min(76%, 11rem);
+  aspect-ratio: 16 / 9;
+  margin-inline: auto;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-event-card--semantic-special {
+  border-color: rgba(255, 196, 71, 0.8);
+  background: linear-gradient(145deg, rgba(69, 45, 10, 0.96), rgba(20, 17, 13, 0.98));
+  box-shadow: 0 0 0.8rem rgba(255, 196, 71, 0.18), inset 0 0 1.1rem rgba(255, 196, 71, 0.08);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-event-card--semantic-live {
+  border-color: rgba(181, 140, 255, 0.54);
+  box-shadow: inset 0.23rem 0 0 rgba(181, 140, 255, 0.75), 0 0.38rem 1.2rem rgba(0, 0, 0, 0.22);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-event-card--semantic-recurring {
+  border-color: rgba(57, 217, 165, 0.48);
+  box-shadow: inset 0.23rem 0 0 rgba(57, 217, 165, 0.78), 0 0.38rem 1.2rem rgba(0, 0, 0, 0.22);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-event-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin: 0 0 0.46rem;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-event-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.28rem;
+  padding: 0.14rem 0.42rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: clamp(0.52rem, 2.15vw, 0.64rem);
+  font-weight: 900;
+  letter-spacing: 0.075em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-event-chip--special {
+  color: var(--mobile-special);
+  background: rgba(255, 196, 71, 0.1);
+  text-shadow: 0 0 0.3rem rgba(255, 196, 71, 0.36);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-event-chip--live {
+  color: var(--mobile-live);
+  background: rgba(181, 140, 255, 0.09);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-event-chip--recurring {
+  color: var(--mobile-recurring);
+  background: rgba(57, 217, 165, 0.08);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-event-chip--venue {
+  color: #d9e4df;
+  border-color: rgba(217, 228, 223, 0.42);
+  background: rgba(217, 228, 223, 0.05);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-event-artwork--event {
+  aspect-ratio: var(--mobile-artwork-aspect, 16 / 9);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-event-artwork--dj-portrait {
+  width: min(var(--mobile-artwork-width, 78%), 19rem);
+  aspect-ratio: 1 / 1;
+  margin-inline: auto;
+  border: 3px solid rgba(255, 201, 79, 0.72);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(9, 13, 12, 0.82), 0 0.55rem 1.4rem rgba(0, 0, 0, 0.5);
+}
+
+/* The official DJ Proof profile image is 150px square. Keep every supported
+   viewport at or below the governed 1.25x upscale ceiling (187.5px). */
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-event-artwork--dj-portrait[data-selected-asset="dj-proof-instagram-profile-v1.jpg"] {
+  width: min(var(--mobile-artwork-width, 40%), 187px);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-series-context--ladies-night {
+  color: #ff9dcd;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-series-context--late-night-happy-hour {
+  color: #dce2e0;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-series-context--vendor {
+  color: #facf41;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-series-context--um-football {
+  color: #ff711f;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-event-card--recurring-full .mobile-event-artwork--identity {
+  margin-bottom: clamp(0.48rem, 2.2vw, 0.7rem);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-event-card--expressive-title .mobile-event-artwork--event {
+  width: min(100%, 17rem);
+  aspect-ratio: 1;
+  margin-inline: auto;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-event-card--expressive-title .mobile-event-title {
+  color: #f5d475;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.55rem, 7vw, 2.1rem);
+  font-weight: 900;
+  letter-spacing: 0.015em;
+  text-align: center;
+  -webkit-text-stroke: 0.8px #431814;
+  text-shadow: 1px 1px 0 #f05b76, 3px 3px 0 #8c2f35, 0 6px 8px rgba(0, 0, 0, 0.78);
+  transform: rotate(1deg) skewX(-2deg);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-event-card--expressive-title .mobile-event-time {
+  text-align: center;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-closed-card--special-closure {
+  border-color: rgba(255, 196, 71, 0.78);
+  background:
+    linear-gradient(135deg, rgba(255, 196, 71, 0.16), transparent 58%),
+    rgba(30, 25, 17, 0.95);
+  box-shadow: 0 0 0.72rem rgba(255, 196, 71, 0.16), inset 0 0 0.95rem rgba(255, 196, 71, 0.06);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-closed-card--special-closure .mobile-closed-status {
+  color: var(--mobile-special);
+}
+
+/*
+ * At <=360px (the 320px supported width), Mobile-v9's shared page padding and
+ * glance gutter left month-at-a-glance date cells at 37x37 CSS px, short of a
+ * 44x44 minimum tap target. Below that breakpoint only, let the glance panel
+ * bleed to the viewport edges (canceling --page-padding) and tighten the grid
+ * gap so the 7 date columns solve to >=44px square with room to spare, while
+ * every wider supported width keeps Mobile-v9's untouched spacing.
+ */
+@media (max-width: 22.5rem) {
+  html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance {
+    margin-inline: calc(-1 * var(--page-padding));
+    padding-inline: 0;
+  }
+
+  html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-weekdays,
+  html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-grid {
+    column-gap: 1px;
+  }
+}
+
+
+/* Mobile-v9 semantic and campaign refinements. */
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-day--special-closure {
+  display: grid;
+  place-items: center;
+  justify-content: initial;
+  padding: 0.08rem;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-day--special-closure .mobile-glance-special-closure {
+  place-items: center;
+  align-content: center;
+  justify-content: center;
+  height: 100%;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-day--special-closure .mobile-glance-day-number {
+  margin: 0;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-marker--ladies {
+  color: #ff4d68;
+  text-shadow: 0 0 0.28rem rgba(255, 77, 104, 0.48);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-marker--whiskey {
+  color: initial;
+  font-size: clamp(0.55rem, 2.05vw, 0.68rem);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-glance-marker--custom {
+  color: var(--mobile-special);
+  font-size: clamp(0.52rem, 2vw, 0.66rem);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-event-card--campaign .mobile-event-artwork--event {
+  width: min(100%, 19rem);
+  margin-inline: auto;
+  background-color: #060807;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-campaign-continuation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.42rem, 2vw, 0.7rem);
+  min-width: 0;
+  padding: clamp(0.68rem, 3vw, 0.92rem);
+  border: 1px solid rgba(255, 196, 71, 0.76);
+  border-radius: clamp(0.72rem, 3vw, 0.95rem);
+  color: var(--mobile-special);
+  background: linear-gradient(135deg, rgba(111, 68, 8, 0.46), rgba(18, 15, 10, 0.96));
+  box-shadow: inset 0 0 0.85rem rgba(255, 196, 71, 0.09);
+  font-size: clamp(0.7rem, 3.1vw, 0.92rem);
+  letter-spacing: 0.045em;
+  line-height: 1.15;
+  text-align: center;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-campaign-continuation-icon {
+  flex: 0 0 auto;
+  font-size: clamp(1rem, 4.2vw, 1.28rem);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-event-card--dj-companion {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.28rem 0.7rem;
+  padding: clamp(0.62rem, 2.7vw, 0.84rem);
+  border-color: rgba(255, 196, 71, 0.42);
+  background: linear-gradient(145deg, rgba(35, 29, 18, 0.94), rgba(12, 15, 14, 0.98));
+  box-shadow: inset 0.2rem 0 0 rgba(255, 196, 71, 0.7);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-event-card--dj-companion .mobile-event-chips {
+  grid-column: 1 / -1;
+  margin-bottom: 0.16rem;
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-event-card--dj-companion .mobile-event-title {
+  margin: 0;
+  font-size: clamp(1rem, 4.4vw, 1.28rem);
+}
+
+html[data-mobile-presentation-contract="mobile-v10"] .mobile-event-card--dj-companion .mobile-event-time {
+  margin: 0;
+  white-space: nowrap;
+}
+</style>
+</head>
+<body>
+<main class="mobile-calendar" data-mobile-prototype="mobile-v10">
+    <header class="mobile-month-header">
+      <nav class="mobile-calendar-navigation" aria-label="Bougies calendar navigation">
+        <span class="mobile-brand">Bougies · An Old Florida Tavern</span>
+        <div class="mobile-navigation-actions"><a class="mobile-home-link" href="https://www.bougiesbar.com/" aria-label="Return to Bougies home">Home</a></div>
+      </nav>
+      <h1>October 2026</h1>
+      
+      
+      <section class="mobile-glance" aria-label="October 2026 at a glance" data-mobile-required>
+    <h2 class="mobile-glance-heading" data-mobile-required>October 2026 at a Glance</h2>
+    <div class="mobile-glance-weekdays" aria-hidden="true"><span class="mobile-glance-weekday">S</span><span class="mobile-glance-weekday">M</span><span class="mobile-glance-weekday">T</span><span class="mobile-glance-weekday">W</span><span class="mobile-glance-weekday">T</span><span class="mobile-glance-weekday">F</span><span class="mobile-glance-weekday">S</span></div>
+    <div class="mobile-glance-grid"><span class="mobile-glance-day mobile-glance-day--outside" aria-hidden="true"></span><span class="mobile-glance-day mobile-glance-day--outside" aria-hidden="true"></span><span class="mobile-glance-day mobile-glance-day--outside" aria-hidden="true"></span><span class="mobile-glance-day mobile-glance-day--outside" aria-hidden="true"></span><a class="mobile-glance-day mobile-glance-day--recurring" href="#mobile-date-2026-10-01" aria-label="2026-10-01: Rhinestone Cowboys, DJ Edward" title="Rhinestone Cowboys, DJ Edward" data-mobile-date-link data-mobile-glance-date="2026-10-01"><span class="mobile-glance-day-number">1</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--recurring" title="Recurring event">↻</span></span></a><a class="mobile-glance-day mobile-glance-day--special" href="#mobile-date-2026-10-02" aria-label="2026-10-02: Bougie Nights, Bad Reputation, DJ Proof" title="Bougie Nights, Bad Reputation, DJ Proof" data-mobile-date-link data-mobile-glance-date="2026-10-02"><span class="mobile-glance-day-number">2</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--custom" title="Bougie Nights">🪩</span><span class="mobile-glance-marker mobile-glance-marker--live" title="Live music">♫</span></span></a><a class="mobile-glance-day mobile-glance-day--band" href="#mobile-date-2026-10-03" aria-label="2026-10-03: Sunset Dreams, DJ Kace" title="Sunset Dreams, DJ Kace" data-mobile-date-link data-mobile-glance-date="2026-10-03"><span class="mobile-glance-day-number">3</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--live" title="Live music">♫</span></span></a><a class="mobile-glance-day mobile-glance-day--recurring" href="#mobile-date-2026-10-04" aria-label="2026-10-04: Whiskey Allstars" title="Whiskey Allstars" data-mobile-date-link data-mobile-glance-date="2026-10-04"><span class="mobile-glance-day-number">4</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--whiskey" title="Whiskey Sunday">🥃</span></span></a><span class="mobile-glance-day mobile-glance-day--closed" aria-label="2026-10-05: Closed" title="Closed" data-mobile-glance-date="2026-10-05"><span class="mobile-glance-day-number">5</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--closed">Closed</span></span></span><a class="mobile-glance-day mobile-glance-day--special" href="#mobile-date-2026-10-06" aria-label="2026-10-06: South Miami Tech Tuesdays, Karaoke Tuesday" title="South Miami Tech Tuesdays, Karaoke Tuesday" data-mobile-date-link data-mobile-glance-date="2026-10-06"><span class="mobile-glance-day-number">6</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--custom" title="South Miami Tech Tuesdays">🤖</span><span class="mobile-glance-marker mobile-glance-marker--karaoke" title="Karaoke">🎙</span></span></a><a class="mobile-glance-day mobile-glance-day--recurring" href="#mobile-date-2026-10-07" aria-label="2026-10-07: Ladies Night" title="Ladies Night" data-mobile-date-link data-mobile-glance-date="2026-10-07"><span class="mobile-glance-day-number">7</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--ladies" title="Ladies Night">♥</span></span></a><a class="mobile-glance-day mobile-glance-day--recurring" href="#mobile-date-2026-10-08" aria-label="2026-10-08: KoolKidz, DJ Edward" title="KoolKidz, DJ Edward" data-mobile-date-link data-mobile-glance-date="2026-10-08"><span class="mobile-glance-day-number">8</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--recurring" title="Recurring event">↻</span></span></a><a class="mobile-glance-day mobile-glance-day--recurring" href="#mobile-date-2026-10-09" aria-label="2026-10-09: The Farm Boys, DJ Edward" title="The Farm Boys, DJ Edward" data-mobile-date-link data-mobile-glance-date="2026-10-09"><span class="mobile-glance-day-number">9</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--live" title="Live music">♫</span><span class="mobile-glance-marker mobile-glance-marker--recurring" title="Recurring event">↻</span></span></a><a class="mobile-glance-day mobile-glance-day--special" href="#mobile-date-2026-10-10" aria-label="2026-10-10: Freestyle Party" title="Freestyle Party" data-mobile-date-link data-mobile-glance-date="2026-10-10"><span class="mobile-glance-day-number">10</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--special" title="Special event">★</span></span></a><a class="mobile-glance-day mobile-glance-day--recurring" href="#mobile-date-2026-10-11" aria-label="2026-10-11: Whiskey Allstars" title="Whiskey Allstars" data-mobile-date-link data-mobile-glance-date="2026-10-11"><span class="mobile-glance-day-number">11</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--whiskey" title="Whiskey Sunday">🥃</span></span></a><span class="mobile-glance-day mobile-glance-day--closed" aria-label="2026-10-12: Closed" title="Closed" data-mobile-glance-date="2026-10-12"><span class="mobile-glance-day-number">12</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--closed">Closed</span></span></span><a class="mobile-glance-day mobile-glance-day--recurring" href="#mobile-date-2026-10-13" aria-label="2026-10-13: Karaoke Tuesday" title="Karaoke Tuesday" data-mobile-date-link data-mobile-glance-date="2026-10-13"><span class="mobile-glance-day-number">13</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--karaoke" title="Karaoke">🎙</span></span></a><a class="mobile-glance-day mobile-glance-day--recurring" href="#mobile-date-2026-10-14" aria-label="2026-10-14: Ladies Night" title="Ladies Night" data-mobile-date-link data-mobile-glance-date="2026-10-14"><span class="mobile-glance-day-number">14</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--ladies" title="Ladies Night">♥</span></span></a><a class="mobile-glance-day mobile-glance-day--recurring" href="#mobile-date-2026-10-15" aria-label="2026-10-15: Luftz, DJ Edward" title="Luftz, DJ Edward" data-mobile-date-link data-mobile-glance-date="2026-10-15"><span class="mobile-glance-day-number">15</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--recurring" title="Recurring event">↻</span></span></a><a class="mobile-glance-day mobile-glance-day--band" href="#mobile-date-2026-10-16" aria-label="2026-10-16: Sailor Ripley" title="Sailor Ripley" data-mobile-date-link data-mobile-glance-date="2026-10-16"><span class="mobile-glance-day-number">16</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--live" title="Live music">♫</span></span></a><a class="mobile-glance-day mobile-glance-day--band" href="#mobile-date-2026-10-17" aria-label="2026-10-17: Pump" title="Pump" data-mobile-date-link data-mobile-glance-date="2026-10-17"><span class="mobile-glance-day-number">17</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--live" title="Live music">♫</span></span></a><a class="mobile-glance-day mobile-glance-day--recurring" href="#mobile-date-2026-10-18" aria-label="2026-10-18: Whiskey Allstars" title="Whiskey Allstars" data-mobile-date-link data-mobile-glance-date="2026-10-18"><span class="mobile-glance-day-number">18</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--whiskey" title="Whiskey Sunday">🥃</span></span></a><span class="mobile-glance-day mobile-glance-day--closed" aria-label="2026-10-19: Closed" title="Closed" data-mobile-glance-date="2026-10-19"><span class="mobile-glance-day-number">19</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--closed">Closed</span></span></span><a class="mobile-glance-day mobile-glance-day--recurring" href="#mobile-date-2026-10-20" aria-label="2026-10-20: Karaoke Tuesday" title="Karaoke Tuesday" data-mobile-date-link data-mobile-glance-date="2026-10-20"><span class="mobile-glance-day-number">20</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--karaoke" title="Karaoke">🎙</span></span></a><a class="mobile-glance-day mobile-glance-day--recurring" href="#mobile-date-2026-10-21" aria-label="2026-10-21: Ladies Night" title="Ladies Night" data-mobile-date-link data-mobile-glance-date="2026-10-21"><span class="mobile-glance-day-number">21</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--ladies" title="Ladies Night">♥</span></span></a><a class="mobile-glance-day mobile-glance-day--recurring" href="#mobile-date-2026-10-22" aria-label="2026-10-22: KoolKidz, DJ Edward" title="KoolKidz, DJ Edward" data-mobile-date-link data-mobile-glance-date="2026-10-22"><span class="mobile-glance-day-number">22</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--recurring" title="Recurring event">↻</span></span></a><a class="mobile-glance-day mobile-glance-day--band" href="#mobile-date-2026-10-23" aria-label="2026-10-23: The Marauders" title="The Marauders" data-mobile-date-link data-mobile-glance-date="2026-10-23"><span class="mobile-glance-day-number">23</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--live" title="Live music">♫</span></span></a><a class="mobile-glance-day mobile-glance-day--band" href="#mobile-date-2026-10-24" aria-label="2026-10-24: Juanabe" title="Juanabe" data-mobile-date-link data-mobile-glance-date="2026-10-24"><span class="mobile-glance-day-number">24</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--live" title="Live music">♫</span></span></a><a class="mobile-glance-day mobile-glance-day--recurring" href="#mobile-date-2026-10-25" aria-label="2026-10-25: Whiskey Allstars" title="Whiskey Allstars" data-mobile-date-link data-mobile-glance-date="2026-10-25"><span class="mobile-glance-day-number">25</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--whiskey" title="Whiskey Sunday">🥃</span></span></a><span class="mobile-glance-day mobile-glance-day--closed" aria-label="2026-10-26: Closed" title="Closed" data-mobile-glance-date="2026-10-26"><span class="mobile-glance-day-number">26</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--closed">Closed</span></span></span><a class="mobile-glance-day mobile-glance-day--recurring" href="#mobile-date-2026-10-27" aria-label="2026-10-27: Karaoke Tuesday" title="Karaoke Tuesday" data-mobile-date-link data-mobile-glance-date="2026-10-27"><span class="mobile-glance-day-number">27</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--karaoke" title="Karaoke">🎙</span></span></a><a class="mobile-glance-day mobile-glance-day--recurring" href="#mobile-date-2026-10-28" aria-label="2026-10-28: Ladies Night" title="Ladies Night" data-mobile-date-link data-mobile-glance-date="2026-10-28"><span class="mobile-glance-day-number">28</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--ladies" title="Ladies Night">♥</span></span></a><a class="mobile-glance-day mobile-glance-day--recurring" href="#mobile-date-2026-10-29" aria-label="2026-10-29: Monchzilla, DJ Edward" title="Monchzilla, DJ Edward" data-mobile-date-link data-mobile-glance-date="2026-10-29"><span class="mobile-glance-day-number">29</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--live" title="Live music">♫</span><span class="mobile-glance-marker mobile-glance-marker--recurring" title="Recurring event">↻</span></span></a><a class="mobile-glance-day mobile-glance-day--band" href="#mobile-date-2026-10-30" aria-label="2026-10-30: SUO" title="SUO" data-mobile-date-link data-mobile-glance-date="2026-10-30"><span class="mobile-glance-day-number">30</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--live" title="Live music">♫</span></span></a><a class="mobile-glance-day mobile-glance-day--band" href="#mobile-date-2026-10-31" aria-label="2026-10-31: Abria, DJ ICUE" title="Abria, DJ ICUE" data-mobile-date-link data-mobile-glance-date="2026-10-31"><span class="mobile-glance-day-number">31</span><span class="mobile-glance-markers" aria-hidden="true"><span class="mobile-glance-marker mobile-glance-marker--live" title="Live music">♫</span></span></a></div>
+    <ul class="mobile-glance-legend" aria-hidden="true">
+      <li class="mobile-glance-legend-item"><span class="mobile-glance-swatch mobile-glance-day--special"></span>Special</li>
+      <li class="mobile-glance-legend-item"><span class="mobile-glance-swatch mobile-glance-day--recurring"></span>Recurring</li>
+      <li class="mobile-glance-legend-item"><span class="mobile-glance-swatch mobile-glance-day--band"></span>Live</li>
+      <li class="mobile-glance-legend-item"><span class="mobile-glance-swatch mobile-glance-day--closed"></span>Closed</li>
+    </ul>
+  </section>
+      <aside class="mobile-promotion-strip" aria-label="Monthly promotions">
+    <strong data-mobile-required>Historical calendar review</strong>
+    
+  </aside>
+    </header>
+    <div class="mobile-week-list"><section class="mobile-week" aria-labelledby="mobile-week-1">
+      <h2 class="mobile-week-heading" id="mobile-week-1">Week 1 · Oct 1–7</h2>
+      <ol class="mobile-date-list"><li class="mobile-date-row mobile-date-row--multi-event" data-date="2026-10-01" id="mobile-date-2026-10-01" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-01" data-mobile-required>
+      <span class="mobile-date-weekday">THU</span>
+      <span class="mobile-date-number">1</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="thursday" aria-label="THU weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-3" role="img" aria-label="THU weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--recurring-full mobile-event-card--semantic-recurring" data-event-name="Rhinestone Cowboys">
+    <div class="mobile-event-artwork mobile-event-artwork--event" data-mobile-image-ref="mobile-image-1" role="img" aria-label="Rhinestone Cowboys artwork" data-mobile-required style="--mobile-artwork-fit:contain;--mobile-artwork-position:center;--mobile-artwork-aspect:1 / 1;--mobile-artwork-width:100%;--mobile-artwork-padding:3%;--mobile-artwork-background:rgba(4, 9, 13, 0.72)" data-selected-asset="thursday-v1-rhinestone-cowboys.png" data-selected-asset-checksum="f106325dd46c6e0e5831fdde72fd8ed267de19cf362d7834052b2edb9c562ca1"></div>
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--live" data-mobile-required>Live Music</span><span class="mobile-event-chip mobile-event-chip--recurring" data-mobile-required>MONTHLY</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>Rhinestone Cowboys</h3>
+    <p class="mobile-event-time" data-mobile-required>8 PM</p>
+    
+    
+    
+    <p class="mobile-series-context mobile-series-context--late-night-happy-hour" data-promotion-id="late-night-hh" data-promotion-semantic="late-night-happy-hour" data-mobile-required>Late Night HH 🌙 · 12 AM</p>
+  </article>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--recurring-full mobile-event-card--semantic-recurring mobile-event-card--dj-companion" data-event-name="DJ Edward" data-performer-display="DJ Edward">
+    <div class="mobile-event-artwork mobile-event-artwork--event mobile-event-artwork--dj-portrait" data-mobile-image-ref="mobile-image-2" role="img" aria-label="DJ Edward artwork" data-mobile-required style="--mobile-artwork-fit:cover;--mobile-artwork-position:center 25%;--mobile-artwork-aspect:1 / 1;--mobile-artwork-width:78%;--mobile-artwork-padding:0%;--mobile-artwork-background:rgba(0, 0, 0, 0.22)" data-selected-asset="dj-edward-v1.jpg" data-selected-asset-checksum="fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e"></div>
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--recurring" data-mobile-required>WEEKLY</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>DJ Edward</h3>
+    <p class="mobile-event-time" data-mobile-required>11:30 PM</p>
+    <p class="mobile-event-performer" data-mobile-required>DJ Edward</p>
+    
+    
+    
+  </article></div>
+  </li>
+<li class="mobile-date-row mobile-date-row--multi-event" data-date="2026-10-02" id="mobile-date-2026-10-02" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-02" data-mobile-required>
+      <span class="mobile-date-weekday">FRI</span>
+      <span class="mobile-date-number">2</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="friday" aria-label="FRI weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-7" role="img" aria-label="FRI weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--special mobile-event-card--artwork-led mobile-event-card--recurring-full mobile-event-card--semantic-special" data-event-name="Bougie Nights" data-performer-display="DJ Alex" data-special-event>
+    <div class="mobile-event-artwork mobile-event-artwork--event" data-mobile-image-ref="mobile-image-4" role="img" aria-label="Bougie Nights artwork" data-mobile-required style="--mobile-artwork-fit:contain;--mobile-artwork-position:center;--mobile-artwork-aspect:16 / 9;--mobile-artwork-width:100%;--mobile-artwork-padding:2%;--mobile-artwork-background:rgba(4, 9, 13, 0.72)" data-selected-asset="friday-v2-bougie-nights.png" data-selected-asset-checksum="ca443b40c88a177717a234527c097430d9fb4f18899475e3c0f2ba93c3feb809"></div>
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--special" data-mobile-required>Special Event</span><span class="mobile-event-chip mobile-event-chip--recurring" data-mobile-required>MONTHLY</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Backyard</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>Bougie Nights</h3>
+    <p class="mobile-event-time" data-mobile-required>8 PM</p>
+    <p class="mobile-event-performer" data-mobile-required>DJ Alex</p>
+    
+    
+    
+  </article>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--semantic-live" data-event-name="Bad Reputation">
+    <div class="mobile-event-artwork mobile-event-artwork--event" data-mobile-image-ref="mobile-image-5" role="img" aria-label="Bad Reputation artwork" data-mobile-required style="--mobile-artwork-fit:contain;--mobile-artwork-position:center;--mobile-artwork-aspect:1 / 1;--mobile-artwork-width:100%;--mobile-artwork-padding:3%;--mobile-artwork-background:rgba(4, 9, 13, 0.72)" data-selected-asset="bad-reputation-instagram-post-v1.jpg" data-selected-asset-checksum="94f456490552967080642537cdf583c41b82ba9bb63d5d703624099d01ddbdc3"></div>
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--live" data-mobile-required>Live Music</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>Bad Reputation</h3>
+    <p class="mobile-event-time" data-mobile-required>10 PM</p>
+    
+    
+    
+    
+  </article>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--dj-companion" data-event-name="DJ Proof">
+    <div class="mobile-event-artwork mobile-event-artwork--event" data-mobile-image-ref="mobile-image-6" role="img" aria-label="DJ Proof artwork" data-mobile-required style="--mobile-artwork-fit:contain;--mobile-artwork-position:center;--mobile-artwork-aspect:1 / 1;--mobile-artwork-width:100%;--mobile-artwork-padding:3%;--mobile-artwork-background:rgba(4, 9, 13, 0.72)" data-selected-asset="dj-proof-instagram-post-v1.jpg" data-selected-asset-checksum="b9d8404597e8162ca3740fb4d3aafe087e09e92ed7031532ef748fbd55c90a5a"></div>
+    
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>DJ Proof</h3>
+    
+    
+    
+    
+    
+  </article></div>
+  </li>
+<li class="mobile-date-row mobile-date-row--multi-event" data-date="2026-10-03" id="mobile-date-2026-10-03" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-03" data-mobile-required>
+      <span class="mobile-date-weekday">SAT</span>
+      <span class="mobile-date-number">3</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="saturday" aria-label="SAT weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-10" role="img" aria-label="SAT weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--semantic-live" data-event-name="Sunset Dreams">
+    <div class="mobile-event-artwork mobile-event-artwork--event" data-mobile-image-ref="mobile-image-8" role="img" aria-label="Sunset Dreams artwork" data-mobile-required style="--mobile-artwork-fit:contain;--mobile-artwork-position:center;--mobile-artwork-aspect:1 / 1;--mobile-artwork-width:100%;--mobile-artwork-padding:3%;--mobile-artwork-background:rgba(4, 9, 13, 0.72)" data-selected-asset="sunset-dreams-v1.jpg" data-selected-asset-checksum="aff501a678c2ab004628eb3dc903dd2f9fa4c4455d5b721cdba65f71c23c1da1"></div>
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--live" data-mobile-required>Live Music</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="visually-hidden">Sunset Dreams</h3>
+    <p class="mobile-event-time" data-mobile-required>10 PM</p>
+    
+    
+    
+    
+  </article>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--dj-companion" data-event-name="DJ Kace">
+    <div class="mobile-event-artwork mobile-event-artwork--event" data-mobile-image-ref="mobile-image-9" role="img" aria-label="DJ Kace artwork" data-mobile-required style="--mobile-artwork-fit:contain;--mobile-artwork-position:center;--mobile-artwork-aspect:1 / 1;--mobile-artwork-width:100%;--mobile-artwork-padding:3%;--mobile-artwork-background:rgba(4, 9, 13, 0.72)" data-selected-asset="dj-kace-instagram-post-v2.jpg" data-selected-asset-checksum="9aefd37fdf7f7c41c4ac97cbc1f84f2c3c00d04fe1798c89acfb272a71d0e472"></div>
+    
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>DJ Kace</h3>
+    
+    
+    
+    
+    
+  </article></div>
+  </li>
+<li class="mobile-date-row" data-date="2026-10-04" id="mobile-date-2026-10-04" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-04" data-mobile-required>
+      <span class="mobile-date-weekday">SUN</span>
+      <span class="mobile-date-number">4</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="sunday" aria-label="SUN weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-11" role="img" aria-label="SUN weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--recurring-full mobile-event-card--semantic-recurring" data-event-name="Whiskey Allstars">
+    
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--live" data-mobile-required>Live Music</span><span class="mobile-event-chip mobile-event-chip--recurring" data-mobile-required>WEEKLY</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>Whiskey Allstars</h3>
+    <p class="mobile-event-time" data-mobile-required>6ish</p>
+    
+    
+    
+    <p class="mobile-series-context mobile-series-context--industry" data-promotion-id="in-da-biz-sundays" data-promotion-semantic="industry" data-mobile-required>In &#39;Da Biz 🍻 50% off</p>
+  </article></div>
+  </li></ol>
+    </section>
+<section class="mobile-week" aria-labelledby="mobile-week-2">
+      <h2 class="mobile-week-heading" id="mobile-week-2">Week 2 · Oct 6–12</h2>
+      <ol class="mobile-date-list"><li class="mobile-date-row mobile-date-row--multi-event" data-date="2026-10-06" id="mobile-date-2026-10-06" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-06" data-mobile-required>
+      <span class="mobile-date-weekday">TUE</span>
+      <span class="mobile-date-number">6</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="tuesday" aria-label="TUE weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-12" role="img" aria-label="TUE weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--special mobile-event-card--recurring-full mobile-event-card--semantic-special" data-event-name="South Miami Tech Tuesdays" data-special-event>
+    
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--special" data-mobile-required>Special Event</span><span class="mobile-event-chip mobile-event-chip--recurring" data-mobile-required>MONTHLY</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>South Miami Tech Tuesdays</h3>
+    <p class="mobile-event-time" data-mobile-required>6 PM–9 PM</p>
+    
+    
+    <span class="visually-hidden mobile-event-venue-semantic">Whole Venue</span>
+    <p class="mobile-series-context mobile-series-context--late-night-happy-hour" data-promotion-id="late-night-hh" data-promotion-semantic="late-night-happy-hour" data-mobile-required>Late Night HH 🌙 · 12 AM</p>
+  </article>
+<article class="mobile-event-card mobile-event-card--recurring-full mobile-event-card--semantic-recurring" data-event-name="Karaoke Tuesday">
+    
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--recurring" data-mobile-required>WEEKLY</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>Karaoke Tuesday</h3>
+    <p class="mobile-event-time" data-mobile-required>10 PM</p>
+    
+    
+    
+    
+  </article></div>
+  </li>
+<li class="mobile-date-row" data-date="2026-10-07" id="mobile-date-2026-10-07" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-07" data-mobile-required>
+      <span class="mobile-date-weekday">WED</span>
+      <span class="mobile-date-number">7</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="wednesday" aria-label="WED weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-13" role="img" aria-label="WED weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--recurring-full mobile-event-card--semantic-recurring mobile-event-card--dj-companion" data-event-name="Ladies Night" data-performer-display="DJ Edward &amp; Friends">
+    <div class="mobile-event-artwork mobile-event-artwork--event mobile-event-artwork--dj-portrait" data-mobile-image-ref="mobile-image-2" role="img" aria-label="Ladies Night artwork" data-mobile-required style="--mobile-artwork-fit:cover;--mobile-artwork-position:center 25%;--mobile-artwork-aspect:1 / 1;--mobile-artwork-width:78%;--mobile-artwork-padding:0%;--mobile-artwork-background:rgba(0, 0, 0, 0.22)" data-selected-asset="dj-edward-v1.jpg" data-selected-asset-checksum="fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e"></div>
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--recurring" data-mobile-required>WEEKLY</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>Ladies Night</h3>
+    <p class="mobile-event-time" data-mobile-required>10 PM–2 AM</p>
+    <p class="mobile-event-performer" data-mobile-required>DJ Edward &amp; Friends</p>
+    
+    
+    <p class="mobile-series-context mobile-series-context--ladies-night" data-promotion-id="ladies-drink-free" data-promotion-semantic="ladies-night" data-mobile-required>Ladies drink FREE</p>
+  </article></div>
+  </li>
+<li class="mobile-date-row mobile-date-row--multi-event" data-date="2026-10-08" id="mobile-date-2026-10-08" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-08" data-mobile-required>
+      <span class="mobile-date-weekday">THU</span>
+      <span class="mobile-date-number">8</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="thursday" aria-label="THU weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-3" role="img" aria-label="THU weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--recurring-full mobile-event-card--semantic-recurring" data-event-name="KoolKidz">
+    <div class="mobile-event-artwork mobile-event-artwork--event" data-mobile-image-ref="mobile-image-14" role="img" aria-label="KoolKidz artwork" data-mobile-required style="--mobile-artwork-fit:contain;--mobile-artwork-position:center;--mobile-artwork-aspect:1 / 1;--mobile-artwork-width:100%;--mobile-artwork-padding:3%;--mobile-artwork-background:rgba(4, 9, 13, 0.72)" data-selected-asset="koolkidz-v1.jpg" data-selected-asset-checksum="0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b"></div>
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--live" data-mobile-required>Live Music</span><span class="mobile-event-chip mobile-event-chip--recurring" data-mobile-required>MONTHLY</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="visually-hidden">KoolKidz</h3>
+    <p class="mobile-event-time" data-mobile-required>8 PM</p>
+    
+    
+    
+    <p class="mobile-series-context mobile-series-context--late-night-happy-hour" data-promotion-id="late-night-hh" data-promotion-semantic="late-night-happy-hour" data-mobile-required>Late Night HH 🌙 · 12 AM</p>
+  </article>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--recurring-full mobile-event-card--semantic-recurring mobile-event-card--dj-companion" data-event-name="DJ Edward" data-performer-display="DJ Edward">
+    <div class="mobile-event-artwork mobile-event-artwork--event mobile-event-artwork--dj-portrait" data-mobile-image-ref="mobile-image-2" role="img" aria-label="DJ Edward artwork" data-mobile-required style="--mobile-artwork-fit:cover;--mobile-artwork-position:center 25%;--mobile-artwork-aspect:1 / 1;--mobile-artwork-width:78%;--mobile-artwork-padding:0%;--mobile-artwork-background:rgba(0, 0, 0, 0.22)" data-selected-asset="dj-edward-v1.jpg" data-selected-asset-checksum="fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e"></div>
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--recurring" data-mobile-required>WEEKLY</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>DJ Edward</h3>
+    <p class="mobile-event-time" data-mobile-required>11:30 PM</p>
+    <p class="mobile-event-performer" data-mobile-required>DJ Edward</p>
+    
+    
+    
+  </article></div>
+  </li>
+<li class="mobile-date-row mobile-date-row--multi-event" data-date="2026-10-09" id="mobile-date-2026-10-09" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-09" data-mobile-required>
+      <span class="mobile-date-weekday">FRI</span>
+      <span class="mobile-date-number">9</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="friday" aria-label="FRI weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-7" role="img" aria-label="FRI weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--semantic-live" data-event-name="The Farm Boys">
+    <div class="mobile-event-artwork mobile-event-artwork--event" data-mobile-image-ref="mobile-image-15" role="img" aria-label="The Farm Boys artwork" data-mobile-required style="--mobile-artwork-fit:contain;--mobile-artwork-position:center;--mobile-artwork-aspect:1 / 1;--mobile-artwork-width:100%;--mobile-artwork-padding:3%;--mobile-artwork-background:rgba(4, 9, 13, 0.72)" data-selected-asset="the-farm-boys-v1.jpg" data-selected-asset-checksum="ad27706b7775bfaa81feb1e7c36d9f29707f1eaed54c1b915aa72a9058434c76"></div>
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--live" data-mobile-required>Live Music</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>The Farm Boys</h3>
+    <p class="mobile-event-time" data-mobile-required>10 PM</p>
+    
+    
+    
+    
+  </article>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--recurring-full mobile-event-card--semantic-recurring mobile-event-card--dj-companion" data-event-name="DJ Edward">
+    <div class="mobile-event-artwork mobile-event-artwork--event mobile-event-artwork--dj-portrait" data-mobile-image-ref="mobile-image-2" role="img" aria-label="DJ Edward artwork" data-mobile-required style="--mobile-artwork-fit:cover;--mobile-artwork-position:center 25%;--mobile-artwork-aspect:1 / 1;--mobile-artwork-width:78%;--mobile-artwork-padding:0%;--mobile-artwork-background:rgba(0, 0, 0, 0.22)" data-selected-asset="dj-edward-v1.jpg" data-selected-asset-checksum="fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e"></div>
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--recurring" data-mobile-required>WEEKLY</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>DJ Edward</h3>
+    
+    
+    
+    
+    
+  </article></div>
+  </li>
+<li class="mobile-date-row" data-date="2026-10-10" id="mobile-date-2026-10-10" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-10" data-mobile-required>
+      <span class="mobile-date-weekday">SAT</span>
+      <span class="mobile-date-number">10</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="saturday" aria-label="SAT weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-10" role="img" aria-label="SAT weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--special mobile-event-card--artwork-led mobile-event-card--semantic-special" data-event-name="Freestyle Party" data-special-event>
+    <div class="mobile-event-artwork mobile-event-artwork--event" data-mobile-image-ref="mobile-image-16" role="img" aria-label="Freestyle Party artwork" data-mobile-required style="--mobile-artwork-fit:contain;--mobile-artwork-position:center;--mobile-artwork-aspect:12 / 5;--mobile-artwork-width:100%;--mobile-artwork-padding:3%;--mobile-artwork-background:rgba(4, 9, 13, 0.72)" data-selected-asset="dj-diaga-v1.jpg" data-selected-asset-checksum="f375d3e1d1195d3e7895dd3fea383b3db1b16b1b42fa92f14f76c5ce3398e539"></div>
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--special" data-mobile-required>Special Event</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>Freestyle Party</h3>
+    
+    <p class="mobile-event-performer" data-mobile-required>DJ Diaga</p>
+    
+    
+    
+  </article></div>
+  </li>
+<li class="mobile-date-row" data-date="2026-10-11" id="mobile-date-2026-10-11" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-11" data-mobile-required>
+      <span class="mobile-date-weekday">SUN</span>
+      <span class="mobile-date-number">11</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="sunday" aria-label="SUN weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-11" role="img" aria-label="SUN weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--recurring-full mobile-event-card--semantic-recurring" data-event-name="Whiskey Allstars">
+    
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--live" data-mobile-required>Live Music</span><span class="mobile-event-chip mobile-event-chip--recurring" data-mobile-required>WEEKLY</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>Whiskey Allstars</h3>
+    <p class="mobile-event-time" data-mobile-required>6ish</p>
+    
+    
+    
+    <p class="mobile-series-context mobile-series-context--industry" data-promotion-id="in-da-biz-sundays" data-promotion-semantic="industry" data-mobile-required>In &#39;Da Biz 🍻 50% off</p>
+  </article></div>
+  </li></ol>
+    </section>
+<section class="mobile-week" aria-labelledby="mobile-week-3">
+      <h2 class="mobile-week-heading" id="mobile-week-3">Week 3 · Oct 13–19</h2>
+      <ol class="mobile-date-list"><li class="mobile-date-row" data-date="2026-10-13" id="mobile-date-2026-10-13" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-13" data-mobile-required>
+      <span class="mobile-date-weekday">TUE</span>
+      <span class="mobile-date-number">13</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="tuesday" aria-label="TUE weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-12" role="img" aria-label="TUE weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--recurring-full mobile-event-card--semantic-recurring" data-event-name="Karaoke Tuesday">
+    
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--recurring" data-mobile-required>WEEKLY</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>Karaoke Tuesday</h3>
+    <p class="mobile-event-time" data-mobile-required>10 PM</p>
+    
+    
+    
+    <p class="mobile-series-context mobile-series-context--late-night-happy-hour" data-promotion-id="late-night-hh" data-promotion-semantic="late-night-happy-hour" data-mobile-required>Late Night HH 🌙 · 12 AM</p>
+  </article></div>
+  </li>
+<li class="mobile-date-row" data-date="2026-10-14" id="mobile-date-2026-10-14" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-14" data-mobile-required>
+      <span class="mobile-date-weekday">WED</span>
+      <span class="mobile-date-number">14</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="wednesday" aria-label="WED weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-13" role="img" aria-label="WED weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--recurring-full mobile-event-card--semantic-recurring mobile-event-card--dj-companion" data-event-name="Ladies Night" data-performer-display="DJ Edward &amp; Friends">
+    <div class="mobile-event-artwork mobile-event-artwork--event mobile-event-artwork--dj-portrait" data-mobile-image-ref="mobile-image-2" role="img" aria-label="Ladies Night artwork" data-mobile-required style="--mobile-artwork-fit:cover;--mobile-artwork-position:center 25%;--mobile-artwork-aspect:1 / 1;--mobile-artwork-width:78%;--mobile-artwork-padding:0%;--mobile-artwork-background:rgba(0, 0, 0, 0.22)" data-selected-asset="dj-edward-v1.jpg" data-selected-asset-checksum="fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e"></div>
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--recurring" data-mobile-required>WEEKLY</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>Ladies Night</h3>
+    <p class="mobile-event-time" data-mobile-required>10 PM–2 AM</p>
+    <p class="mobile-event-performer" data-mobile-required>DJ Edward &amp; Friends</p>
+    
+    
+    <p class="mobile-series-context mobile-series-context--ladies-night" data-promotion-id="ladies-drink-free" data-promotion-semantic="ladies-night" data-mobile-required>Ladies drink FREE</p>
+  </article></div>
+  </li>
+<li class="mobile-date-row mobile-date-row--multi-event" data-date="2026-10-15" id="mobile-date-2026-10-15" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-15" data-mobile-required>
+      <span class="mobile-date-weekday">THU</span>
+      <span class="mobile-date-number">15</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="thursday" aria-label="THU weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-3" role="img" aria-label="THU weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--recurring-full mobile-event-card--semantic-recurring" data-event-name="Luftz">
+    <div class="mobile-event-artwork mobile-event-artwork--event" data-mobile-image-ref="mobile-image-17" role="img" aria-label="Luftz artwork" data-mobile-required style="--mobile-artwork-fit:cover;--mobile-artwork-position:center 35%;--mobile-artwork-aspect:16 / 9;--mobile-artwork-width:100%;--mobile-artwork-padding:0%;--mobile-artwork-background:rgba(0, 0, 0, 0.22)" data-selected-asset="luftz-v1.jpg" data-selected-asset-checksum="440fed2d0014d313246a3d43e7ecc661feaf2ac784554e4d0cf604384f48fe8d"></div>
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--live" data-mobile-required>Live Music</span><span class="mobile-event-chip mobile-event-chip--recurring" data-mobile-required>MONTHLY</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>Luftz</h3>
+    <p class="mobile-event-time" data-mobile-required>8 PM</p>
+    <p class="mobile-event-performer" data-mobile-required>The Lufts</p>
+    
+    
+    <p class="mobile-series-context mobile-series-context--late-night-happy-hour" data-promotion-id="late-night-hh" data-promotion-semantic="late-night-happy-hour" data-mobile-required>Late Night HH 🌙 · 12 AM</p>
+  </article>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--recurring-full mobile-event-card--semantic-recurring mobile-event-card--dj-companion" data-event-name="DJ Edward" data-performer-display="DJ Edward">
+    <div class="mobile-event-artwork mobile-event-artwork--event mobile-event-artwork--dj-portrait" data-mobile-image-ref="mobile-image-2" role="img" aria-label="DJ Edward artwork" data-mobile-required style="--mobile-artwork-fit:cover;--mobile-artwork-position:center 25%;--mobile-artwork-aspect:1 / 1;--mobile-artwork-width:78%;--mobile-artwork-padding:0%;--mobile-artwork-background:rgba(0, 0, 0, 0.22)" data-selected-asset="dj-edward-v1.jpg" data-selected-asset-checksum="fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e"></div>
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--recurring" data-mobile-required>WEEKLY</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>DJ Edward</h3>
+    <p class="mobile-event-time" data-mobile-required>11:30 PM</p>
+    <p class="mobile-event-performer" data-mobile-required>DJ Edward</p>
+    
+    
+    
+  </article></div>
+  </li>
+<li class="mobile-date-row" data-date="2026-10-16" id="mobile-date-2026-10-16" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-16" data-mobile-required>
+      <span class="mobile-date-weekday">FRI</span>
+      <span class="mobile-date-number">16</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="friday" aria-label="FRI weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-7" role="img" aria-label="FRI weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--semantic-live" data-event-name="Sailor Ripley">
+    <div class="mobile-event-artwork mobile-event-artwork--event" data-mobile-image-ref="mobile-image-18" role="img" aria-label="Sailor Ripley artwork" data-mobile-required style="--mobile-artwork-fit:contain;--mobile-artwork-position:center;--mobile-artwork-aspect:1 / 1;--mobile-artwork-width:100%;--mobile-artwork-padding:3%;--mobile-artwork-background:rgba(4, 9, 13, 0.72)" data-selected-asset="sailor-ripley-instagram-post-v2.jpg" data-selected-asset-checksum="505484bec264821a1b548664d074227ebb3402d1bfeadd529b3373c08add4e0e"></div>
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--live" data-mobile-required>Live Music</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>Sailor Ripley</h3>
+    <p class="mobile-event-time" data-mobile-required>10 PM</p>
+    
+    
+    
+    
+  </article></div>
+  </li>
+<li class="mobile-date-row" data-date="2026-10-17" id="mobile-date-2026-10-17" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-17" data-mobile-required>
+      <span class="mobile-date-weekday">SAT</span>
+      <span class="mobile-date-number">17</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="saturday" aria-label="SAT weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-10" role="img" aria-label="SAT weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--semantic-live" data-event-name="Pump">
+    <div class="mobile-event-artwork mobile-event-artwork--event" data-mobile-image-ref="mobile-image-19" role="img" aria-label="Pump artwork" data-mobile-required style="--mobile-artwork-fit:contain;--mobile-artwork-position:center;--mobile-artwork-aspect:1 / 1;--mobile-artwork-width:100%;--mobile-artwork-padding:3%;--mobile-artwork-background:rgba(4, 9, 13, 0.72)" data-selected-asset="pump-v1.jpg" data-selected-asset-checksum="05c16e757f0e1f1218f9e914ae8c7dd092ffbb8eecfe7c02247fd30398959aac"></div>
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--live" data-mobile-required>Live Music</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="visually-hidden">Pump</h3>
+    <p class="mobile-event-time" data-mobile-required>10 PM</p>
+    
+    
+    
+    
+  </article></div>
+  </li>
+<li class="mobile-date-row" data-date="2026-10-18" id="mobile-date-2026-10-18" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-18" data-mobile-required>
+      <span class="mobile-date-weekday">SUN</span>
+      <span class="mobile-date-number">18</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="sunday" aria-label="SUN weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-11" role="img" aria-label="SUN weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--recurring-full mobile-event-card--semantic-recurring" data-event-name="Whiskey Allstars">
+    
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--live" data-mobile-required>Live Music</span><span class="mobile-event-chip mobile-event-chip--recurring" data-mobile-required>WEEKLY</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>Whiskey Allstars</h3>
+    <p class="mobile-event-time" data-mobile-required>6ish</p>
+    
+    
+    
+    <p class="mobile-series-context mobile-series-context--industry" data-promotion-id="in-da-biz-sundays" data-promotion-semantic="industry" data-mobile-required>In &#39;Da Biz 🍻 50% off</p>
+  </article></div>
+  </li></ol>
+    </section>
+<section class="mobile-week" aria-labelledby="mobile-week-4">
+      <h2 class="mobile-week-heading" id="mobile-week-4">Week 4 · Oct 20–26</h2>
+      <ol class="mobile-date-list"><li class="mobile-date-row" data-date="2026-10-20" id="mobile-date-2026-10-20" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-20" data-mobile-required>
+      <span class="mobile-date-weekday">TUE</span>
+      <span class="mobile-date-number">20</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="tuesday" aria-label="TUE weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-12" role="img" aria-label="TUE weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--recurring-full mobile-event-card--semantic-recurring" data-event-name="Karaoke Tuesday">
+    
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--recurring" data-mobile-required>WEEKLY</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>Karaoke Tuesday</h3>
+    <p class="mobile-event-time" data-mobile-required>10 PM</p>
+    
+    
+    
+    <p class="mobile-series-context mobile-series-context--late-night-happy-hour" data-promotion-id="late-night-hh" data-promotion-semantic="late-night-happy-hour" data-mobile-required>Late Night HH 🌙 · 12 AM</p>
+  </article></div>
+  </li>
+<li class="mobile-date-row" data-date="2026-10-21" id="mobile-date-2026-10-21" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-21" data-mobile-required>
+      <span class="mobile-date-weekday">WED</span>
+      <span class="mobile-date-number">21</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="wednesday" aria-label="WED weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-13" role="img" aria-label="WED weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--recurring-full mobile-event-card--semantic-recurring mobile-event-card--dj-companion" data-event-name="Ladies Night" data-performer-display="DJ Edward &amp; Friends">
+    <div class="mobile-event-artwork mobile-event-artwork--event mobile-event-artwork--dj-portrait" data-mobile-image-ref="mobile-image-2" role="img" aria-label="Ladies Night artwork" data-mobile-required style="--mobile-artwork-fit:cover;--mobile-artwork-position:center 25%;--mobile-artwork-aspect:1 / 1;--mobile-artwork-width:78%;--mobile-artwork-padding:0%;--mobile-artwork-background:rgba(0, 0, 0, 0.22)" data-selected-asset="dj-edward-v1.jpg" data-selected-asset-checksum="fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e"></div>
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--recurring" data-mobile-required>WEEKLY</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>Ladies Night</h3>
+    <p class="mobile-event-time" data-mobile-required>10 PM–2 AM</p>
+    <p class="mobile-event-performer" data-mobile-required>DJ Edward &amp; Friends</p>
+    
+    
+    <p class="mobile-series-context mobile-series-context--ladies-night" data-promotion-id="ladies-drink-free" data-promotion-semantic="ladies-night" data-mobile-required>Ladies drink FREE</p>
+  </article></div>
+  </li>
+<li class="mobile-date-row mobile-date-row--multi-event" data-date="2026-10-22" id="mobile-date-2026-10-22" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-22" data-mobile-required>
+      <span class="mobile-date-weekday">THU</span>
+      <span class="mobile-date-number">22</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="thursday" aria-label="THU weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-3" role="img" aria-label="THU weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--recurring-full mobile-event-card--semantic-recurring" data-event-name="KoolKidz">
+    <div class="mobile-event-artwork mobile-event-artwork--event" data-mobile-image-ref="mobile-image-14" role="img" aria-label="KoolKidz artwork" data-mobile-required style="--mobile-artwork-fit:contain;--mobile-artwork-position:center;--mobile-artwork-aspect:1 / 1;--mobile-artwork-width:100%;--mobile-artwork-padding:3%;--mobile-artwork-background:rgba(4, 9, 13, 0.72)" data-selected-asset="koolkidz-v1.jpg" data-selected-asset-checksum="0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b"></div>
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--live" data-mobile-required>Live Music</span><span class="mobile-event-chip mobile-event-chip--recurring" data-mobile-required>MONTHLY</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="visually-hidden">KoolKidz</h3>
+    <p class="mobile-event-time" data-mobile-required>8 PM</p>
+    
+    
+    
+    <p class="mobile-series-context mobile-series-context--late-night-happy-hour" data-promotion-id="late-night-hh" data-promotion-semantic="late-night-happy-hour" data-mobile-required>Late Night HH 🌙 · 12 AM</p>
+  </article>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--recurring-full mobile-event-card--semantic-recurring mobile-event-card--dj-companion" data-event-name="DJ Edward" data-performer-display="DJ Edward">
+    <div class="mobile-event-artwork mobile-event-artwork--event mobile-event-artwork--dj-portrait" data-mobile-image-ref="mobile-image-2" role="img" aria-label="DJ Edward artwork" data-mobile-required style="--mobile-artwork-fit:cover;--mobile-artwork-position:center 25%;--mobile-artwork-aspect:1 / 1;--mobile-artwork-width:78%;--mobile-artwork-padding:0%;--mobile-artwork-background:rgba(0, 0, 0, 0.22)" data-selected-asset="dj-edward-v1.jpg" data-selected-asset-checksum="fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e"></div>
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--recurring" data-mobile-required>WEEKLY</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>DJ Edward</h3>
+    <p class="mobile-event-time" data-mobile-required>11:30 PM</p>
+    <p class="mobile-event-performer" data-mobile-required>DJ Edward</p>
+    
+    
+    
+  </article></div>
+  </li>
+<li class="mobile-date-row" data-date="2026-10-23" id="mobile-date-2026-10-23" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-23" data-mobile-required>
+      <span class="mobile-date-weekday">FRI</span>
+      <span class="mobile-date-number">23</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="friday" aria-label="FRI weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-7" role="img" aria-label="FRI weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--semantic-live" data-event-name="The Marauders">
+    <div class="mobile-event-artwork mobile-event-artwork--event" data-mobile-image-ref="mobile-image-20" role="img" aria-label="The Marauders artwork" data-mobile-required style="--mobile-artwork-fit:contain;--mobile-artwork-position:center;--mobile-artwork-aspect:1 / 1;--mobile-artwork-width:100%;--mobile-artwork-padding:3%;--mobile-artwork-background:rgba(4, 9, 13, 0.72)" data-selected-asset="the-marauders-instagram-post-v1.jpg" data-selected-asset-checksum="0963fd201c80984a35ae300963ddd56fecec03c5efd84cfdb26eb2e945eb50fd"></div>
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--live" data-mobile-required>Live Music</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>The Marauders</h3>
+    <p class="mobile-event-time" data-mobile-required>10 PM</p>
+    
+    
+    
+    
+  </article></div>
+  </li>
+<li class="mobile-date-row" data-date="2026-10-24" id="mobile-date-2026-10-24" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-24" data-mobile-required>
+      <span class="mobile-date-weekday">SAT</span>
+      <span class="mobile-date-number">24</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="saturday" aria-label="SAT weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-10" role="img" aria-label="SAT weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--semantic-live" data-event-name="Juanabe">
+    <div class="mobile-event-artwork mobile-event-artwork--event" data-mobile-image-ref="mobile-image-21" role="img" aria-label="Juanabe artwork" data-mobile-required style="--mobile-artwork-fit:contain;--mobile-artwork-position:center;--mobile-artwork-aspect:1 / 1;--mobile-artwork-width:100%;--mobile-artwork-padding:3%;--mobile-artwork-background:rgba(4, 9, 13, 0.72)" data-selected-asset="juanabe-instagram-post-v2.jpg" data-selected-asset-checksum="37d691ff4e94ba69fe03aca6f05236ab8d90321ef774314bea52578f44d69c55"></div>
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--live" data-mobile-required>Live Music</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>Juanabe</h3>
+    <p class="mobile-event-time" data-mobile-required>10 PM</p>
+    
+    
+    
+    
+  </article></div>
+  </li>
+<li class="mobile-date-row" data-date="2026-10-25" id="mobile-date-2026-10-25" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-25" data-mobile-required>
+      <span class="mobile-date-weekday">SUN</span>
+      <span class="mobile-date-number">25</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="sunday" aria-label="SUN weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-11" role="img" aria-label="SUN weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--recurring-full mobile-event-card--semantic-recurring" data-event-name="Whiskey Allstars">
+    
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--live" data-mobile-required>Live Music</span><span class="mobile-event-chip mobile-event-chip--recurring" data-mobile-required>WEEKLY</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>Whiskey Allstars</h3>
+    <p class="mobile-event-time" data-mobile-required>6ish</p>
+    
+    
+    
+    <p class="mobile-series-context mobile-series-context--industry" data-promotion-id="in-da-biz-sundays" data-promotion-semantic="industry" data-mobile-required>In &#39;Da Biz 🍻 50% off</p>
+  </article></div>
+  </li></ol>
+    </section>
+<section class="mobile-week" aria-labelledby="mobile-week-5">
+      <h2 class="mobile-week-heading" id="mobile-week-5">Week 5 · Oct 27–31</h2>
+      <ol class="mobile-date-list"><li class="mobile-date-row" data-date="2026-10-27" id="mobile-date-2026-10-27" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-27" data-mobile-required>
+      <span class="mobile-date-weekday">TUE</span>
+      <span class="mobile-date-number">27</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="tuesday" aria-label="TUE weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-12" role="img" aria-label="TUE weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--recurring-full mobile-event-card--semantic-recurring" data-event-name="Karaoke Tuesday">
+    
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--recurring" data-mobile-required>WEEKLY</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>Karaoke Tuesday</h3>
+    <p class="mobile-event-time" data-mobile-required>10 PM</p>
+    
+    
+    
+    <p class="mobile-series-context mobile-series-context--late-night-happy-hour" data-promotion-id="late-night-hh" data-promotion-semantic="late-night-happy-hour" data-mobile-required>Late Night HH 🌙 · 12 AM</p>
+  </article></div>
+  </li>
+<li class="mobile-date-row" data-date="2026-10-28" id="mobile-date-2026-10-28" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-28" data-mobile-required>
+      <span class="mobile-date-weekday">WED</span>
+      <span class="mobile-date-number">28</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="wednesday" aria-label="WED weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-13" role="img" aria-label="WED weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--recurring-full mobile-event-card--semantic-recurring mobile-event-card--dj-companion" data-event-name="Ladies Night" data-performer-display="DJ Edward &amp; Friends">
+    <div class="mobile-event-artwork mobile-event-artwork--event mobile-event-artwork--dj-portrait" data-mobile-image-ref="mobile-image-2" role="img" aria-label="Ladies Night artwork" data-mobile-required style="--mobile-artwork-fit:cover;--mobile-artwork-position:center 25%;--mobile-artwork-aspect:1 / 1;--mobile-artwork-width:78%;--mobile-artwork-padding:0%;--mobile-artwork-background:rgba(0, 0, 0, 0.22)" data-selected-asset="dj-edward-v1.jpg" data-selected-asset-checksum="fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e"></div>
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--recurring" data-mobile-required>WEEKLY</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>Ladies Night</h3>
+    <p class="mobile-event-time" data-mobile-required>10 PM–2 AM</p>
+    <p class="mobile-event-performer" data-mobile-required>DJ Edward &amp; Friends</p>
+    
+    
+    <p class="mobile-series-context mobile-series-context--ladies-night" data-promotion-id="ladies-drink-free" data-promotion-semantic="ladies-night" data-mobile-required>Ladies drink FREE</p>
+  </article></div>
+  </li>
+<li class="mobile-date-row mobile-date-row--multi-event" data-date="2026-10-29" id="mobile-date-2026-10-29" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-29" data-mobile-required>
+      <span class="mobile-date-weekday">THU</span>
+      <span class="mobile-date-number">29</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="thursday" aria-label="THU weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-3" role="img" aria-label="THU weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--semantic-live" data-event-name="Monchzilla">
+    <div class="mobile-event-artwork mobile-event-artwork--event" data-mobile-image-ref="mobile-image-22" role="img" aria-label="Monchzilla artwork" data-mobile-required style="--mobile-artwork-fit:contain;--mobile-artwork-position:center;--mobile-artwork-aspect:1 / 1;--mobile-artwork-width:100%;--mobile-artwork-padding:3%;--mobile-artwork-background:rgba(4, 9, 13, 0.72)" data-selected-asset="monchzilla-instagram-post-v2.jpg" data-selected-asset-checksum="8aae18fada46db54e7fb4289348ebaa8b40c29b9d43b4b1041808d0a3460213e"></div>
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--live" data-mobile-required>Live Music</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>Monchzilla</h3>
+    <p class="mobile-event-time" data-mobile-required>8 PM</p>
+    
+    
+    
+    <p class="mobile-series-context mobile-series-context--late-night-happy-hour" data-promotion-id="late-night-hh" data-promotion-semantic="late-night-happy-hour" data-mobile-required>Late Night HH 🌙 · 12 AM</p>
+  </article>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--recurring-full mobile-event-card--semantic-recurring mobile-event-card--dj-companion" data-event-name="DJ Edward" data-performer-display="DJ Edward">
+    <div class="mobile-event-artwork mobile-event-artwork--event mobile-event-artwork--dj-portrait" data-mobile-image-ref="mobile-image-2" role="img" aria-label="DJ Edward artwork" data-mobile-required style="--mobile-artwork-fit:cover;--mobile-artwork-position:center 25%;--mobile-artwork-aspect:1 / 1;--mobile-artwork-width:78%;--mobile-artwork-padding:0%;--mobile-artwork-background:rgba(0, 0, 0, 0.22)" data-selected-asset="dj-edward-v1.jpg" data-selected-asset-checksum="fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e"></div>
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--recurring" data-mobile-required>WEEKLY</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>DJ Edward</h3>
+    <p class="mobile-event-time" data-mobile-required>11:30 PM</p>
+    <p class="mobile-event-performer" data-mobile-required>DJ Edward</p>
+    
+    
+    
+  </article></div>
+  </li>
+<li class="mobile-date-row" data-date="2026-10-30" id="mobile-date-2026-10-30" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-30" data-mobile-required>
+      <span class="mobile-date-weekday">FRI</span>
+      <span class="mobile-date-number">30</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="friday" aria-label="FRI weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-7" role="img" aria-label="FRI weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--semantic-live" data-event-name="SUO">
+    <div class="mobile-event-artwork mobile-event-artwork--event" data-mobile-image-ref="mobile-image-23" role="img" aria-label="SUO artwork" data-mobile-required style="--mobile-artwork-fit:contain;--mobile-artwork-position:center;--mobile-artwork-aspect:1 / 1;--mobile-artwork-width:100%;--mobile-artwork-padding:3%;--mobile-artwork-background:rgba(4, 9, 13, 0.72)" data-selected-asset="suo-v1.jpg" data-selected-asset-checksum="27340265e94074b668419bac978238c4a4a91d49581031d302bc33c118d0cdfe"></div>
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--live" data-mobile-required>Live Music</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>SUO</h3>
+    <p class="mobile-event-time" data-mobile-required>10 PM</p>
+    
+    
+    
+    
+  </article></div>
+  </li>
+<li class="mobile-date-row mobile-date-row--multi-event" data-date="2026-10-31" id="mobile-date-2026-10-31" data-mobile-date-target>
+    <time class="mobile-date-rail" datetime="2026-10-31" data-mobile-required>
+      <span class="mobile-date-weekday">SAT</span>
+      <span class="mobile-date-number">31</span>
+    </time>
+    <div class="mobile-date-content"><section class="mobile-weekday-identity" data-weekday-identity="saturday" aria-label="SAT weekday identity" data-mobile-required>
+    <div class="mobile-weekday-identity-artwork" data-mobile-image-ref="mobile-image-10" role="img" aria-label="SAT weekday identity" data-mobile-required></div>
+  </section>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--semantic-live" data-event-name="Abria">
+    <div class="mobile-event-artwork mobile-event-artwork--event" data-mobile-image-ref="mobile-image-24" role="img" aria-label="Abria artwork" data-mobile-required style="--mobile-artwork-fit:contain;--mobile-artwork-position:center;--mobile-artwork-aspect:1 / 1;--mobile-artwork-width:100%;--mobile-artwork-padding:3%;--mobile-artwork-background:rgba(4, 9, 13, 0.72)" data-selected-asset="abria-instagram-post-v1.jpg" data-selected-asset-checksum="56959c5d4fa82bcd022413abf58f9ea9bf2e20170749c9de09bd53053f445600"></div>
+    <div class="mobile-event-chips" aria-label="Event details"><span class="mobile-event-chip mobile-event-chip--live" data-mobile-required>Live Music</span><span class="mobile-event-chip mobile-event-chip--venue" data-mobile-required>Living Room</span></div>
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>Abria</h3>
+    <p class="mobile-event-time" data-mobile-required>10 PM</p>
+    
+    
+    
+    
+  </article>
+<article class="mobile-event-card mobile-event-card--artwork-led mobile-event-card--dj-companion" data-event-name="DJ ICUE">
+    <div class="mobile-event-artwork mobile-event-artwork--event" data-mobile-image-ref="mobile-image-25" role="img" aria-label="DJ ICUE artwork" data-mobile-required style="--mobile-artwork-fit:contain;--mobile-artwork-position:center;--mobile-artwork-aspect:1 / 1;--mobile-artwork-width:100%;--mobile-artwork-padding:3%;--mobile-artwork-background:rgba(4, 9, 13, 0.72)" data-selected-asset="dj-icue-instagram-post-v1.jpg" data-selected-asset-checksum="ef116261d478d4ae57be860f895aa6cd5c0f4a3f37211264a47bcd2abfce51cb"></div>
+    
+    
+    
+    <h3 class="mobile-event-title" data-mobile-required>DJ ICUE</h3>
+    
+    
+    
+    
+    
+  </article></div>
+  </li></ol>
+    </section></div>
+  </main>
+<script type="application/json" id="mobile-inline-image-payloads">{"mobile-image-1":"assets/a1d12c406da0959b087160329ac6225798b7eb457ed3c9d3cc82d8703ccfa3f9.png","mobile-image-2":"assets/fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e.jpg","mobile-image-3":"assets/827035111b704b117c06411d5ff76e74711cfd4282736ed0dbeda64f9b2eed2b.png","mobile-image-4":"assets/4f029697cb6fedbe644a353602dd6f5980643968a5f7f2a7fd983c3cf6287f55.png","mobile-image-5":"assets/94f456490552967080642537cdf583c41b82ba9bb63d5d703624099d01ddbdc3.jpg","mobile-image-6":"assets/b9d8404597e8162ca3740fb4d3aafe087e09e92ed7031532ef748fbd55c90a5a.jpg","mobile-image-7":"assets/5f626940ca33f833820f7045a95d6ea49d9ea5375f7682fd2835b32729eb097b.png","mobile-image-8":"assets/aff501a678c2ab004628eb3dc903dd2f9fa4c4455d5b721cdba65f71c23c1da1.jpg","mobile-image-9":"assets/9aefd37fdf7f7c41c4ac97cbc1f84f2c3c00d04fe1798c89acfb272a71d0e472.jpg","mobile-image-10":"assets/55df05f3354139b71bb3fd523f27a59cc743d5f6a4108a5aa5c6e010ee2c2ae6.png","mobile-image-11":"assets/249bf73f682bfec6f406a8e55a45cbe1e42d43504a1aef9ab05dbdde5ad6c04d.png","mobile-image-12":"assets/480f85eee8adede95f62924cd2c2c1aa4dd2782743814e8ee260d66c16855f7f.png","mobile-image-13":"assets/752909552b3978d36034d651dbf917f896101acd0f56fbf336098248336b8619.png","mobile-image-14":"assets/0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b.jpg","mobile-image-15":"assets/ad27706b7775bfaa81feb1e7c36d9f29707f1eaed54c1b915aa72a9058434c76.jpg","mobile-image-16":"assets/f375d3e1d1195d3e7895dd3fea383b3db1b16b1b42fa92f14f76c5ce3398e539.jpg","mobile-image-17":"assets/440fed2d0014d313246a3d43e7ecc661feaf2ac784554e4d0cf604384f48fe8d.jpg","mobile-image-18":"assets/505484bec264821a1b548664d074227ebb3402d1bfeadd529b3373c08add4e0e.jpg","mobile-image-19":"assets/05c16e757f0e1f1218f9e914ae8c7dd092ffbb8eecfe7c02247fd30398959aac.jpg","mobile-image-20":"assets/0963fd201c80984a35ae300963ddd56fecec03c5efd84cfdb26eb2e945eb50fd.jpg","mobile-image-21":"assets/37d691ff4e94ba69fe03aca6f05236ab8d90321ef774314bea52578f44d69c55.jpg","mobile-image-22":"assets/8aae18fada46db54e7fb4289348ebaa8b40c29b9d43b4b1041808d0a3460213e.jpg","mobile-image-23":"assets/27340265e94074b668419bac978238c4a4a91d49581031d302bc33c118d0cdfe.jpg","mobile-image-24":"assets/56959c5d4fa82bcd022413abf58f9ea9bf2e20170749c9de09bd53053f445600.jpg","mobile-image-25":"assets/ef116261d478d4ae57be860f895aa6cd5c0f4a3f37211264a47bcd2abfce51cb.jpg"}</script>
+<script>(function mobileImageRuntime() {
+  var payloadElement = document.getElementById("mobile-inline-image-payloads");
+  var payloads = JSON.parse(payloadElement.textContent);
+  var sources = {};
+
+  Object.keys(payloads).forEach(function (reference) {
+    var dataUri = payloads[reference];
+    var comma = dataUri.indexOf(",");
+    var mimeType = dataUri.slice(5, dataUri.indexOf(";", 5));
+    var binary = window.atob(dataUri.slice(comma + 1));
+    var bytes = new Uint8Array(binary.length);
+    for (var index = 0; index < binary.length; index += 1) bytes[index] = binary.charCodeAt(index);
+    var objectUrl = URL.createObjectURL(new Blob([bytes], { type: mimeType }));
+    var source = new Image();
+    source.hidden = true;
+    source.alt = "";
+    source.setAttribute("aria-hidden", "true");
+    source.setAttribute("data-mobile-image-source", reference);
+    source.src = objectUrl;
+    document.body.appendChild(source);
+    sources[reference] = { source: source, objectUrl: objectUrl };
+  });
+
+  var targets = Array.from(document.querySelectorAll("[data-mobile-image-ref]"));
+  targets.forEach(function (target) {
+    var reference = target.getAttribute("data-mobile-image-ref");
+    if (sources[reference]) target.style.backgroundImage = "url('" + sources[reference].objectUrl + "')";
+  });
+
+  window.addEventListener("load", function () {
+    var loadedSourceCount = 0;
+    var failedSourceCount = 0;
+    Object.keys(sources).forEach(function (reference) {
+      var source = sources[reference].source;
+      var loaded = source.complete && source.naturalWidth > 0 && source.naturalHeight > 0;
+      source.setAttribute("data-mobile-image-source-loaded", String(loaded));
+      if (loaded) loadedSourceCount += 1;
+      else failedSourceCount += 1;
+    });
+
+    var resolvedTargetCount = 0;
+    targets.forEach(function (target) {
+      var rect = target.getBoundingClientRect();
+      var resolved = window.getComputedStyle(target).backgroundImage !== "none" && rect.width > 0 && rect.height > 0;
+      target.setAttribute("data-mobile-image-resolved", String(resolved));
+      if (resolved) resolvedTargetCount += 1;
+    });
+
+    var viewportWidth = document.documentElement.clientWidth;
+    var horizontalOverflow = Math.max(document.documentElement.scrollWidth, document.body.scrollWidth) - viewportWidth;
+    var clippedCount = 0;
+    document.querySelectorAll("[data-mobile-required]").forEach(function (element) {
+      var rect = element.getBoundingClientRect();
+      var style = window.getComputedStyle(element);
+      var visible = rect.width > 0 && rect.height > 0 && style.display !== "none" && style.visibility !== "hidden";
+      var clipsHorizontalOverflow = style.overflowX !== "visible" && element.scrollWidth > element.clientWidth + 1;
+      var clipsVerticalOverflow = style.overflowY !== "visible" && element.scrollHeight > element.clientHeight + 1;
+      var clipped = clipsHorizontalOverflow || clipsVerticalOverflow;
+      if (!visible || clipped || rect.left < -1 || rect.right > viewportWidth + 1) {
+        element.setAttribute("data-mobile-content-clipped", "true");
+        clippedCount += 1;
+      }
+    });
+
+    var boundsViolationCount = 0;
+    document.querySelectorAll(".mobile-event-card, .mobile-closed-card").forEach(function (card) {
+      var parent = card.closest(".mobile-date-content");
+      var cardRect = card.getBoundingClientRect();
+      var parentRect = parent.getBoundingClientRect();
+      if (cardRect.left < parentRect.left - 1 || cardRect.right > parentRect.right + 1) boundsViolationCount += 1;
+    });
+
+    var root = document.documentElement;
+    root.setAttribute("data-mobile-image-source-count", String(Object.keys(sources).length));
+    root.setAttribute("data-mobile-image-source-loaded-count", String(loadedSourceCount));
+    root.setAttribute("data-mobile-image-source-failed-count", String(failedSourceCount));
+    root.setAttribute("data-mobile-image-target-count", String(targets.length));
+    root.setAttribute("data-mobile-image-resolved-count", String(resolvedTargetCount));
+    root.setAttribute("data-mobile-image-unresolved-count", String(targets.length - resolvedTargetCount));
+    root.setAttribute("data-mobile-viewport-width", String(viewportWidth));
+    root.setAttribute("data-mobile-horizontal-overflow", String(Math.max(0, Math.ceil(horizontalOverflow))));
+    root.setAttribute("data-mobile-clipped-count", String(clippedCount));
+    root.setAttribute("data-mobile-bounds-violation-count", String(boundsViolationCount));
+    root.setAttribute("data-mobile-measured-height", String(Math.ceil(document.documentElement.scrollHeight)));
+  }, { once: true });
+})();</script>
+<script>(()=>{const parts=Object.fromEntries(new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date()).map(({type,value})=>[type,value]));const date=[parts.year,parts.month,parts.day].join("-");const cell=document.querySelector('[data-mobile-glance-date="'+date+'"]');if(!cell)return;cell.classList.add("mobile-glance-day--today");cell.setAttribute("aria-current","date")})()</script>
+</body>
+</html>

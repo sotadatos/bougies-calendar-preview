@@ -1,0 +1,2883 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bougies Calendar — October 2026</title>
+<style>
+/* Bougies Calendar — Phase 6A background-first renderer foundation
+   (docs/visual-design-phase6-plan.md §2). System font stacks only (no
+   external font loading — keeps this fully self-contained and
+   offline-safe). CSS variables + reusable classes only — structural
+   per-render inline values describe row count and weekday-promotion grid
+   placement (components/month-grid.mjs); the monthly background photo is applied
+   as a direct inline `background-image` on .calendar-page instead of a
+   custom property (see that rule's own comment for why — a Phase 6B
+   step G finding).
+
+   Palette is now a swappable class (.palette-warm / .palette-dusk) rather
+   than fixed :root values, selected per month by colorDirection — see
+   theme-resolver.mjs. Colors below are rgba() rather than opaque hex so
+   the grid stays transparent over whatever sits in the background layer
+   (photo or procedural fallback), per the plan's layer 3. */
+
+:root {
+  --font-display: Georgia, "Times New Roman", serif;
+  --font-body: -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --calendar-grid-gap: 1px;
+}
+
+/* Palette: warm wood / amber, indoor-leaning (default) — one of the 2-3
+   base palettes described in docs/calendar-design-system.md §8. */
+.palette-warm {
+  --bougies-bg: #1b1410;
+  --bougies-bg-panel: rgba(36, 26, 20, 0.55);
+  --bougies-bg-panel-quiet: rgba(36, 26, 20, 0.32);
+  --bougies-wood: #3a2a1d;
+  --bougies-amber: #d9a441;
+  --bougies-amber-soft: #b98a3a;
+  --bougies-cream: #f2e6d3;
+  --bougies-cream-dim: #cbb99e;
+  --bougies-recurring-accent: #5f8f80;
+  --bougies-outside: rgba(18, 13, 10, 0.4);
+  --bougies-border: #4a382a;
+  --bougies-overlay: rgba(15, 10, 7, 0.55);
+  /* Phase 6B step D — overlayStyle "strong" variant and per-template
+     accent/panel tokens (docs/visual-design-phase6b-plan.md §4, §7). */
+  --bougies-overlay-strong: rgba(15, 10, 7, 0.74);
+  --bougies-dj-accent: #6f8fc9;
+  --bougies-dj-panel: rgba(15, 18, 30, 0.72);
+  --bougies-special-accent: #e8c458;
+  --bougies-border-faint: rgba(74, 56, 42, 0.35);
+  --bougies-grid-line: rgba(244, 222, 177, 0.16);
+  --bougies-grid-line-quiet: rgba(244, 222, 177, 0.07);
+}
+
+/* Palette: dusk / neon, cooler — colorDirection: "dusk" (DJ / late-night
+   leaning months). Second base palette per design-system §8. */
+.palette-dusk {
+  --bougies-bg: #12131f;
+  --bougies-bg-panel: rgba(24, 22, 42, 0.55);
+  --bougies-bg-panel-quiet: rgba(24, 22, 42, 0.32);
+  --bougies-wood: #262646;
+  --bougies-amber: #e8a5d8;
+  --bougies-amber-soft: #b978ab;
+  --bougies-cream: #eef0fb;
+  --bougies-cream-dim: #b9bce0;
+  --bougies-recurring-accent: #5fd0c8;
+  --bougies-outside: rgba(10, 10, 18, 0.4);
+  --bougies-border: #3a3a63;
+  --bougies-overlay: rgba(10, 8, 20, 0.55);
+  --bougies-overlay-strong: rgba(10, 8, 20, 0.74);
+  --bougies-dj-accent: #8b7fe0;
+  --bougies-dj-panel: rgba(8, 8, 20, 0.72);
+  --bougies-special-accent: #f2d675;
+  --bougies-border-faint: rgba(58, 58, 99, 0.35);
+  --bougies-grid-line: rgba(238, 240, 251, 0.16);
+  --bougies-grid-line-quiet: rgba(238, 240, 251, 0.07);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+body {
+  margin: 0;
+  background: var(--bougies-bg);
+  color: var(--bougies-cream);
+  font-family: var(--font-body);
+  /* Phase 8 responsive presentation layer (docs/phase7c-graphic-language-plan.md
+     §9's "Investigation note" — the same scale-to-fit already validated
+     against a hand-edited review copy, now built into the renderer
+     itself). .calendar-viewport below centers .calendar-page and can
+     scale it down on narrow viewports; the scaled-down box's native
+     1800px layout width still reports on body's own 100vw calculations,
+     so this keeps that overhang from ever producing a scrollbar. */
+  overflow-x: hidden;
+}
+
+/* Centers .calendar-page (and, on narrow viewports, its scaled-down
+   visual footprint) horizontally. Purely a browser presentation layer —
+   PNG/PDF capture in generate-calendar-render.mjs uses a headless
+   window exactly 1800 CSS px wide, where the media query below is at
+   its own upper boundary and the computed scale is exactly 1, so the
+   1800px master composition and its export dimensions are unchanged. */
+.calendar-viewport {
+  display: flex;
+  justify-content: center;
+}
+
+/* --- Primary composition: landscape, 3:2, matching the historical
+   Bougies reference dimensions exactly (docs/calendar-design-system.md
+   §0 and §2 — "Primary source design"). 1800×1200 is the working
+   resolution chosen for this digital renderer; 5400×3600 (the historical
+   files' actual pixel size) remains the reference ratio, not a hard
+   requirement to hit at this stage. Fixed height, flex column: header and
+   the weekday row take their natural height, the grid fills whatever
+   remains — this is what makes "the grid is the hero" (docs §0 "What
+   should be preserved") literally true regardless of whether a given
+   month needs 5 or 6 row. Portrait/Instagram/print derivations are
+   explicitly future work (docs §2) — this stylesheet only targets the
+   landscape master. */
+
+.calendar-page {
+  position: relative;
+  width: 1800px;
+  /* Phase 7C layout architecture (docs/phase7c-graphic-language-plan.md
+     §5): min-height, not a fixed height. Graphic override layers (month
+     title artwork, weekday identity artwork) have unpredictable rendered
+     heights depending on the source image's aspect ratio — a fixed
+     1200px forced the grid to silently shrink and clip event content
+     whenever those layers grew taller than the space a plain-text
+     render needed. With min-height, the page grows to fit real content
+     instead; a month using only styled text (no graphic overrides)
+     still computes to exactly 1200px, unchanged from before. The actual
+     PNG capture height is measured per-render, not assumed — see
+     generate-calendar-render.mjs's two-pass measure-then-screenshot
+     flow. */
+  min-height: 1200px;
+  padding: 32px 40px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  /* Render-stack layer 1: falls back to a subtle procedural texture —
+     never a flat solid color — when no theme background image is
+     configured. docs/visual-design-phase6-plan.md §2, §4.
+
+     Phase 6B step G finding: the actual monthly photo is applied via a
+     DIRECT inline `background-image` on this element
+     (generate-calendar-render.mjs), not through a CSS custom property.
+     An earlier version routed it through a --bougies-bg-image custom
+     property + var(--bougies-bg-image, ...) fallback here — that broke
+     silently in Chromium for a real (~2MB+) base64 data URI: custom
+     property values have a much lower serialized-length ceiling than
+     ordinary property values, so the var() reference was treated as
+     invalid and always fell through to this procedural pattern, with no
+     error. Confirmed by isolation testing during step G (a bare
+     `background-image: url(...)` with the same large data URI renders
+     correctly; the identical value routed through a custom property does
+     not). A plain inline `background-image` declaration has no such
+     limit and simply overrides this rule for that one property when
+     present, falling through to the procedural pattern below exactly as
+     before when it isn't. */
+  background-color: var(--bougies-bg);
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.02) 0px,
+    rgba(255, 255, 255, 0.02) 2px,
+    transparent 2px,
+    transparent 14px
+  );
+  background-size: var(--web-background-size, cover);
+  background-position: var(--web-background-position, center);
+  background-blend-mode: var(--web-background-blend-mode, normal);
+  transform-origin: top center;
+}
+
+.calendar-customer-nav {
+  position: absolute;
+  top: 18px;
+  right: 28px;
+  z-index: 5;
+  display: flex;
+  gap: 8px;
+}
+
+.calendar-nav-link {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  padding: 5px 10px;
+  border: 1px solid rgba(242, 230, 211, 0.6);
+  border-radius: 999px;
+  background: rgba(15, 10, 7, 0.72);
+  color: var(--bougies-cream);
+  font: 700 11px/1 var(--font-body);
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.calendar-archive-menu { position: relative; }
+.calendar-archive-menu summary { cursor: pointer; list-style: none; }
+.calendar-archive-menu summary::-webkit-details-marker { display: none; }
+.calendar-archive-links {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 4px);
+  display: grid;
+  min-width: 150px;
+  padding: 6px;
+  border-radius: 6px;
+  background: rgba(15, 10, 7, 0.94);
+}
+.calendar-archive-links a { padding: 5px; color: var(--bougies-cream); text-decoration: none; }
+.calendar-archive-menu--review .calendar-nav-link--archive::after {
+  content: "Review only";
+  margin-left: 6px;
+  color: var(--bougies-amber-soft);
+  font-size: 8px;
+  letter-spacing: 0.05em;
+}
+
+/* Inline month history: a compact disclosure anchored to the nav's right
+   edge, so it opens leftward inside the page and never widens it. */
+.calendar-customer-nav:has(.month-history) { z-index: 20; }
+.month-history { position: relative; }
+.month-history summary { cursor: pointer; list-style: none; }
+.month-history summary::-webkit-details-marker { display: none; }
+.month-history summary::after {
+  content: "";
+  margin-left: 7px;
+  border: 4px solid transparent;
+  border-top-color: currentColor;
+  transform: translateY(2px);
+}
+.month-history[open] summary::after { transform: translateY(-2px) rotate(180deg); }
+.calendar-nav-link--history { border-color: rgba(255, 201, 79, 0.58); color: #f4c86e; }
+.calendar-nav-link--history:focus-visible,
+.month-history__item--link:focus-visible {
+  outline: 2px solid #f4c86e;
+  outline-offset: 3px;
+}
+.month-history--web .month-history__menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  display: grid;
+  gap: 2px;
+  width: max-content;
+  min-width: 220px;
+  max-width: 320px;
+  margin: 0;
+  padding: 6px;
+  border: 1px solid rgba(255, 201, 79, 0.58);
+  border-radius: 8px;
+  background: rgba(15, 10, 7, 0.86);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+  list-style: none;
+}
+.month-history--web .month-history__item {
+  display: block;
+  padding: 7px 10px;
+  border-radius: 5px;
+  color: var(--bougies-cream);
+  font: 700 12px/1.25 var(--font-body);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+/* Modifiers share the surface scope so they win over the base item rule. */
+.month-history--web .month-history__item--link { color: #f4c86e; }
+.month-history--web .month-history__item--link:hover { background: rgba(255, 201, 79, 0.14); }
+.month-history--web .month-history__item--disabled { opacity: 0.55; cursor: default; }
+.month-history__state { font-weight: 500; }
+
+/* Scales the whole 1800px master down to fit viewports narrower than
+   it, keeping it centered (transform-origin above is horizontally
+   centered on the box itself, which .calendar-viewport has already
+   centered in the page, so the shrink stays centered rather than
+   drifting toward one edge). Never upscales: outside this media query
+   .calendar-page is simply left at its native, unscaled size. At
+   exactly 1800px — the headless PNG capture window's width — 100vw /
+   1800px is exactly 1, so this is a no-op for that export.
+
+   `screen` only, deliberately: generate-calendar-render.mjs's PDF export
+   (--print-to-pdf) doesn't pass an explicit --window-size, so its print
+   layout viewport is whatever Chrome's default is, not 1800px — under
+   `print`, this same width-based query would misread that default as
+   "narrow" and shrink the PDF's master composition too. The script's own
+   @media print override already forces .calendar-page back to a fixed
+   1800px width for PDF output; scoping this rule to `screen` keeps that
+   export path untouched. */
+@media screen and (min-width: 1000px) and (max-width: 1799px) {
+  .calendar-page {
+    width: 100vw;
+    padding-right: 22px;
+    padding-left: 22px;
+    transform: none;
+  }
+}
+
+@media screen and (max-width: 999px) {
+  .calendar-page {
+    flex: 0 0 auto;
+    width: 1800px;
+    zoom: calc(100vw / 1800px);
+    transform: none;
+  }
+}
+
+/* Render-stack layer 2: the readability overlay/scrim, per
+   docs/calendar-design-system.md §8 ("any text laid over a photo or
+   textured background must sit on a scrim/overlay strong enough to
+   guarantee contrast, automatically"). Sits between the background and
+   every content layer; overlayStyle (theme-resolver.mjs) selects which
+   variant applies. Phase 6B step D formalizes this as a small named
+   registry (docs/visual-design-phase6b-plan.md §7) — "standard" (the
+   prior "warm transparent grid" default, renamed only, unchanged value),
+   "strong" (new, for busier photos), "none". */
+.calendar-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.calendar-page.overlay-standard::before {
+  background: var(--bougies-overlay);
+}
+.calendar-page.overlay-strong::before {
+  background: var(--bougies-overlay-strong);
+}
+.calendar-page.overlay-none::before {
+  background: none;
+}
+
+/* graphicStyle registry (theme-resolver.mjs), Phase 6B step D
+   (docs/visual-design-phase6b-plan.md §7) — "bold" (default) is today's
+   existing badge treatment, so it needs no override rule of its own;
+   "minimal" is the one named alternative, a lighter/quieter badge. Both
+   are named values only — never arbitrary CSS from config. */
+.graphic-minimal .cell-label {
+  font-weight: 500;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  padding: 1px 5px;
+}
+
+/* Layers 3-5 and 7 (header, weekday identity, grid, footer) all sit above
+   the background + global scrim (layers 1-2) — each content layer is
+   lifted into its own stacking context above the ::before overlay. Layer
+   6 (Promotional Overlays) has no rule here yet — architecture only, not
+   implemented (docs/visual-design-phase6-plan.md §2). */
+.calendar-header,
+.weekday-row,
+.month-grid,
+.calendar-footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Header (docs §3 items 1-2; docs/visual-design-phase6b-plan.md §2/§4
+   "header treatment layer"). Integrated into the shared background, not a
+   separate website-style banner: the backing below is a soft gradient
+   bleeding into the page's own background, not an opaque box, and the
+   divider is a fading decorative line rather than a hard rule. --- */
+
+.calendar-header {
+  position: relative;
+  flex: 0 0 auto;
+  text-align: center;
+  /* Negative margin matches .calendar-page's own padding (32px 40px) so
+     the gradient backing below bleeds edge-to-edge behind the header,
+     while the padding keeps header text inset exactly where it was. */
+  margin: -32px -40px -6px;
+  padding: 24px 40px 12px;
+}
+
+.calendar-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 80% 100% at 50% 25%, var(--bougies-overlay) 0%, transparent 75%);
+}
+
+.calendar-header > * {
+  position: relative;
+  z-index: 1;
+}
+
+.calendar-brand {
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--bougies-amber-soft);
+  margin-bottom: 10px;
+}
+
+.calendar-header-divider {
+  height: 2px;
+  margin-top: 10px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--bougies-border) 18%,
+    var(--bougies-amber-soft) 50%,
+    var(--bougies-border) 82%,
+    transparent 100%
+  );
+}
+
+/* Dominant element (Phase 6B step A — docs/visual-design-phase6b-plan.md
+   §2): the month/year masthead artwork, not a plain label. Promoted from
+   this rule's prior 18px to the largest text on the page — the first-read
+   anchor a large stylized month name was in both historical references
+   (design-system §0). text-shadow adds a subtle poster-style depth on top
+   of the header's local backing (::before, above). */
+.calendar-month {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 68px;
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--bougies-amber);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  margin-bottom: 6px;
+}
+
+/* Hero Artwork layer, Phase 7C (docs/phase7c-graphic-language-plan.md
+   §1) — replaces .calendar-month entirely when a monthTitleAsset
+   resolves (components/header.mjs); same position in the hierarchy,
+   same role as the dominant element. max-width keeps it proportionate
+   to the masthead/subtitle around it rather than filling the full page
+   width — verified visually during the Phase 7C placement tests. */
+.calendar-month-artwork {
+  display: block;
+  margin: 0 auto 6px;
+  max-width: 720px;
+  width: 100%;
+  height: auto;
+}
+
+/* Supporting subtitle (demoted from this rule's prior 44px/700-weight
+   treatment) — announces the month's theme without outweighing the
+   month/year element above it. */
+.calendar-theme {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 17px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bougies-cream-dim);
+}
+
+/* Reused by the footer layer (Phase 6B step C) for the relocated monthly
+   tagline/overviewCaption — not currently rendered anywhere
+   (components/header.mjs no longer outputs a .calendar-tagline element as
+   of step A). Left in place so step C has a ready-made style. */
+.calendar-tagline {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--bougies-cream-dim);
+  max-width: 1100px;
+  margin: 8px auto 0;
+  line-height: 1.4;
+}
+
+/* --- Weekday row (docs §3 item 3) --- */
+
+.weekday-row {
+  flex: 0 0 auto;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--calendar-grid-gap);
+  margin-bottom: -4px;
+  z-index: 2;
+}
+
+.weekday-label {
+  display: flex;
+  position: relative;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-body);
+  height: 82px;
+  padding: 0 4px;
+}
+
+/* Render-stack layer 4: weekday identity, derived automatically from
+   which recurring-night event (if any) occupies this weekday this month
+   — see components/month-grid.mjs. Plain weekday name always shows;
+   the identity line only appears when the data supports one, so no
+   weekday is ever given a fabricated identity.
+
+   Phase 6B step B (docs/visual-design-phase6b-plan.md §3): the identity
+   line is promoted from a quiet 10px body-font accent to a real marketing
+   layer — display-font, larger, bolder — the modern equivalent of the
+   historical calendars' "Poker MONDAYS"/"TUESDAY reggae" branded weekday
+   headers (design-system §0). The plain weekday abbreviation stays small
+   body-font text on purpose: it's still the fast day-of-week scan anchor,
+   not part of the brand-voice layer sitting just below it. */
+.weekday-name {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--bougies-cream-dim);
+}
+
+.weekday-identity {
+  display: block;
+  margin-top: 3px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--bougies-recurring-accent);
+}
+
+/* Recurring Identity Artwork layer, Phase 7C
+   (docs/phase7c-graphic-language-plan.md §2) — replaces .weekday-identity
+   entirely for a weekday whose artwork resolves (components/month-grid.mjs);
+   constrained and centered inside its semantic weekday column so differently
+   proportioned marks share the same alignment geometry. Secondary to
+   .calendar-month-artwork in the hierarchy — smaller, and the page grows
+   (see .calendar-page, .month-grid) rather than letting this layer compress
+   the grid below a safe minimum. */
+.weekday-identity-artwork {
+  display: block;
+  margin: 0 auto;
+  height: 100%;
+  max-height: 82px;
+  width: 98%;
+  max-width: 98%;
+  object-fit: contain;
+  object-position: center center;
+  position: relative;
+  z-index: 2;
+  transform: translateY(4px);
+}
+
+.month-grid-stage {
+  position: relative;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.month-grid-stage--has-weekday-promotions {
+  margin-bottom: calc(24px + var(--calendar-grid-gap));
+}
+
+.weekday-promotion-row {
+  position: absolute;
+  inset: 0 0 calc(-24px - var(--calendar-grid-gap));
+  z-index: 4;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(var(--row-count, 6), minmax(0, 1fr)) 24px;
+  gap: var(--calendar-grid-gap);
+  pointer-events: none;
+}
+
+.weekday-promotion-slot {
+  grid-column: var(--promotion-column);
+  grid-row: var(--promotion-row);
+  align-self: start;
+  height: 24px;
+  min-width: 0;
+}
+
+.weekday-grid-promotion {
+  height: 100%;
+  padding: 4px 6px;
+  border: 1px solid rgba(255, 238, 178, 0.96);
+  border-radius: 3px;
+  background: linear-gradient(90deg, rgba(145, 29, 71, 0.98), rgba(224, 57, 126, 0.98));
+  color: #fffbea;
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 1px 2px rgba(45, 5, 24, 0.96), 0 0 4px rgba(255, 248, 214, 0.74);
+  box-shadow: inset 0 0 6px rgba(255, 239, 177, 0.42), 0 0 6px rgba(255, 62, 162, 0.78);
+}
+
+/* --- Monthly grid: the hero element (docs §0 "What should be
+   preserved" — "calendar grid as hero"). Fills all remaining vertical
+   space in the fixed-height canvas; --row-count (5 or 6, set per month by
+   components/month-grid.mjs) sizes rows so the grid always exactly fills
+   the frame, never overflows it, and never leaves a gap below it. */
+
+.month-grid {
+  position: relative;
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  /* Phase 7C: minmax(100px, ...) is the safe-minimum floor a populated
+     cell actually needs (date + badge + title + time, verified against
+     real content — docs/phase7c-graphic-language-plan.md §5) — rows
+     still grow to fill available space via the 1fr when there's room,
+     but never shrink below the floor. Combined with .calendar-page's
+     min-height (above), a row is never forced smaller than this even
+     when the header/weekday-row layers above grow — the page grows
+     instead. No min-height:0 override anymore: letting this grid keep
+     its natural (content-driven) minimum size is exactly what stops it
+     from being silently shrunk past the point cells can render
+     correctly. */
+  grid-template-rows: repeat(var(--row-count, 6), minmax(100px, 1fr));
+  gap: var(--calendar-grid-gap);
+}
+
+/* A bounded campaign may span adjacent dates in one calendar row. The strip
+   is a single grid item so its copy and border remain continuous across the
+   complete campaign, while the underlying day cells keep their own layout. */
+.date-range-promotion-slot {
+  position: absolute;
+  left: calc(
+    (var(--promotion-column) - 1)
+    * (
+      (100% - (6 * var(--calendar-grid-gap))) / 7
+      + var(--calendar-grid-gap)
+    )
+  );
+  top: calc(
+    (var(--promotion-row) - 1)
+    * (
+      (100% - ((var(--row-count) - 1) * var(--calendar-grid-gap))) / var(--row-count)
+      + var(--calendar-grid-gap)
+    )
+    + (100% - ((var(--row-count) - 1) * var(--calendar-grid-gap))) / var(--row-count)
+    - 22px
+  );
+  width: calc(
+    var(--promotion-span)
+    * ((100% - (6 * var(--calendar-grid-gap))) / 7)
+    + ((var(--promotion-span) - 1) * var(--calendar-grid-gap))
+  );
+  z-index: 12;
+  height: 22px;
+  min-width: 0;
+  pointer-events: none;
+}
+
+.date-range-promotion-slot .cell-promotion {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 0 0 3px 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+/* Grid readability, Phase 6B — the background is the calendar's primary
+   visual identity ("album cover"), not something the grid sits on top of
+   and hides. Cells use a top-anchored gradient scrim (strongest right
+   behind the date/content near the top, fading to fully transparent
+   toward each cell's usually-unfilled bottom) instead of a flat opaque
+   fill, so the shared background stays visible through every cell,
+   populated or not — never a traditional opaque app-grid look.
+   text-shadow on cell text is the secondary, always-on contrast layer,
+   doing the rest of the work in the faded zone. */
+
+.day-cell {
+  border-radius: 3px;
+  padding: 7px 8px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+/* Empty-cell texture, Phase 6B step F (docs/visual-design-phase6b-plan.md
+   §8) — empty days read as recessed poster surface, not dead/unused
+   space (design-system §3 item 6, §0's "no cell was ever left truly
+   blank"). No opaque fill, no new asset: a very faint diagonal-hash
+   texture (same technique as .calendar-page's own procedural fallback
+   texture, just fainter) layered under the existing gradient panel, so
+   the shared background still reads through clearly. day-cell--outside
+   (adjacent-month padding) stays the quietest state of all — a dimmer
+   texture, still borderless, since it isn't even a day in the displayed
+   month. day-cell--empty (an in-month day with no event) gets slightly
+   more presence: the faint hairline border and a subtle inset shadow
+   below give it a touch of depth/personality without competing with
+   populated cells, which remain the only ones with a full accent
+   border. */
+
+.day-cell--outside {
+  background-image: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.018) 0px, rgba(255, 255, 255, 0.018) 1px, transparent 1px, transparent 10px),
+    linear-gradient(180deg, var(--bougies-outside) 0%, transparent 70%);
+}
+
+.day-cell--empty {
+  background-image: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0px, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 10px),
+    linear-gradient(180deg, var(--bougies-bg-panel-quiet) 0%, transparent 55%);
+  border: 1px solid var(--bougies-grid-line-quiet);
+}
+
+.day-cell--populated {
+  background: linear-gradient(180deg, var(--bougies-bg-panel) 0%, transparent 62%);
+  border: 1px solid var(--bougies-grid-line);
+}
+
+/* Strengthen complete day boundaries across the Thu/Fri/Sat image columns.
+   Empty/outside dates and recurring vertical artwork remain unoutlined; split
+   dividers stay light. Later semantic special-event rules may replace black
+   with their reserved gold treatment. */
+.month-grid > .day-cell.day-cell--populated:not(.day-cell--recurring-segment):is(
+  :nth-child(7n + 3),
+  :nth-child(7n + 4),
+  :nth-child(7n + 5)
+) {
+  outline: 2px solid rgba(0, 0, 0, 0.92);
+  outline-offset: -2px;
+}
+
+/* Explicit review-only multi-event composition. Each region receives the
+   original event markup and optional artwork independently; nothing is
+   flattened into a combined asset or title. */
+.day-cell--multi-event {
+  padding: 0;
+}
+
+.day-cell--multi-event > .cell-date {
+  position: absolute;
+  top: 6px;
+  left: 7px;
+  z-index: 4;
+  margin: 0;
+}
+
+.multi-event-layout {
+  position: absolute;
+  inset: 0;
+}
+
+.day-cell--multi-event--has-shared-promotion {
+  --multi-event-shared-promotion-height: 22px;
+}
+
+.day-cell--multi-event--has-shared-promotion .multi-event-layout {
+  bottom: var(--multi-event-shared-promotion-height);
+}
+
+/* Date-range ribbons reserve a footer lane inside affected dated cells.
+   Vertical recurring compositions remain unchanged until they have their own rule. */
+.day-cell--has-range-promotion:not(.day-cell--recurring-segment) .multi-event-layout {
+  bottom: 22px;
+}
+
+.multi-event-shared-promotion {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  height: var(--multi-event-shared-promotion-height);
+  overflow: hidden;
+}
+
+.multi-event-shared-promotion .cell-promotion {
+  width: 100%;
+  margin-top: 0;
+  border-radius: 0 0 4px 4px;
+}
+
+.multi-event-region {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.multi-event-region--upper-left {
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  padding: 25px 40% 6px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.multi-event-region--lower-right {
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  /* Mirror the upper-left content stack: this region uses its wide,
+     low corner rather than starting copy beside the diagonal boundary. */
+  padding: 8px 10px 8px 42%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+/* Comparable same-day programming inherits two full-width stacked panels.
+   The diagonal treatment remains available only through an explicit reviewed
+   override. */
+.day-cell--multi-event-stacked .multi-event-layout {
+  display: grid;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.day-cell--multi-event-stacked .multi-event-region--stacked {
+  position: relative;
+  inset: auto;
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 8px 10px;
+  text-align: center;
+}
+
+.day-cell--multi-event-stacked .multi-event-region--top {
+  padding-left: 39px;
+  border-bottom: 1px solid rgba(244, 222, 177, 0.32);
+}
+
+.day-cell--multi-event-stacked .multi-event-region .cell-primary {
+  width: 100%;
+  margin: 0;
+  font-size: 17px;
+  line-height: 1;
+  text-align: center;
+  text-wrap: balance;
+  transform-origin: center;
+}
+
+.day-cell--multi-event-stacked .multi-event-region.presentation-mode-text-only .cell-primary {
+  font-size: 20px;
+}
+
+.day-cell--multi-event-stacked .multi-event-region--title-showcase-uppercase .cell-primary {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+  color: #fff4ce;
+  -webkit-text-stroke: 0.7px rgba(65, 18, 30, 0.94);
+  text-shadow: 1px 1px 0 #ef4c9a, 2px 3px 0 #7d2252, 0 0 7px rgba(239, 76, 154, 0.86), 0 5px 7px rgba(0, 0, 0, 0.9);
+}
+
+.day-cell--multi-event-stacked .multi-event-region .cell-label,
+.day-cell--multi-event-stacked .multi-event-region .cell-venue {
+  position: absolute;
+  z-index: 2;
+  margin: 0;
+  line-height: 1;
+}
+
+.day-cell--multi-event-stacked .multi-event-region .cell-tags {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  z-index: 2;
+  max-width: 58%;
+  justify-content: flex-end;
+  margin: 0;
+}
+
+.day-cell--multi-event-stacked .multi-event-region--top .cell-tags { max-width: 48%; }
+
+.day-cell--multi-event-stacked .multi-event-region .cell-tags .cell-label {
+  position: static;
+  max-width: 100%;
+}
+
+.day-cell--multi-event-stacked .multi-event-region .cell-label {
+  top: 4px;
+  left: 6px;
+  max-width: 48%;
+  font-size: 6px;
+  padding: 1px 3px;
+}
+
+.day-cell--multi-event-stacked .multi-event-region--top .cell-label {
+  left: 39px;
+}
+
+.day-cell--multi-event-stacked .multi-event-region .cell-venue {
+  top: 5px;
+  right: 6px;
+  max-width: 45%;
+  font-size: 7px;
+  text-align: right;
+}
+
+.multi-event-region--has-review-artwork::after {
+  content: none;
+}
+
+.multi-event-region > :not(.cell-review-artwork) {
+  position: relative;
+  z-index: 1;
+}
+
+.multi-event-region .cell-label {
+  font-size: 7px;
+  line-height: 1.1;
+  margin: 0;
+  padding: 1px 3px;
+  white-space: nowrap;
+}
+
+.multi-event-region .cell-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-bottom: 3px;
+}
+
+.multi-event-region--lower-right .cell-tags {
+  justify-content: flex-end;
+}
+
+.multi-event-region .cell-label--venue {
+  background: rgba(4, 9, 13, 0.72);
+  border: 1px solid rgba(244, 222, 177, 0.46);
+  color: var(--bougies-cream);
+}
+
+.multi-event-region .cell-primary {
+  font-size: 13px;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.multi-event-region .cell-secondary,
+.multi-event-region .cell-venue {
+  margin-top: 2px;
+  font-size: 9px;
+}
+
+/* Dense band-and-DJ programming: keep the primary act full-cell and present
+   the companion DJ as a compact circular identity. Matching name/time colors
+   make the two schedules readable without splitting the artwork. */
+.day-cell--primary-companion-overlay {
+  --primary-act-color: #6ee7a8;
+  --companion-dj-color: #67e8f9;
+  padding: 0;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.day-cell--primary-companion-overlay > .cell-date {
+  position: absolute;
+  top: 6px;
+  left: 7px;
+  z-index: 7;
+  margin: 0;
+}
+
+.primary-companion-primary,
+.primary-companion-companion {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.primary-companion-primary > .cell-review-artwork {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.primary-companion-primary > :not(.cell-review-artwork),
+.primary-companion-companion > :not(.cell-review-artwork) {
+  position: absolute;
+  z-index: 5;
+  margin: 0;
+  line-height: 1;
+  text-shadow: 0 1px 3px #000, 0 0 6px #000;
+}
+
+.primary-companion-primary > .cell-primary {
+  right: 43%;
+  bottom: 22px;
+  left: 8px;
+  color: var(--primary-act-color);
+  font-size: 14px;
+  text-align: left;
+}
+
+.primary-companion-primary > :is(.cell-secondary) {
+  bottom: 7px;
+  left: 8px;
+  color: var(--primary-act-color);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.primary-companion-companion > .cell-review-artwork--class-dj-portrait {
+  position: absolute;
+  top: auto;
+  right: 7px;
+  bottom: 31px;
+  left: auto;
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  padding: 0 !important;
+  border: 2px solid var(--companion-dj-color);
+  border-radius: 50%;
+  background-size: cover !important;
+  background-position: center 22% !important;
+  box-shadow: 0 0 0 2px rgba(4, 9, 13, 0.82), 0 0 12px rgba(103, 232, 249, 0.48);
+  transform: none;
+}
+
+.primary-companion-companion > .cell-primary {
+  right: 8px;
+  bottom: 22px;
+  max-width: 48%;
+  padding: 2px 3px;
+  color: var(--companion-dj-color);
+  background: rgba(4, 9, 13, 0.74);
+  font-size: 12px;
+  text-align: right;
+}
+
+.primary-companion-companion > :is(.cell-secondary) {
+  right: 8px;
+  bottom: 7px;
+  padding: 1px 3px;
+  color: var(--companion-dj-color);
+  background: rgba(4, 9, 13, 0.74);
+  font-size: 10px;
+  font-weight: 800;
+  text-align: right;
+}
+
+.day-cell--primary-companion-overlay.day-cell--has-promotion :is(.primary-companion-primary, .primary-companion-companion) > .cell-primary {
+  bottom: 38px;
+}
+
+.day-cell--primary-companion-overlay.day-cell--has-promotion :is(.primary-companion-primary, .primary-companion-companion) > :is(.cell-secondary) {
+  bottom: 23px;
+}
+
+.day-cell--primary-companion-overlay.day-cell--has-promotion .primary-companion-companion > .cell-review-artwork--class-dj-portrait {
+  bottom: 47px;
+}
+
+/* When a Thursday overlay also carries a promo footer, slightly reduce a
+   self-identifying primary logo so its lower lettering remains visible above
+   the footer. September 10 is the first review case for this reusable rule. */
+.day-cell--primary-companion-overlay.day-cell--has-promotion .primary-companion-primary > .cell-review-artwork--presentation-identity-led {
+  bottom: 18px;
+  height: auto;
+  background-color: #020504;
+  background-repeat: no-repeat;
+  background-size: contain !important;
+  background-position: center !important;
+}
+
+/* Side-by-side band and DJ composition for dense Friday programming. The band
+   keeps the larger primary region while the DJ receives an independent narrow
+   region, avoiding artwork overlap without returning to equal splits. */
+.day-cell--primary-secondary-split {
+  --primary-act-color: #6ee7a8;
+  --secondary-dj-color: #67e8f9;
+  padding: 0;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.day-cell--primary-secondary-split > .cell-date {
+  position: absolute;
+  top: 6px;
+  left: 7px;
+  z-index: 7;
+  margin: 0;
+}
+
+.primary-secondary-layout {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+}
+
+/* A promo remains an edge-to-edge footer across both horizontal panels. */
+.day-cell--primary-secondary-split.day-cell--has-promotion .primary-secondary-layout {
+  bottom: 18px;
+}
+
+.day-cell--primary-secondary-split.day-cell--has-range-promotion .primary-secondary-layout {
+  bottom: 22px;
+}
+
+.primary-secondary-primary,
+.primary-secondary-secondary {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.primary-secondary-secondary {
+  border-left: 1px solid rgba(244, 222, 177, 0.42);
+}
+
+:is(.primary-secondary-primary, .primary-secondary-secondary) > .cell-review-artwork {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.primary-secondary-secondary > .cell-review-artwork {
+  top: 7px;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  width: 43px;
+  height: 43px;
+  aspect-ratio: auto;
+  background-color: #020504;
+  background-repeat: no-repeat;
+  background-size: contain !important;
+  background-position: center center !important;
+  transform: translateX(-50%);
+}
+
+:is(.primary-secondary-primary, .primary-secondary-secondary) > :not(.cell-review-artwork) {
+  position: absolute;
+  z-index: 5;
+  margin: 0;
+  padding: 1px 3px;
+  line-height: 1;
+  background: rgba(4, 9, 13, 0.72);
+  text-shadow: 0 1px 3px #000, 0 0 6px #000;
+}
+
+.primary-secondary-primary > .cell-primary {
+  right: 6px;
+  bottom: 22px;
+  left: 7px;
+  color: var(--primary-act-color);
+  font-size: 12px;
+  text-align: left;
+}
+
+.primary-secondary-primary > :is(.cell-secondary) {
+  bottom: 6px;
+  left: 7px;
+  color: var(--primary-act-color);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.primary-secondary-secondary.presentation-mode-photo-led > .cell-primary {
+  right: 3px;
+  bottom: 18px;
+  left: 3px;
+  overflow: hidden;
+  color: var(--secondary-dj-color);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 0.85;
+  text-align: center;
+  -webkit-text-stroke: 0;
+  transform: none;
+  white-space: nowrap;
+}
+
+.primary-secondary-secondary > :is(.cell-secondary) {
+  right: 3px;
+  bottom: 5px;
+  left: 3px;
+  color: var(--secondary-dj-color);
+  font-size: 9px;
+  font-weight: 800;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* A recurring weekly identity remains the full-cell visual base while one
+   exceptional event receives the only visible event card. */
+.day-cell--recurring-base-overlay {
+  padding: 0;
+  isolation: isolate;
+}
+
+.day-cell--recurring-base-overlay > .cell-date {
+  position: absolute;
+  top: 6px;
+  left: 7px;
+  z-index: 5;
+  margin: 0;
+  padding: 2px 5px;
+  border-radius: 3px;
+  background: rgba(242, 230, 211, 0.9);
+}
+
+.recurring-base-layer,
+.recurring-base-layer .cell-review-artwork {
+  position: absolute;
+  inset: 0;
+}
+
+.recurring-base-layer {
+  z-index: 0;
+}
+
+.recurring-base-foreground {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  width: auto;
+  padding: 28px 11px 9px;
+  border: 0;
+  border-radius: 0;
+  background: linear-gradient(135deg, rgba(4, 9, 13, 0.94) 0%, rgba(24, 38, 51, 0.9) 58%, rgba(132, 35, 66, 0.82) 100%);
+  box-shadow: none;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.recurring-base-foreground .cell-review-artwork {
+  display: block;
+  inset: 0;
+  z-index: 0;
+  opacity: 1;
+  background-color: rgba(4, 9, 13, 0.92);
+}
+
+.recurring-base-foreground > :not(.cell-review-artwork) {
+  position: relative;
+  z-index: 1;
+}
+
+.recurring-base-foreground .cell-primary {
+  width: 100%;
+  font-size: 26px;
+  line-height: 1.08;
+  text-align: center;
+}
+
+.recurring-base-foreground .cell-label {
+  position: absolute;
+  top: 28px;
+  left: 11px;
+  margin: 0;
+  padding: 1px 4px;
+  font-size: 8px;
+}
+
+.day-cell--recurring-base-overlay > .cell-promotion {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
+}
+
+/* Review-only event artwork sits behind the established cell composition.
+   The local scrim keeps dates and event copy readable without changing the
+   final renderer path or requiring artwork for a usable cell. */
+.day-cell--has-review-artwork::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(4, 9, 13, 0.8) 0%, rgba(4, 9, 13, 0.5) 58%, rgba(4, 9, 13, 0.18) 100%);
+}
+
+.day-cell--has-review-artwork > :not(.cell-review-artwork) {
+  position: relative;
+  z-index: 2;
+}
+
+.day-cell--recurring-base-overlay > .recurring-base-layer {
+  position: absolute;
+  z-index: 0;
+}
+
+.day-cell--recurring-base-overlay > .recurring-base-foreground {
+  position: absolute;
+  z-index: 3;
+}
+
+.cell-review-artwork {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: var(--web-art-blend-mode, normal);
+  filter: var(--web-art-filter, none);
+}
+
+.cell-review-artwork--presentation-identity-led,
+.cell-review-artwork--presentation-recurring-self-describing {
+  opacity: var(--web-identity-art-opacity, 1);
+}
+
+.cell-review-artwork--presentation-identity-led {
+  background-size: cover;
+}
+
+.cell-review-artwork--presentation-recurring-self-describing {
+  background-size: contain;
+  opacity: var(--web-recurring-art-opacity, 1);
+}
+
+.cell-review-artwork--presentation-photo-led {
+  background-size: cover;
+  opacity: var(--web-photo-art-opacity, 0.94);
+}
+
+/* Square performer identities keep a square art region on Web. This lets the
+   approved bytes fill their intended canvas without destructive 16:9 crop or
+   per-event/date tuning; canonical identity text remains on the cell layer. */
+.cell-review-artwork--class-square-identity,
+.cell-review-artwork--class-compact-square-identity {
+  inset: 0 auto 0 50%;
+  height: 100%;
+  width: min(100%, 150px);
+  aspect-ratio: 1 / 1;
+  transform: translateX(-50%);
+}
+
+.cell-review-artwork--class-dj-portrait {
+  inset: 4px auto 4px 50%;
+  width: min(var(--web-artwork-width, 94%), 142px);
+  aspect-ratio: 1 / 1;
+  border: 2px solid rgba(244, 222, 177, 0.72);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 0 2px rgba(4, 9, 13, 0.65), 0 5px 14px rgba(0, 0, 0, 0.5);
+}
+
+.day-cell--has-review-artwork.presentation-mode-identity-led::after,
+.day-cell--has-review-artwork.presentation-mode-recurring-self-describing::after {
+  background: linear-gradient(180deg, rgba(4, 9, 13, 0.46) 0%, transparent 32%, transparent 62%, rgba(4, 9, 13, 0.72) 100%);
+}
+
+.day-cell--has-review-artwork.presentation-mode-photo-led::after {
+  background: linear-gradient(180deg, var(--web-photo-scrim-top, rgba(4, 9, 13, 0.7)) 0%, var(--web-photo-scrim-middle, rgba(4, 9, 13, 0.32)) 58%, var(--web-photo-scrim-bottom, rgba(4, 9, 13, 0.12)) 100%);
+}
+
+.day-cell--populated.presentation-mode-identity-led,
+.day-cell--populated.presentation-mode-recurring-self-describing {
+  display: flex;
+  flex-direction: column;
+}
+
+.day-cell--populated.presentation-mode-identity-led > .cell-label,
+.day-cell--populated.presentation-mode-identity-led > .cell-tags,
+.day-cell--populated.presentation-mode-recurring-self-describing > .cell-label,
+.day-cell--populated.presentation-mode-recurring-self-describing > .cell-tags {
+  margin-top: auto;
+}
+
+/* Recurring vertical segments close the final pixel of the shared compact
+   grid rhythm so a chronological composition reads as one continuous mark. */
+.day-cell--recurring-segment {
+  z-index: 1;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  border-radius: 1px;
+  border-top-color: var(--bougies-grid-line-quiet);
+  border-bottom-color: var(--bougies-grid-line-quiet);
+}
+
+.day-cell--recurring-segment-first {
+  margin-top: 0;
+  border-radius: 5px 5px 1px 1px;
+}
+
+.day-cell--recurring-segment-last {
+  margin-bottom: 0;
+  border-radius: 1px 1px 5px 5px;
+}
+
+/* Review-only holiday identity attaches to an otherwise empty date cell.
+   It never fabricates an Event or changes the final rendering path. */
+.day-cell--holiday-artwork .cell-review-artwork--holiday-date-cell-artwork {
+  background-size: cover;
+}
+
+.cell-date,
+.cell-label,
+.cell-primary,
+.cell-primary--default,
+.cell-secondary,
+.cell-performer,
+.cell-venue,
+.cell-promo,
+.weekday-name,
+.weekday-identity {
+  text-shadow: var(--web-art-text-shadow, 0 1px 3px rgba(0, 0, 0, 0.55));
+}
+
+/* Date number — same position/markup class across every template, per
+   docs §3 item 5 ("must never move"). */
+.cell-date {
+  font-family: var(--font-display);
+  display: inline-flex;
+  width: max-content;
+  min-width: 23px;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 4px;
+  border: 1px solid rgba(27, 20, 16, 0.24);
+  border-radius: 3px;
+  background: rgba(242, 230, 211, 0.9);
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--bougies-bg);
+  text-shadow: none;
+  margin-bottom: 3px;
+}
+
+.day-cell--populated .cell-date {
+  color: var(--bougies-bg);
+  text-shadow: none;
+}
+
+/* --- Cell content, shared across templates. Text-first, graphics
+   optional (docs §12 "Renderer philosophy") — every rule below applies
+   whether or not a cell ever gains an image, so no cell depends on one
+   existing to render correctly. --- */
+
+.cell-label {
+  display: inline-block;
+  align-self: flex-start;
+  width: max-content;
+  max-width: 100%;
+  min-height: var(--tag-min-height, 11px);
+  font-size: var(--tag-font-size, 9px);
+  line-height: var(--tag-line-height, 1);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: var(--tag-padding-block, 1px) var(--tag-padding-inline, 4px);
+  border-radius: var(--tag-radius, 3px);
+  margin-bottom: var(--tag-margin-bottom, 3px);
+}
+
+.cell-label--venue {
+  background: rgba(4, 9, 13, 0.82);
+  border: 1px solid rgba(244, 222, 177, 0.68);
+  color: var(--bougies-cream);
+  font-weight: 800;
+}
+
+.cell-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  align-items: flex-start;
+  margin-bottom: var(--tag-margin-bottom, 3px);
+}
+
+.cell-tags .cell-label { margin-bottom: 0; }
+
+/* Latest-approved Web venue grammar: the venue tag is independently anchored
+   at the lower-left edge. Category tags remain in normal document flow. */
+.day-cell--populated > .cell-tags--venue-bottom-left {
+  position: absolute;
+  bottom: 7px;
+  left: 8px;
+  z-index: 3;
+  margin: 0;
+  justify-content: flex-start;
+}
+
+.day-cell--populated > .cell-tags--venue-bottom-right,
+.day-cell--populated > .cell-tags--venue-top-left,
+.day-cell--populated > .cell-tags--venue-top-right {
+  position: absolute;
+  z-index: 3;
+  margin: 0;
+}
+
+.day-cell--populated > .cell-tags--venue-bottom-right { right: 8px; bottom: 7px; }
+.day-cell--populated > .cell-tags--venue-top-left { top: 7px; left: 8px; }
+.day-cell--populated > .cell-tags--venue-top-right { top: 7px; right: 8px; }
+
+.day-cell--multi-event .multi-event-region .cell-tags--venue-bottom-left {
+  top: auto;
+  right: auto;
+  bottom: 5px;
+  left: 6px;
+  justify-content: flex-start;
+}
+
+.presentation-mode-identity-led .cell-label,
+.presentation-mode-photo-led .cell-label {
+  font-size: 7px;
+  font-size: var(--tag-artwork-font-size, 7px);
+  letter-spacing: 0.06em;
+  padding: var(--tag-padding-block, 1px) var(--tag-artwork-padding-inline, 3px);
+  opacity: 0.82;
+}
+
+.presentation-mode-identity-led .cell-secondary {
+  margin-top: 2px;
+  font-size: 9px;
+  line-height: 1.05;
+  font-weight: 600;
+  color: var(--bougies-cream);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.78);
+}
+
+.cell-primary {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 1.15;
+  color: var(--bougies-cream);
+}
+
+.cell-primary--default {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--bougies-cream);
+}
+
+.presentation-mode-photo-led .cell-primary,
+.presentation-mode-text-only .cell-primary {
+  font-size: 20px;
+  transform-origin: left center;
+  text-wrap: balance;
+}
+
+/* Text/photo fallbacks make the performer identity the visual center while
+   preserving the universal date and bottom-right time anchors. Artwork-led
+   identity marks are intentionally excluded. */
+.day-cell--populated.presentation-mode-photo-led:not(.day-cell--multi-event):not(.day-cell--recurring-base-overlay),
+.day-cell--populated.presentation-mode-text-only:not(.day-cell--multi-event):not(.day-cell--recurring-base-overlay) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.day-cell--populated.presentation-mode-photo-led:not(.day-cell--multi-event):not(.day-cell--recurring-base-overlay) > .cell-date,
+.day-cell--populated.presentation-mode-text-only:not(.day-cell--multi-event):not(.day-cell--recurring-base-overlay) > .cell-date {
+  position: absolute;
+  top: 7px;
+  left: 8px;
+  z-index: 3;
+}
+
+.day-cell--populated.presentation-mode-photo-led:not(.day-cell--multi-event):not(.day-cell--recurring-base-overlay) > .cell-primary,
+.day-cell--populated.presentation-mode-text-only:not(.day-cell--multi-event):not(.day-cell--recurring-base-overlay) > .cell-primary {
+  width: 94%;
+  margin: 0 auto;
+  font-size: 26px;
+  line-height: 1.02;
+  text-align: center;
+  transform-origin: center;
+}
+
+/* An artwork-backed canonical name occupies its own row immediately above
+   venue/time metadata. Exact approved self-identifying art omits this visible
+   element while retaining the semantic name. */
+.day-cell--has-review-artwork:not(.day-cell--multi-event):not(.day-cell--recurring-base-overlay) > .cell-primary {
+  position: absolute;
+  right: 8px;
+  bottom: 23px;
+  left: 8px;
+  width: auto;
+  margin: 0;
+  font-size: 17px;
+  line-height: 1;
+  text-align: center;
+}
+
+.day-cell--has-review-artwork:not(.day-cell--multi-event):not(.day-cell--recurring-base-overlay) > .cell-performer {
+  position: absolute;
+  right: 8px;
+  bottom: 23px;
+  left: 8px;
+  z-index: 3;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 600;
+  color: var(--bougies-cream);
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.day-cell--has-review-artwork:not(.day-cell--multi-event):not(.day-cell--recurring-base-overlay) > .cell-primary:has(+ .cell-secondary + .cell-performer) {
+  bottom: 40px;
+}
+
+.cell-title-variant--western {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  color: #ffe6ad;
+  -webkit-text-stroke: 0.8px #4b2311;
+  text-shadow: 1px 2px 0 #e06331, 2px 4px 0 #7b371a, 0 6px 8px rgba(0, 0, 0, 0.84);
+  transform: rotate(-1.5deg) skewX(-3deg);
+}
+
+.cell-title-variant--rock {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+  color: #fff3d6;
+  -webkit-text-stroke: 1px #28120d;
+  text-shadow: 1px 1px 0 #f5d475, 3px 3px 0 #a54024, 0 6px 8px rgba(0, 0, 0, 0.86);
+  transform: rotate(1.2deg) scaleY(1.06);
+}
+
+.cell-title-variant--neon {
+  font-family: "Trebuchet MS", "Helvetica Neue", sans-serif;
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #fff5d8;
+  -webkit-text-stroke: 0.8px #5b173d;
+  text-shadow: 1px 1px 0 #ef4c9a, 2px 3px 0 #7d2252, 0 0 7px #ef4c9a, 0 6px 8px rgba(0, 0, 0, 0.88);
+  transform: rotate(-1.2deg) skewX(-5deg);
+}
+
+.cell-title-variant--retro {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 900;
+  letter-spacing: 0.015em;
+  color: #f5d475;
+  -webkit-text-stroke: 0.8px #431814;
+  text-shadow: 1px 1px 0 #f05b76, 3px 3px 0 #8c2f35, 0 6px 8px rgba(0, 0, 0, 0.78);
+  transform: rotate(1deg) skewX(-2deg);
+}
+
+.cell-title-variant--bold-condensed {
+  font-family: "Arial Narrow", Impact, sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--bougies-cream);
+  -webkit-text-stroke: 0.8px rgba(34, 15, 9, 0.96);
+  text-shadow: 1px 1px 0 #f5d475, 3px 3px 0 rgba(196, 80, 40, 0.82), 0 6px 8px rgba(0, 0, 0, 0.86);
+  transform: scaleY(1.08);
+}
+
+.cell-secondary {
+  margin-top: 3px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--bougies-cream);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.day-cell--populated:not(.day-cell--multi-event):not(.day-cell--recurring-base-overlay):not(.day-cell--holiday-artwork) > .cell-secondary {
+  position: absolute;
+  right: 7px;
+  bottom: 6px;
+  z-index: 3;
+  margin: 0;
+  font-size: 9px;
+  line-height: 1;
+  text-align: right;
+}
+
+.recurring-base-foreground .cell-secondary {
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+  margin: 0;
+  font-size: 9px;
+  line-height: 1;
+  text-align: right;
+}
+
+.day-cell--multi-event-stacked .multi-event-region .cell-secondary {
+  position: absolute;
+  right: 6px;
+  bottom: 4px;
+  z-index: 2;
+  margin: 0;
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: right;
+}
+
+.cell-performer {
+  margin-top: 3px;
+  font-size: 11px;
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--bougies-cream);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9), 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Cell content model additions, Phase 6B step D
+   (docs/visual-design-phase6b-plan.md §4) — shared across every template
+   that opts into them via templates/template-registry.mjs, rendered by
+   the single templates/cell-composer.mjs. All three stay empty/absent on
+   every real render today (no image/icon assets exist, no event carries
+   promotionalText yet) — this only defines how they'd look once populated. */
+
+.cell-visual {
+  width: 100%;
+  height: 36px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  background-color: rgba(0, 0, 0, 0.2);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.cell-venue {
+  margin-top: 3px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bougies-cream-dim);
+}
+
+.cell-promo {
+  margin-top: 5px;
+  font-size: 11px;
+  font-style: italic;
+  color: var(--bougies-cream-dim);
+}
+
+/* Review-only promotion prototype. Promotion copy stays in normal flow at
+   the bottom of the cell so event identity, time, and performer metadata
+   retain first claim on space. Ribbons intentionally use a separate berry
+   treatment rather than the semantic event badges above. */
+.day-cell--has-promotion,
+.multi-event-region--has-promotion {
+  display: flex;
+  flex-direction: column;
+}
+
+.day-cell--has-promotion > :not(.cell-review-artwork),
+.multi-event-region--has-promotion > :not(.cell-review-artwork) {
+  flex-shrink: 0;
+}
+
+.cell-promotion {
+  position: relative;
+  z-index: 3;
+  flex: 0 0 auto;
+  max-width: 100%;
+  font-family: var(--font-body);
+  color: var(--bougies-cream);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.92);
+}
+
+.cell-promotion--tag {
+  margin-top: auto;
+  padding: 3px 6px;
+  border: 1px solid rgba(244, 222, 177, 0.58);
+  border-radius: 3px;
+  background: rgba(132, 35, 66, 0.9);
+  font-size: 9px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.cell-promotion--ladies-night,
+.weekday-grid-promotion[data-promotion-semantic="ladies-night"] {
+  color: #fff4fa;
+  background: rgba(207, 53, 132, 0.94);
+  border-color: rgba(255, 190, 225, 0.82);
+}
+
+.cell-promotion--late-night-happy-hour,
+.weekday-grid-promotion[data-promotion-semantic="late-night-happy-hour"] {
+  color: #ffffff;
+  background: rgba(55, 58, 61, 0.96);
+  border-color: rgba(210, 214, 218, 0.82);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+.cell-promotion--industry,
+.weekday-grid-promotion[data-promotion-semantic="industry"] {
+  color: #fff4ce;
+  background: rgba(74, 43, 18, 0.96);
+  border-color: rgba(250, 207, 65, 0.88);
+}
+
+.cell-promotion--vendor,
+.weekday-grid-promotion[data-promotion-semantic="vendor"] {
+  color: #231804;
+  background: rgba(250, 207, 65, 0.96);
+  border-color: rgba(255, 239, 170, 0.9);
+  text-shadow: none;
+}
+
+.cell-promotion--um-football,
+.weekday-grid-promotion[data-promotion-semantic="um-football"] {
+  color: #fff8e8;
+  background: rgba(232, 75, 12, 0.97);
+  border-color: rgba(255, 177, 92, 0.96);
+  text-shadow: 0 1px 2px rgba(54, 18, 2, 0.92);
+}
+
+.day-cell--populated:not(.day-cell--multi-event) > .cell-promotion--vendor {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  width: max-content;
+  max-width: 42%;
+  margin: 0;
+  padding: 2px 4px;
+  transform: translateX(-50%);
+  font-size: 7px;
+  white-space: nowrap;
+}
+
+.cell-promotion--callout {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+}
+
+.cell-promotion-title {
+  font: inherit;
+}
+
+.cell-promotion-time {
+  font: inherit;
+}
+
+.cell-promotion-time::before {
+  content: " · ";
+}
+
+.multi-event-region .cell-promotion {
+  width: min(58%, 112px);
+}
+
+.multi-event-region--lower-right .cell-promotion {
+  margin-left: auto;
+  text-align: right;
+}
+
+/* --- Template-specific accents (docs §5). Every template below is the
+   same shared card (day-cell + cell-composer.mjs) with only its accent
+   color, badge fill, and (for dj) panel darkness varying — never a
+   separate hand-built layout per template. --- */
+
+.template-live-band {
+  border-color: var(--bougies-grid-line);
+}
+.cell-label--live-band {
+  background: var(--bougies-amber);
+  color: var(--bougies-bg);
+}
+
+.template-recurring-night {
+  border-color: var(--bougies-grid-line);
+}
+.cell-label--recurring-night {
+  background: var(--bougies-recurring-accent);
+  color: var(--bougies-bg);
+}
+
+/* DJ Cell (docs/calendar-design-system.md §5) — first built in Phase 6B
+   step D. The "late-night visual treatment (darker background tone)"
+   §5 calls for is a local panel darkening (--bougies-dj-panel), not a
+   photo — it applies inside any palette, not only "dusk" months. */
+.template-dj {
+  border-color: var(--bougies-grid-line);
+}
+.cell-label--dj {
+  background: var(--bougies-dj-accent);
+  color: var(--bougies-bg);
+}
+.day-cell--populated.template-dj {
+  background: linear-gradient(180deg, var(--bougies-dj-panel) 0%, transparent 62%);
+}
+
+/* Special Event Cell (docs/calendar-design-system.md §5) — first built in
+   Phase 6B step D, modest automatic-default state only (the "loud",
+   human-approved custom-artwork upgrade §5/§11 describe stays future
+   work, gated on human approval by definition). */
+.template-special-event {
+  border-color: var(--bougies-grid-line);
+}
+
+/* Special Events receive a controlled inset neon edge. Multi-event days
+   apply the same semantic treatment only to the qualifying panel. */
+.day-cell--populated.day-cell--special-event:not(.day-cell--multi-event) {
+  border-color: rgba(255, 234, 142, 0.98);
+  outline: 2px solid rgba(255, 234, 142, 0.98);
+  outline-offset: -2px;
+  box-shadow: inset 0 0 0 2px rgba(255, 234, 142, 0.92), inset 0 0 8px rgba(255, 73, 170, 0.82), inset 0 0 18px rgba(239, 76, 154, 0.54);
+}
+
+.multi-event-region--special-event {
+  outline: 2px solid rgba(255, 234, 142, 0.94);
+  outline-offset: -2px;
+  box-shadow: inset 0 0 0 2px rgba(255, 234, 142, 0.94), inset 0 0 8px rgba(255, 73, 170, 0.86), inset 0 0 16px rgba(239, 76, 154, 0.58);
+}
+.multi-event-region--special-event::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  z-index: 5;
+  pointer-events: none;
+  border: 2px solid rgba(255, 234, 142, 0.98);
+  box-shadow: inset 0 0 8px rgba(255, 73, 170, 0.9), 0 0 5px rgba(255, 234, 142, 0.72);
+}
+.cell-label--special-event {
+  background: var(--bougies-special-accent);
+  color: var(--bougies-bg);
+}
+
+.template-default-text .cell-label {
+  display: none;
+}
+
+/* --- Footer (render-stack layer 7, permanent — docs/visual-design-phase6-plan.md
+   §2; docs/visual-design-phase6b-plan.md §6, Phase 6B implementation step
+   C). Same background-integration technique already built for the header
+   in step 2: bleeds to the page edge via a negative margin matching
+   .calendar-page's own padding, with a soft local radial-gradient backing
+   rather than a boxed contact card — a poster branding band, not a
+   website footer. Sits below the grid in DOM/flex order; the grid's own
+   flex:1 sizing already shrinks to make room for it, so the fixed
+   1800×1200 canvas never overflows. --- */
+
+.calendar-footer {
+  position: relative;
+  flex: 0 0 auto;
+  text-align: center;
+  margin: 16px -40px -32px;
+  padding: 20px 40px 26px;
+}
+
+.calendar-footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 80% 100% at 50% 90%, var(--bougies-overlay) 0%, transparent 75%);
+}
+
+.calendar-footer > * {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bougies-amber-soft);
+  margin-bottom: 6px;
+}
+
+.footer-contact {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--bougies-cream-dim);
+}
+
+.footer-contact-sep {
+  margin: 0 8px;
+  color: var(--bougies-border);
+}
+
+.footer-tagline {
+  margin: 8px auto 0;
+  max-width: 1580px;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+}
+
+/* --- Print (PDF export) --- */
+
+@media print {
+  body {
+    background: var(--bougies-bg);
+  }
+  .calendar-page {
+    width: auto;
+    height: auto;
+  }
+  .calendar-customer-nav { display: none; }
+}
+
+/* Preserve baked performer identities in rectangular Web regions. The element
+   owns a muted cover fill; its after layer contains the exact source without
+   crop. KoolKidz alone inherits September's approved full-cell cover treatment. */
+.day-cell--has-review-artwork > .cell-review-artwork--class-square-identity,
+.multi-event-region--has-review-artwork > .cell-review-artwork--class-square-identity {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  padding: 0 !important;
+  transform: none;
+  overflow: hidden;
+  background-size: 0 0 !important;
+  background-origin: padding-box !important;
+}
+
+.day-cell--has-review-artwork > .cell-review-artwork--class-square-identity::before,
+.day-cell--has-review-artwork > .cell-review-artwork--class-square-identity::after,
+.multi-event-region--has-review-artwork > .cell-review-artwork--class-square-identity::before,
+.multi-event-region--has-review-artwork > .cell-review-artwork--class-square-identity::after {
+  content: "";
+  position: absolute;
+  background-image: inherit;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.day-cell--has-review-artwork > .cell-review-artwork--class-square-identity::before,
+.multi-event-region--has-review-artwork > .cell-review-artwork--class-square-identity::before {
+  inset: -8px;
+  background-size: cover;
+  filter: blur(5px) brightness(0.5) saturate(0.8);
+}
+
+.day-cell--has-review-artwork > .cell-review-artwork--class-square-identity::after,
+.multi-event-region--has-review-artwork > .cell-review-artwork--class-square-identity::after {
+  inset: 0;
+  background-size: contain;
+}
+
+.day-cell--has-review-artwork > .cell-review-artwork--class-square-identity[data-selected-asset="koolkidz-v1.jpg"],
+.multi-event-region--has-review-artwork > .cell-review-artwork--class-square-identity[data-selected-asset="koolkidz-v1.jpg"] {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover !important;
+}
+
+.day-cell--has-review-artwork > .cell-review-artwork--class-square-identity[data-selected-asset="koolkidz-v1.jpg"]::before,
+.day-cell--has-review-artwork > .cell-review-artwork--class-square-identity[data-selected-asset="koolkidz-v1.jpg"]::after,
+.multi-event-region--has-review-artwork > .cell-review-artwork--class-square-identity[data-selected-asset="koolkidz-v1.jpg"]::before,
+.multi-event-region--has-review-artwork > .cell-review-artwork--class-square-identity[data-selected-asset="koolkidz-v1.jpg"]::after {
+  content: none;
+}
+
+/* DJ names intentionally overlay the lower portrait area with strong contrast,
+   matching the approved band treatment while protecting the face/top focal area. */
+.day-cell--multi-event-stacked:has(.cell-review-artwork--class-dj-portrait) .multi-event-layout {
+  grid-template-rows: minmax(0, 0.68fr) minmax(0, 1.32fr);
+}
+
+/* A live act or other public program remains primary when paired with a DJ.
+   This semantic rule also covers historical records whose Event Type predates
+   the explicit Live Band option and therefore resolves to STANDARD. */
+.day-cell--multi-event-stacked:has(.multi-event-region--top:not(.multi-event-region--category-dj):not(.multi-event-region--category-informational-private-closure)):has(.multi-event-region--bottom.multi-event-region--category-dj) .multi-event-layout {
+  grid-template-rows: minmax(0, 1.18fr) minmax(0, 0.82fr);
+}
+
+.day-cell--has-review-artwork.template-dj:not(.day-cell--multi-event) > .cell-review-artwork--class-dj-portrait {
+  inset: 5px auto auto 50%;
+  width: 104px;
+  height: 86px;
+  background-size: 104px 104px !important;
+  background-position: center top !important;
+}
+
+.day-cell--has-review-artwork.template-dj:not(.day-cell--multi-event):has(> .cell-performer) > .cell-review-artwork--class-dj-portrait {
+  width: 110px;
+  height: 82px;
+  background-size: 110px 110px !important;
+  background-position: center top !important;
+}
+
+.day-cell--has-review-artwork.template-dj:not(.day-cell--multi-event):has(> .cell-performer) > .cell-primary {
+  bottom: 38px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.day-cell--has-review-artwork.template-dj:not(.day-cell--multi-event):has(> .cell-performer) > .cell-performer {
+  bottom: 22px;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.day-cell--multi-event-stacked .multi-event-region--stacked > .cell-review-artwork--class-dj-portrait {
+  inset: 2px auto auto 50%;
+  width: 104px;
+  height: calc(100% - 3px);
+  background-size: 104px 104px !important;
+  background-position: center top !important;
+}
+
+/* Promoted special nights outrank bands in a shared cell. */
+.day-cell--multi-event-stacked:has(.multi-event-region--top.multi-event-region--category-promoted-special-night):has(.multi-event-region--bottom.multi-event-region--category-band) .multi-event-layout {
+  grid-template-rows: minmax(0, 1.25fr) minmax(0, 0.75fr);
+}
+
+/* Reusable split allocation follows semantic priority rather than dates/names. */
+.day-cell--multi-event-stacked:has(.multi-event-region--top.multi-event-region--weight-primary) .multi-event-layout {
+  grid-template-rows: minmax(0, 1.3fr) minmax(0, 0.7fr);
+}
+
+.day-cell--multi-event-stacked:has(.multi-event-region--bottom.multi-event-region--weight-primary) .multi-event-layout {
+  grid-template-rows: minmax(0, 0.7fr) minmax(0, 1.3fr);
+}
+
+.day-cell--multi-event-stacked:has(.multi-event-region--top.multi-event-region--category-band):has(.multi-event-region--bottom.multi-event-region--category-dj) .multi-event-layout {
+  grid-template-rows: minmax(0, 1.18fr) minmax(0, 0.82fr);
+}
+
+.day-cell--multi-event-stacked:has(.multi-event-region--top.multi-event-region--category-informational-private-closure):has(.multi-event-region--bottom.multi-event-region--category-dj) .multi-event-layout {
+  grid-template-rows: minmax(0, 0.82fr) minmax(0, 1.18fr);
+}
+
+.multi-event-region--category-informational-private-closure {
+  background: rgba(8, 8, 8, 0.78);
+  outline: none;
+  box-shadow: none;
+}
+
+.day-cell--multi-event-stacked .multi-event-region--category-informational-private-closure .cell-primary {
+  font-size: 13px !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.day-cell--multi-event-stacked .multi-event-region--category-informational-private-closure .cell-tags {
+  top: auto;
+  right: auto;
+  bottom: 4px;
+  left: 6px;
+  max-width: 42%;
+}
+
+.day-cell--multi-event-stacked .multi-event-region--top.multi-event-region--category-band > .cell-review-artwork--class-square-identity::after {
+  background-size: auto 150%;
+  background-position: center top;
+}
+
+.day-cell--multi-event-stacked .multi-event-region--top > [data-selected-asset="friday-v2-bougie-nights.png"] {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.day-cell--multi-event-stacked .multi-event-region--has-review-artwork > .cell-primary {
+  position: absolute;
+  right: 7px;
+  bottom: 20px;
+  left: 7px;
+  width: auto;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 1), 0 0 5px rgba(0, 0, 0, 0.85);
+}
+
+.day-cell--multi-event-stacked .multi-event-region--has-review-artwork[data-label-layout="metadata-center"] > .cell-performer,
+.day-cell--multi-event-stacked .multi-event-region--has-review-artwork[data-label-layout="metadata-center"]:not(:has(> .cell-performer)) > .cell-primary {
+  right: var(--identity-lane-right, 7px);
+  bottom: 4px;
+  left: var(--identity-lane-left, 7px);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: clip;
+}
+
+.day-cell--multi-event-stacked .multi-event-region--has-review-artwork[data-label-layout="metadata-center"]:has(> .cell-performer) > .cell-primary {
+  bottom: 20px;
+}
+
+.day-cell--multi-event-stacked .multi-event-region--has-review-artwork[data-label-layout="adjacent-row"] > .cell-primary {
+  bottom: 20px;
+}
+
+.day-cell--multi-event-stacked .multi-event-region--has-review-artwork[data-label-layout="adjacent-row"]:has(> .cell-performer) > .cell-primary {
+  bottom: 34px;
+}
+
+.day-cell--multi-event-stacked .multi-event-region--has-review-artwork[data-label-layout="adjacent-row"] > .cell-performer {
+  bottom: 20px;
+}
+
+.day-cell--multi-event-stacked .multi-event-region--has-review-artwork[data-label-layout] > :is(.cell-primary, .cell-performer) {
+  padding-inline: 3px;
+  background: linear-gradient(90deg, transparent, rgba(4, 9, 13, 0.72) 18%, rgba(4, 9, 13, 0.72) 82%, transparent);
+  text-shadow: var(--web-art-text-shadow);
+}
+
+.day-cell--multi-event-stacked .multi-event-region--category-promoted-special-night > .cell-primary {
+  font-size: 18px;
+  line-height: 1;
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1120px) {
+  .day-cell--multi-event-stacked .multi-event-region--category-dj > .cell-primary {
+    font-size: 11px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1120px) {
+  .calendar-customer-nav {
+    top: 8px;
+    right: 10px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+  }
+}
+
+.day-cell--multi-event-stacked .multi-event-region--has-review-artwork > .cell-performer {
+  position: absolute;
+  right: 7px;
+  bottom: 20px;
+  left: 7px;
+  z-index: 2;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1;
+  text-align: center;
+}
+
+/* Semantic title tiers preserve a reusable hierarchy: public special-event
+   names lead, performer labels remain secondary, and band names stay compact. */
+.day-cell--populated:not(.day-cell--multi-event) > .cell-title-tier--special-event {
+  font-size: 21px;
+  line-height: 1;
+}
+
+.day-cell--multi-event .cell-title-tier--special-event {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.day-cell--populated .cell-title-tier--band {
+  font-size: 14px !important;
+  line-height: 1;
+}
+
+.day-cell--has-review-artwork.template-dj:not(.day-cell--multi-event):has(> .cell-performer) > .cell-title-tier--special-event {
+  font-size: 20px;
+}
+
+/* Reserve explicit lanes for left venue and right time anchors. */
+.day-cell--populated:not(.day-cell--multi-event) > .cell-promotion--vendor {
+  right: auto;
+  bottom: 20px;
+  left: 8px;
+  width: calc(100% - 16px);
+  max-width: none;
+  min-width: 0;
+  transform: none;
+  justify-content: center;
+  overflow: hidden;
+  text-overflow: clip;
+  flex-wrap: wrap;
+  align-items: center;
+  white-space: normal;
+}
+
+/* Keep this after every generic vendor-placement rule. Thursday overlays use
+   the promotion as an edge-to-edge footer on the actual day cell. */
+.day-cell--populated.day-cell--primary-companion-overlay.day-cell--has-promotion > .cell-promotion--vendor {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  border-radius: 0;
+  transform: none;
+}
+
+.day-cell--populated.day-cell--primary-secondary-split.day-cell--has-promotion > .cell-promotion--vendor {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  border-radius: 0;
+  transform: none;
+}
+
+/* A single-date callout inside a date-range campaign occupies the lane above
+   the continuous campaign ribbon, so both messages stay visible on the date. */
+.day-cell--primary-secondary-split.day-cell--has-range-promotion.day-cell--has-promotion .primary-secondary-layout {
+  bottom: 40px;
+}
+
+.day-cell--primary-secondary-split.day-cell--has-range-promotion.day-cell--has-promotion > .cell-promotion--callout {
+  position: absolute;
+  right: 0;
+  bottom: 22px;
+  left: 0;
+  z-index: 13;
+  width: 100%;
+  min-height: 18px;
+  margin: 0;
+  border-radius: 0;
+}
+
+</style>
+</head>
+<body>
+<div class="calendar-viewport">
+<div class="calendar-page palette-warm overlay-standard graphic-bold" style="--tag-font-size:9px;--tag-artwork-font-size:7px;--tag-line-height:1;--tag-padding-block:1px;--tag-padding-inline:4px;--tag-artwork-padding-inline:3px;--tag-min-height:11px;--tag-radius:3px;--tag-margin-bottom:3px;--web-background-size:cover;--web-background-position:center;--web-background-blend-mode:normal;--web-background-contrast:1;--bougies-overlay:rgba(15, 10, 7, 0.55);--bougies-bg-panel:rgba(36, 26, 20, 0.55);--bougies-bg-panel-quiet:rgba(36, 26, 20, 0.32);--web-photo-art-opacity:1;--web-identity-art-opacity:1;--web-recurring-art-opacity:1;--web-art-blend-mode:normal;--web-art-filter:none;--web-photo-scrim-top:rgba(4, 9, 13, 0.56);--web-photo-scrim-middle:rgba(4, 9, 13, 0.18);--web-photo-scrim-bottom:rgba(4, 9, 13, 0.06);--web-art-text-shadow:0 1px 3px rgba(0, 0, 0, 0.9), 0 0 5px rgba(0, 0, 0, 0.5);background-image:url('assets/abbefa546c839ba629d6fddd2ac10e5eb8ae9996092cba91b8cc1bf79dc0a496.jpg')">
+<nav class="calendar-customer-nav" aria-label="Calendar navigation"><a class="calendar-nav-link calendar-nav-link--home" href="https://www.bougiesbar.com/">Home</a><details class="calendar-archive-menu calendar-archive-menu--review" data-review-only="true"><summary class="calendar-nav-link calendar-nav-link--archive">Published Review Calendars</summary><span class="calendar-archive-links"><a href="https://sotadatos.github.io/bougies-calendar-preview/review/2026-09/v12/calendar.html">September 2026 · Web v12</a><a href="https://sotadatos.github.io/bougies-calendar-preview/review/2026-08/v36/calendar.html">August 2026 · Web v36</a></span></details></nav>
+
+    <header class="calendar-header">
+      <div class="calendar-brand">Bougies · An Old Florida Tavern</div>
+      <div class="calendar-month">October 2026</div>
+      <div class="calendar-theme">October 2026</div>
+      <div class="calendar-header-divider" aria-hidden="true"></div>
+    </header>
+  
+<div class="weekday-row"><div class="weekday-label"><img class="weekday-identity-artwork" src="assets/480f85eee8adede95f62924cd2c2c1aa4dd2782743814e8ee260d66c16855f7f.png" alt="tuesday weekday identity"></div><div class="weekday-label"><img class="weekday-identity-artwork" src="assets/752909552b3978d36034d651dbf917f896101acd0f56fbf336098248336b8619.png" alt="wednesday weekday identity"></div><div class="weekday-label"><img class="weekday-identity-artwork" src="assets/827035111b704b117c06411d5ff76e74711cfd4282736ed0dbeda64f9b2eed2b.png" alt="thursday weekday identity"></div><div class="weekday-label"><img class="weekday-identity-artwork" src="assets/5f626940ca33f833820f7045a95d6ea49d9ea5375f7682fd2835b32729eb097b.png" alt="friday weekday identity"></div><div class="weekday-label"><img class="weekday-identity-artwork" src="assets/55df05f3354139b71bb3fd523f27a59cc743d5f6a4108a5aa5c6e010ee2c2ae6.png" alt="saturday weekday identity"></div><div class="weekday-label"><img class="weekday-identity-artwork" src="assets/249bf73f682bfec6f406a8e55a45cbe1e42d43504a1aef9ab05dbdde5ad6c04d.png" alt="sunday weekday identity"></div><div class="weekday-label"><img class="weekday-identity-artwork" src="assets/d95b2f15554119f6f7f4a226d2886cbf8a843a7ddea3aa825dedc4fb2625ee96.png" alt="monday weekday identity"></div></div><div class="month-grid-stage month-grid-stage--has-weekday-promotions" style="--row-count:5"><div class="month-grid" style="--row-count:5"><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--populated day-cell--multi-event day-cell--multi-event-stacked template-recurring-night template-recurring-night"><div class="cell-date">1</div><div class="multi-event-layout"><div class="multi-event-region multi-event-region--top multi-event-region--stacked multi-event-region--has-review-artwork multi-event-region--category-band presentation-mode-photo-led" data-event-name="Rhinestone Cowboys">
+    <div class="cell-review-artwork cell-review-artwork--recurring-event-cell-artwork cell-review-artwork--presentation-photo-led cell-review-artwork--class-square-identity cell-review-artwork--background-neutral-mat" style="background-image:url('assets/a1d12c406da0959b087160329ac6225798b7eb457ed3c9d3cc82d8703ccfa3f9.png');background-size:contain;background-position:center center;padding:3%;background-origin:content-box;background-color:rgba(4,9,13,0.72);--web-artwork-width:100%" data-segment-index="0" data-segment-count="1" data-selected-asset="thursday-v1-rhinestone-cowboys.png" data-selected-asset-checksum="f106325dd46c6e0e5831fdde72fd8ed267de19cf362d7834052b2edb9c562ca1" aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Monthly</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="cell-label cell-label--venue">Living Room</div></div>
+    <div class="cell-primary cell-title-tier--band cell-title-variant--bold-condensed">Rhinestone Cowboys</div>
+    
+    <div class="cell-secondary">8 PM</div>
+    
+    
+    
+    
+  </div><div class="multi-event-region multi-event-region--bottom multi-event-region--stacked multi-event-region--has-review-artwork multi-event-region--category-dj presentation-mode-photo-led" data-event-name="DJ Edward">
+    <div class="cell-review-artwork cell-review-artwork--event-cell-artwork cell-review-artwork--presentation-photo-led cell-review-artwork--class-dj-portrait cell-review-artwork--background-edge-fill" style="background-image:var(--calendar-inline-image-1);background-size:cover;background-position:center 25%;--web-artwork-width:94%" data-segment-index="0" data-segment-count="1" data-selected-asset="dj-edward-v1.jpg" data-selected-asset-checksum="fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e" data-text-safety="{&quot;assetSha256&quot;:&quot;fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e&quot;,&quot;protectedRects&quot;:[{&quot;x&quot;:0.28,&quot;y&quot;:0.06,&quot;width&quot;:0.44,&quot;height&quot;:0.44}],&quot;bakedIdentityRects&quot;:[],&quot;safeTextRects&quot;:[{&quot;x&quot;:0.05,&quot;y&quot;:0.74,&quot;width&quot;:0.9,&quot;height&quot;:0.21}]}" aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Weekly</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="cell-label cell-label--venue">Living Room</div></div>
+    <div class="cell-primary cell-title-tier--dj cell-title-variant--bold-condensed">DJ Edward</div>
+    
+    <div class="cell-secondary">11:30 PM</div>
+    
+    
+    
+    
+  </div></div></div><div class="day-cell day-cell--populated template-dj template-recurring-night template-live-band presentation-mode-photo-led presentation-mode-photo-led presentation-mode-identity-led day-cell--has-review-artwork   day-cell--special-event"><div class="cell-date">2</div>
+    <div class="cell-review-artwork cell-review-artwork--event-cell-artwork cell-review-artwork--presentation-photo-led cell-review-artwork--class-square-identity cell-review-artwork--background-neutral-mat" style="background-image:url('assets/b9d8404597e8162ca3740fb4d3aafe087e09e92ed7031532ef748fbd55c90a5a.jpg');background-size:contain;background-position:center center;padding:3%;background-origin:content-box;background-color:rgba(4,9,13,0.72);--web-artwork-width:100%" data-segment-index="0" data-segment-count="1" data-selected-asset="dj-proof-instagram-post-v1.jpg" data-selected-asset-checksum="b9d8404597e8162ca3740fb4d3aafe087e09e92ed7031532ef748fbd55c90a5a" aria-hidden="true"></div>
+    <div class="cell-label cell-label--category cell-label--dj">DJ</div>
+    <div class="cell-primary cell-title-tier--dj cell-title-variant--rock">DJ Proof</div>
+    
+    
+    
+    
+    
+    
+  
+    <div class="cell-review-artwork cell-review-artwork--recurring-event-cell-artwork cell-review-artwork--presentation-photo-led cell-review-artwork--class-event-specific-artwork cell-review-artwork--background-neutral-mat" style="background-image:url('assets/4f029697cb6fedbe644a353602dd6f5980643968a5f7f2a7fd983c3cf6287f55.png');background-size:contain;background-position:center center;padding:3%;background-origin:content-box;background-color:rgba(4,9,13,0.72);--web-artwork-width:100%" data-segment-index="0" data-segment-count="1" data-selected-asset="friday-v2-bougie-nights.png" data-selected-asset-checksum="ca443b40c88a177717a234527c097430d9fb4f18899475e3c0f2ba93c3feb809" aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Monthly</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="cell-label cell-label--venue">Backyard</div></div>
+    <div class="cell-primary cell-title-tier--special-event cell-title-variant--bold-condensed">Bougie Nights</div>
+    
+    <div class="cell-secondary">8 PM</div>
+    <div class="cell-performer">DJ Alex</div>
+    
+    
+    
+  
+    <div class="cell-review-artwork cell-review-artwork--event-cell-artwork cell-review-artwork--presentation-identity-led cell-review-artwork--class-square-identity cell-review-artwork--background-neutral-mat" style="background-image:url('assets/94f456490552967080642537cdf583c41b82ba9bb63d5d703624099d01ddbdc3.jpg');background-size:contain;background-position:center center;padding:3%;background-origin:content-box;background-color:rgba(4,9,13,0.72);--web-artwork-width:100%" data-segment-index="0" data-segment-count="1" data-selected-asset="bad-reputation-instagram-post-v1.jpg" data-selected-asset-checksum="94f456490552967080642537cdf583c41b82ba9bb63d5d703624099d01ddbdc3" aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Live Music</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="cell-label cell-label--venue">Living Room</div></div>
+    <div class="cell-primary cell-title-tier--band cell-title-variant--retro">Bad Reputation</div>
+    
+    <div class="cell-secondary">10 PM</div>
+    
+    
+    
+    
+  </div><div class="day-cell day-cell--populated day-cell--multi-event day-cell--multi-event-stacked template-dj template-live-band"><div class="cell-date">3</div><div class="multi-event-layout"><div class="multi-event-region multi-event-region--top multi-event-region--stacked multi-event-region--has-review-artwork multi-event-region--category-dj presentation-mode-identity-led" data-event-name="DJ Kace">
+    <div class="cell-review-artwork cell-review-artwork--event-cell-artwork cell-review-artwork--presentation-identity-led cell-review-artwork--class-square-identity cell-review-artwork--background-neutral-mat" style="background-image:url('assets/9aefd37fdf7f7c41c4ac97cbc1f84f2c3c00d04fe1798c89acfb272a71d0e472.jpg');background-size:contain;background-position:center center;padding:3%;background-origin:content-box;background-color:rgba(4,9,13,0.72);--web-artwork-width:100%" data-segment-index="0" data-segment-count="1" data-selected-asset="dj-kace-instagram-post-v2.jpg" data-selected-asset-checksum="9aefd37fdf7f7c41c4ac97cbc1f84f2c3c00d04fe1798c89acfb272a71d0e472" aria-hidden="true"></div>
+    <div class="cell-label cell-label--category cell-label--dj">DJ</div>
+    <div class="cell-primary cell-title-tier--dj cell-title-variant--neon">DJ Kace</div>
+    
+    
+    
+    
+    
+    
+  </div><div class="multi-event-region multi-event-region--bottom multi-event-region--stacked multi-event-region--has-review-artwork multi-event-region--category-band presentation-mode-identity-led" data-event-name="Sunset Dreams">
+    <div class="cell-review-artwork cell-review-artwork--event-cell-artwork cell-review-artwork--presentation-identity-led cell-review-artwork--class-square-identity cell-review-artwork--background-neutral-mat" style="background-image:url('assets/aff501a678c2ab004628eb3dc903dd2f9fa4c4455d5b721cdba65f71c23c1da1.jpg');background-size:contain;background-position:center center;padding:3%;background-origin:content-box;background-color:rgba(4,9,13,0.72);--web-artwork-width:100%" data-segment-index="0" data-segment-count="1" data-selected-asset="sunset-dreams-v1.jpg" data-selected-asset-checksum="aff501a678c2ab004628eb3dc903dd2f9fa4c4455d5b721cdba65f71c23c1da1" aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Live Music</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="cell-label cell-label--venue">Living Room</div></div>
+    <div class="visually-hidden cell-semantic-title">Sunset Dreams</div>
+    
+    <div class="cell-secondary">10 PM</div>
+    
+    
+    
+    
+  </div></div></div><div class="day-cell day-cell--populated template-recurring-night presentation-mode-recurring-self-describing day-cell--has-review-artwork  day-cell--recurring-segment day-cell--recurring-segment-first " data-event-name="Whiskey Allstars"><div class="cell-date">4</div>
+    <div class="cell-review-artwork cell-review-artwork--recurring-weekday-vertical-artwork cell-review-artwork--presentation-recurring-self-describing" style="background-image:var(--calendar-inline-image-2);background-size:100% 400%;background-position:center 0%" data-segment-index="0" data-segment-count="4" data-selected-asset="sunday-v2-whiskey-allstars-self-describing.png" data-selected-asset-checksum="7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85" data-recurring-composition aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Weekly</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="visually-hidden cell-semantic-venue">Living Room</div></div>
+    <div class="visually-hidden cell-semantic-title">Whiskey Allstars</div>
+    
+    <div class="visually-hidden cell-semantic-time">6ish</div>
+    
+    
+    
+    
+  </div><div class="day-cell day-cell--empty"><div class="cell-date">5</div></div><div class="day-cell day-cell--populated day-cell--multi-event day-cell--multi-event-stacked template-recurring-night template-recurring-night"><div class="cell-date">6</div><div class="multi-event-layout"><div class="multi-event-region multi-event-region--top multi-event-region--stacked multi-event-region--special-event multi-event-region--category-promoted-special-night presentation-mode-text-only" data-event-name="South Miami Tech Tuesdays">
+    
+    <div class="visually-hidden cell-semantic-badge">Monthly</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="cell-label cell-label--venue">Whole Venue</div></div>
+    <div class="cell-primary cell-title-tier--special-event cell-title-variant--rock">South Miami Tech Tuesdays</div>
+    
+    <div class="cell-secondary">6 PM–9 PM</div>
+    
+    
+    
+    
+  </div><div class="multi-event-region multi-event-region--bottom multi-event-region--stacked multi-event-region--has-review-artwork multi-event-region--category-standard presentation-mode-recurring-self-describing" data-event-name="Karaoke Tuesday">
+    <div class="cell-review-artwork cell-review-artwork--recurring-weekday-vertical-artwork cell-review-artwork--presentation-recurring-self-describing" style="background-image:var(--calendar-inline-image-3);background-size:100% 400%;background-position:center 0%" data-segment-index="0" data-segment-count="4" data-selected-asset="tuesday-v2-karaoke-self-describing.png" data-selected-asset-checksum="0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41" data-recurring-composition aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Weekly</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="visually-hidden cell-semantic-venue">Living Room</div></div>
+    <div class="visually-hidden cell-semantic-title">Karaoke Tuesday</div>
+    
+    <div class="visually-hidden cell-semantic-time">10 PM</div>
+    
+    
+    
+    
+  </div></div></div><div class="day-cell day-cell--populated template-recurring-night presentation-mode-recurring-self-describing day-cell--has-review-artwork  day-cell--recurring-segment day-cell--recurring-segment-first " data-event-name="Ladies Night"><div class="cell-date">7</div>
+    <div class="cell-review-artwork cell-review-artwork--recurring-weekday-vertical-artwork cell-review-artwork--presentation-recurring-self-describing" style="background-image:var(--calendar-inline-image-4);background-size:100% 400%;background-position:center 0%" data-segment-index="0" data-segment-count="4" data-selected-asset="wednesday-v2-ladies-night-self-describing.png" data-selected-asset-checksum="338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa" data-recurring-composition aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Weekly</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="visually-hidden cell-semantic-venue">Living Room</div></div>
+    <div class="visually-hidden cell-semantic-title">Ladies Night</div>
+    
+    <div class="visually-hidden cell-semantic-time">10 PM–2 AM</div>
+    <div class="visually-hidden cell-semantic-performer">DJ Edward &amp; Friends</div>
+    
+    
+    
+  </div><div class="day-cell day-cell--populated day-cell--multi-event day-cell--multi-event-stacked template-recurring-night template-recurring-night"><div class="cell-date">8</div><div class="multi-event-layout"><div class="multi-event-region multi-event-region--top multi-event-region--stacked multi-event-region--has-review-artwork multi-event-region--category-band presentation-mode-identity-led" data-event-name="KoolKidz">
+    <div class="cell-review-artwork cell-review-artwork--recurring-event-cell-artwork cell-review-artwork--presentation-identity-led cell-review-artwork--class-square-identity cell-review-artwork--background-neutral-mat" style="background-image:var(--calendar-inline-image-5);background-size:contain;background-position:center center;padding:3%;background-origin:content-box;background-color:rgba(4,9,13,0.72);--web-artwork-width:100%" data-segment-index="0" data-segment-count="2" data-selected-asset="koolkidz-v1.jpg" data-selected-asset-checksum="0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b" aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Monthly</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="cell-label cell-label--venue">Living Room</div></div>
+    <div class="visually-hidden cell-semantic-title">KoolKidz</div>
+    
+    <div class="cell-secondary">8 PM</div>
+    
+    
+    
+    
+  </div><div class="multi-event-region multi-event-region--bottom multi-event-region--stacked multi-event-region--has-review-artwork multi-event-region--category-dj presentation-mode-photo-led" data-event-name="DJ Edward">
+    <div class="cell-review-artwork cell-review-artwork--event-cell-artwork cell-review-artwork--presentation-photo-led cell-review-artwork--class-dj-portrait cell-review-artwork--background-edge-fill" style="background-image:var(--calendar-inline-image-1);background-size:cover;background-position:center 25%;--web-artwork-width:94%" data-segment-index="0" data-segment-count="1" data-selected-asset="dj-edward-v1.jpg" data-selected-asset-checksum="fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e" data-text-safety="{&quot;assetSha256&quot;:&quot;fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e&quot;,&quot;protectedRects&quot;:[{&quot;x&quot;:0.28,&quot;y&quot;:0.06,&quot;width&quot;:0.44,&quot;height&quot;:0.44}],&quot;bakedIdentityRects&quot;:[],&quot;safeTextRects&quot;:[{&quot;x&quot;:0.05,&quot;y&quot;:0.74,&quot;width&quot;:0.9,&quot;height&quot;:0.21}]}" aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Weekly</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="cell-label cell-label--venue">Living Room</div></div>
+    <div class="cell-primary cell-title-tier--dj cell-title-variant--bold-condensed">DJ Edward</div>
+    
+    <div class="cell-secondary">11:30 PM</div>
+    
+    
+    
+    
+  </div></div></div><div class="day-cell day-cell--populated day-cell--multi-event day-cell--multi-event-stacked template-dj template-live-band"><div class="cell-date">9</div><div class="multi-event-layout"><div class="multi-event-region multi-event-region--top multi-event-region--stacked multi-event-region--has-review-artwork multi-event-region--category-dj presentation-mode-photo-led" data-event-name="DJ Edward">
+    <div class="cell-review-artwork cell-review-artwork--event-cell-artwork cell-review-artwork--presentation-photo-led cell-review-artwork--class-dj-portrait cell-review-artwork--background-edge-fill" style="background-image:var(--calendar-inline-image-1);background-size:cover;background-position:center 25%;--web-artwork-width:94%" data-segment-index="0" data-segment-count="1" data-selected-asset="dj-edward-v1.jpg" data-selected-asset-checksum="fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e" data-text-safety="{&quot;assetSha256&quot;:&quot;fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e&quot;,&quot;protectedRects&quot;:[{&quot;x&quot;:0.28,&quot;y&quot;:0.06,&quot;width&quot;:0.44,&quot;height&quot;:0.44}],&quot;bakedIdentityRects&quot;:[],&quot;safeTextRects&quot;:[{&quot;x&quot;:0.05,&quot;y&quot;:0.74,&quot;width&quot;:0.9,&quot;height&quot;:0.21}]}" aria-hidden="true"></div>
+    <div class="cell-label cell-label--category cell-label--dj">DJ</div>
+    <div class="cell-primary cell-title-tier--dj cell-title-variant--bold-condensed">DJ Edward</div>
+    
+    
+    
+    
+    
+    
+  </div><div class="multi-event-region multi-event-region--bottom multi-event-region--stacked multi-event-region--has-review-artwork multi-event-region--category-band presentation-mode-identity-led" data-event-name="The Farm Boys">
+    <div class="cell-review-artwork cell-review-artwork--event-cell-artwork cell-review-artwork--presentation-identity-led cell-review-artwork--class-square-identity cell-review-artwork--background-neutral-mat" style="background-image:url('assets/ad27706b7775bfaa81feb1e7c36d9f29707f1eaed54c1b915aa72a9058434c76.jpg');background-size:contain;background-position:center center;padding:3%;background-origin:content-box;background-color:rgba(4,9,13,0.72);--web-artwork-width:100%" data-segment-index="0" data-segment-count="1" data-selected-asset="the-farm-boys-v1.jpg" data-selected-asset-checksum="ad27706b7775bfaa81feb1e7c36d9f29707f1eaed54c1b915aa72a9058434c76" aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Live Music</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="cell-label cell-label--venue">Living Room</div></div>
+    <div class="cell-primary cell-title-tier--band cell-title-variant--western">The Farm Boys</div>
+    
+    <div class="cell-secondary">10 PM</div>
+    
+    
+    
+    
+  </div></div></div><div class="day-cell day-cell--populated template-special-event presentation-mode-photo-led day-cell--has-review-artwork   day-cell--special-event" data-event-name="Freestyle Party"><div class="cell-date">10</div>
+    <div class="cell-review-artwork cell-review-artwork--event-cell-artwork cell-review-artwork--presentation-photo-led cell-review-artwork--class-compact-square-identity cell-review-artwork--background-neutral-mat" style="background-image:url('assets/f375d3e1d1195d3e7895dd3fea383b3db1b16b1b42fa92f14f76c5ce3398e539.jpg');background-size:contain;background-position:center center;padding:3%;background-origin:content-box;background-color:rgba(4,9,13,0.72);--web-artwork-width:100%" data-segment-index="0" data-segment-count="1" data-selected-asset="dj-diaga-v1.jpg" data-selected-asset-checksum="f375d3e1d1195d3e7895dd3fea383b3db1b16b1b42fa92f14f76c5ce3398e539" aria-hidden="true"></div>
+    <div class="cell-label cell-label--category cell-label--special-event">Special Event</div>
+    <div class="cell-primary cell-title-tier--special-event cell-title-variant--retro">Freestyle Party</div>
+    
+    
+    
+    
+    
+    
+  </div><div class="day-cell day-cell--populated template-recurring-night presentation-mode-recurring-self-describing day-cell--has-review-artwork  day-cell--recurring-segment day-cell--recurring-segment-middle " data-event-name="Whiskey Allstars"><div class="cell-date">11</div>
+    <div class="cell-review-artwork cell-review-artwork--recurring-weekday-vertical-artwork cell-review-artwork--presentation-recurring-self-describing" style="background-image:var(--calendar-inline-image-2);background-size:100% 400%;background-position:center 33.33333333333333%" data-segment-index="1" data-segment-count="4" data-selected-asset="sunday-v2-whiskey-allstars-self-describing.png" data-selected-asset-checksum="7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85" data-recurring-composition aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Weekly</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="visually-hidden cell-semantic-venue">Living Room</div></div>
+    <div class="visually-hidden cell-semantic-title">Whiskey Allstars</div>
+    
+    <div class="visually-hidden cell-semantic-time">6ish</div>
+    
+    
+    
+    
+  </div><div class="day-cell day-cell--empty"><div class="cell-date">12</div></div><div class="day-cell day-cell--populated template-recurring-night presentation-mode-recurring-self-describing day-cell--has-review-artwork  day-cell--recurring-segment day-cell--recurring-segment-middle " data-event-name="Karaoke Tuesday"><div class="cell-date">13</div>
+    <div class="cell-review-artwork cell-review-artwork--recurring-weekday-vertical-artwork cell-review-artwork--presentation-recurring-self-describing" style="background-image:var(--calendar-inline-image-3);background-size:100% 400%;background-position:center 33.33333333333333%" data-segment-index="1" data-segment-count="4" data-selected-asset="tuesday-v2-karaoke-self-describing.png" data-selected-asset-checksum="0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41" data-recurring-composition aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Weekly</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="visually-hidden cell-semantic-venue">Living Room</div></div>
+    <div class="visually-hidden cell-semantic-title">Karaoke Tuesday</div>
+    
+    <div class="visually-hidden cell-semantic-time">10 PM</div>
+    
+    
+    
+    
+  </div><div class="day-cell day-cell--populated template-recurring-night presentation-mode-recurring-self-describing day-cell--has-review-artwork  day-cell--recurring-segment day-cell--recurring-segment-middle " data-event-name="Ladies Night"><div class="cell-date">14</div>
+    <div class="cell-review-artwork cell-review-artwork--recurring-weekday-vertical-artwork cell-review-artwork--presentation-recurring-self-describing" style="background-image:var(--calendar-inline-image-4);background-size:100% 400%;background-position:center 33.33333333333333%" data-segment-index="1" data-segment-count="4" data-selected-asset="wednesday-v2-ladies-night-self-describing.png" data-selected-asset-checksum="338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa" data-recurring-composition aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Weekly</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="visually-hidden cell-semantic-venue">Living Room</div></div>
+    <div class="visually-hidden cell-semantic-title">Ladies Night</div>
+    
+    <div class="visually-hidden cell-semantic-time">10 PM–2 AM</div>
+    <div class="visually-hidden cell-semantic-performer">DJ Edward &amp; Friends</div>
+    
+    
+    
+  </div><div class="day-cell day-cell--populated day-cell--multi-event day-cell--multi-event-stacked template-recurring-night template-recurring-night"><div class="cell-date">15</div><div class="multi-event-layout"><div class="multi-event-region multi-event-region--top multi-event-region--stacked multi-event-region--has-review-artwork multi-event-region--category-band presentation-mode-identity-led" data-event-name="Luftz">
+    <div class="cell-review-artwork cell-review-artwork--event-cell-artwork cell-review-artwork--presentation-identity-led cell-review-artwork--class-landscape-band-photo cell-review-artwork--background-edge-fill" style="background-image:url('assets/440fed2d0014d313246a3d43e7ecc661feaf2ac784554e4d0cf604384f48fe8d.jpg');background-size:cover;background-position:center 35%;--web-artwork-width:100%" data-segment-index="0" data-segment-count="1" data-selected-asset="luftz-v1.jpg" data-selected-asset-checksum="440fed2d0014d313246a3d43e7ecc661feaf2ac784554e4d0cf604384f48fe8d" aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Monthly</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="cell-label cell-label--venue">Living Room</div></div>
+    <div class="cell-primary cell-title-tier--band cell-title-variant--western">Luftz</div>
+    
+    <div class="cell-secondary">8 PM</div>
+    
+    
+    
+    
+  </div><div class="multi-event-region multi-event-region--bottom multi-event-region--stacked multi-event-region--has-review-artwork multi-event-region--category-dj presentation-mode-photo-led" data-event-name="DJ Edward">
+    <div class="cell-review-artwork cell-review-artwork--event-cell-artwork cell-review-artwork--presentation-photo-led cell-review-artwork--class-dj-portrait cell-review-artwork--background-edge-fill" style="background-image:var(--calendar-inline-image-1);background-size:cover;background-position:center 25%;--web-artwork-width:94%" data-segment-index="0" data-segment-count="1" data-selected-asset="dj-edward-v1.jpg" data-selected-asset-checksum="fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e" data-text-safety="{&quot;assetSha256&quot;:&quot;fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e&quot;,&quot;protectedRects&quot;:[{&quot;x&quot;:0.28,&quot;y&quot;:0.06,&quot;width&quot;:0.44,&quot;height&quot;:0.44}],&quot;bakedIdentityRects&quot;:[],&quot;safeTextRects&quot;:[{&quot;x&quot;:0.05,&quot;y&quot;:0.74,&quot;width&quot;:0.9,&quot;height&quot;:0.21}]}" aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Weekly</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="cell-label cell-label--venue">Living Room</div></div>
+    <div class="cell-primary cell-title-tier--dj cell-title-variant--bold-condensed">DJ Edward</div>
+    
+    <div class="cell-secondary">11:30 PM</div>
+    
+    
+    
+    
+  </div></div></div><div class="day-cell day-cell--populated template-live-band presentation-mode-identity-led day-cell--has-review-artwork   " data-event-name="Sailor Ripley"><div class="cell-date">16</div>
+    <div class="cell-review-artwork cell-review-artwork--event-cell-artwork cell-review-artwork--presentation-identity-led cell-review-artwork--class-square-identity cell-review-artwork--background-neutral-mat" style="background-image:url('assets/505484bec264821a1b548664d074227ebb3402d1bfeadd529b3373c08add4e0e.jpg');background-size:contain;background-position:center center;padding:3%;background-origin:content-box;background-color:rgba(4,9,13,0.72);--web-artwork-width:100%" data-segment-index="0" data-segment-count="1" data-selected-asset="sailor-ripley-instagram-post-v2.jpg" data-selected-asset-checksum="505484bec264821a1b548664d074227ebb3402d1bfeadd529b3373c08add4e0e" aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Live Music</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="cell-label cell-label--venue">Living Room</div></div>
+    <div class="cell-primary cell-title-tier--band cell-title-variant--western">Sailor Ripley</div>
+    
+    <div class="cell-secondary">10 PM</div>
+    
+    
+    
+    
+  </div><div class="day-cell day-cell--populated template-live-band presentation-mode-identity-led day-cell--has-review-artwork   " data-event-name="Pump"><div class="cell-date">17</div>
+    <div class="cell-review-artwork cell-review-artwork--event-cell-artwork cell-review-artwork--presentation-identity-led cell-review-artwork--class-square-identity cell-review-artwork--background-neutral-mat" style="background-image:url('assets/05c16e757f0e1f1218f9e914ae8c7dd092ffbb8eecfe7c02247fd30398959aac.jpg');background-size:contain;background-position:center center;padding:3%;background-origin:content-box;background-color:rgba(4,9,13,0.72);--web-artwork-width:100%" data-segment-index="0" data-segment-count="1" data-selected-asset="pump-v1.jpg" data-selected-asset-checksum="05c16e757f0e1f1218f9e914ae8c7dd092ffbb8eecfe7c02247fd30398959aac" aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Live Music</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="cell-label cell-label--venue">Living Room</div></div>
+    <div class="visually-hidden cell-semantic-title">Pump</div>
+    
+    <div class="cell-secondary">10 PM</div>
+    
+    
+    
+    
+  </div><div class="day-cell day-cell--populated template-recurring-night presentation-mode-recurring-self-describing day-cell--has-review-artwork  day-cell--recurring-segment day-cell--recurring-segment-middle " data-event-name="Whiskey Allstars"><div class="cell-date">18</div>
+    <div class="cell-review-artwork cell-review-artwork--recurring-weekday-vertical-artwork cell-review-artwork--presentation-recurring-self-describing" style="background-image:var(--calendar-inline-image-2);background-size:100% 400%;background-position:center 66.66666666666666%" data-segment-index="2" data-segment-count="4" data-selected-asset="sunday-v2-whiskey-allstars-self-describing.png" data-selected-asset-checksum="7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85" data-recurring-composition aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Weekly</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="visually-hidden cell-semantic-venue">Living Room</div></div>
+    <div class="visually-hidden cell-semantic-title">Whiskey Allstars</div>
+    
+    <div class="visually-hidden cell-semantic-time">6ish</div>
+    
+    
+    
+    
+  </div><div class="day-cell day-cell--empty"><div class="cell-date">19</div></div><div class="day-cell day-cell--populated template-recurring-night presentation-mode-recurring-self-describing day-cell--has-review-artwork  day-cell--recurring-segment day-cell--recurring-segment-middle " data-event-name="Karaoke Tuesday"><div class="cell-date">20</div>
+    <div class="cell-review-artwork cell-review-artwork--recurring-weekday-vertical-artwork cell-review-artwork--presentation-recurring-self-describing" style="background-image:var(--calendar-inline-image-3);background-size:100% 400%;background-position:center 66.66666666666666%" data-segment-index="2" data-segment-count="4" data-selected-asset="tuesday-v2-karaoke-self-describing.png" data-selected-asset-checksum="0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41" data-recurring-composition aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Weekly</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="visually-hidden cell-semantic-venue">Living Room</div></div>
+    <div class="visually-hidden cell-semantic-title">Karaoke Tuesday</div>
+    
+    <div class="visually-hidden cell-semantic-time">10 PM</div>
+    
+    
+    
+    
+  </div><div class="day-cell day-cell--populated template-recurring-night presentation-mode-recurring-self-describing day-cell--has-review-artwork  day-cell--recurring-segment day-cell--recurring-segment-middle " data-event-name="Ladies Night"><div class="cell-date">21</div>
+    <div class="cell-review-artwork cell-review-artwork--recurring-weekday-vertical-artwork cell-review-artwork--presentation-recurring-self-describing" style="background-image:var(--calendar-inline-image-4);background-size:100% 400%;background-position:center 66.66666666666666%" data-segment-index="2" data-segment-count="4" data-selected-asset="wednesday-v2-ladies-night-self-describing.png" data-selected-asset-checksum="338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa" data-recurring-composition aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Weekly</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="visually-hidden cell-semantic-venue">Living Room</div></div>
+    <div class="visually-hidden cell-semantic-title">Ladies Night</div>
+    
+    <div class="visually-hidden cell-semantic-time">10 PM–2 AM</div>
+    <div class="visually-hidden cell-semantic-performer">DJ Edward &amp; Friends</div>
+    
+    
+    
+  </div><div class="day-cell day-cell--populated day-cell--multi-event day-cell--multi-event-stacked template-recurring-night template-recurring-night"><div class="cell-date">22</div><div class="multi-event-layout"><div class="multi-event-region multi-event-region--top multi-event-region--stacked multi-event-region--has-review-artwork multi-event-region--category-band presentation-mode-identity-led" data-event-name="KoolKidz">
+    <div class="cell-review-artwork cell-review-artwork--recurring-event-cell-artwork cell-review-artwork--presentation-identity-led cell-review-artwork--class-square-identity cell-review-artwork--background-neutral-mat" style="background-image:var(--calendar-inline-image-5);background-size:contain;background-position:center center;padding:3%;background-origin:content-box;background-color:rgba(4,9,13,0.72);--web-artwork-width:100%" data-segment-index="1" data-segment-count="2" data-selected-asset="koolkidz-v1.jpg" data-selected-asset-checksum="0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b" aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Monthly</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="cell-label cell-label--venue">Living Room</div></div>
+    <div class="visually-hidden cell-semantic-title">KoolKidz</div>
+    
+    <div class="cell-secondary">8 PM</div>
+    
+    
+    
+    
+  </div><div class="multi-event-region multi-event-region--bottom multi-event-region--stacked multi-event-region--has-review-artwork multi-event-region--category-dj presentation-mode-photo-led" data-event-name="DJ Edward">
+    <div class="cell-review-artwork cell-review-artwork--event-cell-artwork cell-review-artwork--presentation-photo-led cell-review-artwork--class-dj-portrait cell-review-artwork--background-edge-fill" style="background-image:var(--calendar-inline-image-1);background-size:cover;background-position:center 25%;--web-artwork-width:94%" data-segment-index="0" data-segment-count="1" data-selected-asset="dj-edward-v1.jpg" data-selected-asset-checksum="fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e" data-text-safety="{&quot;assetSha256&quot;:&quot;fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e&quot;,&quot;protectedRects&quot;:[{&quot;x&quot;:0.28,&quot;y&quot;:0.06,&quot;width&quot;:0.44,&quot;height&quot;:0.44}],&quot;bakedIdentityRects&quot;:[],&quot;safeTextRects&quot;:[{&quot;x&quot;:0.05,&quot;y&quot;:0.74,&quot;width&quot;:0.9,&quot;height&quot;:0.21}]}" aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Weekly</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="cell-label cell-label--venue">Living Room</div></div>
+    <div class="cell-primary cell-title-tier--dj cell-title-variant--bold-condensed">DJ Edward</div>
+    
+    <div class="cell-secondary">11:30 PM</div>
+    
+    
+    
+    
+  </div></div></div><div class="day-cell day-cell--populated template-live-band presentation-mode-photo-led day-cell--has-review-artwork   " data-event-name="The Marauders"><div class="cell-date">23</div>
+    <div class="cell-review-artwork cell-review-artwork--event-cell-artwork cell-review-artwork--presentation-photo-led cell-review-artwork--class-square-identity cell-review-artwork--background-neutral-mat" style="background-image:url('assets/0963fd201c80984a35ae300963ddd56fecec03c5efd84cfdb26eb2e945eb50fd.jpg');background-size:contain;background-position:center center;padding:3%;background-origin:content-box;background-color:rgba(4,9,13,0.72);--web-artwork-width:100%" data-segment-index="0" data-segment-count="1" data-selected-asset="the-marauders-instagram-post-v1.jpg" data-selected-asset-checksum="0963fd201c80984a35ae300963ddd56fecec03c5efd84cfdb26eb2e945eb50fd" aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Live Music</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="cell-label cell-label--venue">Living Room</div></div>
+    <div class="cell-primary cell-title-tier--band cell-title-variant--neon">The Marauders</div>
+    
+    <div class="cell-secondary">10 PM</div>
+    
+    
+    
+    
+  </div><div class="day-cell day-cell--populated template-live-band presentation-mode-identity-led day-cell--has-review-artwork   " data-event-name="Juanabe"><div class="cell-date">24</div>
+    <div class="cell-review-artwork cell-review-artwork--event-cell-artwork cell-review-artwork--presentation-identity-led cell-review-artwork--class-square-identity cell-review-artwork--background-neutral-mat" style="background-image:url('assets/37d691ff4e94ba69fe03aca6f05236ab8d90321ef774314bea52578f44d69c55.jpg');background-size:contain;background-position:center center;padding:3%;background-origin:content-box;background-color:rgba(4,9,13,0.72);--web-artwork-width:100%" data-segment-index="0" data-segment-count="1" data-selected-asset="juanabe-instagram-post-v2.jpg" data-selected-asset-checksum="37d691ff4e94ba69fe03aca6f05236ab8d90321ef774314bea52578f44d69c55" aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Live Music</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="cell-label cell-label--venue">Living Room</div></div>
+    <div class="cell-primary cell-title-tier--band cell-title-variant--retro">Juanabe</div>
+    
+    <div class="cell-secondary">10 PM</div>
+    
+    
+    
+    
+  </div><div class="day-cell day-cell--populated template-recurring-night presentation-mode-recurring-self-describing day-cell--has-review-artwork  day-cell--recurring-segment day-cell--recurring-segment-last " data-event-name="Whiskey Allstars"><div class="cell-date">25</div>
+    <div class="cell-review-artwork cell-review-artwork--recurring-weekday-vertical-artwork cell-review-artwork--presentation-recurring-self-describing" style="background-image:var(--calendar-inline-image-2);background-size:100% 400%;background-position:center 100%" data-segment-index="3" data-segment-count="4" data-selected-asset="sunday-v2-whiskey-allstars-self-describing.png" data-selected-asset-checksum="7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85" data-recurring-composition aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Weekly</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="visually-hidden cell-semantic-venue">Living Room</div></div>
+    <div class="visually-hidden cell-semantic-title">Whiskey Allstars</div>
+    
+    <div class="visually-hidden cell-semantic-time">6ish</div>
+    
+    
+    
+    
+  </div><div class="day-cell day-cell--empty"><div class="cell-date">26</div></div><div class="day-cell day-cell--populated template-recurring-night presentation-mode-recurring-self-describing day-cell--has-review-artwork  day-cell--recurring-segment day-cell--recurring-segment-last " data-event-name="Karaoke Tuesday"><div class="cell-date">27</div>
+    <div class="cell-review-artwork cell-review-artwork--recurring-weekday-vertical-artwork cell-review-artwork--presentation-recurring-self-describing" style="background-image:var(--calendar-inline-image-3);background-size:100% 400%;background-position:center 100%" data-segment-index="3" data-segment-count="4" data-selected-asset="tuesday-v2-karaoke-self-describing.png" data-selected-asset-checksum="0caa146ae225d575785360e988c1f1cf570307112b4b6401f72c8a1749b6fb41" data-recurring-composition aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Weekly</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="visually-hidden cell-semantic-venue">Living Room</div></div>
+    <div class="visually-hidden cell-semantic-title">Karaoke Tuesday</div>
+    
+    <div class="visually-hidden cell-semantic-time">10 PM</div>
+    
+    
+    
+    
+  </div><div class="day-cell day-cell--populated template-recurring-night presentation-mode-recurring-self-describing day-cell--has-review-artwork  day-cell--recurring-segment day-cell--recurring-segment-last " data-event-name="Ladies Night"><div class="cell-date">28</div>
+    <div class="cell-review-artwork cell-review-artwork--recurring-weekday-vertical-artwork cell-review-artwork--presentation-recurring-self-describing" style="background-image:var(--calendar-inline-image-4);background-size:100% 400%;background-position:center 100%" data-segment-index="3" data-segment-count="4" data-selected-asset="wednesday-v2-ladies-night-self-describing.png" data-selected-asset-checksum="338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa" data-recurring-composition aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Weekly</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="visually-hidden cell-semantic-venue">Living Room</div></div>
+    <div class="visually-hidden cell-semantic-title">Ladies Night</div>
+    
+    <div class="visually-hidden cell-semantic-time">10 PM–2 AM</div>
+    <div class="visually-hidden cell-semantic-performer">DJ Edward &amp; Friends</div>
+    
+    
+    
+  </div><div class="day-cell day-cell--populated day-cell--multi-event day-cell--multi-event-stacked template-live-band template-recurring-night"><div class="cell-date">29</div><div class="multi-event-layout"><div class="multi-event-region multi-event-region--top multi-event-region--stacked multi-event-region--has-review-artwork multi-event-region--category-band presentation-mode-identity-led" data-event-name="Monchzilla">
+    <div class="cell-review-artwork cell-review-artwork--event-cell-artwork cell-review-artwork--presentation-identity-led cell-review-artwork--class-square-identity cell-review-artwork--background-neutral-mat" style="background-image:url('assets/8aae18fada46db54e7fb4289348ebaa8b40c29b9d43b4b1041808d0a3460213e.jpg');background-size:contain;background-position:center center;padding:3%;background-origin:content-box;background-color:rgba(4,9,13,0.72);--web-artwork-width:100%" data-segment-index="0" data-segment-count="1" data-selected-asset="monchzilla-instagram-post-v2.jpg" data-selected-asset-checksum="8aae18fada46db54e7fb4289348ebaa8b40c29b9d43b4b1041808d0a3460213e" aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Live Music</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="cell-label cell-label--venue">Living Room</div></div>
+    <div class="cell-primary cell-title-tier--band cell-title-variant--western">Monchzilla</div>
+    
+    <div class="cell-secondary">8 PM</div>
+    
+    
+    
+    
+  </div><div class="multi-event-region multi-event-region--bottom multi-event-region--stacked multi-event-region--has-review-artwork multi-event-region--category-dj presentation-mode-photo-led" data-event-name="DJ Edward">
+    <div class="cell-review-artwork cell-review-artwork--event-cell-artwork cell-review-artwork--presentation-photo-led cell-review-artwork--class-dj-portrait cell-review-artwork--background-edge-fill" style="background-image:var(--calendar-inline-image-1);background-size:cover;background-position:center 25%;--web-artwork-width:94%" data-segment-index="0" data-segment-count="1" data-selected-asset="dj-edward-v1.jpg" data-selected-asset-checksum="fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e" data-text-safety="{&quot;assetSha256&quot;:&quot;fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e&quot;,&quot;protectedRects&quot;:[{&quot;x&quot;:0.28,&quot;y&quot;:0.06,&quot;width&quot;:0.44,&quot;height&quot;:0.44}],&quot;bakedIdentityRects&quot;:[],&quot;safeTextRects&quot;:[{&quot;x&quot;:0.05,&quot;y&quot;:0.74,&quot;width&quot;:0.9,&quot;height&quot;:0.21}]}" aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Weekly</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="cell-label cell-label--venue">Living Room</div></div>
+    <div class="cell-primary cell-title-tier--dj cell-title-variant--bold-condensed">DJ Edward</div>
+    
+    <div class="cell-secondary">11:30 PM</div>
+    
+    
+    
+    
+  </div></div></div><div class="day-cell day-cell--populated template-live-band presentation-mode-identity-led day-cell--has-review-artwork   " data-event-name="SUO"><div class="cell-date">30</div>
+    <div class="cell-review-artwork cell-review-artwork--event-cell-artwork cell-review-artwork--presentation-identity-led cell-review-artwork--class-square-identity cell-review-artwork--background-neutral-mat" style="background-image:url('assets/27340265e94074b668419bac978238c4a4a91d49581031d302bc33c118d0cdfe.jpg');background-size:contain;background-position:center center;padding:3%;background-origin:content-box;background-color:rgba(4,9,13,0.72);--web-artwork-width:100%" data-segment-index="0" data-segment-count="1" data-selected-asset="suo-v1.jpg" data-selected-asset-checksum="27340265e94074b668419bac978238c4a4a91d49581031d302bc33c118d0cdfe" aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Live Music</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="cell-label cell-label--venue">Living Room</div></div>
+    <div class="cell-primary cell-title-tier--band cell-title-variant--neon">SUO</div>
+    
+    <div class="cell-secondary">10 PM</div>
+    
+    
+    
+    
+  </div><div class="day-cell day-cell--populated day-cell--multi-event day-cell--multi-event-stacked template-dj template-live-band"><div class="cell-date">31</div><div class="multi-event-layout"><div class="multi-event-region multi-event-region--top multi-event-region--stacked multi-event-region--has-review-artwork multi-event-region--category-dj presentation-mode-photo-led" data-event-name="DJ ICUE">
+    <div class="cell-review-artwork cell-review-artwork--event-cell-artwork cell-review-artwork--presentation-photo-led cell-review-artwork--class-square-identity cell-review-artwork--background-neutral-mat" style="background-image:url('assets/ef116261d478d4ae57be860f895aa6cd5c0f4a3f37211264a47bcd2abfce51cb.jpg');background-size:contain;background-position:center center;padding:3%;background-origin:content-box;background-color:rgba(4,9,13,0.72);--web-artwork-width:100%" data-segment-index="0" data-segment-count="1" data-selected-asset="dj-icue-instagram-post-v1.jpg" data-selected-asset-checksum="ef116261d478d4ae57be860f895aa6cd5c0f4a3f37211264a47bcd2abfce51cb" aria-hidden="true"></div>
+    <div class="cell-label cell-label--category cell-label--dj">DJ</div>
+    <div class="cell-primary cell-title-tier--dj cell-title-variant--bold-condensed">DJ ICUE</div>
+    
+    
+    
+    
+    
+    
+  </div><div class="multi-event-region multi-event-region--bottom multi-event-region--stacked multi-event-region--has-review-artwork multi-event-region--category-band presentation-mode-identity-led" data-event-name="Abria">
+    <div class="cell-review-artwork cell-review-artwork--event-cell-artwork cell-review-artwork--presentation-identity-led cell-review-artwork--class-square-identity cell-review-artwork--background-neutral-mat" style="background-image:url('assets/56959c5d4fa82bcd022413abf58f9ea9bf2e20170749c9de09bd53053f445600.jpg');background-size:contain;background-position:center center;padding:3%;background-origin:content-box;background-color:rgba(4,9,13,0.72);--web-artwork-width:100%" data-segment-index="0" data-segment-count="1" data-selected-asset="abria-instagram-post-v1.jpg" data-selected-asset-checksum="56959c5d4fa82bcd022413abf58f9ea9bf2e20170749c9de09bd53053f445600" aria-hidden="true"></div>
+    <div class="visually-hidden cell-semantic-badge">Live Music</div><div class="cell-tags cell-tags--venue-bottom-left"><div class="cell-label cell-label--venue">Living Room</div></div>
+    <div class="cell-primary cell-title-tier--band cell-title-variant--bold-condensed">Abria</div>
+    
+    <div class="cell-secondary">10 PM</div>
+    
+    
+    
+    
+  </div></div></div><div class="day-cell day-cell--outside"></div><div class="day-cell day-cell--outside"></div></div><div class="weekday-promotion-row"><div class="weekday-promotion-slot" style="--promotion-column:1;--promotion-row:6"><div class="weekday-grid-promotion" data-promotion-id="late-night-hh" data-promotion-semantic="late-night-happy-hour">Late Night HH 🌙 · 12 AM</div></div><div class="weekday-promotion-slot" style="--promotion-column:2;--promotion-row:6"><div class="weekday-grid-promotion" data-promotion-id="ladies-drink-free">LADIES DRINK FREE 🥂 10PM-2AM</div></div><div class="weekday-promotion-slot" style="--promotion-column:3;--promotion-row:6"><div class="weekday-grid-promotion" data-promotion-id="late-night-hh" data-promotion-semantic="late-night-happy-hour">Late Night HH 🌙 · 12 AM</div></div><div class="weekday-promotion-slot" style="--promotion-column:6;--promotion-row:5"><div class="weekday-grid-promotion" data-promotion-id="in-da-biz-sundays" data-promotion-semantic="industry">In &#39;Da Biz 🍻 50% off</div></div></div></div>
+
+    <footer class="calendar-footer">
+      <div class="footer-brand">Bougainvillea&#39;s Old Florida Tavern</div>
+      <div class="footer-contact"><span class="footer-contact-item">7221 SW 58th Ave, South Miami, FL</span><span class="footer-contact-sep" aria-hidden="true">·</span><span class="footer-contact-item">www.bougiesbar.com</span><span class="footer-contact-sep" aria-hidden="true">·</span><span class="footer-contact-item">305-669-8577</span><span class="footer-contact-sep" aria-hidden="true">·</span><span class="footer-contact-item">@bougiesbar</span></div>
+      <p class="calendar-tagline footer-tagline">Happy Hour Every Day 🍻 Weekdays ‘till 8pm   -   Saturdays 6-9pm   -   Sundays 4-6pm - Late Night HH 🌙 Tuesdays &amp; Thursdays after Midnight</p>
+    </footer>
+  
+</div>
+</div>
+<script>
+(function(){
+    const gap=3;
+    const box=(n)=>n?n.getBoundingClientRect():null;
+    const overlap=(a,b)=>Boolean(a&&b&&a.left<b.right&&a.right>b.left&&a.top<b.bottom&&a.bottom>b.top);
+    const textWidth=(node)=>{const range=document.createRange();range.selectNodeContents(node);return range.getBoundingClientRect().width+6;};
+    function protectedRects(root,art){try{return JSON.parse(art?.dataset.textSafety||'{}').protectedRects||[];}catch{return [];}}
+    function artworkImageRect(art,ar){
+      const style=getComputedStyle(art),parts=style.backgroundSize.split(' '),px=(value,fallback)=>value?.endsWith('px')?Number.parseFloat(value):fallback;
+      const width=px(parts[0],ar.width),height=px(parts[1],ar.height),position=style.backgroundPosition.toLowerCase();
+      const left=position.includes('left')?ar.left:position.includes('right')?ar.right-width:ar.left+(ar.width-width)/2;
+      const top=position.includes('top')?ar.top:position.includes('bottom')?ar.bottom-height:ar.top+(ar.height-height)/2;
+      return {left,top,width,height};
+    }
+    const set=(node,name,value)=>{if(node.getAttribute(name)!==value)node.setAttribute(name,value);};
+    const css=(node,name,value)=>{if(node.style.getPropertyValue(name)!==value)node.style.setProperty(name,value);};
+    function run(){
+      document.querySelectorAll('.day-cell--has-review-artwork:not(.day-cell--multi-event):not(.day-cell--recurring-base-overlay)').forEach((root)=>{set(root,'data-label-layout','full-bottom-center');set(root,'data-label-layout-reason','approved-full-context');});
+      document.querySelectorAll('.day-cell--multi-event-stacked .multi-event-region--has-review-artwork').forEach((root)=>{
+        const title=root.querySelector(':scope > .cell-primary');const performer=root.querySelector(':scope > .cell-performer');const identity=performer||title;if(!identity)return;
+        const venue=root.querySelector('.cell-label--venue,.cell-venue');const time=root.querySelector(':scope > .cell-secondary');const rr=box(root),vr=box(venue),tr=box(time),ir=box(identity),art=root.querySelector(':scope > .cell-review-artwork'),ar=box(art);
+        const scale=rr.width/root.offsetWidth||1,left=Math.max(gap,((vr?.right||rr.left)-rr.left)/scale+gap),right=Math.min(root.offsetWidth-gap,((tr?.left||rr.right)-rr.left)/scale-gap),available=Math.max(0,right-left),required=textWidth(identity)/scale;
+        const height=Math.max(ir?.height||0,14*scale),proposed={left:rr.left+left*scale,right:rr.left+right*scale,top:rr.bottom-4*scale-height,bottom:rr.bottom-4*scale},image=art&&ar?artworkImageRect(art,ar):null;
+        const protectedHit=Boolean(image)&&protectedRects(root,art).some((p)=>overlap(proposed,{left:image.left+p.x*image.width,right:image.left+(p.x+p.width)*image.width,top:image.top+p.y*image.height,bottom:image.top+(p.y+p.height)*image.height}));
+        const layout=!protectedHit&&required<=available+1?'metadata-center':'adjacent-row';set(root,'data-label-layout',layout);set(root,'data-label-layout-reason',protectedHit?'protected-artwork':required<=available+1?'measured-lane-fit':'insufficient-lane');css(root,'--identity-lane-left',left+'px');css(root,'--identity-lane-right',(root.offsetWidth-right)+'px');set(root,'data-label-layout-available',available.toFixed(2));set(root,'data-label-layout-required',required.toFixed(2));set(root,'data-label-layout-asset-checksum',art?.dataset.selectedAssetChecksum||'');
+      });
+    }
+    let queued=false;function ready(){if(queued)return;queued=true;requestAnimationFrame(()=>Promise.resolve(document.fonts?.ready).then(()=>{queued=false;run();}));}
+    window.addEventListener('load',ready);const page=document.querySelector('.calendar-page');if(page)new ResizeObserver(ready).observe(page);
+  })();
+// Phase 7C layout architecture (docs/phase7c-graphic-language-plan.md §5):
+// reports the page's real, laid-out height as a data attribute so
+// generate-calendar-render.mjs can capture a PNG at exactly the height
+// this render actually needs — never a fixed guess that risks clipping
+// event content. Harmless in any other context (opening this file
+// directly in a browser): it only ever sets an attribute, never alters
+// what's visible.
+window.addEventListener("load", function () {
+  var page = document.querySelector(".calendar-page");
+  var height = Math.ceil(page.getBoundingClientRect().height);
+  document.documentElement.setAttribute("data-measured-height", String(height));
+
+  var promotionCells = document.querySelectorAll(".weekday-grid-promotion, .day-cell--has-promotion, .multi-event-region--has-promotion, .multi-event-shared-promotion");
+  var promotionOverflowCount = 0;
+  promotionCells.forEach(function (cell) {
+    if (cell.scrollHeight > cell.clientHeight + 1) {
+      cell.setAttribute("data-promotion-overflow", "true");
+      promotionOverflowCount += 1;
+    }
+  });
+  document.documentElement.setAttribute("data-promotion-overflow-count", String(promotionOverflowCount));
+});
+</script>
+<script type="application/json" id="calendar-inline-image-payloads">{"--calendar-inline-image-1":"assets/fb38ad8644518913e3d3852a7692e67ea62eb9a9eb0d1bf9d4e7716f3b24959e.jpg","--calendar-inline-image-2":"assets/7791b0e1947d15e904461a255a38dd207fc92ed0e593a6429f2564b3c7ea3e85.png","--calendar-inline-image-3":"assets/9763b1b81dbbca6d3a1dddb8e9250bf6b09a25fbb26209bd1d5d9c541af8257f.png","--calendar-inline-image-4":"assets/338169ad8bfa42751af75a0d94edb14a0a40b3379c133bbbb66f501364775daa.png","--calendar-inline-image-5":"assets/0bff4cde074141374ec534cf6ae0a45ddd16756a4a59724b6a0fc3a0c109f87b.jpg"}</script>
+<script>(function calendarInlineImageRuntime() {
+  var payloadElement = document.getElementById("calendar-inline-image-payloads");
+  var payloads = JSON.parse(payloadElement.textContent);
+  var sourceImages = {};
+
+  Object.keys(payloads).forEach(function (reference) {
+    var dataUri = payloads[reference];
+    var comma = dataUri.indexOf(",");
+    var mimeMatch = dataUri.slice(0, comma).match(/^data:([^;]+);base64$/);
+    var binary = window.atob(dataUri.slice(comma + 1));
+    var bytes = new Uint8Array(binary.length);
+    for (var index = 0; index < binary.length; index += 1) {
+      bytes[index] = binary.charCodeAt(index);
+    }
+    var objectUrl = URL.createObjectURL(new Blob([bytes], { type: mimeMatch[1] }));
+    var source = new Image();
+    source.hidden = true;
+    source.alt = "";
+    source.setAttribute("aria-hidden", "true");
+    source.setAttribute("data-inline-image-source", reference);
+    source.src = objectUrl;
+    document.body.appendChild(source);
+    sourceImages[reference] = { source: source, objectUrl: objectUrl };
+  });
+
+  var targets = Array.from(document.querySelectorAll('[style*="var(--calendar-inline-image-"]'));
+  targets.forEach(function (target) {
+    var match = target.getAttribute("style").match(/background-image\s*:\s*var\((--calendar-inline-image-\d+)\)/);
+    var reference = match && match[1];
+    target.setAttribute("data-inline-image-ref", reference || "missing");
+    if (reference && sourceImages[reference]) {
+      target.style.backgroundImage = "url('" + sourceImages[reference].objectUrl + "')";
+    }
+  });
+
+  function verifyResolvedImages() {
+    var loadedSourceCount = 0;
+    var failedSourceCount = 0;
+    Object.keys(sourceImages).forEach(function (reference) {
+      var source = sourceImages[reference].source;
+      var loaded = source.complete && source.naturalWidth > 0 && source.naturalHeight > 0;
+      source.setAttribute("data-inline-image-source-loaded", String(loaded));
+      if (loaded) loadedSourceCount += 1;
+      else failedSourceCount += 1;
+    });
+
+    var resolvedTargetCount = 0;
+    targets.forEach(function (target) {
+      var rect = target.getBoundingClientRect();
+      var backgroundImage = window.getComputedStyle(target).backgroundImage;
+      var resolved = backgroundImage && backgroundImage !== "none" && rect.width > 0 && rect.height > 0;
+      target.setAttribute("data-inline-image-resolved", String(Boolean(resolved)));
+      if (resolved) resolvedTargetCount += 1;
+    });
+
+    document.documentElement.setAttribute("data-inline-image-source-count", String(Object.keys(sourceImages).length));
+    document.documentElement.setAttribute("data-inline-image-source-loaded-count", String(loadedSourceCount));
+    document.documentElement.setAttribute("data-inline-image-source-failed-count", String(failedSourceCount));
+    document.documentElement.setAttribute("data-inline-image-target-count", String(targets.length));
+    document.documentElement.setAttribute("data-inline-image-resolved-count", String(resolvedTargetCount));
+    document.documentElement.setAttribute("data-inline-image-unresolved-count", String(targets.length - resolvedTargetCount));
+  }
+
+  window.addEventListener("load", verifyResolvedImages, { once: true });
+})();</script>
+</body>
+</html>
