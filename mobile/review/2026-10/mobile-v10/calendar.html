@@ -1789,13 +1789,9 @@ html[data-mobile-presentation-contract="mobile-v10"] .mobile-event-card--dj-comp
   var sources = {};
 
   Object.keys(payloads).forEach(function (reference) {
-    var dataUri = payloads[reference];
-    var comma = dataUri.indexOf(",");
-    var mimeType = dataUri.slice(5, dataUri.indexOf(";", 5));
-    var binary = window.atob(dataUri.slice(comma + 1));
-    var bytes = new Uint8Array(binary.length);
-    for (var index = 0; index < binary.length; index += 1) bytes[index] = binary.charCodeAt(index);
-    var objectUrl = URL.createObjectURL(new Blob([bytes], { type: mimeType }));
+    // Packaged review copy: payload is a relative content-addressed asset URL, loaded directly.
+    var objectUrl = payloads[reference];
+    if (typeof objectUrl !== "string" || !/^assets\/[0-9a-f]{64}\.(?:png|jpg|webp|gif|svg)$/.test(objectUrl)) throw new Error("Packaged image payload " + reference + " is not a content-addressed asset URL.");
     var source = new Image();
     source.hidden = true;
     source.alt = "";
