@@ -63,6 +63,7 @@ class PagesSiteTest(unittest.TestCase):
             "customer/2026-10/mobile/release-manifest.json": "{}",
             "mobile/review/2026-09/mobile-v20/calendar.html": "retained September mobile v20 review",
             "mobile/review/2026-09/mobile-v20/prototype-manifest.json": "{}",
+            "mobile/review/2026-10/mobile-v21/calendar.html": "retained October mobile v21 review",
         }.items():
             self.write(name, value)
         self.write_current_manifest()
@@ -115,6 +116,7 @@ class PagesSiteTest(unittest.TestCase):
         self.assertNotIn("review/2026-09/v12", manifest["provenanceDirectories"])
         self.assertEqual((output / "mobile/review/2026-08/mobile-v13-framework-consistency/calendar.html").read_text(), "retained August mobile framework review")
         self.assertEqual((output / "mobile/review/2026-09/mobile-v11-framework-consistency/calendar.html").read_text(), "linked September mobile framework review")
+        self.assertEqual((output / "mobile/review/2026-10/mobile-v21/calendar.html").read_text(), "retained October mobile v21 review")
         self.assertEqual((output / "mobile/current/calendar.html").read_text(), "current mobile")
         self.assertEqual((output / "customer/2026-08/web/calendar.html").read_text(), "customer archive web")
         self.assertEqual((output / "customer/2026-08/mobile/calendar.html").read_text(), "customer archive mobile")
@@ -166,6 +168,19 @@ class PagesSiteTest(unittest.TestCase):
         self.write("calendar.html", '<a href="review/2026-08/v30/calendar.html">old</a>')
         with self.assertRaises(MODULE.ContractError):
             self.build()
+
+    def test_new_mobile_review_keeps_prior_review_linked_from_web_archive(self):
+        prior = "https://sotadatos.github.io/bougies-calendar-preview/mobile/review/2026-10/mobile-v21/calendar.html"
+        self.write("review/2026-10/v15/calendar.html", "October Web review")
+        self.write("review/2026-10/v15/archive/2026-09/mobile/calendar.html", f'<a href="{prior}">October</a>')
+        self.write("mobile/review/2026-10/mobile-v22/calendar.html", "October Mobile review")
+        run(self.repo, "git", "add", ".")
+        run(self.repo, "git", "commit", "-qm", "new October reviews")
+
+        manifest, output = self.build()
+        self.assertEqual(manifest["activeReviews"]["web"], "review/2026-10/v15")
+        self.assertEqual(manifest["activeReviews"]["mobile"], "mobile/review/2026-10/mobile-v22")
+        self.assertEqual((output / "mobile/review/2026-10/mobile-v21/calendar.html").read_text(), "retained October mobile v21 review")
 
 
 if __name__ == "__main__":
