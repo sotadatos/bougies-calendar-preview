@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "targetMonth": "2026-09",
+  "surface": "web",
+  "status": "historical",
+  "calendarHtmlSha256": "6a9a38e6f67d612053cf8e7d60dd6ccca6932704928a192d887d3c6c3f0d5c28",
+  "sourceImmutablePath": "review/2026-09/v48-inline-history/calendar.html",
+  "preservation": "Byte-identical copy of previously approved September customer presentation",
+  "authorization": "Loic approved September archival with October live release, 2026-10-04"
+}
