@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 2,
+  "contract": "calendar-history-registry",
+  "label": "Past Calendars",
+  "namespace": "review-stage:2026-10-next",
+  "currentMonth": "2026-10",
+  "currentDestinations": {
+    "web": "https://sotadatos.github.io/bougies-calendar-preview/review/2026-10/v15/calendar.html",
+    "mobile": "https://sotadatos.github.io/bougies-calendar-preview/mobile/review/2026-10/mobile-v21/calendar.html"
+  },
+  "months": [
+    {
+      "month": "2026-10",
+      "displayLabel": "October 2026",
+      "state": "released",
+      "webDestination": "https://sotadatos.github.io/bougies-calendar-preview/review/2026-10/v15/calendar.html",
+      "mobileDestination": "https://sotadatos.github.io/bougies-calendar-preview/mobile/review/2026-10/mobile-v21/calendar.html"
+    },
+    {
+      "month": "2026-09",
+      "displayLabel": "September 2026",
+      "state": "released",
+      "webDestination": "https://sotadatos.github.io/bougies-calendar-preview/review/2026-10/v15/archive/2026-09/web/calendar.html",
+      "mobileDestination": "https://sotadatos.github.io/bougies-calendar-preview/review/2026-10/v15/archive/2026-09/mobile/calendar.html"
+    },
+    {
+      "month": "2026-08",
+      "displayLabel": "August 2026",
+      "state": "released",
+      "webDestination": "https://sotadatos.github.io/bougies-calendar-preview/review/2026-10/v15/archive/2026-08/web/calendar.html",
+      "mobileDestination": "https://sotadatos.github.io/bougies-calendar-preview/review/2026-10/v15/archive/2026-08/mobile/calendar.html"
+    },
+    {
+      "month": "2026-07",
+      "displayLabel": "July 2026",
+      "state": "coming-soon"
+    }
+  ]
+}

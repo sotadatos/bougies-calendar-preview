@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "contract": "calendar-review-media",
+  "files": [
+    {
+      "path": "media/october-merged-header-gen45-trial-01-contained-792x396.mp4",
+      "role": "mergedHeader",
+      "sha256": "4142a7ecb05b24618b043462407708d92096cd59004e2e1700ab701610b4654f",
+      "bytes": 1989062,
+      "contentType": "video/mp4"
+    }
+  ]
+}
