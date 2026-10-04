@@ -16,6 +16,11 @@ MODULE = importlib.util.module_from_spec(SPEC)
 assert SPEC and SPEC.loader
 SPEC.loader.exec_module(MODULE)
 
+V46_HTML = (
+    '<a href="https://sotadatos.github.io/bougies-calendar-preview/review/2026-09/v12/calendar.html">v12</a>'
+    '<a href="https://sotadatos.github.io/bougies-calendar-preview/review/2026-08/v36/calendar.html">v36</a>'
+)
+
 
 def run(repo: Path, *args: str) -> str:
     return subprocess.run(list(args), cwd=repo, check=True, text=True, stdout=subprocess.PIPE).stdout.strip()
@@ -39,7 +44,7 @@ class PagesSiteTest(unittest.TestCase):
             "review/2026-08/v49-web-consistency/calendar.html": "retained August web consistency review",
             "review/2026-09/v48-inline-history/calendar.html": "approved September inline history review",
             "review/2026-09/v18-web-consistency/calendar.html": "retained September web consistency review",
-            "review/2026-09/v46-central-michigan-promo/calendar.html": "approved September web review",
+            "review/2026-09/v46-central-michigan-promo/calendar.html": V46_HTML,
             "mobile/review/2026-08/mobile-v13-framework-consistency/calendar.html": "retained August mobile framework review",
             "mobile/review/2026-09/mobile-v11-framework-consistency/calendar.html": "linked September mobile framework review",
             "mobile/review/2026-08/mobile-v10-h4/calendar.html": "old mobile",
@@ -85,9 +90,9 @@ class PagesSiteTest(unittest.TestCase):
 
     def write_current_manifest(self):
         self.write("mobile/current/prototype-manifest.json", json.dumps({
-            "approvedImmutableReviewUrl": "https://sotadatos.github.io/bougies-calendar-preview/mobile/review/2026-09/mobile-v10/calendar.html",
-            "approvedImmutableManifestUrl": "https://sotadatos.github.io/bougies-calendar-preview/mobile/review/2026-09/mobile-v10/prototype-manifest.json",
-            "sourceDesktopReview": {"htmlUrl": "https://sotadatos.github.io/bougies-calendar-preview/review/2026-09/v12/calendar.html"},
+            "approvedImmutableReviewUrl": "https://sotadatos.github.io/bougies-calendar-preview/customer/2026-10/mobile/calendar.html",
+            "approvedImmutableManifestUrl": "https://sotadatos.github.io/bougies-calendar-preview/customer/2026-10/mobile/release-manifest.json",
+            "sourceDesktopReview": {"htmlUrl": "https://sotadatos.github.io/bougies-calendar-preview/customer/2026-10/web/calendar.html"},
         }))
 
     def build(self):
@@ -105,7 +110,9 @@ class PagesSiteTest(unittest.TestCase):
         self.assertEqual((output / "review/2026-08/v49-web-consistency/calendar.html").read_text(), "retained August web consistency review")
         self.assertEqual((output / "review/2026-09/v48-inline-history/calendar.html").read_text(), "approved September inline history review")
         self.assertEqual((output / "review/2026-09/v18-web-consistency/calendar.html").read_text(), "retained September web consistency review")
-        self.assertEqual((output / "review/2026-09/v46-central-michigan-promo/calendar.html").read_text(), "approved September web review")
+        self.assertEqual((output / "review/2026-09/v46-central-michigan-promo/calendar.html").read_text(), V46_HTML)
+        self.assertEqual((output / "review/2026-09/v12/calendar.html").read_text(), "approved web")
+        self.assertNotIn("review/2026-09/v12", manifest["provenanceDirectories"])
         self.assertEqual((output / "mobile/review/2026-08/mobile-v13-framework-consistency/calendar.html").read_text(), "retained August mobile framework review")
         self.assertEqual((output / "mobile/review/2026-09/mobile-v11-framework-consistency/calendar.html").read_text(), "linked September mobile framework review")
         self.assertEqual((output / "mobile/current/calendar.html").read_text(), "current mobile")
