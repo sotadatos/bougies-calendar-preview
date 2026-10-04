@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "targetMonth": "2026-10",
+  "surface": "web",
+  "sourceCommit": "82f3f63c1304f73dda0b559bdc26b74aeba49aad",
+  "calendarHtmlSha256": "9d943a55c9c1a05fc61d0b6dc2b7785df7d2632ee717bc66638fb1f727ed7ad3",
+  "bytes": 39391726,
+  "acceptedAppearance": "Web v13 and Mobile v19",
+  "releaseDelta": "Confirmed DJ venues; October current and September historical navigation",
+  "ownerAcceptance": "Loic, 2026-10-04; existing artwork overlaps accepted for this release",
+  "motion": "static"
+}

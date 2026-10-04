@@ -48,6 +48,16 @@ class PagesSiteTest(unittest.TestCase):
             "customer/2026-08/web/provenance.json": "{}",
             "customer/2026-08/mobile/calendar.html": "customer archive mobile",
             "customer/2026-08/mobile/provenance.json": "{}",
+            "customer/2026-09/web/calendar.html": "customer September web",
+            "customer/2026-09/web/release-manifest.json": "{}",
+            "customer/2026-09/mobile/calendar.html": "customer September mobile",
+            "customer/2026-09/mobile/release-manifest.json": "{}",
+            "customer/2026-10/web/calendar.html": "customer October web",
+            "customer/2026-10/web/release-manifest.json": "{}",
+            "customer/2026-10/mobile/calendar.html": "customer October mobile",
+            "customer/2026-10/mobile/release-manifest.json": "{}",
+            "mobile/review/2026-09/mobile-v20/calendar.html": "retained September mobile v20 review",
+            "mobile/review/2026-09/mobile-v20/prototype-manifest.json": "{}",
         }.items():
             self.write(name, value)
         self.write_current_manifest()
@@ -103,6 +113,13 @@ class PagesSiteTest(unittest.TestCase):
         self.assertEqual((output / "customer/2026-08/mobile/calendar.html").read_text(), "customer archive mobile")
         self.assertTrue((output / "customer/2026-08/web/provenance.json").is_file())
         self.assertTrue((output / "customer/2026-08/mobile/provenance.json").is_file())
+        self.assertEqual((output / "customer/2026-09/web/calendar.html").read_text(), "customer September web")
+        self.assertEqual((output / "customer/2026-09/mobile/calendar.html").read_text(), "customer September mobile")
+        self.assertEqual((output / "customer/2026-10/web/calendar.html").read_text(), "customer October web")
+        self.assertEqual((output / "customer/2026-10/mobile/calendar.html").read_text(), "customer October mobile")
+        self.assertTrue((output / "customer/2026-10/web/release-manifest.json").is_file())
+        self.assertTrue((output / "customer/2026-10/mobile/release-manifest.json").is_file())
+        self.assertEqual((output / "mobile/review/2026-09/mobile-v20/calendar.html").read_text(), "retained September mobile v20 review")
         self.assertFalse((output / "review/2026-08/v30/calendar.html").exists())
         self.assertFalse((output / "mobile/review/2026-08/mobile-v10-h4/calendar.html").exists())
 
