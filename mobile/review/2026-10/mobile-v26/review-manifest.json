@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "contract": "review-stage-manifest",
+  "stage": "2026-10-next",
+  "mobileReviewVersion": "mobile-v26",
+  "label": "October 2026 next review prototype, Mobile mobile-v26 looping header with Home-level pause, rail-derived card frames and section ornaments (not published)",
+  "reviewOnly": true,
+  "published": false,
+  "approval": "BCA approved exact source 2e76e5d74fa9ea1e1931bd7e7ddb244af2c847dd for review staging; Loic visual review pending; no live/current approval.",
+  "sourceCommit": "2e76e5d74fa9ea1e1931bd7e7ddb244af2c847dd",
+  "archives": [
+    {
+      "month": "2026-09",
+      "sourceSha256": "f6ec9ebcd063389d6c9de53b5a33a4b1d674ee47b3b3ed835c0004b217e682d7",
+      "derivativeSha256": "3aa55439e2bbfea7fed650422e04e060e7dc13f54798b22109cf2c90f883eb1c",
+      "restoresSourceExactly": true
+    },
+    {
+      "month": "2026-08",
+      "sourceSha256": "f2792fca47ea77a37def738a766190ce6eb1cbd89ae67c4d4c89e242f077caf3",
+      "derivativeSha256": "02a9dc34b3fe3c4651bba57f0e25de2cd090ff121aaae526e4f73417a2f73ab2",
+      "restoresSourceExactly": true
+    }
+  ],
+  "staged": [
+    {
+      "path": "mobile/review/2026-10/mobile-v26/calendar.html",
+      "sha256": "324ef7110a39d8c18307f512939d6c4790bc619b21036fc487d20814d546f943",
+      "bytes": 15996562
+    },
+    {
+      "path": "mobile/review/2026-10/mobile-v26/media-manifest.json",
+      "sha256": "cdfbd4c4cbd2b091be0d6f79992886f569fc1952b1c26dc15f9fc8f3864aca31",
+      "bytes": 347
+    },
+    {
+      "path": "mobile/review/2026-10/mobile-v26/media/october-merged-header-gen45-trial-01-contained-792x396.mp4",
+      "sha256": "4142a7ecb05b24618b043462407708d92096cd59004e2e1700ab701610b4654f",
+      "bytes": 1989062
+    },
+    {
+      "path": "mobile/review/2026-10/mobile-v26/calendar-history.json",
+      "sha256": "3817d1210ac89a8a9de5dccd877176e5036802206c0ba50105fbf4d2aefc06c9",
+      "bytes": 1675
+    },
+    {
+      "path": "mobile/review/2026-10/mobile-v26/archive/2026-09/mobile/calendar.html",
+      "sha256": "3aa55439e2bbfea7fed650422e04e060e7dc13f54798b22109cf2c90f883eb1c",
+      "bytes": 15539599
+    },
+    {
+      "path": "mobile/review/2026-10/mobile-v26/archive/2026-08/mobile/calendar.html",
+      "sha256": "02a9dc34b3fe3c4651bba57f0e25de2cd090ff121aaae526e4f73417a2f73ab2",
+      "bytes": 10401617
+    }
+  ]
+}
