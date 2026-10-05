@@ -45,6 +45,7 @@ class PagesSiteTest(unittest.TestCase):
             "review/2026-09/v48-inline-history/calendar.html": "approved September inline history review",
             "review/2026-09/v18-web-consistency/calendar.html": "retained September web consistency review",
             "review/2026-09/v46-central-michigan-promo/calendar.html": V46_HTML,
+            "review/2026-10/v15/calendar.html": "retained linked October web review",
             "mobile/review/2026-08/mobile-v13-framework-consistency/calendar.html": "retained August mobile framework review",
             "mobile/review/2026-09/mobile-v11-framework-consistency/calendar.html": "linked September mobile framework review",
             "mobile/review/2026-08/mobile-v10-h4/calendar.html": "old mobile",
@@ -110,6 +111,7 @@ class PagesSiteTest(unittest.TestCase):
         self.assertEqual((output / "review/2026-08/v36/calendar.html").read_text(), "retained linked web")
         self.assertEqual((output / "review/2026-08/v49-web-consistency/calendar.html").read_text(), "retained August web consistency review")
         self.assertEqual((output / "review/2026-09/v48-inline-history/calendar.html").read_text(), "approved September inline history review")
+        self.assertEqual((output / "review/2026-10/v15/calendar.html").read_text(), "retained linked October web review")
         self.assertEqual((output / "review/2026-09/v18-web-consistency/calendar.html").read_text(), "retained September web consistency review")
         self.assertEqual((output / "review/2026-09/v46-central-michigan-promo/calendar.html").read_text(), V46_HTML)
         self.assertEqual((output / "review/2026-09/v12/calendar.html").read_text(), "approved web")
