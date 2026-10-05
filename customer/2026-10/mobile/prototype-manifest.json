@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 1,
+  "prototypeOnly": true,
+  "targetMonth": "2026-10",
+  "mobileReviewVersion": "mobile-v28",
+  "renderMode": "review",
+  "sourceFixture": {
+    "path": "output/month-revisions/2026-10/5e6bf2f9bf66dfc6280f48afe56fb91511b79312b97c654fe5553c24dd2b4104/month.snapshot.json",
+    "sha256": "eaf26fc750d60facc11a0e03097d00aa13bc1bc41915a3c46fb4560192ba4b16",
+    "eventCount": 38,
+    "representativeDates": [
+      "2026-10-01",
+      "2026-10-02",
+      "2026-10-03",
+      "2026-10-04",
+      "2026-10-05",
+      "2026-10-06",
+      "2026-10-07",
+      "2026-10-08",
+      "2026-10-09",
+      "2026-10-10",
+      "2026-10-11",
+      "2026-10-12",
+      "2026-10-13",
+      "2026-10-14",
+      "2026-10-15",
+      "2026-10-16",
+      "2026-10-17",
+      "2026-10-18",
+      "2026-10-19",
+      "2026-10-20",
+      "2026-10-21",
+      "2026-10-22",
+      "2026-10-23",
+      "2026-10-24",
+      "2026-10-25",
+      "2026-10-26",
+      "2026-10-27",
+      "2026-10-28",
+      "2026-10-29",
+      "2026-10-30",
+      "2026-10-31"
+    ]
+  },
+  "sourceSnapshot": {
+    "path": "output/month-revisions/2026-10/5e6bf2f9bf66dfc6280f48afe56fb91511b79312b97c654fe5553c24dd2b4104/month.snapshot.json",
+    "revision": "5e6bf2f9bf66dfc6280f48afe56fb91511b79312b97c654fe5553c24dd2b4104"
+  },
+  "reviewStageMobileVariant": {
+    "stage": "2026-10-next",
+    "mobileReviewVersion": "mobile-v27",
+    "mobileCapabilities": [
+      "navigationFirstHeader",
+      "tuesdayFirstGlance",
+      "mergedHeaderMotion",
+      "closeupMistDateRail",
+      "headerFrameCanvas",
+      "navHeaderMotionToggle",
+      "stackedEventCards",
+      "performerNameInstagramLinks",
+      "compactEventTags",
+      "eventCardFrames",
+      "glanceOrnamentFrame",
+      "weekdayTitleOrnamentFrame",
+      "weekdayTitlePattern"
+    ]
+  },
+  "customerRelease": {
+    "month": "2026-10",
+    "presentation": {
+      "reviewStage": "2026-10-next",
+      "mobileReviewVersion": "mobile-v27",
+      "sourceCommit": "72653eb7d6578a6ea862848eba5473db3ff445a8",
+      "reviewCalendarHtmlSha256": "05eeeb170346dfc15b80513e758bde7fcd07e0b1c6c443f4c7b8da2568adb0fb",
+      "configSha256": {
+        "stage": "1febef11a16935b58f7461860a5b05d38395e5df1a457e4c1740ee8b83d538f5",
+        "variant": "bd0cb19c9554c1506d471741f16087667c97b5bd2b08ee1ec10f36a892d93464",
+        "visualSlotArt": "18f6bfecc89e38d06db855d310b0010ea6029fdebc11723da834f567643bec0b"
+      }
+    },
+    "acceptance": {
+      "acceptedBy": "Loic",
+      "acceptedAt": "2026-10-05"
+    },
+    "replaces": {
+      "mobileReviewVersion": "mobile-v20",
+      "calendarHtmlSha256": "b7401dcc63d16a7af15ff1b2c13eed224df75299d54e683b4e6ade82cfa3a3ad",
+      "sourcePreviewCommit": "271193c28dc18df4f4aa8f5241156238823cc283"
+    },
+    "customerDestination": "customer/2026-10/mobile/calendar.html"
+  },
+  "mobilePosterArtExceptions": [
+    {
+      "date": "2026-10-06",
+      "eventName": "South Miami Tech Tuesdays",
+      "placementId": "south-miami-tech-tuesdays-october-6-event-cell",
+      "asset": "south-miami-tech-tuesdays-v1.png",
+      "sha256": "02b962f7d78a147a883b8bdd91302f45a70c1f2be52629faed3fa5d8b50fbe1b",
+      "approvedPlacement": {
+        "id": "south-miami-tech-tuesdays-september-1-event-cell",
+        "targetMonth": "2026-09"
+      },
+      "mobilePresentation": {
+        "fit": "contain",
+        "position": "center",
+        "aspectRatio": "1 / 1"
+      },
+      "approval": {
+        "approvedBy": "Loic",
+        "approvedAt": "2026-10-05"
+      }
+    }
+  ],
+  "mergedHeader": {
+    "posterSha256": "b97e5ee5739ba32c8d475e555b62ae268f304bbad1393f1529d095e6c79f6c78",
+    "motion": {
+      "id": "october-merged-header-gen45-trial-01-contained",
+      "path": "media/october-merged-header-gen45-trial-01-contained-792x396.mp4",
+      "sha256": "4142a7ecb05b24618b043462407708d92096cd59004e2e1700ab701610b4654f"
+    },
+    "playback": "loop",
+    "toggle": "navigation"
+  },
+  "pageCanvas": {
+    "color": "#09060a"
+  },
+  "dateRailArt": {
+    "id": "october-2026-blue-ghost-closeup-mist",
+    "rotation": [
+      "bride",
+      "drunk",
+      "escort",
+      "drunk"
+    ],
+    "backdropSha256": "0bdff7476e85609fb5e2460c45f8772d0567c400f36be42245689fb016bf7dc2",
+    "apparitionSha256": {
+      "bride": "63f17aba815c861e679c2f9ef0dda7aab5164876a072398819dfc84103587071",
+      "drunk": "be6a15ae4a34d39ba9beea046bc01a898f0804cf354514438f0a8390e451b450",
+      "escort": "f2f5fd598d1a72d98bd1ee964463fc3a36a30b2adddbf47920595949bbb09e52"
+    },
+    "layout": "closeupMist",
+    "mistSha256": "2daf5f61a5aba5448d7a813ca2404dc7238a868270729ecf1cf0fe7d5def0899",
+    "deliveredDerivativeSha256": [
+      "125c7b232721989b235d87836d8a50833f0824962ba5886f306a7d1f98da9378",
+      "0379210bb40714a037216747b4844e1152720110af2a1d7ef5c69241256e3e24",
+      "f80843143eca88982aa8cbaf6c301b253f94fcca1ccf12ecac7b3827c4704dc8",
+      "290030907527e71a68f7d86e10f5dffb094beb6240dea57cc7d8dc603e0bdcb4",
+      "3ff572a390aa312e603707003e4156830c89f2a360175836f3ecef31bf05ea59"
+    ],
+    "artApproval": {
+      "approvedBy": "Loic",
+      "approvedAt": "2026-10-04"
+    },
+    "productionApproval": "customer release 2026-10 mobile-v28: Loic accepted 2026-10-next mobile-v27 on 2026-10-05 (config/customer-releases.json)"
+  },
+  "cardFrameArt": {
+    "id": "rail-derived-v2",
+    "frameSha256": {
+      "special": "984da4ca779daf8660055c03fc8cabf1940bcb3f68995c3e060dad33fa048524",
+      "recurring": "cfb4cd8aa3be3096d373582b38691832446e7bbeea53dd463be87750e88402a8",
+      "live": "2600214c33ef414919074e6cfa70f7e4ae2ea8d13fb62425faa2eae8665d51fc"
+    },
+    "contentInsetPx": 14,
+    "artApproval": {
+      "approvedBy": "Loic",
+      "approvedAt": "2026-10-05"
+    },
+    "productionApproval": "customer release 2026-10 mobile-v28: Loic accepted 2026-10-next mobile-v27 on 2026-10-05 (config/customer-releases.json)"
+  },
+  "sectionOrnamentArt": {
+    "id": "rail-derived-v2",
+    "roleSha256": {
+      "glanceFrame": "393c2e14a24873194dee829391aeb5e24a9cc38f1ca22fe8d7b309339deadca5",
+      "weekdayTitleFrame": "393c2e14a24873194dee829391aeb5e24a9cc38f1ca22fe8d7b309339deadca5",
+      "weekdayTitlePattern": "f99087479bb79e98000c350cacc8900550b56068b265e5dfd622929436f82c69"
+    },
+    "artApproval": {
+      "approvedBy": "Loic",
+      "approvedAt": "2026-10-05"
+    },
+    "productionApproval": "customer release 2026-10 mobile-v28: Loic accepted 2026-10-next mobile-v27 on 2026-10-05 (config/customer-releases.json)"
+  },
+  "embeddedImages": {
+    "sourceCount": 32,
+    "targetCount": 139
+  },
+  "imageDelivery": {
+    "htmlBytes": 15608963,
+    "imageOccurrences": 37,
+    "uniqueImageCount": 37,
+    "repeatedImageTargets": 0,
+    "uniqueRawImageBytes": 11572800,
+    "allRawImageBytes": 11572800,
+    "encodedImageBytes": 15431276,
+    "uniqueEncodedImageBytes": 15431276,
+    "base64DataUriOverheadBytes": 3858476,
+    "markupWithoutDataUrisBytes": 177687,
+    "uniqueInlineBaselineBytes": 15608963,
+    "styleBytes": 96265,
+    "executableScriptBytes": 15313,
+    "payloadContainerBytes": 15384818,
+    "largestImages": [
+      {
+        "mimeType": "image/png",
+        "sha256": "ec4ed78bcba6dec2a5a5cac8d8b4d65fdb36a651d286e69f89d4c3639aad84b6",
+        "rawBytes": 3235222,
+        "encodedBytes": 4313654,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/png",
+        "sha256": "b97e5ee5739ba32c8d475e555b62ae268f304bbad1393f1529d095e6c79f6c78",
+        "rawBytes": 2926179,
+        "encodedBytes": 3901594,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/png",
+        "sha256": "a1d12c406da0959b087160329ac6225798b7eb457ed3c9d3cc82d8703ccfa3f9",
+        "rawBytes": 1831497,
+        "encodedBytes": 2442018,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/jpeg",
+        "sha256": "0771b49d53a8f422f55b8d83ecab3030f889a73b500af12d4e2f25e93302b48a",
+        "rawBytes": 621243,
+        "encodedBytes": 828347,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/jpeg",
+        "sha256": "d7fcea32538e6bc08605a8bb5765a98dc5ed15bcae079600f06b1013106f49c2",
+        "rawBytes": 419720,
+        "encodedBytes": 559651,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/png",
+        "sha256": "f4518fc3f268e64d3e6508c84132520420c92b853fe9475da026379bf3beb708",
+        "rawBytes": 328324,
+        "encodedBytes": 437790,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/png",
+        "sha256": "3d75b54b1f811086d317fcf175fae41cc2326ab86448526f89dc259bce5bd203",
+        "rawBytes": 312939,
+        "encodedBytes": 417274,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/png",
+        "sha256": "d4aa515e03949e79d645c7ab551d512517a302a7419314f96180d5bb5ec42ef6",
+        "rawBytes": 311859,
+        "encodedBytes": 415834,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/png",
+        "sha256": "2744e3cb6881d18154993aedb480bdb54b6cc2c6cbe5dd58a9b1e8eb95db053a",
+        "rawBytes": 292587,
+        "encodedBytes": 390138,
+        "targetCount": 1
+      },
+      {
+        "mimeType": "image/jpeg",
+        "sha256": "aee6e337c85f80f79d5aa1ccc20547a0e7c7009f4091a0aba092d3e162d7ee81",
+        "rawBytes": 291156,
+        "encodedBytes": 388231,
+        "targetCount": 1
+      }
+    ]
+  },
+  "htmlBytes": 15608963
+}

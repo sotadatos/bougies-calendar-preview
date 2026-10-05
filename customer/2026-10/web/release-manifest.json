@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "targetMonth": "2026-10",
   "surface": "web",
-  "sourceCommit": "82f3f63c1304f73dda0b559bdc26b74aeba49aad",
-  "calendarHtmlSha256": "9d943a55c9c1a05fc61d0b6dc2b7785df7d2632ee717bc66638fb1f727ed7ad3",
-  "bytes": 39391726,
-  "acceptedAppearance": "Web v13 and Mobile v19",
-  "releaseDelta": "Confirmed DJ venues; October current and September historical navigation",
-  "ownerAcceptance": "Loic, 2026-10-04; existing artwork overlaps accepted for this release",
-  "motion": "static"
+  "sourceCommit": "71da49eb409721c609786f48f34ced55227f9758",
+  "calendarHtmlSha256": "1ee92d5b27980cd480af6ff4c1c03667968a0bb1e97131d4e9d29b9b170f114f",
+  "acceptedAppearance": "Web v17 / Mobile v28",
+  "canonicalSnapshotRevision": "5e6bf2f9bf66dfc6280f48afe56fb91511b79312b97c654fe5553c24dd2b4104",
+  "ownerAcceptance": "Loic direct publish both approved prototypes request, 2026-10-05",
+  "motion": "approved looping title with pause/play control",
+  "rollbackPreviewCommit": "77cce2981d6273ee0062bdab0e32fd20f317dca7"
 }

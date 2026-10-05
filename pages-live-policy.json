@@ -4,7 +4,8 @@
   "fixedFiles": [
     "calendar.html",
     "calendar.png",
-    "calendar.pdf"
+    "calendar.pdf",
+    "customer/calendar-history.json"
   ],
   "fixedDirectories": [
     "mobile/current",

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 2,
+  "contract": "calendar-history-registry",
+  "label": "Past Calendars",
+  "namespace": "production",
+  "currentMonth": "2026-10",
+  "currentDestinations": {
+    "web": "https://www.bougiesbar.com/calendar",
+    "mobile": "https://calendar.bougiesbar.com/"
+  },
+  "months": [
+    {
+      "month": "2026-10",
+      "displayLabel": "October 2026",
+      "state": "released",
+      "webDestination": "https://sotadatos.github.io/bougies-calendar-preview/customer/2026-10/web/calendar.html",
+      "mobileDestination": "https://sotadatos.github.io/bougies-calendar-preview/customer/2026-10/mobile/calendar.html"
+    },
+    {
+      "month": "2026-09",
+      "displayLabel": "September 2026",
+      "state": "released",
+      "webDestination": "https://sotadatos.github.io/bougies-calendar-preview/customer/2026-09/web/calendar.html",
+      "mobileDestination": "https://calendar.bougiesbar.com/2026-09/"
+    },
+    {
+      "month": "2026-08",
+      "displayLabel": "August 2026",
+      "state": "released",
+      "webDestination": "https://sotadatos.github.io/bougies-calendar-preview/customer/2026-08/web/calendar.html",
+      "mobileDestination": "https://calendar.bougiesbar.com/2026-08/"
+    },
+    {
+      "month": "2026-07",
+      "displayLabel": "July 2026",
+      "state": "coming-soon"
+    }
+  ]
+}
