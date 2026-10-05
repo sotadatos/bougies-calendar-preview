@@ -51,6 +51,7 @@ class PagesSiteTest(unittest.TestCase):
             "mobile/review/2026-09/mobile-v11-framework-consistency/calendar.html": "linked September mobile framework review",
             "mobile/review/2026-08/mobile-v10-h4/calendar.html": "old mobile",
             "mobile/current/calendar.html": "current mobile",
+            "customer/calendar-history.json": '{"history": "shared registry"}',
             "customer/2026-08/web/calendar.html": "customer archive web",
             "customer/2026-08/web/provenance.json": "{}",
             "customer/2026-08/mobile/calendar.html": "customer archive mobile",
@@ -122,6 +123,7 @@ class PagesSiteTest(unittest.TestCase):
         self.assertEqual((output / "mobile/review/2026-09/mobile-v11-framework-consistency/calendar.html").read_text(), "linked September mobile framework review")
         self.assertEqual((output / "mobile/review/2026-10/mobile-v21/calendar.html").read_text(), "retained October mobile v21 review")
         self.assertEqual((output / "mobile/current/calendar.html").read_text(), "current mobile")
+        self.assertEqual((output / "customer/calendar-history.json").read_text(), '{"history": "shared registry"}')
         self.assertEqual((output / "customer/2026-08/web/calendar.html").read_text(), "customer archive web")
         self.assertEqual((output / "customer/2026-08/mobile/calendar.html").read_text(), "customer archive mobile")
         self.assertTrue((output / "customer/2026-08/web/provenance.json").is_file())
