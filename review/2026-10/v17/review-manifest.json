@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "contract": "review-stage-manifest",
+  "stage": "2026-10-next",
+  "webReviewVersion": "v17",
+  "label": "October 2026 next review prototype, Web v17: Web v16 with touching day cells sharing one orange seam per boundary instead of the ivory outlines (not published)",
+  "reviewOnly": true,
+  "published": false,
+  "approval": "none: Web v17 is a review candidate pending Loic review",
+  "webCorrections": [
+    "naturalGridAspect",
+    "compactHeaderFrame",
+    "cleanArtLabels",
+    "translucentArtMats",
+    "themeTokenDateBadge",
+    "naturalWeekdayRow",
+    "navHeaderMotionToggle",
+    "sharedDayCellSeams"
+  ],
+  "candidateArt": {
+    "status": "candidate",
+    "review": "user-review-pending",
+    "approval": "none: Loic visual review pending; BCA technical working-prototype review requested",
+    "verticalMasters": [
+      {
+        "id": "october-tuesday-wednesday-next-v5",
+        "sha256": "9b819c62b6982f70e38a19a9c1617b34d221c5ae6e1f4eb2747c368af340dd1e",
+        "size": [
+          1428,
+          2250
+        ],
+        "openArtworkTasks": [
+          {
+            "type": "date-clearance",
+            "dates": [
+              "2026-10-07",
+              "2026-10-14",
+              "2026-10-21",
+              "2026-10-27",
+              "2026-10-28"
+            ],
+            "detail": "BCD v5 limit (candidate, not a pass): the conservative 185x128 quiet zone still holds a decorative cherub/head edge on Oct 7, secondary hands/arms on Oct 14 and 21, and horned decor on Oct 27 and 28. The Oct 6 Tech plaque and the Oct 13/20 promotion lettering are clear. One focused correction failed the image service output safety filter (no new image); not retried."
+          }
+        ]
+      },
+      {
+        "id": "october-sunday-monday-next-v8",
+        "sha256": "c526ec0b1dd449cc1adda144f72ba865dfd33f7d0076932c77dca62b296f72e9",
+        "size": [
+          1428,
+          2250
+        ],
+        "openArtworkTasks": [
+          {
+            "type": "date-clearance",
+            "dates": [
+              "2026-10-04",
+              "2026-10-05",
+              "2026-10-11",
+              "2026-10-12",
+              "2026-10-18",
+              "2026-10-19",
+              "2026-10-25",
+              "2026-10-26"
+            ],
+            "detail": "BCD v8 limit (candidate, not a pass): no faces, skulls or promotion letters in the dated quiet zones per BCD's annotated proof, but the moon sits in the Oct 5 sky area and small fringes of the witch cloak, the sign frame and a grave base may enter conservative background zones; BCD does not assert a pixel-level background-only pass, so every dated tile of this group stays under review."
+          },
+          {
+            "type": "row-seam",
+            "dates": [
+              "2026-10-04",
+              "2026-10-05",
+              "2026-10-11",
+              "2026-10-12"
+            ],
+            "detail": "BCD v8 limit: the house branding and a ghost's lower face/chin remain near the row 1/2 seam (not under a date badge). The skeleton guitarist head moved below the row 2/3 seam; band faces sit above the row 4/5 seam."
+          }
+        ]
+      }
+    ],
+    "weekdayTiles": {
+      "tuesday": "2171039a19ccec5f82b86f10a3836d5e20d2b00f867bea931f7233aaf7a008b5",
+      "wednesday": "a9ffe1c92044588e4c642783a3a762ab86ed9ec35ea1ed6312ca61690b196f36",
+      "thursday": "7cb0a1ffee93d40fa59c1be872558398b0b4a0e169878ea560cb98c2e7184310",
+      "friday": "9ae58ec4e977faa09555752f1c7f1764a76be8576b9508661fc620cedf228def",
+      "saturday": "22a684e6c06f2a5ef671f4f52844d07db5f0d6720302366149984e51b926a4b3",
+      "sunday": "2ea898591cf77786b4086b662ce59be6802f12c8b09322e05264f191cce83e8a",
+      "monday": "28d0eed0332d2bbbd729b2fb4bd146adbbfafa365f375b6119391449c1e83049"
+    },
+    "weekdayJoinedProofSha256": "1ad9377689e4f52b6d0231dc60bee7001d854ea6eaa8270c02f2af7525bfaac9",
+    "knownLimits": [
+      "Tuesday/Wednesday v5: the conservative 185x128 quiet zone still holds a decorative cherub/head edge (Oct 7), secondary hands/arms (Oct 14, 21) and horned decor (Oct 27, 28); not a protected-zone pass.",
+      "Tuesday/Wednesday v5: the Oct 6 Tech Tuesdays plaque sits within its one cell and the Oct 13/20 promotion lettering is clear; shared foliage is continuous across cells (the plaque is not an isolated event rectangle).",
+      "Tuesday/Wednesday v5: one focused correction failed the image service output safety filter and produced no image; it was not retried and no provider workaround was used.",
+      "Sunday/Monday v8 (supersedes v7): main faces, skull and date overlaps resolved per BCD's annotated proof; the frog stays on Rick's tombstone and the skeleton guitarist head moved off the row seam.",
+      "Sunday/Monday v8: the moon (Oct 5 sky), cloak fringe, sign frame and a grave base may enter conservative background zones; house branding and a ghost's chin remain near the row 1/2 seam; BCD asserts no pixel-level background-only pass.",
+      "Weekday row v1: words are visually close to column centres on a common bottom baseline but not measured (approximate offsets -25.5 to +25 px on 1200); Wednesday costume change and character changes need Loic's acceptance; Thursday keeps 6/7 px transparent side margins.",
+      "All candidate art is pending Loic's visual review; BCA was asked for technical working-prototype approval with these limits disclosed."
+    ],
+    "mobileStrip": "OPTION_ONLY_NOT_GENERATED_OR_APPROVED"
+  },
+  "registry": {
+    "url": "https://sotadatos.github.io/bougies-calendar-preview/review/2026-10/v17/calendar-history.json",
+    "sha256": "f4d666fd9a7a2d115b6a35c741750dedda7b1c6929c0827f5cfd782058877221"
+  },
+  "archives": [
+    {
+      "month": "2026-09",
+      "surface": "web",
+      "shape": "month-history",
+      "liveRoute": "https://sotadatos.github.io/bougies-calendar-preview/customer/2026-09/web/calendar.html",
+      "sourceSha256": "6a9a38e6f67d612053cf8e7d60dd6ccca6932704928a192d887d3c6c3f0d5c28",
+      "derivativeSha256": "5716a40b06c6bbbfbfb0d6e63e0ad5435a17ac51718c93155cfecdfe733befcb",
+      "restoresSourceExactly": true
+    },
+    {
+      "month": "2026-08",
+      "surface": "web",
+      "shape": "month-history",
+      "liveRoute": "https://sotadatos.github.io/bougies-calendar-preview/customer/2026-08/web/calendar.html",
+      "sourceSha256": "bc256167c59d13bf74b3b2d6ace9ae07cb8c22eb99bbd6fb8f98d69ba7e3eedf",
+      "derivativeSha256": "2886fe369d2bf84375658e8c22c5bde16ab1d026905782cea175ebcfdfcdd627",
+      "restoresSourceExactly": true
+    }
+  ],
+  "staged": [
+    {
+      "path": "review/2026-10/v17/calendar.html",
+      "sha256": "cde720c337906054c34a5477deebe42f7186291df2ac1a978ddea1e09324a16f",
+      "bytes": 42657544
+    },
+    {
+      "path": "review/2026-10/v17/media-manifest.json",
+      "sha256": "cdfbd4c4cbd2b091be0d6f79992886f569fc1952b1c26dc15f9fc8f3864aca31",
+      "bytes": 347
+    },
+    {
+      "path": "review/2026-10/v17/media/october-merged-header-gen45-trial-01-contained-792x396.mp4",
+      "sha256": "4142a7ecb05b24618b043462407708d92096cd59004e2e1700ab701610b4654f",
+      "bytes": 1989062
+    }
+  ]
+}
